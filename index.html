@@ -780,7 +780,7 @@ function artLinha(a){
       g+=`<circle cx="${x(j)}" cy="${y(v)}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)+6,y(v)-10,v.toLocaleString("pt-BR",{minimumFractionDigits:2})+(a.sufixo||""),{f:FONT_M,size:14,w:500,fill:"var(--ink)"})}})}
   const last=series[0].pontos[n-1],lx=x(n-1),ly=y(num(last[1]));
   g+=`<circle cx="${lx}" cy="${ly}" r="8" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/>`;
-  if(a.destaque){const w=a.destaque.length*10.2+28,bx=Math.max(L,lx-w-8),by=ly-74<T-14?ly+22:ly-74;g+=`<rect x="${bx}" y="${by}" width="${w}" height="38" rx="7" fill="var(--ink)"/>`+txt(bx+w/2,by+25,a.destaque,{size:18,w:700,fill:"var(--surface)",anchor:"middle"})}
+  if(a.destaque){const w=a.destaque.length*10.2+28,bx=W-R-w,baixo=ly>(T+(H-T-B)/2),by=baixo?T-6:H-B-50;g+=`<rect x="${bx}" y="${by}" width="${w}" height="38" rx="7" fill="var(--ink)"/>`+txt(bx+w/2,by+25,a.destaque,{size:18,w:700,fill:"var(--surface)",anchor:"middle"})}
   if(a.fonte)g+=txt(W-12,H-4,a.fonte,{size:11,anchor:"end"});
   (a.marcas||[]).forEach(m=>{const j=m[0];const v=num(series[0].pontos[j][1]);g+=`<circle cx="${x(j)}" cy="${y(v)}" r="6" fill="var(--signal)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)-10,y(v)-16,m[1],{size:17,w:700,fill:"var(--ink)",anchor:"end"})});
   return g;
