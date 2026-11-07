@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "scripts": {"test": "node tools/teste.js index.html"},
+  "devDependencies": {"jsdom": "24.1.3"}
+}
