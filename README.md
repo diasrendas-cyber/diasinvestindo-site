@@ -10,6 +10,22 @@ Site de página única publicado pela Netlify a cada push na branch `main`.
 - `tools/validar.py`: valida o bloco de notícias antes de publicar.
 - `tools/preview.py`: gera a versão de prévia para o artifact do Claude.
 
+## Regra de ouro: nenhum dado sem checagem
+
+O portal trata de finanças: **um número errado é pior do que nenhum número.**
+
+1. **Pesquise antes de escrever ou ilustrar.** Leia a matéria completa (não só o trecho da busca).
+2. **Todo número** (texto, régua e ilustração) precisa estar confirmado em **duas fontes independentes**
+   ou em **uma fonte oficial** (Banco Central, IBGE, B3, Tesouro, CVM, comunicado da própria empresa).
+   - Selic e decisões do Copom: bcb.gov.br (comunicados do Copom).
+   - Inflação (IPCA): IBGE. Câmbio Ptax: Banco Central. Ibovespa: B3 ou fechamento publicado por InfoMoney/Valor.
+3. **Séries no tempo** (ex.: a Selic mês a mês) são montadas a partir das decisões oficiais, ponto a ponto.
+   Não preencha meses por estimativa; o valor de cada mês é o vigente no fim do mês.
+4. Se um número não puder ser confirmado, **não o use**: troque a ilustração por `cena` (sem números)
+   e escreva o texto sem esse dado.
+5. Registre a checagem no arquivo `verificacao.md` (substituído a cada atualização): cada número usado,
+   onde aparece (texto, régua ou ilustração) e as URLs que o confirmam. Esse arquivo vai no mesmo commit.
+
 ## Atualização diária das notícias
 
 A tarefa agendada altera **somente** o bloco
@@ -69,7 +85,7 @@ jul 14,25; ago 14; set 13,75; out 13,75; nov 13,75.
 
 ```
 python3 tools/validar.py index.html      # precisa terminar com OK
-git diff --stat                           # só index.html pode mudar
+git diff --stat                           # só index.html e verificacao.md podem mudar
 git commit -am "Notícias de dd/mm/aaaa" && git push origin main
 python3 tools/preview.py index.html /tmp/preview.html   # para republicar a prévia no Claude
 ```
