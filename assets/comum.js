@@ -4,7 +4,7 @@
 const E=window.DIArte.E;
 /* ---------- Captura de e-mail ---------- */
 const API="https://nkdyvbvbwdqkwvlwfcnr.supabase.co/functions/v1/inscrever-site";
-const live=/(^|\.)diasinvestindo\.com\.br$|^diasinvestindo-portal\.netlify\.app$|--diasinvestindo-portal\.netlify\.app$/.test(location.hostname);
+const live=/(^|\.)diasinvestindo\.com\.br$/.test(location.hostname);
 let fc=0;
 document.querySelectorAll(".capture-slot").forEach(slot=>{fc++;const id="cap"+fc;
   const d=document.createElement("div");d.className="capture";
