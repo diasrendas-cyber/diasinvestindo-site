@@ -1,6 +1,6 @@
 # Dias Investindo (diasinvestindo.com.br)
 
-Portal publicado pela Netlify a cada push na branch `main`.
+Portal publicado pelo GitHub Pages (repositório diasrendas-cyber/diasinvestindo-site, branch `main`, pasta raiz) a cada push. O arquivo `CNAME` mantém o domínio diasinvestindo.com.br; `.nojekyll` faz o Pages servir os arquivos como estão.
 
 ## Arquivos
 
