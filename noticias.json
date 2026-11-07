@@ -1,14 +1,135 @@
 {
-  "atualizado": "06/11/2026",
+  "atualizado": "07/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "166.191",
-    "ibovVar": "-0,82%",
-    "dolar": "R$ 5,489",
-    "dolarVar": "+0,67%",
-    "data": "05/11/2026"
+    "ibov": "168.498",
+    "ibovVar": "+1,39%",
+    "dolar": "R$ 5,511",
+    "dolarVar": "+0,44%",
+    "data": "06/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Mercados",
+      "data": "06/11/2026",
+      "publicado": "07/11/2026",
+      "titulo": "Ibovespa sobe 1,39% e fecha a 168.498 pontos; dólar avança a R$ 5,51",
+      "resumo": "Dados fortes de emprego nos Estados Unidos e balanços de empresas deram fôlego à bolsa, enquanto o real perdeu valor frente ao dólar.",
+      "texto": [
+        "O Ibovespa, principal índice da bolsa brasileira, terminou o pregão de sexta-feira, 6 de novembro, em alta de 1,39%, aos 168.498 pontos. O resultado devolveu parte das perdas da véspera, quando o índice havia recuado 0,82%. No câmbio, o movimento foi oposto: o dólar comercial subiu 0,44% e fechou cotado a R$ 5,511.",
+        "O dado que mais influenciou os negócios foi o relatório de emprego dos Estados Unidos, que mostrou a criação de 165 mil vagas em outubro, bem acima das 65 mil esperadas pelos analistas. A economia americana aquecida reforça a leitura de que os juros por lá podem continuar altos, o que fortalece o dólar no mundo todo. Na bolsa, uma leva de balanços corporativos e o tom mais positivo em Wall Street ajudaram a sustentar a alta.",
+        "No cenário doméstico, os investidores seguem atentos aos sinais sobre a política econômica e as contas públicas do governo. A alta recente do dólar foi um dos motivos citados pelo Banco Central para interromper os cortes da Selic nesta semana, o que mantém o câmbio no radar. Novos balanços trimestrais de empresas listadas seguem no calendário e podem continuar mexendo com as ações."
+      ],
+      "bolso": "Dólar acima de R$ 5,50 encarece viagens, compras em sites estrangeiros e produtos importados; quem tem gastos em moeda estrangeira programados deve acompanhar a cotação.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "bolsa",
+        "rotulo": "Ibovespa no fechamento, pontos",
+        "valor": "168.498",
+        "variacao": "+1,39%",
+        "secundarios": [
+          {
+            "rotulo": "Dólar comercial",
+            "valor": "R$ 5,511",
+            "variacao": "+0,44%"
+          }
+        ],
+        "fonte": "Fonte: Estadão Conteúdo, CNN Brasil e Agência Brasil, fechamento de 06/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-6-novembro-2026/"
+        },
+        {
+          "nome": "Agência Brasil, via A Gazeta de Dourados",
+          "url": "https://www.agazetadedourados.com.br/noticias/brasil/dolar-sobe-para-r-551-com-dados-de-emprego-nos-eua/06/11/2026/"
+        },
+        {
+          "nome": "Estadão Conteúdo, via DGABC",
+          "url": "https://www.dgabc.com.br/Noticia/4367385/fechamento-do-mercado-financeiro"
+        }
+      ],
+      "slug": "2026-11-06-ibovespa-sobe-1-39-e-fecha-a-168-498-pontos-dolar-avanca-a-r-5-51"
+    },
+    {
+      "editoria": "Economia",
+      "data": "06/11/2026",
+      "publicado": "07/11/2026",
+      "titulo": "EUA criam 165 mil vagas em outubro, quase o triplo do esperado",
+      "resumo": "Relatório oficial de emprego surpreende, desemprego fica em 4,1% e salários sobem 3,1% em 12 meses, o que reforça a cautela do Fed.",
+      "texto": [
+        "A economia dos Estados Unidos abriu 165 mil vagas de trabalho fora do setor agrícola em outubro, segundo o relatório divulgado na sexta-feira, 6 de novembro, pelo Departamento de Estatísticas do Trabalho (BLS). Analistas esperavam cerca de 65 mil postos. A taxa de desemprego ficou em 4,1%, e o salário médio por hora subiu 0,4% no mês, para US$ 38,00, com alta de 3,1% em 12 meses.",
+        "O órgão também revisou para cima os dados dos meses anteriores: agosto passou a 186 mil vagas e setembro, a 60 mil, somando 84 mil postos a mais do que o informado antes. As contratações se concentraram em serviços profissionais e empresariais, com 70 mil vagas, saúde, com 42 mil, e transporte e armazenagem, com 25 mil. O ganho de outubro superou com folga a média dos 12 meses anteriores, de 48 mil vagas por mês.",
+        "Um mercado de trabalho forte e salários em alta tendem a sustentar o consumo e a pressionar a inflação, o que leva o Federal Reserve a manter a política de juros mais dura. Parte dos analistas passou a esperar nova alta de juros na reunião de dezembro do Fed. O próximo relatório de emprego, com os dados de novembro, está previsto para 4 de dezembro."
+      ],
+      "bolso": "Juros altos nos EUA costumam atrair dinheiro para a economia americana e pressionar o dólar para cima, o que pode encarecer produtos importados no Brasil.",
+      "arte": {
+        "tipo": "barras",
+        "tema": "emprego",
+        "titulo": "Vagas criadas nos EUA, em milhares",
+        "barras": [
+          {
+            "rotulo": "Agosto (revisado)",
+            "valor": 186
+          },
+          {
+            "rotulo": "Setembro (revisado)",
+            "valor": 60
+          },
+          {
+            "rotulo": "Outubro",
+            "valor": 165,
+            "destaque": true
+          }
+        ],
+        "nota": "Para outubro, a expectativa era de 65 mil vagas",
+        "fonte": "Fonte: BLS (Departamento do Trabalho dos EUA), 06/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "U.S. Bureau of Labor Statistics",
+          "url": "https://www.bls.gov/news.release/empsit.nr0.htm"
+        },
+        {
+          "nome": "ANI News",
+          "url": "https://aninews.in/news/business/us-nonfarm-payrolls-rise-by-165000-in-october-over-three-times-12-month-average20261106192219/"
+        },
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-6-novembro-2026/"
+        }
+      ],
+      "slug": "2026-11-06-eua-criam-165-mil-vagas-em-outubro-quase-o-triplo-do-esperado"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "05/11/2026",
+      "publicado": "07/11/2026",
+      "titulo": "Meta suspende novos termos que permitiriam coletar conteúdo de sites, após liminares no Brasil e na Noruega",
+      "resumo": "Regras que entrariam em vigor em 20 de novembro foram pausadas sem nova data, depois da reação de jornais, editoras e autoridades.",
+      "texto": [
+        "A Meta, dona do Facebook, do Instagram e do WhatsApp, suspendeu por tempo indeterminado a atualização de quatro conjuntos de termos comerciais, anunciada na quinta-feira, 5 de novembro. Especialistas e empresas de mídia afirmavam que as novas regras abririam caminho para a empresa coletar conteúdo publicado nos sites de clientes com contas comerciais. A mudança entraria em vigor em 30 de outubro, foi adiada para 20 de novembro e agora não tem nova data.",
+        "O recuo veio depois de semanas de pressão de jornais, editoras e autoridades de vários países. No Brasil, a Justiça de São Paulo concedeu liminar em ação da Associação Nacional de Jornais (ANJ), da Abert e da Aner, que suspende as regras e proíbe o uso de reportagens dos veículos associados para treinar sistemas de inteligência artificial. Na Noruega, outra liminar teve efeito semelhante, e no Reino Unido o órgão de defesa da concorrência abriu investigação sobre a conduta da empresa.",
+        "Segundo a Meta, os termos atuais continuam valendo, e a companhia afirma que não mudará a política sem consultar o setor. Ainda não está claro se a empresa vai apresentar uma nova versão das regras ou abandonar a proposta. O caso se soma à disputa global entre empresas de tecnologia e produtores de conteúdo sobre o uso de textos e imagens no treinamento de modelos de IA."
+      ],
+      "arte": {
+        "tipo": "cena",
+        "tema": "ia",
+        "titulo": "Meta pausa novos termos"
+      },
+      "fontes": [
+        {
+          "nome": "Olhar Digital",
+          "url": "https://olhardigital.com.br/2026/11/06/pro/meta-recua-em-regras-para-coleta-de-conteudo-apos-pressao-internacional"
+        },
+        {
+          "nome": "Tribuna do Sertão",
+          "url": "https://www.tribunadosertao.com.br/politica/2026/11/06/1015697-meta-adia-regra-que-permite-uso-de-conteudo-jornalistico-por-ia-sem-licenca-apos-reves"
+        }
+      ],
+      "slug": "2026-11-05-meta-suspende-novos-termos-que-permitiriam-coletar-conteudo-de-sites"
+    },
     {
       "editoria": "Juros",
       "data": "04/11/2026",
