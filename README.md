@@ -1,14 +1,16 @@
 # Dias Investindo (diasinvestindo.com.br)
 
-Site de página única publicado pela Netlify a cada push na branch `main`.
+Portal publicado pela Netlify a cada push na branch `main`.
 
 ## Arquivos
 
-- `index.html`: o site inteiro (HTML, CSS, JavaScript e os dados das notícias).
+- `noticias.json`: **a base de todas as notícias**, da mais nova para a mais antiga. É o único arquivo de conteúdo que a tarefa diária edita.
+- `index.html`: a página inicial (página única com seções). O bloco `site-data` é preenchido pelo gerador; não edite à mão.
+- `noticias/<slug>/index.html`, `noticias/index.html`, `privacidade/`, `404.html`, `sitemap.xml`, `robots.txt`, `feed.xml`: **gerados** por `tools/gerar.py`. Não edite à mão.
+- `assets/estilo.css`, `assets/arte.js` (ilustrações), `assets/comum.js` (formulário de e-mail e anúncios): compartilhados por todas as páginas.
+- `verificacao/AAAA-MM-DD.md`: registro de checagem de cada edição.
 - `ads.txt`: autorização do Google AdSense (editor `pub-2224422141615380`).
-- `netlify.toml`: configuração de publicação.
-- `tools/validar.py`: valida o bloco de notícias antes de publicar.
-- `tools/preview.py`: gera a versão de prévia para o artifact do Claude.
+- `tools/validar.py` (valida `noticias.json`), `tools/gerar.py` (gera as páginas), `tools/preview.py` (prévia autocontida), `tools/teste.js` (testes; `npm install && npm test`).
 
 ## Regra de ouro: nenhum dado sem checagem
 
@@ -24,13 +26,15 @@ O portal trata de finanças: **um número errado é pior do que nenhum número.*
    Não preencha meses por estimativa; o valor de cada mês é o vigente no fim do mês.
 4. Se um número não puder ser confirmado, **não o use**: troque a ilustração por `cena` (sem números)
    e escreva o texto sem esse dado.
-5. Registre a checagem no arquivo `verificacao.md` (substituído a cada atualização): cada número usado,
+5. Registre a checagem em `verificacao/AAAA-MM-DD.md` (um arquivo por edição, no formato dos anteriores): cada número usado,
    onde aparece (texto, régua ou ilustração) e as URLs que o confirmam. Esse arquivo vai no mesmo commit.
 
 ## Atualização diária das notícias
 
-A tarefa agendada altera **somente** o bloco
-`<script type="application/json" id="site-data">` do `index.html`.
+As notícias **se acumulam**: cada edição diária acrescenta 3 notícias **no topo** da lista `noticias`
+de `noticias.json`, sem apagar as anteriores. Também atualiza `atualizado` e `ticker`.
+O gerador cria a página própria de cada notícia (`/noticias/<slug>/`), o arquivo `/noticias/` (por mês, com filtro por editoria),
+a home com as 10 mais recentes, o sitemap e o RSS.
 
 ```json
 {
@@ -44,7 +48,8 @@ A tarefa agendada altera **somente** o bloco
   "noticias": [
     {
       "editoria": "Juros | Mercados | Economia | Inteligência Artificial | Produtividade | Negócios",
-      "data": "dd/mm/aaaa",
+      "data": "dd/mm/aaaa (dia do fato)",
+      "publicado": "dd/mm/aaaa (dia da edição; igual a atualizado)",
       "titulo": "Manchete com verbo e fato principal",
       "resumo": "Uma frase que explica a notícia.",
       "texto": ["Parágrafo 1: o fato.", "Parágrafo 2: causas e contexto.", "Parágrafo 3: próximos passos e consequências."],
@@ -56,7 +61,8 @@ A tarefa agendada altera **somente** o bloco
 }
 ```
 
-Regras: exatamente 3 notícias; `texto` com exatamente 3 parágrafos de pelo menos 200 caracteres cada,
+Regras: 3 notícias novas por edição, inseridas no topo; não altere nem remova notícias antigas
+(o campo `slug` é criado pelo gerador e nunca deve mudar, porque é o endereço permanente da página); `texto` com exatamente 3 parágrafos de pelo menos 200 caracteres cada,
 escritos com palavras próprias (nunca copiar trechos das fontes); variações sempre com sinal (`+0,67%`, `-0,82%`).
 
 ### Ilustração (`arte`) de cada notícia
@@ -85,8 +91,10 @@ jul 14,25; ago 14; set 13,75; out 13,75; nov 13,75.
 ### Passos
 
 ```
-python3 tools/validar.py index.html      # precisa terminar com OK
-git diff --stat                           # só index.html e verificacao.md podem mudar
-git commit -am "Notícias de dd/mm/aaaa" && git push origin main
+python3 tools/validar.py                  # precisa terminar com OK
+python3 tools/gerar.py                    # gera páginas, arquivo, home, sitemap e RSS
+npm install && npm test                   # testes (se o npm estiver disponível)
+git add -A && git status --short          # devem aparecer: noticias.json, index.html, páginas geradas e o novo verificacao/AAAA-MM-DD.md
+git commit -m "Notícias de dd/mm/aaaa" && git push origin main
 python3 tools/preview.py index.html /tmp/preview.html   # para republicar a prévia no Claude
 ```
