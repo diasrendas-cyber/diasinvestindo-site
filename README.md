@@ -48,7 +48,7 @@ A ilustração é desenhada pelo site a partir dos dados da própria notícia. E
 
 | tipo | quando usar | campos |
 |---|---|---|
-| `linha` | evolução no tempo (juros, inflação, preço) | `titulo`, `pontos: [["rótulo", número], ...]`, opcionais `degraus: true`, `destaque: "texto curto"` |
+| `linha` | evolução no tempo (juros, inflação, preço) | `titulo`, `pontos: [["rótulo", número], ...]`, `fonte`, opcionais `degraus: true`, `rotular: true`, `sufixo`, `destaque: "texto curto"` |
 | `indicador` | um número do dia (índice, cotação, PIB) | `rotulo`, `valor` (texto), `variacao` (`"+1,2%"`), opcional `secundarios: [{rotulo, valor, variacao}]` (até 2) |
 | `barras` | comparação de valores | `titulo`, `barras: [{rotulo, valor (número), destaque?: true}]` (1 a 4), opcionais `prefixo`, `sufixo`, `nota` |
 | `cena` | notícia sem número central | `titulo` curto (opcional) |
@@ -56,7 +56,14 @@ A ilustração é desenhada pelo site a partir dos dados da própria notícia. E
 Todos os tipos levam `tema`, o desenho de fundo:
 `juros`, `fiscal`, `ia`, `bolsa`, `cambio`, `inflacao`, `energia`, `tecnologia`, `imoveis`, `emprego`.
 
-Use apenas números confirmados nas fontes.
+**Nunca invente dados.** Todo número da ilustração precisa estar na matéria ou em fonte oficial,
+e as ilustrações com dados (`linha`, `indicador`, `barras`) levam o campo `fonte`, exibido na imagem
+(ex.: `"fonte": "Fonte: InfoMoney, fechamento de 05/11/2026"`).
+
+Séries no tempo usam um ponto por período, sem pular meses: para a Selic, um ponto por mês com a taxa
+vigente no fim do mês, `degraus: true` e `rotular: true` (escreve o valor em cada mudança), com `sufixo: "%"`.
+Exemplo conferido nas decisões do Copom de 2026: jan 15; fev 15; mar 14,75; abr 14,5; mai 14,5; jun 14,25;
+jul 14,25; ago 14; set 13,75; out 13,75; nov 13,75.
 
 ### Passos
 

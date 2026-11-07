@@ -39,6 +39,7 @@ for i, n in enumerate(ns, 1):
     if a.get("tipo") == "barras" and not (1 <= len(a.get("barras", [])) <= 4): erros.append(f"{p}: arte barras precisa de 1 a 4 barras")
     if a.get("tipo") == "barras" and not all(isinstance(b.get("valor"), (int, float)) for b in a.get("barras", [])): erros.append(f"{p}: valor das barras deve ser número")
     if a.get("tipo") == "indicador" and not (a.get("valor") and a.get("rotulo")): erros.append(f"{p}: arte indicador precisa de rotulo e valor")
+    if a.get("tipo") in ("linha", "indicador", "barras") and not a.get("fonte"): erros.append(f"{p}: arte com dados precisa do campo fonte (de onde vieram os números)")
 if erros:
     print("\n".join("ERRO: " + e for e in erros)); sys.exit(1)
 print("OK: site-data válido (3 notícias, 3 parágrafos cada)")

@@ -644,10 +644,11 @@ footer.site p{margin:0;max-width:70ch}
       ],
       "bolso": "Com a Selic parada em 13,75%, a renda fixa pós-fixada (Tesouro Selic e CDBs atrelados ao CDI) continua pagando bem. Vale reavaliar prazos antes de travar uma taxa.",
       "arte": {
-        "tipo": "linha", "tema": "juros", "degraus": true,
+        "tipo": "linha", "tema": "juros", "degraus": true, "rotular": true, "sufixo": "%",
         "titulo": "Selic em 2026, % ao ano",
-        "pontos": [["jan", 15], ["mar", 14.75], ["abr", 14.5], ["jun", 14.25], ["ago", 14], ["set", 13.75], ["nov", 13.75]],
-        "destaque": "Mantida em 13,75%"
+        "pontos": [["jan", 15], ["fev", 15], ["mar", 14.75], ["abr", 14.5], ["mai", 14.5], ["jun", 14.25], ["jul", 14.25], ["ago", 14], ["set", 13.75], ["out", 13.75], ["nov", 13.75]],
+        "destaque": "Mantida em 13,75%",
+        "fonte": "Taxa vigente no fim de cada mês. Fonte: decisões do Copom (Banco Central)"
       },
       "fontes": [
         {"nome": "Sou Brasília", "url": "https://soubrasilia.com/copom-mantem-selic-13-75-unanimidade-4-novembro-2026/"},
@@ -668,7 +669,8 @@ footer.site p{margin:0;max-width:70ch}
         "tipo": "indicador", "tema": "fiscal",
         "rotulo": "Ibovespa no fechamento, pontos",
         "valor": "166.191", "variacao": "-0,82%",
-        "secundarios": [{"rotulo": "Dólar comercial", "valor": "R$ 5,489", "variacao": "+0,67%"}, {"rotulo": "Nasdaq", "valor": "queda acima de 5%", "variacao": "-5%"}]
+        "secundarios": [{"rotulo": "Dólar comercial", "valor": "R$ 5,489", "variacao": "+0,67%"}, {"rotulo": "Nasdaq", "valor": "queda acima de 5%", "variacao": "-5%"}],
+        "fonte": "Fonte: InfoMoney, fechamento de 05/11/2026"
       },
       "fontes": [{"nome": "InfoMoney", "url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-05112026/"}]
     },
@@ -686,7 +688,8 @@ footer.site p{margin:0;max-width:70ch}
         "tipo": "barras", "tema": "ia",
         "titulo": "Valuation da Anthropic no IPO, US$ trilhões",
         "barras": [{"rotulo": "Teto cogitado antes", "valor": 2.0}, {"rotulo": "Patamar discutido agora", "valor": 1.5, "destaque": true}],
-        "nota": "Oferta pode chegar a US$ 100 bilhões"
+        "nota": "Oferta pode chegar a US$ 100 bilhões",
+        "fonte": "Fonte: Reuters, 06/11/2026"
       },
       "fontes": [{"nome": "Reuters, via BNN Bloomberg", "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/06/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-reuters-exclusive/"}]
     }
@@ -773,9 +776,12 @@ function artLinha(a){
     if(si===0)g+=`<path d="${d} L${x(n-1)} ${y(lo)} L${x(0)} ${y(lo)} Z" fill="var(--accent)" fill-opacity=".1"/>`;
     g+=`<path d="${d}" fill="none" stroke="${cor}" stroke-width="${si===0?4:2.5}" ${si?'stroke-dasharray="7 6"':""} stroke-linejoin="round" stroke-linecap="round"/>`;
   });
+  if(a.rotular){const p0=series[0].pontos;p0.forEach((p,j)=>{const v=num(p[1]);if(j===0||v!==num(p0[j-1][1])){
+      g+=`<circle cx="${x(j)}" cy="${y(v)}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)+6,y(v)-10,v.toLocaleString("pt-BR",{minimumFractionDigits:2})+(a.sufixo||""),{f:FONT_M,size:14,w:500,fill:"var(--ink)"})}})}
   const last=series[0].pontos[n-1],lx=x(n-1),ly=y(num(last[1]));
   g+=`<circle cx="${lx}" cy="${ly}" r="8" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/>`;
   if(a.destaque){const w=a.destaque.length*10.2+28,bx=Math.max(L,lx-w-8),by=ly-74<T-14?ly+22:ly-74;g+=`<rect x="${bx}" y="${by}" width="${w}" height="38" rx="7" fill="var(--ink)"/>`+txt(bx+w/2,by+25,a.destaque,{size:18,w:700,fill:"var(--surface)",anchor:"middle"})}
+  if(a.fonte)g+=txt(W-12,H-4,a.fonte,{size:11,anchor:"end"});
   (a.marcas||[]).forEach(m=>{const j=m[0];const v=num(series[0].pontos[j][1]);g+=`<circle cx="${x(j)}" cy="${y(v)}" r="6" fill="var(--signal)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)-10,y(v)-16,m[1],{size:17,w:700,fill:"var(--ink)",anchor:"end"})});
   return g;
 }
@@ -787,6 +793,7 @@ function artIndicador(a){
   const v=fmtVar(a.variacao||""),w=v.length*15+52;
   g+=`<rect x="32" y="170" width="${w}" height="46" rx="23" fill="${cor}"/>`;
   g+=`<path d="M52 ${cl==="down"?186:200} l9 ${cl==="down"?14:-14} l9 ${cl==="down"?-14:14}z" fill="var(--surface)"/>`+txt(78,202,v,{f:FONT_M,size:24,w:500,fill:"var(--surface)"});
+  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   (a.secundarios||[]).slice(0,2).forEach((s,i)=>{const yy=268+i*46,c2=sinal(s.variacao);
     g+=`<line x1="32" x2="372" y1="${yy-28}" y2="${yy-28}" stroke="var(--line)"/>`+txt(32,yy,s.rotulo,{size:18,w:600,fill:"var(--muted)"})+txt(372,yy,s.valor+(s.variacao&&!/%/.test(s.valor)?"  "+fmtVar(s.variacao):""),{f:FONT_M,size:18,fill:c2==="down"?"var(--down)":c2==="up"?"var(--up)":"var(--ink)",anchor:"end"})});
   return g;
@@ -799,6 +806,7 @@ function artBarras(a){
     g+=txt(L,yy,b.rotulo,{size:17,w:600,fill:"var(--ink)"});
     g+=`<rect x="${L}" y="${yy+9}" width="${w}" height="${bh}" rx="5" fill="${c}" fill-opacity="${b.destaque?1:.4}"/>`;
     g+=txt(L+w+12,yy+9+bh/2+8,(a.prefixo||"")+num(b.valor).toLocaleString("pt-BR",{minimumFractionDigits:dec,maximumFractionDigits:2})+(a.sufixo||""),{f:FONT_M,size:22,w:500,fill:"var(--ink)"})});
+  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   if(a.nota){g+=`<rect x="28" y="${H-58}" width="${a.nota.length*9.2+30}" height="38" rx="7" fill="var(--signal-soft)"/>`+txt(43,H-33,a.nota,{size:16,w:600,fill:"var(--ink)"})}
   return g;
 }
@@ -818,11 +826,10 @@ const i6=Math.pow(1.06,1/12)-1,fv=m=>((Math.pow(1+i6,m)-1)/i6)*1000;
 const ARTE_ARTIGO={
   juros:{tipo:"linha",tema:"juros",titulo:"R$ 1.000 por mês a 6% reais ao ano",fmt:"mil",zero:true,
     series:[{pontos:[0,5,10,15,20,25,30].map(t=>[t+"a",fv(t*12)])},{pontos:[0,5,10,15,20,25,30].map(t=>[t+"a",t*12000])}],
-    marcas:[[2,"R$ 162 mil"]],destaque:"R$ 974 mil"},
-  financas:{tipo:"barras",tema:"inflacao",titulo:"Para onde vai cada R$ 100 (exemplo)",prefixo:"R$ ",
-    barras:[{rotulo:"Essenciais",valor:55},{rotulo:"Escolhas",valor:30},{rotulo:"Futuro: reserva e investimentos",valor:15,destaque:true}],nota:"Pague o futuro primeiro"},
+    marcas:[[2,"R$ 162 mil"]],destaque:"R$ 974 mil",fonte:"Simulação do artigo: aportes no fim do mês, sem impostos"},
+  financas:{tipo:"cena",tema:"inflacao",titulo:"Essenciais · Escolhas · Futuro"},
   aposentadoria:{tipo:"barras",tema:"imoveis",titulo:"Patrimônio para viver de renda, retirada de 4%",prefixo:"R$ ",sufixo:" mi",
-    barras:[{rotulo:"Renda de R$ 5 mil/mês",valor:1.5},{rotulo:"Renda de R$ 10 mil/mês",valor:3,destaque:true},{rotulo:"Renda de R$ 20 mil/mês",valor:6}],nota:"Renda × 12 ÷ 4%"}
+    barras:[{rotulo:"Renda de R$ 5 mil/mês",valor:1.5},{rotulo:"Renda de R$ 10 mil/mês",valor:3,destaque:true},{rotulo:"Renda de R$ 20 mil/mês",valor:6}],nota:"Renda × 12 ÷ 4%",fonte:"Cálculo do artigo"}
 };
 const pintarArtes=raiz=>raiz.querySelectorAll("[data-art-artigo]").forEach(el=>{el.innerHTML=desenhar(ARTE_ARTIGO[el.dataset.artArtigo])});
 
