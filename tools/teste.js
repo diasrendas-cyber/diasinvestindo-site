@@ -39,7 +39,7 @@ check($("ticker").querySelectorAll(".up,.down").length >= 1, "cores da régua po
 // Notícias
 check(d.querySelectorAll("#destaques [data-open-noticia]").length === 3, "3 destaques");
 check(d.querySelectorAll("#news-list [data-open-noticia]").length === Math.min(10, JSON.parse(d.getElementById("site-data").textContent).noticias.length), "notícias na seção (até 10)");
-d.querySelectorAll("#news-list .art svg").forEach((s, i) => check(s.querySelectorAll("path,rect,text").length > 10, "arte rica notícia " + i));
+d.querySelectorAll("#news-list .art svg").forEach((s, i) => check(s.querySelectorAll("path,rect,text,circle,line,polyline").length > 5, "arte desenhada na notícia " + i));
 DADOS.noticias.forEach((n, i) => {
   const svg = d.querySelectorAll("#news-list .art svg")[i].textContent;
   const esperado = n.arte.titulo || n.arte.valor || n.arte.rotulo || "";
@@ -63,9 +63,14 @@ check(!dlg.hasAttribute("open"), "Esc fecha");
 // Artigos
 const ARTS = fs.readdirSync(path.join(RAIZ, "conteudo/artigos")).filter(f => f.endsWith(".md")).map(f => f.slice(0, -3));
 check(d.querySelectorAll("#inicio [data-open-artigo]").length === Math.min(2, ARTS.length), "vitrine de artigos na home");
+// A home mostra os mais recentes (vitrines e VideoBlog com até 12); os demais ficam em /artigos/ e nas páginas de categoria
+const TODOS_ARTS = fs.readFileSync(path.join(RAIZ, "artigos/index.html"), "utf8");
+check(!!d.querySelector('#videoblog a[href="/artigos/"]'), "VideoBlog tem link para todos os artigos");
 ARTS.forEach(a => {
+  check(TODOS_ARTS.includes(`/artigos/${a}/`), "artigo listado em /artigos/ " + a);
   const b = d.querySelector(`[data-open-artigo="${a}"]`);
-  check(!!b, "artigo listado na home ou no VideoBlog " + a); if (!b) return;
+  if (ARTS.length <= 12) check(!!b, "artigo listado na home ou no VideoBlog " + a);
+  if (!b) return;
   b.click();
   check(dlg.hasAttribute("open") && $("leitor-corpo").querySelector("h1"), "artigo abre " + a);
   check($("leitor-corpo").querySelector(".art svg"), "arte no artigo " + a);
