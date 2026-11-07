@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 Disallow: /verificacao/
+Disallow: /conteudo/
+Disallow: /noticias.json
 
 Sitemap: https://diasinvestindo.com.br/sitemap.xml

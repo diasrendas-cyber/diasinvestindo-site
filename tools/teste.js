@@ -61,14 +61,18 @@ w.document.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape" }));
 check(!dlg.hasAttribute("open"), "Esc fecha");
 
 // Artigos
-["juros", "financas", "aposentadoria"].forEach(a => {
-  const b = d.querySelector(`[data-open-artigo="${a}"]`); b.click();
+const ARTS = fs.readdirSync(path.join(RAIZ, "conteudo/artigos")).filter(f => f.endsWith(".md")).map(f => f.slice(0, -3));
+check(d.querySelectorAll("#inicio [data-open-artigo]").length === Math.min(2, ARTS.length), "vitrine de artigos na home");
+ARTS.forEach(a => {
+  const b = d.querySelector(`[data-open-artigo="${a}"]`);
+  check(!!b, "artigo listado na home ou no VideoBlog " + a); if (!b) return;
+  b.click();
   check(dlg.hasAttribute("open") && $("leitor-corpo").querySelector("h1"), "artigo abre " + a);
   check($("leitor-corpo").querySelector(".art svg"), "arte no artigo " + a);
   $("leitor-fechar").click();
 });
 // Link interno do artigo fecha o leitor
-d.querySelector('[data-open-artigo="juros"]').click();
+d.querySelector('[data-open-artigo="juros-compostos-o-tempo-pesa-mais-que-o-aporte"]').click();
 $("leitor-corpo").querySelector("[data-fecha-leitor]").click();
 check(!dlg.hasAttribute("open"), "link para calculadora fecha o leitor");
 // Privacidade
@@ -160,6 +164,29 @@ todas.forEach((n, i) => {
   check(pg.querySelector('script[type="application/ld+json"]'), "dados estruturados na página " + (i + 1));
   check(pg.querySelector('link[rel="canonical"]').getAttribute("href").endsWith(`/noticias/${n.slug}/`), "canonical na página " + (i + 1));
 });
+const sm = fs.readFileSync(path.join(RAIZ, "sitemap.xml"), "utf8");
+// ---------- Artigos: páginas, categorias e links no site publicado ----------
+ld.querySelectorAll("[data-open-artigo]").forEach(a => check(a.tagName === "A" && a.getAttribute("href") === `/artigos/${a.dataset.openArtigo}/`, "link do artigo " + a.dataset.openArtigo));
+ld.querySelector("[data-open-artigo]").click();
+check(!ld.getElementById("leitor").hasAttribute("open"), "no site o artigo abre a página própria");
+check(d.querySelectorAll(".so-site").length > 0 && [...d.querySelectorAll(".so-site")].every(x => x.hidden), "links de categoria escondidos na prévia");
+ARTS.forEach(slug => {
+  const rel = `artigos/${slug}/index.html`;
+  check(fs.existsSync(path.join(RAIZ, rel)), "página do artigo " + slug);
+  const pg = carregar(`https://diasinvestindo.com.br/artigos/${slug}/`, autocontido(rel)).window.document;
+  check(pg.querySelector("h1") && pg.querySelector(".corpo h2"), "corpo do artigo " + slug);
+  check(pg.querySelector(".art svg"), "ilustração do artigo " + slug);
+  check(pg.querySelectorAll("section .three .story").length >= 1, "leia também " + slug);
+  check(pg.querySelector('link[rel="canonical"]').getAttribute("href").endsWith(`/artigos/${slug}/`), "canonical do artigo " + slug);
+});
+["financas-pessoais", "investimentos", "produtividade", "artigos"].forEach(c => {
+  const rel = `${c}/index.html`;
+  check(fs.existsSync(path.join(RAIZ, rel)), "página " + c);
+  const pg = carregar(`https://diasinvestindo.com.br/${c}/`, autocontido(rel)).window.document;
+  check(pg.querySelector("h2") && pg.querySelector(".capture form"), "conteúdo da página " + c);
+});
+check(ARTS.every(a => sm.includes(`/artigos/${a}/`)), "sitemap com todos os artigos");
+
 // Arquivo com filtro por editoria
 const arq = carregar("https://diasinvestindo.com.br/noticias/", autocontido("noticias/index.html")).window.document;
 check(arq.querySelectorAll(".lista li").length === todas.length, "arquivo lista todas as notícias");
@@ -168,7 +195,6 @@ bt.click();
 check([...arq.querySelectorAll(".lista li")].every(li => li.hidden === (li.dataset.ed !== bt.dataset.ed)), "filtro por editoria");
 // Arquivos de apoio
 ["sitemap.xml", "robots.txt", "feed.xml", "ads.txt", "404.html", "privacidade/index.html"].forEach(f => check(fs.existsSync(path.join(RAIZ, f)), "arquivo " + f));
-const sm = fs.readFileSync(path.join(RAIZ, "sitemap.xml"), "utf8");
 check(todas.every(n => sm.includes(`/noticias/${n.slug}/`)), "sitemap com todas as notícias");
 
 // Prévia fora do domínio: formulário avisa

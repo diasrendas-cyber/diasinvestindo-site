@@ -9,6 +9,8 @@ Uso: python3 tools/gerar.py
 """
 import html, json, os, re, shutil, sys, unicodedata
 from urllib.parse import quote
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import artigos as ART
 from datetime import date
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -259,7 +261,32 @@ def main():
     novo, qtd = re.subn(r'(<script type="application/json" id="site-data">\n).*?(\n</script>)', lambda m: m.group(1) + bloco + m.group(2), idx, flags=re.S)
     if qtd != 1:
         sys.exit("ERRO: bloco site-data não encontrado no index.html")
+    # artigos: vitrines da home, VideoBlog e modelos da prévia
+    arts = ART.ler(caminho("conteudo", "artigos"))
+    def preencher(html_, marca, conteudo):
+        r, q = re.subn(rf"(<!-- GERADO:{marca} -->\n).*?(<!-- /GERADO -->)", lambda m: m.group(1) + conteudo + m.group(2), html_, flags=re.S)
+        if q != 1:
+            sys.exit(f"ERRO: marcador GERADO:{marca} não encontrado no index.html")
+        return r
+    home = ([a for a in arts if a["destaque"]] + [a for a in arts if not a["destaque"]])[:2]
+    novo = preencher(novo, "home-artigos", "".join(ART.cartao(a) for a in home) + "\n")
+    for cat in ART.CATEGORIAS:
+        novo = preencher(novo, cat, ART.vitrine(arts, cat))
+    novo = preencher(novo, "videoblog", ART.videoblog(arts))
+    na_home = {a["slug"] for a in home} | {a["slug"] for c in ART.CATEGORIAS for a in [x for x in arts if x["categoria"] == c][:3]} | {a["slug"] for a in arts[:12]}
+    novo = preencher(novo, "modelos-artigos", ART.modelos([a for a in arts if a["slug"] in na_home]))
     open(caminho("index.html"), "w", encoding="utf-8").write(novo)
+    for pasta_ in ["artigos"] + list(ART.CATEGORIAS):
+        if os.path.isdir(caminho(pasta_)):
+            shutil.rmtree(caminho(pasta_))
+    os.makedirs(caminho("artigos"))
+    for a in arts:
+        os.makedirs(caminho("artigos", a["slug"]))
+        open(caminho("artigos", a["slug"], "index.html"), "w", encoding="utf-8").write(ART.pagina_artigo(a, arts, pagina, SITE, HOTMART, dados))
+    open(caminho("artigos", "index.html"), "w", encoding="utf-8").write(ART.pagina_todos(arts, pagina, SITE, dados))
+    for cat in ART.CATEGORIAS:
+        os.makedirs(caminho(cat))
+        open(caminho(cat, "index.html"), "w", encoding="utf-8").write(ART.pagina_categoria(cat, arts, pagina, SITE, dados))
 
     # páginas de notícia (recria a pasta para não deixar páginas órfãs)
     pasta = caminho("noticias")
@@ -277,12 +304,14 @@ def main():
     # sitemap, robots e RSS
     hoje = iso(dados["atualizado"])
     urls = [(f"{SITE}/", hoje, "daily"), (f"{SITE}/noticias/", hoje, "daily"), (f"{SITE}/privacidade/", "2026-11-06", "yearly")]
+    urls += [(f"{SITE}/artigos/", hoje, "weekly")] + [(f"{SITE}/{c}/", hoje, "weekly") for c in ART.CATEGORIAS]
+    urls += [(f"{SITE}/artigos/{a['slug']}/", iso(a["data"]), "monthly") for a in arts]
     urls += [(f"{SITE}/noticias/{n['slug']}/", iso(n.get("publicado", n["data"])), "monthly") for n in todas]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f"  <url><loc>{esc(u)}</loc><lastmod>{d}</lastmod><changefreq>{c}</changefreq></url>" for u, d, c in urls]
     sm.append("</urlset>")
     open(caminho("sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
-    open(caminho("robots.txt"), "w", encoding="utf-8").write(f"User-agent: *\nAllow: /\nDisallow: /tools/\nDisallow: /verificacao/\n\nSitemap: {SITE}/sitemap.xml\n")
+    open(caminho("robots.txt"), "w", encoding="utf-8").write(f"User-agent: *\nAllow: /\nDisallow: /tools/\nDisallow: /verificacao/\nDisallow: /conteudo/\nDisallow: /noticias.json\n\nSitemap: {SITE}/sitemap.xml\n")
     meses_en = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     def rfc(d):
         a = date.fromisoformat(iso(d))
@@ -293,7 +322,7 @@ def main():
     rss = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Dias Investindo: notícias</title>'
            f"<link>{SITE}/noticias/</link><description>Notícias que mexem com o seu bolso, explicadas.</description><language>pt-br</language>{itens}</channel></rss>\n")
     open(caminho("feed.xml"), "w", encoding="utf-8").write(rss)
-    print(f"OK: {len(todas)} notícias, {len(todas)} páginas, arquivo, sitemap ({len(urls)} URLs), RSS e home atualizados")
+    print(f"OK: {len(todas)} notícias, {len(arts)} artigos, páginas, arquivos, sitemap ({len(urls)} URLs), RSS e home atualizados")
 
 
 if __name__ == "__main__":
