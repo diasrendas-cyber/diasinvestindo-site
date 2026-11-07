@@ -1,0 +1,169 @@
+{
+  "atualizado": "06/11/2026",
+  "ticker": {
+    "selic": "13,75%",
+    "ibov": "166.191",
+    "ibovVar": "-0,82%",
+    "dolar": "R$ 5,489",
+    "dolarVar": "+0,67%",
+    "data": "05/11/2026"
+  },
+  "noticias": [
+    {
+      "editoria": "Juros",
+      "data": "04/11/2026",
+      "publicado": "06/11/2026",
+      "titulo": "Copom mantém a Selic em 13,75% e interrompe a sequência de cortes",
+      "resumo": "Decisão unânime cita dólar mais alto, El Niño e um cenário mais incerto para a inflação; próxima reunião é em dezembro.",
+      "texto": [
+        "O Comitê de Política Monetária (Copom) do Banco Central manteve, por unanimidade, a taxa Selic em 13,75% ao ano na reunião encerrada em 4 de novembro. A decisão interrompe a sequência de cinco cortes de 0,25 ponto percentual feitos ao longo de 2026, que haviam reduzido os juros básicos dos 15% vigentes em janeiro.",
+        "No comunicado, o BC justificou a pausa com a alta recente do dólar, os possíveis efeitos do El Niño sobre os preços e um cenário mais incerto, que classificou como desafiador para a política monetária. As expectativas de inflação continuam acima da meta, e as novas projeções oficiais serão divulgadas no Relatório de Política Monetária do fim de novembro.",
+        "A última reunião do ano está marcada para 8 e 9 de dezembro. O comitê segue funcionando com cadeiras vagas na diretoria: os mandatos de dois diretores terminaram no fim de 2025 e os substitutos ainda não foram enviados ao Congresso."
+      ],
+      "bolso": "Com a Selic parada em 13,75%, a renda fixa pós-fixada (Tesouro Selic e CDBs atrelados ao CDI) continua pagando bem. Vale reavaliar prazos antes de travar uma taxa.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "juros",
+        "degraus": true,
+        "rotular": true,
+        "sufixo": "%",
+        "titulo": "Selic em 2026, % ao ano",
+        "pontos": [
+          [
+            "jan",
+            15
+          ],
+          [
+            "fev",
+            15
+          ],
+          [
+            "mar",
+            14.75
+          ],
+          [
+            "abr",
+            14.5
+          ],
+          [
+            "mai",
+            14.5
+          ],
+          [
+            "jun",
+            14.25
+          ],
+          [
+            "jul",
+            14.25
+          ],
+          [
+            "ago",
+            14
+          ],
+          [
+            "set",
+            13.75
+          ],
+          [
+            "out",
+            13.75
+          ],
+          [
+            "nov",
+            13.75
+          ]
+        ],
+        "destaque": "Mantida em 13,75%",
+        "fonte": "Taxa vigente no fim de cada mês. Fonte: decisões do Copom (Banco Central)"
+      },
+      "fontes": [
+        {
+          "nome": "Sou Brasília",
+          "url": "https://soubrasilia.com/copom-mantem-selic-13-75-unanimidade-4-novembro-2026/"
+        },
+        {
+          "nome": "Poder360",
+          "url": "https://www.poder360.com.br/poder-economia/copom-mantem-selic-em-1375-e-confirma-aposta-do-mercado/"
+        }
+      ],
+      "slug": "2026-11-04-copom-mantem-a-selic-em-13-75-e-interrompe-a-sequencia-de-cortes"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "05/11/2026",
+      "publicado": "06/11/2026",
+      "titulo": "Ibovespa cai 0,82% com temor fiscal; dólar sobe a R$ 5,49",
+      "resumo": "Falta de medidas concretas no fiscal e a queda forte do Nasdaq levaram a bolsa aos 166 mil pontos.",
+      "texto": [
+        "O Ibovespa fechou a quinta-feira, 5 de novembro, em queda de 0,82%, aos 166.191 pontos, uma perda de cerca de 1.372 pontos no dia. No câmbio, o dólar comercial subiu 0,67% e terminou cotado a R$ 5,489.",
+        "O cenário fiscal concentrou as atenções. A reunião do presidente com ministros e economistas terminou sem medidas concretas, que ficaram para depois da viagem presidencial. O Santander alertou que, sem ajuste, o PIB pode crescer menos de 1,3% em 2027, e o governo estuda endurecer as regras do arcabouço fiscal.",
+        "O exterior também pesou. Em Wall Street, o Nasdaq caiu mais de 5%, puxado por ações de fabricantes de chips e de data centers, e os demais índices recuaram mais de 2%, revertendo a alta do dia anterior."
+      ],
+      "arte": {
+        "tipo": "indicador",
+        "tema": "fiscal",
+        "rotulo": "Ibovespa no fechamento, pontos",
+        "valor": "166.191",
+        "variacao": "-0,82%",
+        "secundarios": [
+          {
+            "rotulo": "Dólar comercial",
+            "valor": "R$ 5,489",
+            "variacao": "+0,67%"
+          },
+          {
+            "rotulo": "Nasdaq",
+            "valor": "queda acima de 5%",
+            "variacao": "-5%"
+          }
+        ],
+        "fonte": "Fonte: InfoMoney, fechamento de 05/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-05112026/"
+        }
+      ],
+      "slug": "2026-11-05-ibovespa-cai-0-82-com-temor-fiscal-dolar-sobe-a-r-5-49"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "06/11/2026",
+      "publicado": "06/11/2026",
+      "titulo": "Investidores duvidam que o IPO da Anthropic saia ainda em novembro",
+      "resumo": "Queda das ações de IA e pedido de valuation mais baixo podem adiar a estreia na bolsa da criadora do Claude.",
+      "texto": [
+        "Potenciais investidores ouvidos pela agência Reuters duvidam que a Anthropic, criadora do assistente Claude, consiga fazer a rodada de apresentações a investidores na semana de 9 de novembro e estrear na bolsa ainda neste mês, segundo quatro pessoas a par das conversas.",
+        "A desconfiança vem depois de dois dias de forte queda das ações ligadas à inteligência artificial, após as eleições de meio de mandato nos Estados Unidos. Os investidores pedem um valuation mais atraente: o patamar de US$ 1,5 trilhão, discutido recentemente, é visto como o teto das expectativas, abaixo dos até US$ 2 trilhões cogitados antes.",
+        "Pesam ainda o histórico de prejuízos trimestrais da empresa e seus grandes compromissos com parceiros, e o mercado aguarda o número de receita de outubro, deixado em branco no prospecto atualizado. A oferta pode chegar a US$ 100 bilhões e, se for adiada, pode pressionar o mercado de tecnologia como um todo. A Anthropic não comentou."
+      ],
+      "arte": {
+        "tipo": "barras",
+        "tema": "ia",
+        "titulo": "Valuation da Anthropic no IPO, US$ trilhões",
+        "barras": [
+          {
+            "rotulo": "Teto cogitado antes",
+            "valor": 2.0
+          },
+          {
+            "rotulo": "Patamar discutido agora",
+            "valor": 1.5,
+            "destaque": true
+          }
+        ],
+        "nota": "Oferta pode chegar a US$ 100 bilhões",
+        "fonte": "Fonte: Reuters, 06/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters, via BNN Bloomberg",
+          "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/06/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-reuters-exclusive/"
+        }
+      ],
+      "slug": "2026-11-06-investidores-duvidam-que-o-ipo-da-anthropic-saia-ainda-em-novembro"
+    }
+  ]
+}

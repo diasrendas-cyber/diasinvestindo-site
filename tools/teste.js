@@ -1,16 +1,20 @@
 // Testes funcionais do site Dias Investindo (jsdom)
 const fs = require("fs");
 const { JSDOM, VirtualConsole } = require("jsdom");
-const html = fs.readFileSync(process.argv[2], "utf8");
+const path = require("path");
+const { execFileSync } = require("child_process");
+const RAIZ = path.join(__dirname, "..");
+const autocontido = rel => { const out = path.join(require("os").tmpdir(), "di-" + rel.replace(/[\/]/g, "_"));
+  execFileSync("python3", [path.join(RAIZ, "tools/preview.py"), path.join(RAIZ, rel), out, "--completo"]); return fs.readFileSync(out, "utf8"); };
+const html = autocontido("index.html");
 let falhas = 0, ok = 0;
 const check = (cond, nome, extra = "") => { if (cond) { ok++; } else { falhas++; console.log("FALHOU:", nome, extra); } };
 const erros = [];
 const vc = new VirtualConsole();
-vc.on("error", e => erros.push(String(e))); vc.on("jsdomError", e => { if (!/Could not load|Not implemented: window.scrollTo/.test(e.message)) erros.push(e.message); });
+vc.on("error", e => erros.push(String(e))); vc.on("jsdomError", e => { if (!/Could not load|Not implemented: (window.scrollTo|navigation)/.test(e.message)) erros.push(e.message); });
 
-function carregar(url = "https://diasinvestindo.com.br/") {
-  const dom = new JSDOM(html, { runScripts: "dangerously", pretendToBeVisual: true, url, virtualConsole: vc });
-  return dom;
+function carregar(url = "https://claude.ai/previa", fonte = html) {
+  return new JSDOM(fonte, { runScripts: "dangerously", pretendToBeVisual: true, url, virtualConsole: vc });
 }
 const dom = carregar();
 const w = dom.window, d = w.document, $ = id => d.getElementById(id);
@@ -23,7 +27,7 @@ check(links.length === 8, "8 abas no menu", links.join(","));
 links.forEach(h => check(!!d.getElementById(h.slice(1)), "seção existe " + h));
 check(d.querySelectorAll("section[hidden]").length === 0, "nenhuma seção escondida (página única)");
 ["#contato", "#calc-milhao", "#calc-aposentadoria"].forEach(h => check(!!d.querySelector(h), "âncora " + h));
-check(!!d.querySelector('script[src*="ca-pub-2224422141615380"]'), "script AdSense no head");
+check(/ca-pub-2224422141615380/.test(fs.readFileSync(path.join(RAIZ, "index.html"), "utf8").split("</head>")[0]), "script AdSense no head");
 check(d.querySelector(".rail") && d.querySelector(".sponsor-slot"), "espaços de patrocínio");
 
 // Régua
@@ -130,6 +134,42 @@ check(Math.abs(brlN(txt("a-proj")) - (100000 + 2000 * 240)) < 2, "taxa zero soma
 setv("a-tx", "5");
 check($("a-chart").querySelectorAll("path").length >= 4, "gráfico da aposentadoria desenhado");
 check($("m-chart").querySelectorAll("path").length >= 4, "gráfico do milhão desenhado");
+
+// ---------- Site publicado: notícias são links para páginas próprias ----------
+const live = carregar("https://diasinvestindo.com.br/");
+const ld = live.window.document;
+const cards = [...ld.querySelectorAll("#news-list a[data-open-noticia]")];
+check(cards.length === Math.min(10, DADOS.noticias.length), "notícias da home como links");
+cards.forEach((a, i) => check(a.getAttribute("href") === `/noticias/${DADOS.noticias[i].slug}/`, "link da notícia " + (i + 1), a.getAttribute("href")));
+cards[0].click();
+check(!ld.getElementById("leitor").hasAttribute("open"), "no site publicado o link abre a página, não o leitor");
+check(!ld.querySelector('a[href="/noticias/"]').hidden, "link para o arquivo visível no site");
+check(d.querySelector('a[href="/noticias/"]').hidden, "link para o arquivo escondido na prévia");
+
+// ---------- Páginas de notícia geradas ----------
+const todas = JSON.parse(fs.readFileSync(path.join(RAIZ, "noticias.json"), "utf8")).noticias;
+todas.forEach((n, i) => {
+  const rel = `noticias/${n.slug}/index.html`;
+  check(fs.existsSync(path.join(RAIZ, rel)), "página gerada " + n.slug);
+  const pg = carregar(`https://diasinvestindo.com.br/noticias/${n.slug}/`, autocontido(rel)).window.document;
+  check(pg.querySelector("h1").textContent === n.titulo, "título da página " + (i + 1));
+  check(pg.querySelectorAll(".corpo > p:not(.callout)").length === 3, "3 parágrafos na página " + (i + 1));
+  check(pg.querySelector(".art svg") && pg.querySelector(".art svg").textContent.includes(n.arte.titulo || n.arte.valor || ""), "ilustração na página " + (i + 1));
+  check(pg.querySelector(".capture form"), "formulário na página " + (i + 1));
+  check(pg.querySelector(".ticker .wrap").textContent.includes("Selic"), "régua na página " + (i + 1));
+  check(pg.querySelector('script[type="application/ld+json"]'), "dados estruturados na página " + (i + 1));
+  check(pg.querySelector('link[rel="canonical"]').getAttribute("href").endsWith(`/noticias/${n.slug}/`), "canonical na página " + (i + 1));
+});
+// Arquivo com filtro por editoria
+const arq = carregar("https://diasinvestindo.com.br/noticias/", autocontido("noticias/index.html")).window.document;
+check(arq.querySelectorAll(".lista li").length === todas.length, "arquivo lista todas as notícias");
+const bt = [...arq.querySelectorAll(".filtros button")].find(b => b.dataset.ed);
+bt.click();
+check([...arq.querySelectorAll(".lista li")].every(li => li.hidden === (li.dataset.ed !== bt.dataset.ed)), "filtro por editoria");
+// Arquivos de apoio
+["sitemap.xml", "robots.txt", "feed.xml", "ads.txt", "404.html", "privacidade/index.html"].forEach(f => check(fs.existsSync(path.join(RAIZ, f)), "arquivo " + f));
+const sm = fs.readFileSync(path.join(RAIZ, "sitemap.xml"), "utf8");
+check(todas.every(n => sm.includes(`/noticias/${n.slug}/`)), "sitemap com todas as notícias");
 
 // Prévia fora do domínio: formulário avisa
 const dom2 = carregar("https://claude.ai/x");

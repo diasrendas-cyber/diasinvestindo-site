@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /verificacao/
+
+Sitemap: https://diasinvestindo.com.br/sitemap.xml
