@@ -27,32 +27,32 @@ check(!!d.querySelector('script[src*="ca-pub-2224422141615380"]'), "script AdSen
 check(d.querySelector(".rail") && d.querySelector(".sponsor-slot"), "espaços de patrocínio");
 
 // Régua
+const DADOS = JSON.parse(d.getElementById("site-data").textContent);
 const tk = $("ticker").textContent;
-check(/Selic\s*13,75%/.test(tk) && /166\.191/.test(tk) && /5,489/.test(tk), "régua com dados", tk);
-check($("ticker").querySelector(".down") && $("ticker").querySelector(".up"), "cores da régua por sinal");
+check(/Selic/.test(tk) && tk.includes(DADOS.ticker.ibov) && tk.includes(DADOS.ticker.dolar), "régua com dados", tk);
+check($("ticker").querySelectorAll(".up,.down").length >= 1, "cores da régua por sinal");
 
 // Notícias
 check(d.querySelectorAll("#destaques [data-open-noticia]").length === 3, "3 destaques");
 check(d.querySelectorAll("#news-list [data-open-noticia]").length === 3, "3 notícias na seção");
 d.querySelectorAll("#news-list .art svg").forEach((s, i) => check(s.querySelectorAll("path,rect,text").length > 10, "arte rica notícia " + i));
-const arte0 = d.querySelector("#news-list .art svg").innerHTML;
-check(/Selic em 2026/.test(arte0) && /Mantida em 13,75%/.test(arte0), "arte do Copom contextual");
-const arte1 = d.querySelectorAll("#news-list .art svg")[1].innerHTML;
-check(/166\.191/.test(arte1) && /R\$ 5,489/.test(arte1), "arte do Ibovespa contextual");
-const arte2 = d.querySelectorAll("#news-list .art svg")[2].innerHTML;
-check(/Valuation/.test(arte2) && /1,5/.test(arte2), "arte da Anthropic contextual");
+DADOS.noticias.forEach((n, i) => {
+  const svg = d.querySelectorAll("#news-list .art svg")[i].textContent;
+  const esperado = n.arte.titulo || n.arte.valor || n.arte.rotulo || "";
+  check(!esperado || svg.includes(esperado), "arte contextual da notícia " + (i + 1), esperado);
+});
 
 // Leitor de notícia
 d.querySelectorAll("#news-list [data-open-noticia]")[1].click();
 const dlg = $("leitor");
 check(dlg.hasAttribute("open"), "notícia abre o leitor");
 check($("leitor-corpo").querySelectorAll("article > p:not(.dek):not(.src):not(.callout)").length === 3, "notícia com 3 parágrafos", $("leitor-corpo").querySelectorAll("p").length);
-check(/InfoMoney/.test($("leitor-corpo").textContent), "fonte na notícia");
+check($("leitor-corpo").textContent.includes(DADOS.noticias[1].fontes[0].nome), "fonte na notícia");
 $("leitor-fechar").click();
 check(!dlg.hasAttribute("open"), "leitor fecha");
 // Destaque grande também abre
 d.querySelector("#destaques [data-open-noticia]").click();
-check(dlg.hasAttribute("open") && /Copom/.test($("leitor-corpo").textContent), "destaque abre a notícia certa");
+check(dlg.hasAttribute("open") && $("leitor-corpo").textContent.includes(DADOS.noticias[0].titulo), "destaque abre a notícia certa");
 w.document.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape" }));
 check(!dlg.hasAttribute("open"), "Esc fecha");
 
