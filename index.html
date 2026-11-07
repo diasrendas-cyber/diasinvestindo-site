@@ -172,6 +172,13 @@ table.fig td{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .calc-index a:hover{border-color:var(--accent);color:var(--accent)}
 .note{font:500 13px var(--display);color:var(--muted);margin:0}
 
+
+.contact-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.contact-card small{display:block;font:600 12px var(--display);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.contact-card b{font:600 18px var(--display);user-select:all;overflow-wrap:anywhere}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+.foot-links a{color:var(--muted)}
+.ad-unit{display:block;width:100%;min-height:inherit}
 footer.site{border-top:1px solid var(--line);background:var(--surface)}
 footer.site .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;font:500 13px/1.5 var(--display);color:var(--muted)}
 footer.site p{margin:0;max-width:70ch}
@@ -194,7 +201,7 @@ footer.site p{margin:0;max-width:70ch}
   <div class="ticker"><div class="wrap" id="ticker"></div></div>
 </header>
 <div class="sponsor" aria-label="Patrocínio"><div class="wrap">
-  <div class="sponsor-slot">
+  <div class="sponsor-slot" data-ad-slot-name="faixa">
     <div><span class="tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira · contato pelo Instagram @diasinvestindo</span></div>
     <span class="dim">970 × 90</span>
   </div>
@@ -203,7 +210,7 @@ footer.site p{margin:0;max-width:70ch}
 <main class="wrap">
 <div class="layout">
 <aside class="rail" aria-label="Patrocínio lateral">
-  <div class="slot">
+  <div class="slot" data-ad-slot-name="lateral">
     <span class="tag">Patrocínio</span>
     <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
     <span class="dim">160 × 600</span>
@@ -439,7 +446,55 @@ footer.site p{margin:0;max-width:70ch}
     <p>Minha formação é em Física, e talvez por isso eu goste de fazer as contas antes de acreditar em qualquer promessa. Depois vieram um MBA em Gestão de Projetos e a especialização em gestão de risco e segurança contra incêndio. Nas finanças, tirei a CPA e sigo estudando para a C-Pro I.</p>
     <p>Não escrevo como quem já sabe tudo. Escrevo como quem está fazendo o próprio caminho rumo à liberdade financeira e quer dividir o que aprende.</p>
     <h2>Patrocínio</h2>
-    <p>Os espaços de patrocínio, na faixa abaixo da régua de mercado e na coluna lateral, estão disponíveis para marcas alinhadas à educação financeira. Contato pelo Instagram <strong>@diasinvestindo</strong>.</p>
+    <p>Os espaços de patrocínio, na faixa abaixo da régua de mercado e na coluna lateral, estão disponíveis para marcas alinhadas à educação financeira. Veja a página de <a href="#contato">Contato</a>.</p>
+  </article>
+</section>
+
+<!-- PRIVACIDADE -->
+<section class="view" id="v-privacidade" data-view="privacidade" hidden>
+  <article class="reading">
+    <span class="kicker">Institucional</span>
+    <h1>Política de Privacidade</h1>
+    <p class="meta">Última atualização: 06/11/2026</p>
+    <p>Esta política explica como o site Dias Investindo (diasinvestindo.com.br) trata os dados pessoais de quem o visita, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).</p>
+    <h2>Quem é o responsável</h2>
+    <p>O controlador dos dados é Moisés Silva Dias, responsável pelo site. Para qualquer assunto sobre privacidade, escreva para <strong>contato@diasinvestindo.com.br</strong>.</p>
+    <h2>Quais dados coletamos</h2>
+    <p><strong>Cadastro na lista de e-mails:</strong> nome (opcional) e e-mail, informados por você no formulário "Receba os próximos artigos por e-mail".</p>
+    <p><strong>Calculadoras e simuladores:</strong> os valores digitados são processados apenas no seu navegador. Não são enviados nem armazenados por nós.</p>
+    <p><strong>Dados técnicos:</strong> a hospedagem pode registrar informações técnicas de acesso, como endereço IP e tipo de navegador, para segurança e funcionamento do site.</p>
+    <h2>Para que usamos</h2>
+    <p>Usamos o e-mail para enviar o e-mail de boas-vindas, novos artigos, notícias selecionadas e, eventualmente, ofertas de produtos próprios relacionados à educação financeira. A base legal é o seu consentimento, dado ao se cadastrar.</p>
+    <h2>Com quem compartilhamos</h2>
+    <p>Não vendemos nem alugamos dados. Eles são tratados por prestadores de serviço necessários ao funcionamento do site: Netlify (hospedagem), Supabase (processamento do formulário) e Resend (envio de e-mails). Esses serviços podem armazenar dados fora do Brasil, com salvaguardas contratuais.</p>
+    <h2>Cookies e anúncios</h2>
+    <p>O site não usa cookies próprios de rastreamento. As fontes tipográficas são carregadas do Google Fonts. Caso o site passe a exibir anúncios do Google AdSense, o Google e seus parceiros poderão usar cookies para exibir anúncios com base em visitas anteriores. Você pode desativar a publicidade personalizada nas <a href="https://adssettings.google.com" target="_blank" rel="noopener">Configurações de anúncios do Google</a>.</p>
+    <h2>Por quanto tempo guardamos</h2>
+    <p>Seus dados ficam na lista enquanto você estiver inscrito. Ao sair da lista, deixamos de enviar e-mails e excluímos os dados quando solicitado.</p>
+    <h2>Seus direitos</h2>
+    <p>Pela LGPD, você pode a qualquer momento confirmar se tratamos seus dados, acessá-los, corrigi-los, pedir a exclusão, revogar o consentimento e obter informações sobre compartilhamento. Basta responder qualquer e-mail nosso ou escrever para contato@diasinvestindo.com.br.</p>
+    <h2>Alterações</h2>
+    <p>Esta política pode ser atualizada. A data no topo indica a versão vigente.</p>
+  </article>
+</section>
+
+<!-- CONTATO -->
+<section class="view" id="v-contato" data-view="contato" hidden>
+  <article class="reading">
+    <span class="kicker">Institucional</span>
+    <h1>Contato</h1>
+    <p class="dek">Dúvidas, sugestões de pauta, parcerias ou patrocínio: fale direto comigo.</p>
+    <div class="contact-card">
+      <div><small>E-mail</small><b id="contato-email">contato@diasinvestindo.com.br</b></div>
+      <button class="btn ghost" type="button" id="copiar-email">Copiar e-mail</button>
+    </div>
+    <div class="contact-card">
+      <div><small>Instagram</small><b>@diasinvestindo</b></div>
+      <a class="btn ghost" href="https://www.instagram.com/diasinvestindo/" target="_blank" rel="noopener">Abrir perfil</a>
+    </div>
+    <h2>Patrocínio</h2>
+    <p>O site tem dois espaços para marcas alinhadas à educação financeira: a faixa abaixo da régua de mercado (970 × 90) e a coluna lateral (160 × 600 e 160 × 160). Escreva para o e-mail acima com o assunto "Patrocínio".</p>
+    <p class="src">Não faço recomendação individual de investimentos. O conteúdo do site é educativo.</p>
   </article>
 </section>
 
@@ -450,6 +505,7 @@ footer.site p{margin:0;max-width:70ch}
 
 <footer class="site"><div class="wrap">
   <p><strong style="color:var(--ink)">Dias Investindo</strong> · diasinvestindo.com.br · @diasinvestindo</p>
+  <p class="foot-links"><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="#privacidade">Política de Privacidade</a></p>
   <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
 </div></footer>
 
@@ -632,6 +688,21 @@ const ART={
 };
 document.querySelectorAll("[data-art]").forEach(el=>{const f=ART[el.dataset.art];if(!f)return;const[W,H,g]=f();
   el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${g}</svg>`});
+
+/* AdSense: preencha após a aprovação. Enquanto vazio, os espaços mostram "Sua marca aqui". */
+const ADSENSE={client:"",slots:{faixa:"",lateral:""}};
+if(ADSENSE.client&&/^ca-pub-\d+$/.test(ADSENSE.client)){
+  const sc=document.createElement("script");sc.async=true;sc.crossOrigin="anonymous";
+  sc.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+ADSENSE.client;document.head.appendChild(sc);
+  document.querySelectorAll("[data-ad-slot-name]").forEach(el=>{const id=ADSENSE.slots[el.dataset.adSlotName];if(!id)return;
+    el.innerHTML=`<ins class="adsbygoogle ad-unit" data-ad-client="${ADSENSE.client}" data-ad-slot="${id}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
+    el.style.backgroundImage="none";el.style.borderStyle="solid";
+    try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
+}
+const cb=document.getElementById("copiar-email");
+if(cb)cb.addEventListener("click",async()=>{const t=document.getElementById("contato-email").textContent;
+  try{await navigator.clipboard.writeText(t);cb.textContent="Copiado"}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById("contato-email"));const sel=getSelection();sel.removeAllRanges();sel.addRange(r);cb.textContent="Selecionado, use Copiar"}
+  setTimeout(()=>cb.textContent="Copiar e-mail",2500)});
 
 /* Navegação por hash */
 const views=[...document.querySelectorAll("[data-view]")];
