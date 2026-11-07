@@ -3,175 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Finanças tratadas como gestão de risco: notícias, artigos e calculadoras de juros compostos e aposentadoria, por Moisés Dias.">
-<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0}img{max-width:100%}</style>
 <title>Dias Investindo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Finanças tratadas como gestão de risco: notícias explicadas, artigos e calculadoras de juros compostos e aposentadoria, por Moisés Dias.">
+<meta property="og:title" content="Dias Investindo">
+<meta property="og:description" content="Notícias que mexem com o seu bolso, artigos do problema à solução e calculadoras gratuitas.">
+<meta property="og:locale" content="pt_BR">
+<!-- ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2224422141615380" crossorigin="anonymous"></script>
+<!-- /ADSENSE -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: portal de notícias com régua de mercado no topo; conteúdo em grade + trilho fino de patrocínio à direita (vira faixa no celular) */
+/* Layout: portal de página única. Cabeçalho fixo com menu e régua de mercado, faixa de patrocínio,
+   seções empilhadas (o menu rola até cada uma) e coluna fina de patrocínio flutuando à direita. */
 :root{
   --paper:#F3F5F7; --surface:#FFFFFF; --ink:#0E1724; --muted:#566273; --line:#DCE1E7; --soft:#E9EDF2;
-  --accent:#1E4FD1; --accent-soft:#E3EAFB; --signal:#B98400; --up:#13834F; --down:#C2362B;
+  --accent:#1E4FD1; --accent-soft:#E3EAFB; --signal:#B98400; --signal-soft:#FBF1D6; --up:#13834F; --down:#C2362B;
   --display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --header-h:118px;
+  color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0B1017; --surface:#121922; --ink:#E6EBF1; --muted:#93A0B1; --line:#243040; --soft:#1A2330;
-  --accent:#7C9DFF; --accent-soft:#1A2644; --signal:#F0C04A; --up:#3CC184; --down:#F07167; color-scheme:dark}}
+  --accent:#7C9DFF; --accent-soft:#1A2644; --signal:#F0C04A; --signal-soft:#2E2610; --up:#3CC184; --down:#F07167; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0B1017; --surface:#121922; --ink:#E6EBF1; --muted:#93A0B1; --line:#243040; --soft:#1A2330;
-  --accent:#7C9DFF; --accent-soft:#1A2644; --signal:#F0C04A; --up:#3CC184; --down:#F07167; color-scheme:dark}
+  --accent:#7C9DFF; --accent-soft:#1A2644; --signal:#F0C04A; --signal-soft:#2E2610; --up:#3CC184; --down:#F07167; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+html{scroll-padding-top:calc(var(--header-h) + 12px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img{max-width:100%}
 a{color:var(--accent)}
 .wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3,h4{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
-.mono,.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .kicker{font:700 12px var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
 .meta{font:500 13px var(--display);color:var(--muted)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button{font:inherit}
 
-/* Cabeçalho */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
-header.site{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px 10px;flex-wrap:wrap}
+/* Cabeçalho fixo */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+header.site{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px 20px;padding-block:12px 6px;flex-wrap:wrap}
 .logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
 .logo b{font:800 26px var(--display);letter-spacing:-.03em}
 .logo b span{color:var(--accent)}
 .logo small{font:500 13px var(--display);color:var(--muted)}
-nav.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-nav.tabs a{font:600 15px var(--display);color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:6px;white-space:nowrap}
+nav.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{font:600 15px var(--display);color:var(--muted);text-decoration:none;padding:8px 11px;white-space:nowrap;border-radius:6px}
 nav.tabs a:hover{color:var(--ink);background:var(--soft)}
-nav.tabs a[aria-current="page"]{color:var(--ink);box-shadow:inset 0 -3px 0 var(--accent);border-radius:0}
+nav.tabs a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -3px 0 var(--accent);border-radius:0}
 .ticker{border-top:1px solid var(--line);background:var(--paper)}
 .ticker .wrap{display:flex;gap:22px;align-items:center;overflow-x:auto;scrollbar-width:none;padding-block:7px;font:500 13px var(--mono);white-space:nowrap}
 .ticker .lbl{color:var(--muted)}
-.ticker .up{color:var(--up)}.ticker .down{color:var(--down)}
+.up{color:var(--up)}.down{color:var(--down)}
 .ticker .when{color:var(--muted);font-family:var(--display)}
 
-/* Faixa de patrocínio abaixo da régua de mercado */
-main{padding-block:28px 48px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:32px;align-items:start}
-.rail{position:sticky;top:150px;display:flex;flex-direction:column;gap:14px;order:2}
-.slot{border:1px dashed var(--line);border-radius:8px;background:var(--surface);display:flex;flex-direction:column;justify-content:space-between;padding:12px;min-height:300px;
+/* Patrocínio */
+.sponsor{background:var(--paper)}
+.sponsor .wrap{padding-block:14px 0}
+.sponsor-slot,.slot{border:1px dashed var(--line);border-radius:8px;background-color:var(--surface);
   background-image:repeating-linear-gradient(135deg,transparent 0 9px,var(--soft) 9px 10px)}
-.slot.short{min-height:160px}
-.slot .tag{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.slot strong{font:700 15px/1.25 var(--display);display:block;margin-bottom:4px;color:var(--ink)}
+.sponsor-slot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;min-height:76px;padding:10px 18px}
+.ad-tag{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sponsor-slot strong{font:700 16px var(--display);color:var(--ink);margin-right:8px}
+.sponsor-slot .t{font:500 14px var(--display);color:var(--muted)}
+.ad-dim{font:500 11px var(--mono);color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:32px;align-items:start}
+.rail{position:sticky;top:calc(var(--header-h) + 20px);display:flex;flex-direction:column;gap:14px}
+.slot{display:flex;flex-direction:column;justify-content:space-between;padding:12px;min-height:300px}
+.slot.short{min-height:150px}
+.slot strong{font:700 15px/1.25 var(--display);display:block;margin-bottom:4px}
 .slot p{font:500 13px/1.4 var(--display);color:var(--muted);margin:0}
-.slot .dim{font:500 11px var(--mono);color:var(--muted)}
-@media (max-width:900px){
+.ad-unit{display:block;width:100%;min-height:inherit}
+@media (max-width:960px){
   .layout{grid-template-columns:1fr}
   .rail{position:static;flex-direction:row;order:2}
   .slot{min-height:110px;flex:1}
   .slot.short{display:none}
 }
-.sponsor{background:var(--paper);border-bottom:1px solid var(--line)}
-.sponsor .wrap{padding-block:12px}
-.sponsor-slot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1px dashed var(--line);border-radius:8px;min-height:76px;padding:10px 18px;background:var(--surface);
-  background-image:repeating-linear-gradient(135deg,transparent 0 9px,var(--soft) 9px 10px)}
-.sponsor-slot .tag{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.sponsor-slot strong{font:700 16px var(--display);color:var(--ink);margin-right:8px}
-.sponsor-slot span.t{font:500 14px var(--display);color:var(--muted)}
-.sponsor-slot .dim{font:500 11px var(--mono);color:var(--muted)}
-/* Captura de e-mail */
+
+/* Seções */
+main{padding-block:26px 56px}
+#conteudo{display:flex;flex-direction:column;gap:64px;min-width:0}
+.sec{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.sec-head h2{font-size:26px;font-weight:800}
+.sec-head .sub{font:500 14px var(--display);color:var(--muted)}
+.sec-head a{font:600 14px var(--display);text-decoration:none}
+
+/* Abertura */
+.intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end}
+.intro h1{font-size:clamp(30px,4.6vw,50px);font-weight:800;letter-spacing:-.03em}
+.intro h1 em{font-style:normal;color:var(--accent)}
+.intro p{margin:0;color:var(--muted);max-width:52ch}
+@media (max-width:760px){.intro{grid-template-columns:1fr}}
+
+/* Cartões no estilo portal */
+.lead-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
+.side-stack{display:flex;flex-direction:column;gap:24px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;align-items:start}
+@media (max-width:860px){.three,.two,.lead-grid{grid-template-columns:1fr}}
+.story{display:flex;flex-direction:column;gap:10px;min-width:0;text-align:left;background:none;border:0;padding:0;color:var(--ink);cursor:pointer;text-decoration:none}
+.story:hover h3,.story:focus-visible h3{color:var(--accent)}
+.story h3{font-size:20px;font-weight:700;transition:color .15s}
+.story.big h3{font-size:clamp(24px,3vw,32px);font-weight:800}
+.story p{margin:0;color:var(--muted);font-size:16px}
+.story .more{font:600 14px var(--display);color:var(--accent)}
+.art{border-radius:6px;overflow:hidden;background:var(--surface);border:1px solid var(--line);aspect-ratio:16/9;max-width:100%;width:100%}
+.art svg{display:block;width:100%;height:100%}
+
+/* Chamadas */
+.cta{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;background:var(--accent-soft);border-radius:10px;padding:22px 24px}
+.cta h3{font-size:20px;margin-bottom:4px}
+.cta p{margin:0;color:var(--muted);font-size:16px;max-width:56ch}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:700 15px var(--display);background:var(--accent);color:var(--surface);border:1px solid var(--accent);border-radius:8px;padding:11px 18px;text-decoration:none;display:inline-block;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--accent)}
 .capture{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:center;background:var(--ink);color:var(--paper);border-radius:10px;padding:24px}
 .capture h3{font-size:22px;color:var(--paper)}
 .capture p{margin:6px 0 0;font-size:16px;opacity:.8}
 .capture form{display:flex;flex-wrap:wrap;gap:8px}
 .capture input{font:500 15px var(--display);flex:1 1 150px;min-width:0;padding:12px;border-radius:8px;border:1px solid transparent;background:var(--paper);color:var(--ink)}
-.capture input:focus{outline:2px solid var(--accent);outline-offset:1px}
-.capture .btn{flex:0 0 auto}
+.capture .btn{flex:0 0 auto;background:var(--accent);border-color:var(--accent)}
 .capture .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .capture .msg{flex-basis:100%;font:500 14px var(--display);margin:0;min-height:1.2em}
 .capture .msg.ok{color:#7FE0A8}.capture .msg.err{color:#FFB4A8}
-.capture small{flex-basis:100%;font:500 12px var(--display);opacity:.65}
+.capture small{flex-basis:100%;font:500 12px var(--display);opacity:.7}
+.capture small a{color:inherit}
 @media (max-width:760px){.capture{grid-template-columns:1fr}}
 
-/* Blocos de notícia, estilo portal */
-.view{display:flex;flex-direction:column;gap:36px}
-.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px}
-.sec-head h2{font-size:22px}
-.sec-head a{font:600 14px var(--display);text-decoration:none}
-.lead-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
-.side-stack{display:flex;flex-direction:column;gap:24px}
-@media (max-width:760px){.lead-grid{grid-template-columns:1fr}}
-.story{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
-.story:hover h3{color:var(--accent)}
-.art{border-radius:6px;overflow:hidden;background:var(--surface);border:1px solid var(--line);aspect-ratio:16/9;max-width:100%}
-.art svg{display:block;width:100%;height:100%}
-.story h3{font-size:20px;transition:color .15s}
-.story.big h3{font-size:clamp(24px,3vw,32px);font-weight:800}
-.story p{margin:0;color:var(--muted);font-size:16px}
-.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-@media (max-width:860px){.three{grid-template-columns:1fr}}
-
-/* Intro e autor */
-.intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end;padding-block:4px 8px}
-.intro h1{font-size:clamp(30px,4.6vw,50px);font-weight:800;letter-spacing:-.03em}
-.intro h1 em{font-style:normal;color:var(--accent)}
-.intro p{margin:0;color:var(--muted);max-width:52ch}
-@media (max-width:760px){.intro{grid-template-columns:1fr}}
+/* Autor */
 .author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
 .mark{width:72px;height:72px;border-radius:50%;background:var(--accent);color:var(--surface);display:grid;place-items:center;font:800 26px var(--display)}
-.author h2{font-size:22px;margin-bottom:8px}
+.author h3{font-size:22px;margin-bottom:8px}
 .author p{margin:0 0 10px;max-width:64ch}
 .creds{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.creds span{font:600 12px var(--display);padding:4px 9px;border-radius:999px;background:var(--soft);color:var(--ink)}
+.creds span{font:600 12px var(--display);padding:4px 9px;border-radius:999px;background:var(--soft)}
 @media (max-width:560px){.author{grid-template-columns:1fr}}
 
-/* Chamada de produto */
-.cta{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;background:var(--accent-soft);border-radius:10px;padding:22px 24px}
-.cta h3{font-size:20px;margin-bottom:4px}
-.cta p{margin:0;color:var(--muted);font-size:16px;max-width:56ch}
-.btn{font:700 15px var(--display);background:var(--accent);color:var(--surface);border:0;border-radius:8px;padding:12px 18px;text-decoration:none;display:inline-block;cursor:pointer}
-.btn:hover{filter:brightness(1.08)}
-.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-
-/* Leitura */
-.reading{max-width:700px;display:flex;flex-direction:column;gap:18px}
-.reading h1{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em}
-.reading .dek{font-size:20px;color:var(--muted);margin:0}
-.reading p{margin:0}
-.reading h2{font-size:22px;margin-top:10px}
-.reading .src{font:500 14px var(--display);color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
-.callout{border-left:3px solid var(--signal);padding:4px 0 4px 16px;font-size:16px}
-.callout strong{font-family:var(--display)}
-table.fig{border-collapse:collapse;font:500 14px var(--display);width:100%}
-table.fig th,table.fig td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
-table.fig th:first-child,table.fig td:first-child{text-align:left}
-table.fig td{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.tablebox{overflow-x:auto}
-.news-list{display:flex;flex-direction:column;gap:40px}
-.news-item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;border-bottom:1px solid var(--line);padding-bottom:36px}
-.news-item:last-child{border-bottom:0}
-.news-item .body{display:flex;flex-direction:column;gap:12px}
-.news-item h2{font-size:26px;font-weight:800}
-.news-item p{margin:0}
-@media (max-width:760px){.news-item{grid-template-columns:1fr}}
+/* Produtividade e videoblog */
+.soon{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.soon h3{font-size:22px;margin-bottom:6px}
+.soon p{margin:0 0 12px;color:var(--muted)}
+@media (max-width:760px){.soon{grid-template-columns:1fr}}
+.vlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.vlist li{border-bottom:1px solid var(--line)}
+.vlist button{display:flex;gap:12px;align-items:baseline;width:100%;text-align:left;background:none;border:0;padding:14px 0;cursor:pointer;color:var(--ink)}
+.vlist .n{font:500 13px var(--mono);color:var(--muted)}
+.vlist b{font:700 17px var(--display)}
+.vlist button:hover b{color:var(--accent)}
+.vcard{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.vthumb{flex:0 0 132px;aspect-ratio:16/9;border-radius:6px;background:var(--ink);display:grid;place-items:center;position:relative;overflow:hidden}
+.vthumb::after{content:"";border-left:16px solid var(--paper);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px;opacity:.85}
+.vcard b{font:700 15px/1.3 var(--display);display:block}
+.vcard span{font:500 13px var(--display);color:var(--muted)}
+.vstack{display:flex;flex-direction:column;gap:12px}
 
 /* Calculadoras */
-.calc{scroll-margin-top:140px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:18px}
-.calc h2{font-size:24px}
+.calc{scroll-margin-top:calc(var(--header-h) + 16px);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.calc h3{font-size:24px}
 .calc .desc{margin:0;color:var(--muted);font-size:16px}
-.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.calc.compact{padding:18px;gap:12px}
+.calc.compact h3{font-size:19px}
 .calc.compact .fields{grid-template-columns:1fr 1fr}
 .field{display:flex;flex-direction:column;gap:5px;min-width:0}
 .field label{font:600 13px var(--display);color:var(--muted)}
 .field input{font:500 16px var(--mono);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:9px 10px;width:100%;min-width:0}
 .field input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
-.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.field input[aria-invalid="true"]{border-color:var(--down)}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
 .res{border-top:2px solid var(--line);padding-top:8px;min-width:0}
 .res.key{border-color:var(--accent)}
 .res small{display:block;font:600 12px var(--display);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.res b{display:block;font:500 22px var(--mono);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.res b{display:block;font:500 21px var(--mono);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .res.key b{color:var(--accent)}
-.res.warn b{color:var(--down)}
-.res.ok b{color:var(--up)}
+.res.warn{border-color:var(--down)} .res.warn b{color:var(--down)}
+.res.ok{border-color:var(--up)} .res.ok b{color:var(--up)}
+.explain{margin:0;font-size:16px;background:var(--paper);border-radius:8px;padding:12px 14px}
 .chart{width:100%;height:auto;display:block}
 .legend{display:flex;gap:16px;font:500 13px var(--display);color:var(--muted);flex-wrap:wrap}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px}
@@ -180,114 +199,124 @@ table.fig td{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .calc-index a:hover{border-color:var(--accent);color:var(--accent)}
 .note{font:500 13px var(--display);color:var(--muted);margin:0}
 
-
+/* Contato */
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.contact-grid{grid-template-columns:1fr}}
 .contact-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
 .contact-card small{display:block;font:600 12px var(--display);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.contact-card b{font:600 18px var(--display);user-select:all;overflow-wrap:anywhere}
-.foot-links{display:flex;gap:16px;flex-wrap:wrap}
-.foot-links a{color:var(--muted)}
-.ad-unit{display:block;width:100%;min-height:inherit}
+.contact-card b{font:600 17px var(--display);user-select:all;overflow-wrap:anywhere}
+
+/* Leitor (notícias, artigos e política) */
+dialog.reader{border:0;padding:0;width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 32px);border-radius:12px;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog.reader::backdrop{background:rgba(8,12,18,.6)}
+dialog.reader[open]{display:flex;flex-direction:column}
+.reader-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:2}
+.reader-close{background:var(--soft);border:0;border-radius:8px;padding:8px 14px;font:600 14px var(--display);color:var(--ink);cursor:pointer}
+.reader-body{overflow-y:auto;padding:22px clamp(16px,4vw,36px) 32px}
+.reading{display:flex;flex-direction:column;gap:16px;max-width:66ch}
+.reading h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em}
+.reading .dek{font-size:19px;color:var(--muted);margin:0}
+.reading p{margin:0}
+.reading h2{font-size:21px;margin-top:8px}
+.reading .src{font:500 14px var(--display);color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.callout{border-left:3px solid var(--signal);padding:4px 0 4px 16px;font-size:16px}
+.callout strong{font-family:var(--display)}
+table.fig{border-collapse:collapse;font:500 14px var(--display);width:100%}
+table.fig th,table.fig td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+table.fig th:first-child,table.fig td:first-child{text-align:left}
+table.fig td{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tablebox{overflow-x:auto}
+body.reader-fallback dialog.reader[open]{position:fixed;inset:16px;margin:auto;z-index:50}
+
 footer.site{border-top:1px solid var(--line);background:var(--surface)}
-footer.site .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;font:500 13px/1.5 var(--display);color:var(--muted)}
+footer.site .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;font:500 13px/1.5 var(--display);color:var(--muted)}
 footer.site p{margin:0;max-width:70ch}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+.foot-links a,.foot-links button{color:var(--muted);background:none;border:0;padding:0;font:500 13px var(--display);text-decoration:underline;cursor:pointer}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
-
-<header class="site">
+<header class="site" id="topo">
   <div class="wrap bar">
     <a class="logo" href="#inicio"><b>Dias<span>Investindo</span></b><small>finanças com cálculo</small></a>
-    <nav class="tabs" aria-label="Seções">
+    <nav class="tabs" aria-label="Seções do site">
       <a href="#inicio">Início</a>
       <a href="#noticias">Notícias</a>
-      <a href="#artigo-financas">Finanças Pessoais</a>
-      <a href="#artigo-juros">Investimentos</a>
-      <a href="#artigo-aposentadoria">Aposentadoria</a>
+      <a href="#financas">Finanças Pessoais</a>
+      <a href="#investimentos">Investimentos</a>
+      <a href="#produtividade">Produtividade</a>
       <a href="#calculadoras">Calculadoras</a>
+      <a href="#videoblog">VideoBlog</a>
       <a href="#sobre">Sobre</a>
     </nav>
   </div>
-  <div class="ticker"><div class="wrap" id="ticker"></div></div>
+  <div class="ticker"><div class="wrap" id="ticker" aria-label="Indicadores de mercado"></div></div>
 </header>
+
 <div class="sponsor" aria-label="Patrocínio"><div class="wrap">
   <div class="sponsor-slot" data-ad-slot-name="faixa">
-    <div><span class="tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira · contato pelo Instagram @diasinvestindo</span></div>
-    <span class="dim">970 × 90</span>
+    <div><span class="ad-tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira</span></div>
+    <span class="ad-dim">970 × 90</span>
   </div>
 </div></div>
 
 <main class="wrap">
 <div class="layout">
-<aside class="rail" aria-label="Patrocínio lateral">
-  <div class="slot" data-ad-slot-name="lateral">
-    <span class="tag">Patrocínio</span>
-    <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
-    <span class="dim">160 × 600</span>
-  </div>
-  <div class="slot short">
-    <span class="tag">Apoio</span>
-    <div><strong>Anuncie</strong><p>@diasinvestindo</p></div>
-    <span class="dim">160 × 160</span>
-  </div>
-</aside>
-<div id="content">
+<div id="conteudo">
 
 <!-- INÍCIO -->
-<section class="view" id="v-inicio" data-view="inicio">
+<section class="sec" id="inicio" aria-label="Início">
   <div class="intro">
     <h1>Dinheiro se trata como risco: <em>com cálculo</em>, preparo e sem atalhos.</h1>
     <p>Notícias que mexem com o seu bolso, artigos que vão do problema à solução e calculadoras para você fazer as próprias contas antes de decidir.</p>
   </div>
+  <div class="sec-head"><h2>Destaques</h2><a href="#noticias">Todas as notícias</a></div>
+  <div class="lead-grid" id="destaques"></div>
 
-  <div>
-    <div class="sec-head"><h2>Destaques</h2><a href="#noticias">Todas as notícias →</a></div>
-    <div class="lead-grid" style="margin-top:18px" id="destaques"></div>
-  </div>
-
-  <div>
-    <div class="sec-head"><h2>Para ler e calcular</h2><a href="#calculadoras">Calculadoras →</a></div>
-    <div class="three" style="margin-top:18px">
-      <a class="story" href="#artigo-juros">
-        <div class="art" data-art="juros"></div>
-        <span class="kicker">Investimentos</span>
-        <h3>Juros compostos: por que o tempo pesa mais que o aporte</h3>
-        <p>R$ 1.000 por mês viram R$ 162 mil em 10 anos e quase R$ 1 milhão em 30. A diferença está no tempo.</p>
-      </a>
-      <a class="story" href="#artigo-financas">
-        <div class="art" data-art="financas"></div>
-        <span class="kicker">Finanças Pessoais</span>
-        <h3>Antes de investir, descubra para onde vai o seu dinheiro</h3>
-        <p>Sem medir, não dá para controlar. O método de 30 dias que organiza o orçamento antes do primeiro aporte.</p>
-      </a>
-      <div class="calc compact" id="mini">
-        <span class="kicker">Calculadora do Milhão</span>
-        <h3 style="font-size:20px">Em quanto tempo você chega a R$ 1 milhão?</h3>
-        <div class="fields">
-          <div class="field"><label for="mini-ini">Já tenho (R$)</label><input id="mini-ini" inputmode="decimal" value="10.000"></div>
-          <div class="field"><label for="mini-ap">Aporte mensal</label><input id="mini-ap" inputmode="decimal" value="1.500"></div>
-          <div class="field"><label for="mini-tx">Juros reais % a.a.</label><input id="mini-tx" inputmode="decimal" value="6"></div>
-          <div class="field"><label for="mini-meta">Meta (R$)</label><input id="mini-meta" inputmode="decimal" value="1.000.000"></div>
-        </div>
-        <div class="results"><div class="res key"><small>Tempo até a meta</small><b id="mini-out">–</b></div></div>
-        <a class="btn ghost" href="#calc-milhao" style="align-self:flex-start">Ver simulação completa</a>
+  <div class="sec-head"><h2>Para ler e calcular</h2><a href="#calculadoras">Calculadoras</a></div>
+  <div class="three">
+    <button class="story" type="button" data-open-artigo="juros">
+      <div class="art" data-art-artigo="juros"></div>
+      <span class="kicker">Investimentos</span>
+      <h3>Juros compostos: por que o tempo pesa mais que o aporte</h3>
+      <p>R$ 1.000 por mês viram R$ 162 mil em 10 anos e quase R$ 1 milhão em 30. A diferença está no tempo.</p>
+      <span class="more">Ler artigo</span>
+    </button>
+    <button class="story" type="button" data-open-artigo="aposentadoria">
+      <div class="art" data-art-artigo="aposentadoria"></div>
+      <span class="kicker">Investimentos · Aposentadoria</span>
+      <h3>Quanto você precisa juntar para viver de renda</h3>
+      <p>Uma conta de uma linha transforma "quero me aposentar bem" em um número com prazo.</p>
+      <span class="more">Ler artigo</span>
+    </button>
+    <div class="calc compact" id="mini">
+      <span class="kicker">Calculadora do Milhão</span>
+      <h3>Em quanto tempo você chega a R$ 1 milhão?</h3>
+      <div class="fields">
+        <div class="field"><label for="mini-ini">Já tenho (R$)</label><input id="mini-ini" inputmode="decimal" value="10.000"></div>
+        <div class="field"><label for="mini-ap">Aporte mensal (R$)</label><input id="mini-ap" inputmode="decimal" value="1.500"></div>
+        <div class="field"><label for="mini-tx">Juros reais (% a.a.)</label><input id="mini-tx" inputmode="decimal" value="6"></div>
+        <div class="field"><label for="mini-meta">Meta (R$)</label><input id="mini-meta" inputmode="decimal" value="1.000.000"></div>
       </div>
+      <div class="results"><div class="res key"><small>Tempo até a meta</small><b id="mini-out">–</b></div></div>
+      <a class="btn ghost" href="#calc-milhao">Ver simulação completa</a>
     </div>
   </div>
 
   <div class="cta">
     <div><h3>Planilha Liberdade Financeira</h3><p>Descubra quanto precisa juntar, por quanto tempo e com que aporte para viver de renda. Em português, feita para a realidade brasileira.</p></div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Conhecer a planilha</a><a class="btn ghost" href="#calc-aposentadoria">Simular grátis</a></div>
+    <div class="btns"><a class="btn" href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Conhecer a planilha</a><a class="btn ghost" href="#calc-aposentadoria">Simular grátis</a></div>
   </div>
 
   <div class="capture-slot" data-origem="home"></div>
 
-  <div class="author" id="autor-home">
+  <div class="author">
     <div class="mark" aria-hidden="true">MD</div>
     <div>
-      <h2>Quem escreve aqui</h2>
-      <p>Sou Moisés Dias. Passei a carreira no Corpo de Bombeiros Militar do DF, onde aprendi, na prática, que risco não se ignora: se mede, se prepara e se administra. Hoje estou na reserva e levo esse aprendizado para o dinheiro.</p>
+      <h3>A proposta e quem escreve</h3>
+      <p>O Dias Investindo trata dinheiro como gestão de risco: medir, preparar e corrigir a rota. Sou Moisés Dias, passei a carreira no Corpo de Bombeiros Militar do DF e hoje, na reserva, levo esse aprendizado para as finanças.</p>
       <p>Não escrevo como quem já sabe tudo. Escrevo como quem está fazendo o próprio caminho rumo à liberdade financeira, com números honestos e sem fórmula mágica.</p>
       <div class="creds"><span>Física</span><span>MBA em Gestão de Projetos</span><span>Gestão de risco</span><span>CPA</span><span>Estudando para a C-Pro I</span></div>
     </div>
@@ -295,78 +324,262 @@ footer.site p{margin:0;max-width:70ch}
 </section>
 
 <!-- NOTÍCIAS -->
-<section class="view" id="v-noticias" data-view="noticias" hidden>
-  <div class="sec-head"><h2>Notícias</h2><span class="meta" id="news-updated"></span></div>
-  <div class="news-list" id="news-list"></div>
+<section class="sec" id="noticias" aria-label="Notícias">
+  <div class="sec-head"><h2>Notícias</h2><span class="sub" id="news-updated"></span></div>
+  <p class="meta" style="margin:-8px 0 0">Economia, investimentos, inteligência artificial, produtividade e negócios, explicados pelo impacto no seu bolso.</p>
+  <div class="two" id="news-list"></div>
   <div class="capture-slot" data-origem="noticias"></div>
 </section>
 
-<!-- ARTIGO: JUROS COMPOSTOS -->
-<section class="view" id="v-artigo-juros" data-view="artigo-juros" hidden>
+<!-- FINANÇAS PESSOAIS -->
+<section class="sec" id="financas" aria-label="Finanças Pessoais">
+  <div class="sec-head"><h2>Finanças Pessoais</h2><span class="sub">Do problema à solução</span></div>
+  <div class="two">
+    <button class="story big" type="button" data-open-artigo="financas">
+      <div class="art" data-art-artigo="financas"></div>
+      <span class="kicker">Finanças Pessoais</span>
+      <h3>Antes de investir, descubra para onde vai o seu dinheiro</h3>
+      <p>Em gestão de risco, ninguém controla o que não mede. O método de 30 dias que organiza o orçamento antes do primeiro aporte.</p>
+      <span class="more">Ler artigo completo</span>
+    </button>
+    <div class="vstack">
+      <div class="vcard"><div class="vthumb" aria-hidden="true"></div><div><b>Vídeo: o método de 30 dias</b><span>Em produção. O vídeo deste artigo entra aqui.</span></div></div>
+      <div class="cta" style="flex-direction:column;align-items:flex-start">
+        <div><h3>Organize o plano completo</h3><p>A Planilha Liberdade Financeira junta orçamento, reserva e metas em um só lugar.</p></div>
+        <a class="btn" href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Conhecer a planilha</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTOS -->
+<section class="sec" id="investimentos" aria-label="Investimentos">
+  <div class="sec-head"><h2>Investimentos</h2><span class="sub">Juros compostos e aposentadoria</span></div>
+  <div class="two">
+    <button class="story" type="button" data-open-artigo="juros">
+      <div class="art" data-art-artigo="juros"></div>
+      <span class="kicker">Investimentos</span>
+      <h3>Juros compostos: por que o tempo pesa mais que o aporte</h3>
+      <p>A maioria acha que precisa ganhar mais para enriquecer. A matemática mostra que, quase sempre, falta começar antes.</p>
+      <span class="more">Ler artigo completo</span>
+    </button>
+    <button class="story" type="button" data-open-artigo="aposentadoria">
+      <div class="art" data-art-artigo="aposentadoria"></div>
+      <span class="kicker">Aposentadoria</span>
+      <h3>Quanto você precisa juntar para viver de renda</h3>
+      <p>Renda desejada, taxa de retirada e tempo: como transformar a aposentadoria em um projeto com meta e prazo.</p>
+      <span class="more">Ler artigo completo</span>
+    </button>
+  </div>
+  <div class="cta">
+    <div><h3>Do artigo para o seu plano</h3><p>Faça a sua conta no simulador gratuito e, se quiser ir além, use a Planilha Liberdade Financeira.</p></div>
+    <div class="btns"><a class="btn ghost" href="#calc-aposentadoria">Simular aposentadoria</a><a class="btn" href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Conhecer a planilha</a></div>
+  </div>
+</section>
+
+<!-- PRODUTIVIDADE -->
+<section class="sec" id="produtividade" aria-label="Produtividade">
+  <div class="sec-head"><h2>Produtividade</h2><span class="sub">Trabalhar melhor com inteligência artificial</span></div>
+  <div class="soon">
+    <div>
+      <span class="kicker">Curso gratuito</span>
+      <h3>Curso Completo de Claude: do básico ao avançado</h3>
+      <p>Oito módulos para usar inteligência artificial no trabalho e nos estudos: escrever, analisar dados, organizar projetos e automatizar tarefas.</p>
+      <a class="btn" href="https://curso.diasinvestindo.com.br" target="_blank" rel="noopener">Acessar o curso</a>
+    </div>
+    <div><p class="meta">Os artigos de produtividade estão em produção. Cadastre-se para receber o primeiro assim que sair.</p></div>
+  </div>
+</section>
+
+<!-- CALCULADORAS -->
+<section class="sec" id="calculadoras" aria-label="Simuladores e Calculadoras">
+  <div class="sec-head"><h2>Simuladores e Calculadoras</h2><span class="sub">Gratuitos, sem cadastro</span></div>
+  <nav class="calc-index" aria-label="Calculadoras">
+    <a href="#calc-milhao">Calculadora do Milhão (juros compostos)</a>
+    <a href="#calc-aposentadoria">Simulador de Aposentadoria (viver de renda)</a>
+  </nav>
+
+  <div class="calc" id="calc-milhao">
+    <span class="kicker">Juros compostos</span>
+    <h3>Calculadora do Milhão</h3>
+    <p class="desc">Informe o que já tem, quanto investe por mês e a rentabilidade acima da inflação. A calculadora mostra quando você atinge a meta e quanto disso veio dos juros.</p>
+    <div class="fields">
+      <div class="field"><label for="m-ini">Valor inicial (R$)</label><input id="m-ini" inputmode="decimal" value="10.000"></div>
+      <div class="field"><label for="m-ap">Aporte mensal (R$)</label><input id="m-ap" inputmode="decimal" value="1.500"></div>
+      <div class="field"><label for="m-tx">Rentabilidade real (% ao ano)</label><input id="m-tx" inputmode="decimal" value="6"></div>
+      <div class="field"><label for="m-meta">Meta (R$)</label><input id="m-meta" inputmode="decimal" value="1.000.000"></div>
+    </div>
+    <div class="results">
+      <div class="res key"><small>Tempo até a meta</small><b id="m-tempo">–</b></div>
+      <div class="res"><small>Total aportado</small><b id="m-aport">–</b></div>
+      <div class="res ok"><small>Ganho com juros</small><b id="m-juros">–</b></div>
+      <div class="res"><small>Juros no saldo final</small><b id="m-pct">–</b></div>
+    </div>
+    <p class="explain" id="m-exp"></p>
+    <svg class="chart" id="m-chart" viewBox="0 0 640 250" role="img" aria-label="Evolução do patrimônio até a meta"></svg>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Saldo com juros</span><span><i style="background:var(--muted);opacity:.5"></i>Dinheiro que você aportou</span><span><i style="background:var(--signal)"></i>Meta</span></div>
+    <p class="note">Rentabilidade real é a que sobra acima da inflação, então os valores estão em reais de hoje. Aportes no fim de cada mês, sem impostos e custos.</p>
+  </div>
+
+  <div class="calc" id="calc-aposentadoria">
+    <span class="kicker">Viver de renda</span>
+    <h3>Simulador de Aposentadoria</h3>
+    <p class="desc">Descubra quanto patrimônio você precisa para viver de renda, quanto terá no ritmo atual e qual aporte mensal fecha a conta. Todos os valores em reais de hoje.</p>
+    <div class="fields">
+      <div class="field"><label for="a-idade">Idade atual</label><input id="a-idade" inputmode="numeric" value="40"></div>
+      <div class="field"><label for="a-apos">Idade para viver de renda</label><input id="a-apos" inputmode="numeric" value="60"></div>
+      <div class="field"><label for="a-pat">Patrimônio atual (R$)</label><input id="a-pat" inputmode="decimal" value="100.000"></div>
+      <div class="field"><label for="a-ap">Aporte mensal (R$)</label><input id="a-ap" inputmode="decimal" value="2.000"></div>
+      <div class="field"><label for="a-renda">Renda mensal desejada (R$)</label><input id="a-renda" inputmode="decimal" value="10.000"></div>
+      <div class="field"><label for="a-outras">Outras rendas, ex.: INSS (R$/mês)</label><input id="a-outras" inputmode="decimal" value="0"></div>
+      <div class="field"><label for="a-tx">Rentabilidade real (% ao ano)</label><input id="a-tx" inputmode="decimal" value="5"></div>
+      <div class="field"><label for="a-ret">Taxa de retirada (% ao ano)</label><input id="a-ret" inputmode="decimal" value="4"></div>
+    </div>
+    <div class="results">
+      <div class="res key"><small>Patrimônio necessário</small><b id="a-nec">–</b></div>
+      <div class="res"><small>Projetado no seu ritmo</small><b id="a-proj">–</b></div>
+      <div class="res" id="a-gap-box"><small>Diferença</small><b id="a-gap">–</b></div>
+      <div class="res"><small>Aporte que fecha a conta</small><b id="a-need">–</b></div>
+    </div>
+    <p class="explain" id="a-exp"></p>
+    <svg class="chart" id="a-chart" viewBox="0 0 640 250" role="img" aria-label="Patrimônio projetado comparado ao necessário"></svg>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Patrimônio projetado</span><span><i style="background:var(--muted);opacity:.5"></i>Dinheiro que você aportou</span><span><i style="background:var(--signal)"></i>Patrimônio necessário</span></div>
+    <p class="note">Patrimônio necessário = (renda desejada − outras rendas) × 12 ÷ taxa de retirada. Simulação educativa, sem impostos e custos; não é recomendação de investimento.</p>
+  </div>
+
+  <div class="cta">
+    <div><h3>Leve a simulação para o seu plano</h3><p>A Planilha Liberdade Financeira detalha metas, aportes e cenários, em português e para a realidade brasileira.</p></div>
+    <a class="btn" href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Conhecer a planilha</a>
+  </div>
+</section>
+
+<!-- VIDEOBLOG -->
+<section class="sec" id="videoblog" aria-label="VideoBlog">
+  <div class="sec-head"><h2>VideoBlog</h2><span class="sub">Artigos e vídeos</span></div>
+  <div class="two">
+    <div>
+      <span class="kicker">Artigos</span>
+      <ul class="vlist">
+        <li><button type="button" data-open-artigo="juros"><span class="n">01</span><b>Juros compostos: por que o tempo pesa mais que o aporte</b></button></li>
+        <li><button type="button" data-open-artigo="financas"><span class="n">02</span><b>Antes de investir, descubra para onde vai o seu dinheiro</b></button></li>
+        <li><button type="button" data-open-artigo="aposentadoria"><span class="n">03</span><b>Quanto você precisa juntar para viver de renda</b></button></li>
+      </ul>
+    </div>
+    <div class="vstack">
+      <span class="kicker">Vídeos</span>
+      <div class="vcard"><div class="vthumb" aria-hidden="true"></div><div><b>Juros compostos na prática</b><span>Em produção</span></div></div>
+      <div class="vcard"><div class="vthumb" aria-hidden="true"></div><div><b>O método de 30 dias para o orçamento</b><span>Em produção</span></div></div>
+      <div class="vcard"><div class="vthumb" aria-hidden="true"></div><div><b>A conta para viver de renda</b><span>Em produção</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE E CONTATO -->
+<section class="sec" id="sobre" aria-label="Sobre">
+  <div class="sec-head"><h2>Sobre</h2><span class="sub">Finanças tratadas como gestão de risco</span></div>
+  <div class="reading" style="max-width:70ch">
+    <p>O Dias Investindo nasceu para explicar dinheiro do jeito que eu aprendi a lidar com risco: medindo, preparando e corrigindo a rota. Cada artigo parte de um problema real e chega a uma solução prática; as calculadoras existem para você fazer as próprias contas; e as notícias são selecionadas de fontes confiáveis e explicadas pelo impacto no seu bolso.</p>
+    <p>Sou Moisés Dias. Passei a carreira no Corpo de Bombeiros Militar do DF, onde aprendi que risco não se ignora: se mede, se prepara e se administra. Minha formação é em Física, e talvez por isso eu goste de fazer as contas antes de acreditar em qualquer promessa. Depois vieram um MBA em Gestão de Projetos e a especialização em gestão de risco e segurança contra incêndio. Nas finanças, tirei a CPA e sigo estudando para a C-Pro I.</p>
+  </div>
+  <div class="capture-slot" data-origem="sobre"></div>
+  <div class="sec-head" id="contato"><h2>Contato</h2><span class="sub">Dúvidas, pautas, parcerias e patrocínio</span></div>
+  <div class="contact-grid">
+    <div class="contact-card"><div><small>E-mail</small><b id="contato-email">contato@diasinvestindo.com.br</b></div><button class="btn ghost" type="button" id="copiar-email">Copiar</button></div>
+    <div class="contact-card"><div><small>Instagram</small><b>@diasinvestindo</b></div><a class="btn ghost" href="https://www.instagram.com/diasinvestindo/" target="_blank" rel="noopener">Abrir perfil</a></div>
+  </div>
+  <p class="note">Patrocínio: a faixa abaixo da régua de mercado (970 × 90) e a coluna lateral (160 × 600 e 160 × 160). Escreva com o assunto "Patrocínio". O conteúdo do site é educativo; não faço recomendação individual de investimentos.</p>
+</section>
+
+</div>
+
+<aside class="rail" aria-label="Patrocínio lateral">
+  <div class="slot" data-ad-slot-name="lateral">
+    <span class="ad-tag">Patrocínio</span>
+    <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
+    <span class="ad-dim">160 × 600</span>
+  </div>
+  <div class="slot short">
+    <span class="ad-tag">Apoio</span>
+    <div><strong>Anuncie</strong><p>contato@<wbr>diasinvestindo.com.br</p></div>
+    <span class="ad-dim">160 × 160</span>
+  </div>
+</aside>
+</div>
+</main>
+
+<footer class="site"><div class="wrap">
+  <p><strong style="color:var(--ink)">Dias Investindo</strong> · diasinvestindo.com.br · @diasinvestindo</p>
+  <p class="foot-links"><a href="#sobre">Sobre</a><a href="#contato">Contato</a><button type="button" id="abrir-privacidade">Política de Privacidade</button></p>
+  <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
+</div></footer>
+
+<dialog class="reader" id="leitor" aria-labelledby="leitor-titulo">
+  <div class="reader-top"><span class="kicker" id="leitor-kicker"></span><button class="reader-close" type="button" id="leitor-fechar">Fechar</button></div>
+  <div class="reader-body" id="leitor-corpo"></div>
+</dialog>
+
+<!-- ARTIGOS -->
+<template id="artigo-juros">
   <article class="reading">
     <span class="kicker">Investimentos</span>
-    <h1>Juros compostos: por que o tempo pesa mais que o aporte</h1>
+    <h1 id="leitor-titulo">Juros compostos: por que o tempo pesa mais que o aporte</h1>
     <p class="dek">A maioria das pessoas acha que precisa ganhar mais para enriquecer. A matemática mostra que, quase sempre, o que falta é começar antes.</p>
     <p class="meta">Por Moisés Dias · 6 min de leitura</p>
-    <div class="art" data-art="juros"></div>
+    <div class="art" data-art-artigo="juros"></div>
     <h2>O problema: a gente pensa em linha reta</h2>
-    <p>Nosso cérebro é bom em somar. Se eu guardo R$ 1.000 por mês, em 30 anos tenho R$ 360 mil. Essa conta está certa, mas descreve um cofre, não um investimento. Quando o dinheiro rende, o rendimento de cada mês passa a render também. O crescimento deixa de ser uma reta e vira uma curva que acelera.</p>
+    <p>Nosso cérebro é bom em somar. Se eu guardo R$ 1.000 por mês, em 30 anos tenho R$ 360 mil. A conta está certa, mas descreve um cofre, não um investimento. Quando o dinheiro rende, o rendimento de cada mês passa a render também, e o crescimento deixa de ser uma reta para virar uma curva que acelera.</p>
     <h2>Os números</h2>
     <p>Veja R$ 1.000 por mês aplicados a 6% ao ano acima da inflação, um retorno real plausível para uma carteira conservadora no Brasil:</p>
     <div class="tablebox"><table class="fig">
       <thead><tr><th>Prazo</th><th>Você aportou</th><th>Saldo final</th><th>Parte que veio dos juros</th></tr></thead>
       <tbody>
         <tr><td>10 anos</td><td>R$ 120 mil</td><td>R$ 162 mil</td><td>26%</td></tr>
-        <tr><td>20 anos</td><td>R$ 240 mil</td><td>R$ 450 mil</td><td>47%</td></tr>
+        <tr><td>20 anos</td><td>R$ 240 mil</td><td>R$ 453 mil</td><td>47%</td></tr>
         <tr><td>30 anos</td><td>R$ 360 mil</td><td>R$ 974 mil</td><td>63%</td></tr>
       </tbody>
     </table></div>
     <p>Repare: de 20 para 30 anos o aporte cresce R$ 120 mil, mas o saldo sobe mais de R$ 500 mil. Nos últimos dez anos, os juros trabalham mais do que você.</p>
     <h2>A solução: começar cedo, mesmo pequeno</h2>
     <p>Quem começa dez anos antes com metade do aporte frequentemente termina na frente de quem começa depois com o dobro. Por isso a primeira decisão não é qual ativo comprar, e sim quando começar. O segundo passo é proteger a taxa: fugir de produtos com taxas altas e de rendimento abaixo da inflação, que corroem justamente a parte que cresce sozinha.</p>
-    <p class="callout"><strong>Faça a sua conta:</strong> a Calculadora do Milhão mostra em quanto tempo o seu aporte chega à meta e quanto disso vem dos juros. <a href="#calc-milhao">Abrir a calculadora</a></p>
-    <p class="src">Simulação com taxa real de 6% a.a. convertida para mensal, aportes no fim de cada mês, sem impostos e custos. Conteúdo educativo; não é recomendação de investimento.</p>
+    <p class="callout"><strong>Faça a sua conta:</strong> a Calculadora do Milhão mostra em quanto tempo o seu aporte chega à meta e quanto disso vem dos juros. <a href="#calc-milhao" data-fecha-leitor>Abrir a calculadora</a></p>
+    <p class="src">Simulação com taxa real de 6% ao ano convertida para mensal, aportes no fim de cada mês, sem impostos e custos. Conteúdo educativo; não é recomendação de investimento.</p>
   </article>
-  <div class="capture-slot" data-origem="artigo"></div>
-</section>
+</template>
 
-<!-- ARTIGO: FINANÇAS PESSOAIS -->
-<section class="view" id="v-artigo-financas" data-view="artigo-financas" hidden>
+<template id="artigo-financas">
   <article class="reading">
     <span class="kicker">Finanças Pessoais</span>
-    <h1>Antes de investir, descubra para onde vai o seu dinheiro</h1>
+    <h1 id="leitor-titulo">Antes de investir, descubra para onde vai o seu dinheiro</h1>
     <p class="dek">Em gestão de risco, ninguém controla o que não mede. Com o orçamento da casa é igual.</p>
     <p class="meta">Por Moisés Dias · 5 min de leitura</p>
-    <div class="art" data-art="financas"></div>
+    <div class="art" data-art-artigo="financas"></div>
     <h2>O problema: o dinheiro some e ninguém sabe onde</h2>
     <p>Quase todo mundo sabe quanto ganha. Pouca gente sabe quanto gasta, e menos ainda sabe em quê. O resultado é o mês que termina antes do salário, a sensação de que nunca sobra nada e a ideia de que investir é coisa para quem ganha mais. Na maioria das vezes, o problema não é a renda. É a falta de visibilidade.</p>
     <h2>Por que isso importa para quem quer investir</h2>
     <p>Investir é a etapa final de um sistema. Antes dela vêm três: saber o custo real de vida, ter uma reserva para imprevistos e garantir que existe uma sobra todo mês. Pular essas etapas é como montar um plano de evacuação sem conhecer a planta do prédio. Na primeira emergência, o investimento é resgatado na pior hora.</p>
     <h2>A solução: um método de 30 dias</h2>
-    <p><strong>Semana 1 a 4: registre tudo.</strong> Cada gasto, do aluguel ao cafezinho, sem julgamento. O objetivo é medir, não cortar.</p>
-    <p><strong>Ao fim do mês: separe em três grupos.</strong> Essenciais (moradia, alimentação, saúde, transporte), escolhas (lazer, assinaturas, compras) e futuro (reserva e investimentos). Agora você enxerga o seu orçamento de verdade.</p>
-    <p><strong>Depois: pague o futuro primeiro.</strong> Defina um valor fixo para o grupo futuro e transfira no dia do pagamento, de forma automática. O que sobra é o que dá para gastar, e não o contrário.</p>
+    <p><strong>Durante 30 dias, registre tudo.</strong> Cada gasto, do aluguel ao cafezinho, sem julgamento. O objetivo é medir, não cortar.</p>
+    <p><strong>Ao fim do mês, separe em três grupos.</strong> Essenciais (moradia, alimentação, saúde, transporte), escolhas (lazer, assinaturas, compras) e futuro (reserva e investimentos). Agora você enxerga o seu orçamento de verdade.</p>
+    <p><strong>Depois, pague o futuro primeiro.</strong> Defina um valor fixo para o grupo futuro e transfira no dia do pagamento, de forma automática. O que sobra é o que dá para gastar, e não o contrário.</p>
     <p class="callout"><strong>A primeira meta é a reserva:</strong> de 6 a 12 meses do seu custo essencial, em aplicação com liquidez diária. Só depois dela o dinheiro começa a trabalhar no longo prazo.</p>
     <p>Com o custo de vida medido, você também ganha o número mais importante do planejamento: quanto precisa por mês para viver. É dele que sai a meta de aposentadoria.</p>
-    <p class="callout"><strong>Próximo passo:</strong> use esse número no <a href="#calc-aposentadoria">Simulador de Aposentadoria</a> e veja quanto precisa juntar.</p>
+    <p class="callout"><strong>Próximo passo:</strong> use esse número no <a href="#calc-aposentadoria" data-fecha-leitor>Simulador de Aposentadoria</a> e veja quanto precisa juntar.</p>
     <p class="src">Conteúdo educativo; não é recomendação de investimento.</p>
   </article>
-  <div class="capture-slot" data-origem="artigo"></div>
-</section>
+</template>
 
-<!-- ARTIGO: APOSENTADORIA -->
-<section class="view" id="v-artigo-aposentadoria" data-view="artigo-aposentadoria" hidden>
+<template id="artigo-aposentadoria">
   <article class="reading">
     <span class="kicker">Aposentadoria</span>
-    <h1>Quanto você precisa juntar para viver de renda</h1>
+    <h1 id="leitor-titulo">Quanto você precisa juntar para viver de renda</h1>
     <p class="dek">Existe uma conta simples para transformar um desejo vago em um número. E esse número costuma assustar menos quando vem acompanhado de um plano.</p>
     <p class="meta">Por Moisés Dias · 7 min de leitura</p>
-    <div class="art" data-art="aposentadoria"></div>
+    <div class="art" data-art-artigo="aposentadoria"></div>
     <h2>O problema: "quero me aposentar bem" não é uma meta</h2>
-    <p>Sem um número, não dá para saber se você está no caminho. A maioria das pessoas posterga a decisão porque a pergunta parece grande demais. Mas ela cabe em uma linha.</p>
+    <p>Sem um número, não dá para saber se você está no caminho. A maioria das pessoas adia a decisão porque a pergunta parece grande demais. Mas ela cabe em uma linha.</p>
     <h2>A conta</h2>
     <p class="callout"><strong>Patrimônio necessário = renda mensal desejada × 12 ÷ taxa de retirada anual</strong></p>
-    <p>A taxa de retirada é quanto do patrimônio você pode sacar por ano sem esgotá-lo. Estudos internacionais popularizaram os 4%. No Brasil, onde a renda fixa costuma pagar juros reais mais altos, há quem use 4% a 5%, mas prudência aqui vale ouro: o risco de errar para mais é ficar sem dinheiro aos 80 anos.</p>
+    <p>A taxa de retirada é quanto do patrimônio você pode sacar por ano sem esgotá-lo. Estudos internacionais popularizaram os 4%. No Brasil, onde a renda fixa costuma pagar juros reais mais altos, há quem use de 4% a 5%, mas aqui a prudência vale ouro: o risco de errar para mais é ficar sem dinheiro aos 80 anos.</p>
     <div class="tablebox"><table class="fig">
       <thead><tr><th>Renda mensal (valores de hoje)</th><th>Retirada de 4%</th><th>Retirada de 5%</th></tr></thead>
       <tbody>
@@ -381,91 +594,15 @@ footer.site p{margin:0;max-width:70ch}
     <p><strong>Custo de vida real.</strong> Quem mediu os gastos costuma descobrir que precisa de menos do que imaginava.</p>
     <h2>A solução: transformar o número em aporte</h2>
     <p>Com o patrimônio-alvo, a idade e a rentabilidade real esperada, dá para calcular o aporte mensal necessário. É esse valor que entra no orçamento, no grupo "futuro". A partir daí, a aposentadoria deixa de ser uma esperança e vira um projeto com prazo, meta e acompanhamento.</p>
-    <p class="callout"><strong>Calcule o seu:</strong> o <a href="#calc-aposentadoria">Simulador de Aposentadoria</a> mostra se o seu ritmo atual chega lá e qual aporte fecha a conta.</p>
-    <p class="callout"><strong>Quer o plano completo?</strong> A <a href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Planilha Liberdade Financeira</a> organiza metas, aportes e projeções em um só lugar.</p>
+    <p class="callout"><strong>Calcule o seu:</strong> o <a href="#calc-aposentadoria" data-fecha-leitor>Simulador de Aposentadoria</a> mostra se o seu ritmo atual chega lá e qual aporte fecha a conta. Para o plano completo, conheça a <a href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Planilha Liberdade Financeira</a>.</p>
     <p class="src">Valores em termos reais (já descontada a inflação). Conteúdo educativo; não é recomendação de investimento.</p>
   </article>
-  <div class="capture-slot" data-origem="artigo"></div>
-</section>
+</template>
 
-<!-- CALCULADORAS -->
-<section class="view" id="v-calculadoras" data-view="calculadoras" hidden>
-  <div class="sec-head"><h2>Simuladores e calculadoras</h2></div>
-  <div class="calc-index">
-    <a href="#calc-milhao">Calculadora do Milhão</a>
-    <a href="#calc-aposentadoria">Simulador de Aposentadoria</a>
-  </div>
-
-  <div class="calc" id="calc-milhao">
-    <span class="kicker">Juros compostos</span>
-    <h2>Calculadora do Milhão</h2>
-    <p class="desc">Informe o que já tem, quanto investe por mês e a rentabilidade acima da inflação. A calculadora mostra quando você atinge a meta e quanto disso vem dos juros.</p>
-    <div class="fields">
-      <div class="field"><label for="m-ini">Valor inicial (R$)</label><input id="m-ini" inputmode="decimal" value="10.000"></div>
-      <div class="field"><label for="m-ap">Aporte mensal (R$)</label><input id="m-ap" inputmode="decimal" value="1.500"></div>
-      <div class="field"><label for="m-tx">Rentabilidade real (% a.a.)</label><input id="m-tx" inputmode="decimal" value="6"></div>
-      <div class="field"><label for="m-meta">Meta (R$)</label><input id="m-meta" inputmode="decimal" value="1.000.000"></div>
-    </div>
-    <div class="results">
-      <div class="res key"><small>Tempo até a meta</small><b id="m-tempo">–</b></div>
-      <div class="res"><small>Total aportado</small><b id="m-aport">–</b></div>
-      <div class="res ok"><small>Ganho com juros</small><b id="m-juros">–</b></div>
-      <div class="res"><small>Juros no saldo final</small><b id="m-pct">–</b></div>
-    </div>
-    <svg class="chart" id="m-chart" viewBox="0 0 640 240" role="img" aria-label="Evolução do patrimônio até a meta"></svg>
-    <div class="legend"><span><i style="background:var(--accent)"></i>Saldo com juros</span><span><i style="background:var(--muted);opacity:.45"></i>Dinheiro que você aportou</span></div>
-  </div>
-
-  <div class="calc" id="calc-aposentadoria">
-    <span class="kicker">Viver de renda</span>
-    <h2>Simulador de Aposentadoria</h2>
-    <p class="desc">Descubra quanto patrimônio você precisa para viver de renda, quanto terá no ritmo atual e qual aporte mensal fecha a conta. Todos os valores em reais de hoje.</p>
-    <div class="fields">
-      <div class="field"><label for="a-idade">Idade atual</label><input id="a-idade" inputmode="numeric" value="40"></div>
-      <div class="field"><label for="a-apos">Idade para viver de renda</label><input id="a-apos" inputmode="numeric" value="60"></div>
-      <div class="field"><label for="a-pat">Patrimônio atual (R$)</label><input id="a-pat" inputmode="decimal" value="100.000"></div>
-      <div class="field"><label for="a-ap">Aporte mensal (R$)</label><input id="a-ap" inputmode="decimal" value="2.000"></div>
-      <div class="field"><label for="a-renda">Renda mensal desejada (R$)</label><input id="a-renda" inputmode="decimal" value="10.000"></div>
-      <div class="field"><label for="a-outras">Outras rendas, ex.: INSS (R$)</label><input id="a-outras" inputmode="decimal" value="0"></div>
-      <div class="field"><label for="a-tx">Rentabilidade real (% a.a.)</label><input id="a-tx" inputmode="decimal" value="5"></div>
-      <div class="field"><label for="a-ret">Taxa de retirada (% a.a.)</label><input id="a-ret" inputmode="decimal" value="4"></div>
-    </div>
-    <div class="results">
-      <div class="res key"><small>Patrimônio necessário</small><b id="a-nec">–</b></div>
-      <div class="res"><small>Projetado no seu ritmo</small><b id="a-proj">–</b></div>
-      <div class="res" id="a-gap-box"><small>Diferença</small><b id="a-gap">–</b></div>
-      <div class="res"><small>Aporte que fecha a conta</small><b id="a-need">–</b></div>
-    </div>
-    <svg class="chart" id="a-chart" viewBox="0 0 640 240" role="img" aria-label="Patrimônio projetado comparado ao necessário"></svg>
-    <div class="legend"><span><i style="background:var(--accent)"></i>Patrimônio projetado</span><span><i style="background:var(--signal)"></i>Patrimônio necessário</span></div>
-  </div>
-  <div class="cta"><div><h3>Leve a simulação para o seu plano</h3><p>A Planilha Liberdade Financeira detalha metas, aportes e cenários, em português e para a realidade brasileira.</p></div><a class="btn" href="https://go.hotmart.com/R108167327G" target="_blank" rel="noopener">Conhecer a planilha</a></div>
-  <div class="capture-slot" data-origem="calculadoras"></div>
-  <p class="note">Simulações educativas em termos reais, sem impostos e custos. Não constituem recomendação de investimento.</p>
-</section>
-
-<!-- SOBRE -->
-<section class="view" id="v-sobre" data-view="sobre" hidden>
-  <article class="reading">
-    <span class="kicker">Sobre</span>
-    <h1>Finanças tratadas como gestão de risco</h1>
-    <p class="dek">O Dias Investindo nasceu para explicar dinheiro do jeito que eu aprendi a lidar com risco: medindo, preparando e corrigindo a rota.</p>
-    <h2>A proposta</h2>
-    <p>Aqui cada artigo parte de um problema real e chega a uma solução prática. As calculadoras existem para você fazer as próprias contas. As notícias são selecionadas de fontes confiáveis e explicadas pelo impacto no seu bolso.</p>
-    <h2>Quem escreve</h2>
-    <p>Sou Moisés Dias. Passei a carreira no Corpo de Bombeiros Militar do DF, onde aprendi que risco não se ignora: se mede, se prepara e se administra. Hoje estou na reserva e levo esse aprendizado para o dinheiro.</p>
-    <p>Minha formação é em Física, e talvez por isso eu goste de fazer as contas antes de acreditar em qualquer promessa. Depois vieram um MBA em Gestão de Projetos e a especialização em gestão de risco e segurança contra incêndio. Nas finanças, tirei a CPA e sigo estudando para a C-Pro I.</p>
-    <p>Não escrevo como quem já sabe tudo. Escrevo como quem está fazendo o próprio caminho rumo à liberdade financeira e quer dividir o que aprende.</p>
-    <h2>Patrocínio</h2>
-    <p>Os espaços de patrocínio, na faixa abaixo da régua de mercado e na coluna lateral, estão disponíveis para marcas alinhadas à educação financeira. Veja a página de <a href="#contato">Contato</a>.</p>
-  </article>
-</section>
-
-<!-- PRIVACIDADE -->
-<section class="view" id="v-privacidade" data-view="privacidade" hidden>
+<template id="politica-privacidade">
   <article class="reading">
     <span class="kicker">Institucional</span>
-    <h1>Política de Privacidade</h1>
+    <h1 id="leitor-titulo">Política de Privacidade</h1>
     <p class="meta">Última atualização: 06/11/2026</p>
     <p>Esta política explica como o site Dias Investindo (diasinvestindo.com.br) trata os dados pessoais de quem o visita, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).</p>
     <h2>Quem é o responsável</h2>
@@ -477,7 +614,7 @@ footer.site p{margin:0;max-width:70ch}
     <h2>Para que usamos</h2>
     <p>Usamos o e-mail para enviar o e-mail de boas-vindas, novos artigos, notícias selecionadas e, eventualmente, ofertas de produtos próprios relacionados à educação financeira. A base legal é o seu consentimento, dado ao se cadastrar.</p>
     <h2>Com quem compartilhamos</h2>
-    <p>Não vendemos nem alugamos dados. Eles são tratados por prestadores de serviço necessários ao funcionamento do site: Netlify (hospedagem), Supabase (processamento do formulário) e Resend (envio de e-mails). Esses serviços podem armazenar dados fora do Brasil, com salvaguardas contratuais.</p>
+    <p>Não vendemos nem alugamos dados. Eles são tratados por prestadores de serviço necessários ao funcionamento do site: Netlify (hospedagem), Supabase (processamento do formulário) e Resend (envio e recebimento de e-mails). Esses serviços podem armazenar dados fora do Brasil, com salvaguardas contratuais.</p>
     <h2>Cookies e anúncios</h2>
     <p>O site não usa cookies próprios de rastreamento. As fontes tipográficas são carregadas do Google Fonts. Caso o site passe a exibir anúncios do Google AdSense, o Google e seus parceiros poderão usar cookies para exibir anúncios com base em visitas anteriores. Você pode desativar a publicidade personalizada nas <a href="https://adssettings.google.com" target="_blank" rel="noopener">Configurações de anúncios do Google</a>.</p>
     <h2>Por quanto tempo guardamos</h2>
@@ -487,168 +624,343 @@ footer.site p{margin:0;max-width:70ch}
     <h2>Alterações</h2>
     <p>Esta política pode ser atualizada. A data no topo indica a versão vigente.</p>
   </article>
-</section>
+</template>
 
-<!-- CONTATO -->
-<section class="view" id="v-contato" data-view="contato" hidden>
-  <article class="reading">
-    <span class="kicker">Institucional</span>
-    <h1>Contato</h1>
-    <p class="dek">Dúvidas, sugestões de pauta, parcerias ou patrocínio: fale direto comigo.</p>
-    <div class="contact-card">
-      <div><small>E-mail</small><b id="contato-email">contato@diasinvestindo.com.br</b></div>
-      <button class="btn ghost" type="button" id="copiar-email">Copiar e-mail</button>
-    </div>
-    <div class="contact-card">
-      <div><small>Instagram</small><b>@diasinvestindo</b></div>
-      <a class="btn ghost" href="https://www.instagram.com/diasinvestindo/" target="_blank" rel="noopener">Abrir perfil</a>
-    </div>
-    <h2>Patrocínio</h2>
-    <p>O site tem dois espaços para marcas alinhadas à educação financeira: a faixa abaixo da régua de mercado (970 × 90) e a coluna lateral (160 × 600 e 160 × 160). Escreva para o e-mail acima com o assunto "Patrocínio".</p>
-    <p class="src">Não faço recomendação individual de investimentos. O conteúdo do site é educativo.</p>
-  </article>
-</section>
-
-</div>
-
-</div>
-</main>
-
-<footer class="site"><div class="wrap">
-  <p><strong style="color:var(--ink)">Dias Investindo</strong> · diasinvestindo.com.br · @diasinvestindo</p>
-  <p class="foot-links"><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="#privacidade">Política de Privacidade</a></p>
-  <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
-</div></footer>
-
+<!-- DADOS DAS NOTÍCIAS: a tarefa diária altera somente este bloco. Formato documentado em README.md -->
 <script type="application/json" id="site-data">
 {
   "atualizado": "06/11/2026",
-  "ticker": {"selic": "13,75%", "ibov": "166.191", "ibovVar": "−0,82%", "ibovUp": false, "dolar": "R$ 5,489", "dolarVar": "+0,67%", "dolarUp": false, "data": "05/11/2026"},
-  "selicHist": [["jan",15],["mar",14.75],["abr",14.5],["jun",14.25],["ago",14],["set",13.75],["nov",13.75]],
+  "ticker": {"selic": "13,75%", "ibov": "166.191", "ibovVar": "-0,82%", "dolar": "R$ 5,489", "dolarVar": "+0,67%", "data": "05/11/2026"},
   "noticias": [
-    {"arte": "juros", "editoria": "Juros", "data": "04/11/2026",
-     "titulo": "Copom mantém a Selic em 13,75% e interrompe a sequência de cortes",
-     "resumo": "Decisão unânime de 4 de novembro cita dólar mais alto, El Niño e um cenário mais incerto para a inflação.",
-     "texto": ["O Comitê de Política Monetária do Banco Central decidiu por unanimidade manter a taxa básica de juros em 13,75% ao ano. A decisão encerra uma série de cinco cortes de 0,25 ponto em 2026, que haviam trazido a Selic dos 15% de janeiro até o patamar atual.", "No comunicado, o BC apontou a alta do dólar, os efeitos do El Niño e um ambiente mais incerto como motivos para a pausa. As expectativas de inflação seguem acima da meta, e as novas projeções saem no Relatório de Política Monetária do fim de novembro. A última reunião do ano será em 8 e 9 de dezembro."],
-     "bolso": "Com a Selic parada em 13,75%, a renda fixa pós-fixada (Tesouro Selic, CDBs atrelados ao CDI) continua pagando bem. Vale reavaliar prazos antes de travar taxas.",
-     "fontes": [{"nome": "Sou Brasília", "url": "https://soubrasilia.com/copom-mantem-selic-13-75-unanimidade-4-novembro-2026/"}, {"nome": "Poder360", "url": "https://www.poder360.com.br/poder-economia/copom-mantem-selic-em-1375-e-confirma-aposta-do-mercado/"}]},
-    {"arte": "mercado", "editoria": "Mercados", "data": "05/11/2026",
-     "titulo": "Ibovespa cai 0,82% com temor fiscal; dólar sobe a R$ 5,49",
-     "resumo": "Bolsa fecha aos 166.191 pontos com o fiscal no centro das preocupações e forte queda do Nasdaq.",
-     "texto": ["O principal índice da B3 fechou aos 166.191 pontos, com perda de cerca de 1.372 pontos no dia. O dólar comercial subiu 0,67% e terminou cotado a R$ 5,489.", "O fiscal segue no centro das preocupações: a reunião do presidente com ministros e economistas terminou sem medidas concretas, e o Santander alertou que, sem ajuste, o PIB pode crescer menos de 1,3% em 2027. Lá fora, o Nasdaq recuou mais de 5%, puxado por ações de chips e data centers."],
-     "fontes": [{"nome": "InfoMoney", "url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-05112026/"}]},
-    {"arte": "ia", "editoria": "Inteligência Artificial", "data": "06/11/2026",
-     "titulo": "Investidores duvidam que o IPO da Anthropic saia ainda em novembro",
-     "resumo": "Reuters: queda das ações de IA e pedido de valuation mais baixo podem adiar a estreia da dona do Claude.",
-     "texto": ["Potenciais investidores ouvidos pela Reuters questionam se a Anthropic, dona do Claude, conseguirá fazer o roadshow na semana de 9 de novembro e estrear na bolsa ainda este mês. A oferta, que pode chegar a US$ 100 bilhões, coincide com dois dias de forte queda das ações de IA após as eleições de meio de mandato nos EUA.", "Os investidores pedem um valuation mais atraente: o patamar de US$ 1,5 trilhão discutido recentemente é visto como o teto das expectativas, abaixo dos até US$ 2 trilhões cogitados antes. A empresa não comentou."],
-     "fontes": [{"nome": "Reuters, via BNN Bloomberg", "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/06/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-reuters-exclusive/"}]}
+    {
+      "editoria": "Juros",
+      "data": "04/11/2026",
+      "titulo": "Copom mantém a Selic em 13,75% e interrompe a sequência de cortes",
+      "resumo": "Decisão unânime cita dólar mais alto, El Niño e um cenário mais incerto para a inflação; próxima reunião é em dezembro.",
+      "texto": [
+        "O Comitê de Política Monetária (Copom) do Banco Central manteve, por unanimidade, a taxa Selic em 13,75% ao ano na reunião encerrada em 4 de novembro. A decisão interrompe a sequência de cinco cortes de 0,25 ponto percentual feitos ao longo de 2026, que haviam reduzido os juros básicos dos 15% vigentes em janeiro.",
+        "No comunicado, o BC justificou a pausa com a alta recente do dólar, os possíveis efeitos do El Niño sobre os preços e um cenário mais incerto, que classificou como desafiador para a política monetária. As expectativas de inflação continuam acima da meta, e as novas projeções oficiais serão divulgadas no Relatório de Política Monetária do fim de novembro.",
+        "A última reunião do ano está marcada para 8 e 9 de dezembro. O comitê segue funcionando com cadeiras vagas na diretoria: os mandatos de dois diretores terminaram no fim de 2025 e os substitutos ainda não foram enviados ao Congresso."
+      ],
+      "bolso": "Com a Selic parada em 13,75%, a renda fixa pós-fixada (Tesouro Selic e CDBs atrelados ao CDI) continua pagando bem. Vale reavaliar prazos antes de travar uma taxa.",
+      "arte": {
+        "tipo": "linha", "tema": "juros", "degraus": true,
+        "titulo": "Selic em 2026, % ao ano",
+        "pontos": [["jan", 15], ["mar", 14.75], ["abr", 14.5], ["jun", 14.25], ["ago", 14], ["set", 13.75], ["nov", 13.75]],
+        "destaque": "Mantida em 13,75%"
+      },
+      "fontes": [
+        {"nome": "Sou Brasília", "url": "https://soubrasilia.com/copom-mantem-selic-13-75-unanimidade-4-novembro-2026/"},
+        {"nome": "Poder360", "url": "https://www.poder360.com.br/poder-economia/copom-mantem-selic-em-1375-e-confirma-aposta-do-mercado/"}
+      ]
+    },
+    {
+      "editoria": "Mercados",
+      "data": "05/11/2026",
+      "titulo": "Ibovespa cai 0,82% com temor fiscal; dólar sobe a R$ 5,49",
+      "resumo": "Falta de medidas concretas no fiscal e a queda forte do Nasdaq levaram a bolsa aos 166 mil pontos.",
+      "texto": [
+        "O Ibovespa fechou a quinta-feira, 5 de novembro, em queda de 0,82%, aos 166.191 pontos, uma perda de cerca de 1.372 pontos no dia. No câmbio, o dólar comercial subiu 0,67% e terminou cotado a R$ 5,489.",
+        "O cenário fiscal concentrou as atenções. A reunião do presidente com ministros e economistas terminou sem medidas concretas, que ficaram para depois da viagem presidencial. O Santander alertou que, sem ajuste, o PIB pode crescer menos de 1,3% em 2027, e o governo estuda endurecer as regras do arcabouço fiscal.",
+        "O exterior também pesou. Em Wall Street, o Nasdaq caiu mais de 5%, puxado por ações de fabricantes de chips e de data centers, e os demais índices recuaram mais de 2%, revertendo a alta do dia anterior."
+      ],
+      "arte": {
+        "tipo": "indicador", "tema": "fiscal",
+        "rotulo": "Ibovespa no fechamento, pontos",
+        "valor": "166.191", "variacao": "-0,82%",
+        "secundarios": [{"rotulo": "Dólar comercial", "valor": "R$ 5,489", "variacao": "+0,67%"}, {"rotulo": "Nasdaq", "valor": "queda acima de 5%", "variacao": "-5%"}]
+      },
+      "fontes": [{"nome": "InfoMoney", "url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-05112026/"}]
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "06/11/2026",
+      "titulo": "Investidores duvidam que o IPO da Anthropic saia ainda em novembro",
+      "resumo": "Queda das ações de IA e pedido de valuation mais baixo podem adiar a estreia na bolsa da criadora do Claude.",
+      "texto": [
+        "Potenciais investidores ouvidos pela agência Reuters duvidam que a Anthropic, criadora do assistente Claude, consiga fazer a rodada de apresentações a investidores na semana de 9 de novembro e estrear na bolsa ainda neste mês, segundo quatro pessoas a par das conversas.",
+        "A desconfiança vem depois de dois dias de forte queda das ações ligadas à inteligência artificial, após as eleições de meio de mandato nos Estados Unidos. Os investidores pedem um valuation mais atraente: o patamar de US$ 1,5 trilhão, discutido recentemente, é visto como o teto das expectativas, abaixo dos até US$ 2 trilhões cogitados antes.",
+        "Pesam ainda o histórico de prejuízos trimestrais da empresa e seus grandes compromissos com parceiros, e o mercado aguarda o número de receita de outubro, deixado em branco no prospecto atualizado. A oferta pode chegar a US$ 100 bilhões e, se for adiada, pode pressionar o mercado de tecnologia como um todo. A Anthropic não comentou."
+      ],
+      "arte": {
+        "tipo": "barras", "tema": "ia",
+        "titulo": "Valuation da Anthropic no IPO, US$ trilhões",
+        "barras": [{"rotulo": "Teto cogitado antes", "valor": 2.0}, {"rotulo": "Patamar discutido agora", "valor": 1.5, "destaque": true}],
+        "nota": "Oferta pode chegar a US$ 100 bilhões"
+      },
+      "fontes": [{"nome": "Reuters, via BNN Bloomberg", "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/06/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-reuters-exclusive/"}]
+    }
   ]
 }
 </script>
+
 <script>
 (function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const E=t=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const FONT_D="Schibsted Grotesk,Helvetica Neue,Arial,sans-serif", FONT_M="IBM Plex Mono,Menlo,monospace";
 const brl=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
 const compact=v=>{const a=Math.abs(v);if(a>=1e6)return "R$ "+(v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:2})+" mi";if(a>=1e3)return "R$ "+Math.round(v/1e3).toLocaleString("pt-BR")+" mil";return brl.format(v)};
-const num=id=>{const el=document.getElementById(id);let s=(el.value||"").trim().replace(/[^\d,.-]/g,"");if(s.includes(","))s=s.replace(/\./g,"").replace(",",".");else s=s.replace(/\.(?=\d{3}(\D|$))/g,"");const n=parseFloat(s);return isFinite(n)?n:0};
-const mrate=a=>Math.pow(1+a/100,1/12)-1;
-const tempo=m=>{const y=Math.floor(m/12),r=m%12;return (y?y+(y===1?" ano":" anos"):"")+(y&&r?" e ":"")+(r?r+(r===1?" mês":" meses"):"")||"já atingida"};
+const sinal=s=>{const t=String(s||"").trim().replace("−","-");if(t.startsWith("-"))return "down";if(t.startsWith("+")&&/[1-9]/.test(t))return "up";return ""};
+const fmtVar=s=>String(s||"").replace(/^-/,"−");
 
-function milhao(ini,ap,tx,meta){
+/* ---------- Dados ---------- */
+let DATA={atualizado:"",ticker:{},noticias:[]};
+try{DATA=JSON.parse($("site-data").textContent)}catch(e){console.error("site-data inválido",e)}
+const tk=DATA.ticker||{};
+$("ticker").innerHTML=[
+  tk.selic?`<span><span class="lbl">Selic</span> ${E(tk.selic)}</span>`:"",
+  tk.ibov?`<span><span class="lbl">Ibovespa</span> ${E(tk.ibov)} <span class="${sinal(tk.ibovVar)}">${E(fmtVar(tk.ibovVar))}</span></span>`:"",
+  tk.dolar?`<span><span class="lbl">Dólar</span> ${E(tk.dolar)} <span class="${sinal(tk.dolarVar)}">${E(fmtVar(tk.dolarVar))}</span></span>`:"",
+  tk.data?`<span class="when">Fechamento de ${E(tk.data)}</span>`:""
+].join("");
+$("news-updated").textContent=DATA.atualizado?"Atualizado em "+DATA.atualizado:"";
+
+/* ---------- Ilustrações ---------- */
+const W=640,H=360;
+const txt=(x,y,s,o={})=>`<text x="${x}" y="${y}" font-family="${o.f||FONT_D}" font-size="${o.size||14}" font-weight="${o.w||500}" fill="${o.fill||"var(--muted)"}" text-anchor="${o.anchor||"start"}">${E(s)}</text>`;
+const grid=()=>{let g=`<defs><pattern id="pg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="var(--line)" stroke-width="0.6"/></pattern></defs><rect width="${W}" height="${H}" fill="var(--surface)"/><rect width="${W}" height="${H}" fill="url(#pg)" opacity=".55"/>`;return g};
+const num=v=>Number(String(v).replace(",","."));
+const nice=v=>v.toLocaleString("pt-BR",{maximumFractionDigits:2});
+
+/* Cenas temáticas desenhadas em traço, usadas como fundo à direita */
+const CENAS={
+  juros(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    ${[0,1,2,3,4].map(i=>`<ellipse cx="60" cy="${150-i*18}" rx="48" ry="12" fill="var(--surface)"/><path d="M12 ${150-i*18}v10a48 12 0 0 0 96 0v-10"/>`).join("")}
+    <circle cx="150" cy="40" r="16"/><circle cx="196" cy="96" r="16"/><path d="M200 30 146 106" stroke-width="5"/></g>`},
+  fiscal(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <path d="M0 170H260"/><rect x="104" y="20" width="18" height="120"/><rect x="128" y="20" width="18" height="120"/><path d="M104 60h42M104 100h42"/>
+    <path d="M20 150h70v-10H20z"/><path d="M28 140a27 22 0 0 1 54 0"/><path d="M170 150h70v-10h-70z"/><path d="M178 140q27 34 54 0"/></g>`},
+  ia(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".24">
+    <rect x="70" y="50" width="100" height="100" rx="10"/><rect x="95" y="75" width="50" height="50" rx="4"/>
+    ${[0,1,2,3].map(i=>`<path d="M${84+i*24} 50V20M${84+i*24} 150v30M70 ${64+i*24}H38M170 ${64+i*24}h32"/><circle cx="${84+i*24}" cy="16" r="4"/><circle cx="${84+i*24}" cy="184" r="4"/><circle cx="34" cy="${64+i*24}" r="4"/><circle cx="206" cy="${64+i*24}" r="4"/>`).join("")}</g>`},
+  bolsa(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    ${[[20,90,40],[60,70,50],[100,100,30],[140,60,70],[180,40,60],[220,20,50]].map(([cx,t,h])=>`<path d="M${cx} ${t-15}v${h+30}"/><rect x="${cx-9}" y="${t}" width="18" height="${h}" fill="var(--surface)"/>`).join("")}
+    <path d="M0 150 60 120 110 135 170 80 250 40" fill="none"/></g>`},
+  cambio(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <circle cx="70" cy="90" r="56"/><circle cx="190" cy="90" r="56"/>${txt(70,110,"US$",{size:34,w:700,fill:"var(--accent)",anchor:"middle"})}${txt(190,110,"R$",{size:34,w:700,fill:"var(--accent)",anchor:"middle"})}
+    <path d="M100 18q30-16 60 0M152 12l8 6-10 4M160 162q-30 16-60 0M108 168l-8-6 10-4"/></g>`},
+  inflacao(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <path d="M10 30h30l26 100h110l20-70H52"/><circle cx="80" cy="152" r="10"/><circle cx="160" cy="152" r="10"/><path d="M220 120V20M200 40l20-20 20 20"/></g>`},
+  energia(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <path d="M70 20 30 100h40l-20 70 70-96H80l30-54z"/><path d="M190 30c-30 40-46 66-46 90a46 46 0 0 0 92 0c0-24-16-50-46-90z"/></g>`},
+  tecnologia(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <rect x="20" y="30" width="170" height="110" rx="8"/><path d="M0 150h210l-12 14H12z"/><rect x="200" y="50" width="56" height="100" rx="10"/><path d="M220 138h16"/></g>`},
+  imoveis(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <path d="M20 90 100 30l80 60v80H20z"/><rect x="80" y="120" width="40" height="50"/><rect x="150" y="70" width="80" height="100"/>${[0,1,2].map(i=>`<path d="M165 ${90+i*25}h50"/>`).join("")}</g>`},
+  emprego(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <rect x="30" y="60" width="180" height="110" rx="8"/><path d="M90 60V40h60v20M30 105h180"/><rect x="105" y="95" width="30" height="20"/></g>`}
+};
+const cena=(t,x=380,y=100,s=1)=>(CENAS[t]||CENAS.bolsa)(x,y,s);
+
+function artLinha(a){
+  const series=a.series||[{pontos:a.pontos}];
+  const all=series.flatMap(s=>s.pontos.map(p=>num(p[1])));
+  let lo=Math.min(...all),hi=Math.max(...all);if(a.zero)lo=0;
+  const pad=(hi-lo)*.15||1;lo=a.zero?0:lo-pad;hi=hi+pad;
+  const L=64,R=40,T=78,B=56,n=series[0].pontos.length;
+  const x=j=>L+(W-L-R)*j/(Math.max(1,n-1)),y=v=>T+(H-T-B)*(hi-v)/(hi-lo);
+  let g=grid()+cena(a.tema,420,40,.95);
+  g+=txt(28,44,a.titulo||"",{size:17,w:700,fill:"var(--ink)"});
+  for(let k=0;k<=3;k++){const v=lo+(hi-lo)*k/3;g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/>`+txt(L-10,y(v)+4,a.fmt==="mil"?compact(v).replace("R$ ",""):nice(Math.round(v*100)/100),{f:FONT_M,size:12,anchor:"end"})}
+  series[0].pontos.forEach((p,j)=>{if(n<=12||j%Math.ceil(n/8)===0||j===n-1)g+=txt(x(j),H-24,p[0],{size:13,anchor:"middle"})});
+  series.forEach((s,si)=>{
+    const cor=si===0?"var(--accent)":"var(--muted)";let d="";
+    s.pontos.forEach((p,j)=>{const v=num(p[1]);if(!j)d=`M${x(j)} ${y(v)}`;else if(a.degraus)d+=` L${x(j)} ${y(num(s.pontos[j-1][1]))} L${x(j)} ${y(v)}`;else d+=` L${x(j)} ${y(v)}`});
+    if(si===0)g+=`<path d="${d} L${x(n-1)} ${y(lo)} L${x(0)} ${y(lo)} Z" fill="var(--accent)" fill-opacity=".1"/>`;
+    g+=`<path d="${d}" fill="none" stroke="${cor}" stroke-width="${si===0?4:2.5}" ${si?'stroke-dasharray="7 6"':""} stroke-linejoin="round" stroke-linecap="round"/>`;
+  });
+  const last=series[0].pontos[n-1],lx=x(n-1),ly=y(num(last[1]));
+  g+=`<circle cx="${lx}" cy="${ly}" r="8" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/>`;
+  if(a.destaque){const w=a.destaque.length*8.6+24;g+=`<rect x="${lx-w-6}" y="${ly-48}" width="${w}" height="32" rx="6" fill="var(--ink)"/>`+txt(lx-w/2-6,ly-27,a.destaque,{size:14,w:700,fill:"var(--surface)",anchor:"middle"})}
+  (a.marcas||[]).forEach(m=>{const j=m[0];const v=num(series[0].pontos[j][1]);g+=`<circle cx="${x(j)}" cy="${y(v)}" r="6" fill="var(--signal)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)-10,y(v)-14,m[1],{size:14,w:700,fill:"var(--ink)",anchor:"end"})});
+  return g;
+}
+function artIndicador(a){
+  let g=grid()+cena(a.tema,380,96,1.05);
+  const cl=sinal(a.variacao),cor=cl==="down"?"var(--down)":cl==="up"?"var(--up)":"var(--muted)";
+  g+=txt(32,62,a.rotulo||"",{size:16,w:600});
+  g+=txt(30,150,a.valor||"",{size:76,w:800,fill:"var(--ink)"});
+  const v=fmtVar(a.variacao||""),w=v.length*13+44;
+  g+=`<rect x="32" y="176" width="${w}" height="40" rx="20" fill="${cor}"/>`;
+  g+=`<path d="M${50} ${cl==="down"?190:202} l8 ${cl==="down"?12:-12} l8 ${cl==="down"?-12:12}z" fill="var(--surface)"/>`+txt(72,203,v,{f:FONT_M,size:20,w:500,fill:"var(--surface)"});
+  (a.secundarios||[]).slice(0,2).forEach((s,i)=>{const yy=262+i*44,c2=sinal(s.variacao);
+    g+=`<line x1="32" x2="330" y1="${yy-24}" y2="${yy-24}" stroke="var(--line)"/>`+txt(32,yy,s.rotulo,{size:15,w:600,fill:"var(--muted)"})+txt(330,yy,s.valor+(s.variacao&&!/%/.test(s.valor)?"  "+fmtVar(s.variacao):""),{f:FONT_M,size:15,fill:c2==="down"?"var(--down)":c2==="up"?"var(--up)":"var(--ink)",anchor:"end"})});
+  return g;
+}
+function artBarras(a){
+  let g=grid()+cena(a.tema,400,150,.9);
+  g+=txt(28,44,a.titulo||"",{size:17,w:700,fill:"var(--ink)"});
+  const bs=(a.barras||[]).slice(0,4),mx=Math.max(...bs.map(b=>num(b.valor)))||1,L=28,maxW=W-L-150,top=86,bh=Math.min(54,(H-top-70)/Math.max(1,bs.length)-26);
+  bs.forEach((b,i)=>{const yy=top+i*(bh+34),w=maxW*num(b.valor)/mx,c=b.destaque?"var(--accent)":"var(--muted)";
+    g+=txt(L,yy,b.rotulo,{size:14,w:600,fill:"var(--ink)"});
+    g+=`<rect x="${L}" y="${yy+8}" width="${w}" height="${bh}" rx="5" fill="${c}" fill-opacity="${b.destaque?1:.35}"/>`;
+    g+=txt(L+w+12,yy+8+bh/2+8,(a.prefixo||"")+nice(num(b.valor))+(a.sufixo||""),{f:FONT_M,size:20,fill:"var(--ink)"})});
+  if(a.nota){g+=`<rect x="28" y="${H-56}" width="${a.nota.length*8+28}" height="34" rx="6" fill="var(--signal-soft)"/>`+txt(42,H-34,a.nota,{size:14,w:600,fill:"var(--ink)"})}
+  return g;
+}
+function artCena(a){
+  let g=grid()+cena(a.tema,150,70,1.5).replace('opacity=".22"','opacity=".55"').replace('opacity=".24"','opacity=".55"');
+  if(a.titulo)g+=`<rect x="24" y="24" width="${a.titulo.length*9+28}" height="38" rx="6" fill="var(--ink)"/>`+txt(38,49,a.titulo,{size:16,w:700,fill:"var(--surface)"});
+  return g;
+}
+function desenhar(a){
+  if(!a||typeof a!=="object")a={tipo:"cena",tema:"bolsa"};
+  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${g}</svg>`;
+}
+
+/* Ilustrações dos artigos (dados reais dos artigos) */
+const i6=Math.pow(1.06,1/12)-1,fv=m=>((Math.pow(1+i6,m)-1)/i6)*1000;
+const ARTE_ARTIGO={
+  juros:{tipo:"linha",tema:"juros",titulo:"R$ 1.000 por mês a 6% reais ao ano",fmt:"mil",zero:true,
+    series:[{pontos:[0,5,10,15,20,25,30].map(t=>[t+"a",fv(t*12)])},{pontos:[0,5,10,15,20,25,30].map(t=>[t+"a",t*12000])}],
+    marcas:[[2,"R$ 162 mil"]],destaque:"R$ 974 mil"},
+  financas:{tipo:"barras",tema:"inflacao",titulo:"Para onde vai cada R$ 100 (exemplo)",prefixo:"R$ ",
+    barras:[{rotulo:"Essenciais",valor:55},{rotulo:"Escolhas",valor:30},{rotulo:"Futuro: reserva e investimentos",valor:15,destaque:true}],nota:"Pague o futuro primeiro"},
+  aposentadoria:{tipo:"barras",tema:"imoveis",titulo:"Patrimônio para viver de renda, retirada de 4%",prefixo:"R$ ",sufixo:" mi",
+    barras:[{rotulo:"Renda de R$ 5 mil/mês",valor:1.5},{rotulo:"Renda de R$ 10 mil/mês",valor:3,destaque:true},{rotulo:"Renda de R$ 20 mil/mês",valor:6}],nota:"Renda × 12 ÷ 4%"}
+};
+const pintarArtes=raiz=>raiz.querySelectorAll("[data-art-artigo]").forEach(el=>{el.innerHTML=desenhar(ARTE_ARTIGO[el.dataset.artArtigo])});
+
+/* ---------- Notícias ---------- */
+const N=(DATA.noticias||[]).slice(0,6);
+const cartao=(n,i,big)=>`<button class="story${big?" big":""}" type="button" data-open-noticia="${i}">
+  <div class="art">${desenhar(n.arte)}</div>
+  <span class="kicker">${E(n.editoria)}${n.data?" · "+E(n.data):""}</span>
+  <h3>${E(n.titulo)}</h3><p>${E(n.resumo)}</p><span class="more">Ler notícia completa</span></button>`;
+$("destaques").innerHTML=N.length?cartao(N[0],0,true)+`<div class="side-stack">${N.slice(1,3).map((n,k)=>cartao(n,k+1,false)).join("")}</div>`:`<p class="meta">As notícias do dia aparecem aqui.</p>`;
+$("news-list").innerHTML=N.map((n,i)=>cartao(n,i,false)).join("");
+
+/* ---------- Leitor ---------- */
+const dlg=$("leitor"),corpo=$("leitor-corpo");
+let ultimoFoco=null;
+function abrirLeitor(html,kicker){
+  ultimoFoco=document.activeElement;corpo.innerHTML=html;$("leitor-kicker").textContent=kicker||"";
+  pintarArtes(corpo);corpo.scrollTop=0;
+  if(typeof dlg.showModal==="function"){try{dlg.showModal()}catch(e){dlg.setAttribute("open","");document.body.classList.add("reader-fallback")}}
+  else{dlg.setAttribute("open","");document.body.classList.add("reader-fallback")}
+  $("leitor-fechar").focus();
+}
+function fecharLeitor(){if(dlg.open&&typeof dlg.close==="function")dlg.close();else dlg.removeAttribute("open");document.body.classList.remove("reader-fallback");if(ultimoFoco&&ultimoFoco.focus)ultimoFoco.focus()}
+$("leitor-fechar").addEventListener("click",fecharLeitor);
+dlg.addEventListener("click",e=>{if(e.target===dlg)fecharLeitor()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dlg.hasAttribute("open"))fecharLeitor()});
+corpo.addEventListener("click",e=>{const a=e.target.closest("[data-fecha-leitor]");if(a){fecharLeitor()}});
+function htmlNoticia(n){
+  return `<article class="reading"><span class="kicker">${E(n.editoria)} · ${E(n.data)}</span><h1 id="leitor-titulo">${E(n.titulo)}</h1>
+  <p class="dek">${E(n.resumo)}</p><div class="art">${desenhar(n.arte)}</div>
+  ${(n.texto||[]).map(t=>`<p>${E(t)}</p>`).join("")}
+  ${n.bolso?`<p class="callout"><strong>Para o seu bolso:</strong> ${E(n.bolso)}</p>`:""}
+  <p class="src">${(n.fontes||[]).length>1?"Fontes":"Fonte"}: ${(n.fontes||[]).map(f=>`<a href="${E(f.url)}" target="_blank" rel="noopener">${E(f.nome)}</a>`).join(" · ")}. Resumo escrito pelo Dias Investindo a partir das reportagens citadas.</p></article>`;
+}
+document.addEventListener("click",e=>{
+  const bn=e.target.closest("[data-open-noticia]");
+  if(bn){const n=N[+bn.dataset.openNoticia];if(n)abrirLeitor(htmlNoticia(n),"Notícia");return}
+  const ba=e.target.closest("[data-open-artigo]");
+  if(ba){const t=$("artigo-"+ba.dataset.openArtigo);if(t)abrirLeitor(t.innerHTML,"Artigo");return}
+});
+$("abrir-privacidade").addEventListener("click",()=>abrirLeitor($("politica-privacidade").innerHTML,"Institucional"));
+pintarArtes(document);
+
+/* ---------- Calculadoras ---------- */
+function num2(id){const el=$(id);let s=(el.value||"").trim().replace(/[^\d,.\-]/g,"");
+  if(s.includes(","))s=s.replace(/\./g,"").replace(",",".");else if(/^\d{1,3}(\.\d{3})+$/.test(s))s=s.replace(/\./g,"");
+  const n=parseFloat(s),ok=isFinite(n)&&n>=0,vazio=(el.value||"").trim()==="";el.setAttribute("aria-invalid",ok||vazio?"false":"true");return ok?n:0}
+const mrate=a=>Math.pow(1+a/100,1/12)-1;
+const tempo=m=>{if(m===0)return "Meta já atingida";const y=Math.floor(m/12),r=m%12;return [y?y+(y===1?" ano":" anos"):"",r?r+(r===1?" mês":" meses"):""].filter(Boolean).join(" e ")};
+function simMilhao(ini,ap,tx,meta){
   const i=mrate(tx);let s=ini,m=0;const pts=[[0,ini,ini]];
   if(s>=meta)return{m:0,s,inv:ini,pts};
   while(s<meta&&m<1200){s=s*(1+i)+ap;m++;if(m%12===0)pts.push([m,s,ini+ap*m])}
   if(m%12)pts.push([m,s,ini+ap*m]);
   return{m:s>=meta?m:null,s,inv:ini+ap*m,pts};
 }
-
-function svgArea(svg,pts,opts){
-  const W=640,H=240,L=58,R=12,T=14,B=30;
-  const maxX=pts[pts.length-1][0]||1;
-  let maxY=Math.max(...pts.map(p=>Math.max(p[1],p[2])),opts.line||0)*1.08||1;
-  const x=v=>L+(W-L-R)*v/maxX, y=v=>T+(H-T-B)*(1-v/maxY);
+function grafico(svg,pts,opts){
+  const VW=640,VH=250,L=60,R=14,T=16,B=30;
+  const maxX=Math.max(12,pts[pts.length-1][0]);
+  const maxY=Math.max(...pts.map(p=>Math.max(p[1],p[2])),opts.linha||0)*1.1||1;
+  const x=v=>L+(VW-L-R)*v/maxX,y=v=>T+(VH-T-B)*(1-v/maxY);
   const path=k=>pts.map((p,j)=>(j?"L":"M")+x(p[0]).toFixed(1)+" "+y(p[k]).toFixed(1)).join(" ");
-  const base=` L${x(maxX).toFixed(1)} ${y(0)} L${x(0)} ${y(0)} Z`;
+  const base=` L${x(pts[pts.length-1][0]).toFixed(1)} ${y(0)} L${x(0)} ${y(0)} Z`;
   let g="";
-  for(let t=0;t<=4;t++){const v=maxY*t/4;g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono,monospace">${t?compact(v).replace("R$ ",""):"0"}</text>`}
-  const yrs=maxX/12, step=yrs>30?10:yrs>12?5:yrs>5?2:1;
-  for(let yy=0;yy<=yrs+0.001;yy+=step){g+=`<text x="${x(yy*12)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="Schibsted Grotesk,sans-serif">${opts.age?opts.age+yy:yy+"a"}</text>`}
+  for(let t=0;t<=4;t++){const v=maxY*t/4;g+=`<line x1="${L}" x2="${VW-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="${FONT_M}">${t?compact(v).replace("R$ ",""):"0"}</text>`}
+  const anos=maxX/12,step=anos>40?10:anos>15?5:anos>6?2:1;
+  for(let a=0;a<=anos+1e-9;a+=step){g+=`<text x="${x(a*12)}" y="${VH-8}" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="${FONT_D}">${opts.idade!=null?opts.idade+a:a+(a===1?" ano":" anos")}</text>`}
   g+=`<path d="${path(1)+base}" fill="var(--accent)" fill-opacity=".14"/><path d="${path(1)}" fill="none" stroke="var(--accent)" stroke-width="2.5"/>`;
-  g+=`<path d="${path(2)+base}" fill="var(--muted)" fill-opacity=".22"/><path d="${path(2)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-opacity=".7"/>`;
-  if(opts.line){g+=`<line x1="${L}" x2="${W-R}" y1="${y(opts.line)}" y2="${y(opts.line)}" stroke="var(--signal)" stroke-width="2" stroke-dasharray="6 5"/><text x="${W-R}" y="${y(opts.line)-6}" text-anchor="end" font-size="11" fill="var(--signal)" font-family="Schibsted Grotesk,sans-serif" font-weight="700">${opts.lineLabel}</text>`}
-  const last=pts[pts.length-1];
-  g+=`<circle cx="${x(last[0])}" cy="${y(last[1])}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`;
+  g+=`<path d="${path(2)+base}" fill="var(--muted)" fill-opacity=".2"/><path d="${path(2)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-opacity=".7"/>`;
+  if(opts.linha){g+=`<line x1="${L}" x2="${VW-R}" y1="${y(opts.linha)}" y2="${y(opts.linha)}" stroke="var(--signal)" stroke-width="2" stroke-dasharray="6 5"/><text x="${VW-R}" y="${y(opts.linha)-7}" text-anchor="end" font-size="12" fill="var(--signal)" font-family="${FONT_D}" font-weight="700">${E(opts.rotulo)}</text>`}
+  const u=pts[pts.length-1];g+=`<circle cx="${x(u[0])}" cy="${y(u[1])}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`;
   svg.innerHTML=g;
 }
-
 function runMilhao(){
-  const r=milhao(num("m-ini"),num("m-ap"),num("m-tx"),num("m-meta"));
-  const set=(id,t)=>document.getElementById(id).textContent=t;
-  if(r.m===null){set("m-tempo","mais de 100 anos");set("m-aport","–");set("m-juros","–");set("m-pct","–");document.getElementById("m-chart").innerHTML="";return}
-  const juros=r.s-r.inv;
-  set("m-tempo",tempo(r.m));set("m-aport",brl.format(r.inv));set("m-juros",brl.format(Math.max(0,juros)));set("m-pct",(r.s?Math.max(0,juros)/r.s*100:0).toLocaleString("pt-BR",{maximumFractionDigits:0})+"%");
-  svgArea(document.getElementById("m-chart"),r.pts.length>1?r.pts:[[0,r.s,r.inv],[12,r.s,r.inv]],{line:num("m-meta"),lineLabel:"Meta "+compact(num("m-meta"))});
+  const ini=num2("m-ini"),ap=num2("m-ap"),tx=num2("m-tx"),meta=num2("m-meta");
+  const set=(id,t)=>$(id).textContent=t;
+  if(meta<=0){set("m-tempo","Informe a meta");["m-aport","m-juros","m-pct"].forEach(i=>set(i,"–"));set("m-exp","");$("m-chart").innerHTML="";return}
+  const r=simMilhao(ini,ap,tx,meta);
+  if(r.m===null){set("m-tempo","Mais de 100 anos");set("m-aport","–");set("m-juros","–");set("m-pct","–");
+    set("m-exp",ap===0&&tx===0?"Sem aporte e sem rentabilidade, o patrimônio não cresce. Aumente o aporte ou a rentabilidade.":"Nesse ritmo a meta não é atingida em 100 anos. Experimente aumentar o aporte mensal.");$("m-chart").innerHTML="";return}
+  const juros=Math.max(0,r.s-r.inv);
+  set("m-tempo",tempo(r.m));set("m-aport",brl.format(r.inv));set("m-juros",brl.format(juros));
+  set("m-pct",(r.s?juros/r.s*100:0).toLocaleString("pt-BR",{maximumFractionDigits:0})+"%");
+  set("m-exp",r.m===0?"Você já tem o valor da meta.":`Aportando ${brl.format(ap)} por mês a ${tx.toLocaleString("pt-BR")}% reais ao ano, você chega a ${brl.format(meta)} em ${tempo(r.m)}. Do saldo final, ${brl.format(juros)} vieram dos juros.`);
+  grafico($("m-chart"),r.pts.length>1?r.pts:[[0,r.s,r.inv],[12,r.s,r.inv]],{linha:meta,rotulo:"Meta "+compact(meta)});
 }
 function runMini(){
-  const r=milhao(num("mini-ini"),num("mini-ap"),num("mini-tx"),num("mini-meta"));
-  document.getElementById("mini-out").textContent=r.m===null?"mais de 100 anos":tempo(r.m);
+  const meta=num2("mini-meta");const r=meta>0?simMilhao(num2("mini-ini"),num2("mini-ap"),num2("mini-tx"),meta):{m:null};
+  $("mini-out").textContent=meta<=0?"Informe a meta":r.m===null?"Mais de 100 anos":tempo(r.m);
 }
 function runApos(){
-  const idade=num("a-idade"),apos=num("a-apos"),pat=num("a-pat"),ap=num("a-ap"),renda=num("a-renda"),outras=num("a-outras"),tx=num("a-tx"),ret=num("a-ret");
-  const n=Math.max(0,Math.round((apos-idade)*12)),i=mrate(tx);
+  const idade=Math.round(num2("a-idade")),apos=Math.round(num2("a-apos")),pat=num2("a-pat"),ap=num2("a-ap"),renda=num2("a-renda"),outras=num2("a-outras"),tx=num2("a-tx"),ret=num2("a-ret");
+  const set=(id,t)=>$(id).textContent=t,box=$("a-gap-box");
   const liquida=Math.max(0,renda-outras);
-  const nec=ret>0?liquida*12/(ret/100):0;
-  const g=Math.pow(1+i,n), fvf=i?(g-1)/i:n;
-  const proj=pat*g+ap*fvf;
-  const need=n?Math.max(0,(nec-pat*g)/fvf):Math.max(0,nec-pat);
-  const set=(id,t)=>document.getElementById(id).textContent=t;
+  if(ret<=0){set("a-nec","Informe a retirada");["a-proj","a-gap","a-need"].forEach(i=>set(i,"–"));box.className="res";set("a-exp","A taxa de retirada precisa ser maior que zero. O padrão usado em estudos é 4% ao ano.");$("a-chart").innerHTML="";return}
+  const nec=liquida*12/(ret/100);
+  if(apos<=idade){set("a-nec",brl.format(nec));set("a-proj",brl.format(pat));const gap=pat-nec;box.className="res "+(gap>=0?"ok":"warn");set("a-gap",(gap>=0?"Sobra ":"Falta ")+brl.format(Math.abs(gap)));set("a-need","–");
+    set("a-exp","A idade para viver de renda precisa ser maior que a idade atual para o simulador projetar a acumulação.");$("a-chart").innerHTML="";return}
+  const n=(apos-idade)*12,i=mrate(tx),g=Math.pow(1+i,n),fvf=i?(g-1)/i:n;
+  const proj=pat*g+ap*fvf,need=Math.max(0,(nec-pat*g)/fvf),gap=proj-nec;
   set("a-nec",brl.format(nec));set("a-proj",brl.format(proj));
-  const gap=proj-nec, box=document.getElementById("a-gap-box");
-  box.className="res "+(gap>=0?"ok":"warn");
-  set("a-gap",(gap>=0?"Sobra ":"Falta ")+brl.format(Math.abs(gap)));
-  set("a-need",n?brl.format(need)+"/mês":"–");
-  const pts=[];let s=pat;pts.push([0,s,pat]);
-  for(let m=1;m<=n;m++){s=s*(1+i)+ap;if(m%12===0||m===n)pts.push([m,s,pat+ap*m])}
-  if(pts.length<2)pts.push([12,s,pat]);
-  svgArea(document.getElementById("a-chart"),pts,{line:nec,lineLabel:"Necessário "+compact(nec),age:idade});
+  box.className="res "+(gap>=0?"ok":"warn");set("a-gap",(gap>=0?"Sobra ":"Falta ")+brl.format(Math.abs(gap)));
+  set("a-need",brl.format(need)+"/mês");
+  const rendaGerada=proj*ret/100/12+outras;
+  let s=pat,atinge=null;for(let m=1;m<=Math.max(0,(100-idade)*12);m++){s=s*(1+i)+ap;if(atinge===null&&s>=nec&&nec>0){atinge=m;break}}
+  if(nec===0)set("a-exp","Com as outras rendas informadas, você já cobre a renda desejada.");
+  else set("a-exp",`No ritmo atual, aos ${apos} anos o patrimônio sustentaria uma renda de ${brl.format(rendaGerada)} por mês${outras>0?" (já somando as outras rendas)":""}, contra ${brl.format(renda)} desejados. `+
+    (gap>=0?"Você chega lá com folga.":`Para fechar a conta, o aporte precisa ser de ${brl.format(need)} por mês. `+(atinge?`Mantendo ${brl.format(ap)} por mês, a meta seria atingida aos ${idade+Math.ceil(atinge/12)} anos.`:"")));
+  const pts=[];let s2=pat;pts.push([0,s2,pat]);for(let m=1;m<=n;m++){s2=s2*(1+i)+ap;if(m%12===0||m===n)pts.push([m,s2,pat+ap*m])}
+  grafico($("a-chart"),pts,{linha:nec,rotulo:"Necessário "+compact(nec),idade});
 }
-["m-ini","m-ap","m-tx","m-meta"].forEach(id=>document.getElementById(id).addEventListener("input",runMilhao));
-["mini-ini","mini-ap","mini-tx","mini-meta"].forEach(id=>document.getElementById(id).addEventListener("input",runMini));
-["a-idade","a-apos","a-pat","a-ap","a-renda","a-outras","a-tx","a-ret"].forEach(id=>document.getElementById(id).addEventListener("input",runApos));
+["m-ini","m-ap","m-tx","m-meta"].forEach(id=>$(id).addEventListener("input",runMilhao));
+["mini-ini","mini-ap","mini-tx","mini-meta"].forEach(id=>$(id).addEventListener("input",runMini));
+["a-idade","a-apos","a-pat","a-ap","a-renda","a-outras","a-tx","a-ret"].forEach(id=>$(id).addEventListener("input",runApos));
 runMilhao();runMini();runApos();
+window.__calc={simMilhao,mrate};
 
-/* Conteúdo a partir dos dados */
-const DATA=JSON.parse(document.getElementById("site-data").textContent);
-const E=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const tk=DATA.ticker;
-document.getElementById("ticker").innerHTML=`<span><span class="lbl">Selic</span> ${E(tk.selic)}</span><span><span class="lbl">Ibovespa</span> ${E(tk.ibov)} <span class="${tk.ibovUp?"up":"down"}">${E(tk.ibovVar)}</span></span><span><span class="lbl">Dólar</span> ${E(tk.dolar)} <span class="${tk.dolarUp?"up":"down"}">${E(tk.dolarVar)}</span></span><span class="when">Fechamento de ${E(tk.data)}</span>`;
-document.getElementById("news-updated").textContent="Atualizado em "+DATA.atualizado;
-const N=DATA.noticias;
-const card=(n,big)=>`<a class="story${big?" big":""}" href="#noticias"><div class="art" data-art="n-${E(n.arte)}"></div><span class="kicker">${E(n.editoria)}</span><h3>${E(n.titulo)}</h3>${big?`<p>${E(n.resumo)}</p>`:""}</a>`;
-document.getElementById("destaques").innerHTML=card(N[0],true)+`<div class="side-stack">${N.slice(1,3).map(n=>card(n,false)).join("")}</div>`;
-document.getElementById("news-list").innerHTML=N.map(n=>`<article class="news-item"><div class="art" data-art="n-${E(n.arte)}"></div><div class="body"><span class="kicker">${E(n.editoria)} · ${E(n.data)}</span><h2>${E(n.titulo)}</h2>${n.texto.map(t=>`<p>${E(t)}</p>`).join("")}${n.bolso?`<p class="callout"><strong>Para o seu bolso:</strong> ${E(n.bolso)}</p>`:""}<p class="meta">${n.fontes.length>1?"Fontes":"Fonte"}: ${n.fontes.map(f=>`<a href="${E(f.url)}" target="_blank" rel="noopener">${E(f.nome)}</a>`).join(" · ")}</p></div></article>`).join("");
-
-/* Captura de e-mail */
+/* ---------- Captura de e-mail ---------- */
 const API="https://nkdyvbvbwdqkwvlwfcnr.supabase.co/functions/v1/inscrever-site";
-const live=/(^|\.)diasinvestindo\.com\.br$|\.netlify\.app$/.test(location.hostname);
+const live=/(^|\.)diasinvestindo\.com\.br$|^diasinvestindo-portal\.netlify\.app$|--diasinvestindo-portal\.netlify\.app$/.test(location.hostname);
 let fc=0;
 document.querySelectorAll(".capture-slot").forEach(slot=>{fc++;const id="cap"+fc;
-  slot.outerHTML=`<div class="capture"><div><h3>Receba os próximos artigos por e-mail</h3><p>Notícias que mexem com o seu bolso, novos artigos e atualizações das calculadoras. Sem spam.</p></div>
+  const d=document.createElement("div");d.className="capture";
+  d.innerHTML=`<div><h3>Receba os próximos artigos por e-mail</h3><p>Notícias que mexem com o seu bolso, novos artigos e atualizações das calculadoras. Sem spam.</p></div>
   <form data-origem="${E(slot.dataset.origem||"site")}" novalidate>
-    <label class="hp" for="${id}-site">Site</label><input class="hp" id="${id}-site" name="site" tabindex="-1" autocomplete="off">
+    <label class="hp" for="${id}-site">Não preencha</label><input class="hp" id="${id}-site" name="site" tabindex="-1" autocomplete="off">
     <input id="${id}-nome" name="nome" placeholder="Seu nome" autocomplete="given-name" aria-label="Seu nome">
     <input id="${id}-email" name="email" type="email" placeholder="Seu melhor e-mail" autocomplete="email" required aria-label="Seu e-mail">
     <button class="btn" type="submit">Quero receber</button>
     <p class="msg" role="status"></p>
-    <small>Você pode sair da lista quando quiser.</small>
-  </form></div>`});
+    <small>Você pode sair quando quiser. Veja a <button type="button" class="link-priv" style="background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit">Política de Privacidade</button>.</small>
+  </form>`;slot.replaceWith(d)});
+document.querySelectorAll(".link-priv").forEach(b=>b.addEventListener("click",()=>abrirLeitor($("politica-privacidade").innerHTML,"Institucional")));
 document.querySelectorAll(".capture form").forEach(f=>f.addEventListener("submit",async ev=>{
-  ev.preventDefault();const msg=f.querySelector(".msg"),btn=f.querySelector("button");
-  const email=f.email.value.trim(),nome=f.nome.value.trim();
-  msg.className="msg";
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){msg.classList.add("err");msg.textContent="Confira o e-mail digitado.";f.email.focus();return}
+  ev.preventDefault();const msg=f.querySelector(".msg"),btn=f.querySelector("button[type=submit]");
+  const q=n=>f.querySelector(`[name="${n}"]`);const email=q("email").value.trim(),nome=q("nome").value.trim();msg.className="msg";
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){msg.classList.add("err");msg.textContent="Confira o e-mail digitado.";q("email").focus();return}
   if(!live){msg.classList.add("err");msg.textContent="Esta é a prévia: o cadastro funciona no site publicado em diasinvestindo.com.br.";return}
   btn.disabled=true;btn.textContent="Enviando…";
-  try{const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,nome,site:f.site.value,origem:f.dataset.origem})});
+  try{const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,nome,site:q("site").value,origem:f.dataset.origem})});
     const j=await r.json().catch(()=>({}));
     if(r.ok&&j.ok){msg.classList.add("ok");msg.textContent=j.jaInscrito?"Você já estava na lista. Obrigado!":"Pronto! Confira a sua caixa de entrada.";f.reset()}
     else{msg.classList.add("err");msg.textContent=j.erro||"Não foi possível concluir agora. Tente de novo em instantes."}
@@ -656,80 +968,39 @@ document.querySelectorAll(".capture form").forEach(f=>f.addEventListener("submit
   btn.disabled=false;btn.textContent="Quero receber";
 }));
 
-/* Ilustrações */
-const ART={
- "n-juros"(){const d=DATA.selicHist,last=d[d.length-1];
-   const vals=d.map(e=>e[1]),lo=Math.floor(Math.min(...vals)*2)/2-0.25,hi=Math.ceil(Math.max(...vals)*2)/2+0.2,W=640,H=360,L=60,R=30,T=60,B=50,x=j=>L+(W-L-R)*j/(d.length-1),y=v=>T+(H-T-B)*(hi-v)/(hi-lo);
-   let p="M"+x(0)+" "+y(d[0][1]);d.forEach((e,j)=>{if(j){p+=` L${x(j)} ${y(d[j-1][1])} L${x(j)} ${y(e[1])}`}});
-   let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/><text x="${L}" y="36" font-size="15" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">Selic em 2026, % ao ano</text>`;
-   [...Array(Math.round((hi-lo)/0.5)+1)].map((_,k)=>Math.ceil(lo*2)/2+k*0.5).filter(v=>v<=hi).forEach(v=>g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-10}" y="${y(v)+4}" text-anchor="end" font-size="13" fill="var(--muted)" font-family="IBM Plex Mono,monospace">${v.toLocaleString("pt-BR")}</text>`);
-   d.forEach((e,j)=>g+=`<text x="${x(j)}" y="${H-20}" text-anchor="middle" font-size="13" fill="var(--muted)" font-family="Schibsted Grotesk,sans-serif">${e[0]}</text>`);
-   g+=`<path d="${p}" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linejoin="round"/><circle cx="${x(d.length-1)}" cy="${y(last[1])}" r="8" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/><text x="${x(d.length-1)-12}" y="${y(last[1])-16}" text-anchor="end" font-size="15" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">${last[1].toLocaleString("pt-BR")}% em ${last[0]}</text>`;
-   return [W,H,g]},
- "n-mercado"(){const tk=DATA.ticker;const W=640,H=360;let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/>`;
-   for(let k=0;k<16;k++){const h=40+((k*37)%90)+(k>9?-(k-9)*12:k*6),xx=50+k*36,top=H-60-h;const dn=k%3!==1||k>9;
-     g+=`<line x1="${xx+10}" x2="${xx+10}" y1="${top-14}" y2="${H-46}" stroke="${dn?"var(--down)":"var(--up)"}" stroke-width="2"/><rect x="${xx}" y="${top}" width="20" height="${Math.max(18,h*.55)}" rx="2" fill="${dn?"var(--down)":"var(--up)"}" fill-opacity="${dn?.85:.75}"/>`}
-   g+=`<text x="50" y="50" font-size="40" font-weight="800" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">${tk.ibov}</text><text x="50" y="80" font-size="17" fill="${tk.ibovUp?"var(--up)":"var(--down)"}" font-family="IBM Plex Mono,monospace">${tk.ibovVar} · dólar ${tk.dolar}</text>`;return [W,H,g]},
- "n-ia"(){const W=640,H=360;let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/>`;const pts=[];
-   for(let r=0;r<5;r++)for(let c=0;c<9;c++)pts.push([70+c*62+(r%2)*31,70+r*58]);
-   pts.forEach((a,j)=>{pts.forEach((b,k)=>{if(k>j&&Math.hypot(a[0]-b[0],a[1]-b[1])<75&&(j*7+k)%3)g+=`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--line)" stroke-width="1.5"/>`})});
-   pts.forEach((a,j)=>g+=`<circle cx="${a[0]}" cy="${a[1]}" r="${j%11===3?9:5}" fill="${j%11===3?"var(--accent)":"var(--muted)"}" fill-opacity="${j%11===3?1:.5}"/>`);
-   g+=`<rect x="40" y="${H-62}" width="210" height="40" rx="6" fill="var(--paper)"/><text x="56" y="${H-36}" font-size="16" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">Inteligência Artificial</text>`;return [W,H,g]},
- "n-economia"(){const W=640,H=360;let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/>`;
-   for(let k=0;k<12;k++){const h=60+Math.abs(Math.sin(k*1.3))*150;g+=`<rect x="${50+k*46}" y="${H-50-h}" width="30" height="${h}" rx="3" fill="var(--accent)" fill-opacity="${k===11?1:.25+k*.04}"/>`}
-   g+=`<line x1="40" x2="${W-40}" y1="${H-50}" y2="${H-50}" stroke="var(--line)"/><text x="50" y="50" font-size="17" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">Economia</text>`;return [W,H,g]},
- juros(){const W=640,H=360,L=50,R=30,T=40,B=50,i=Math.pow(1.06,1/12)-1,fv=m=>((Math.pow(1+i,m)-1)/i)*1000,mx=fv(360)*1.05;
-   const x=m=>L+(W-L-R)*m/360,y=v=>T+(H-T-B)*(1-v/mx);let a="",b="";
-   for(let m=0;m<=360;m+=6){a+=(m?"L":"M")+x(m).toFixed(1)+" "+y(fv(m)).toFixed(1);b+=(m?"L":"M")+x(m).toFixed(1)+" "+y(1000*m).toFixed(1)}
-   let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/><path d="${a} L${x(360)} ${y(0)} L${x(0)} ${y(0)}Z" fill="var(--accent)" fill-opacity=".12"/><path d="${a}" fill="none" stroke="var(--accent)" stroke-width="4"/><path d="${b}" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-dasharray="7 6"/>`;
-   [[120,"162 mil"],[360,"974 mil"]].forEach(([m,t])=>g+=`<circle cx="${x(m)}" cy="${y(fv(m))}" r="7" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/><text x="${x(m)-12}" y="${y(fv(m))-14}" text-anchor="end" font-size="16" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">R$ ${t}</text>`);
-   [0,10,20,30].forEach(t=>g+=`<text x="${x(t*12)}" y="${H-20}" text-anchor="middle" font-size="13" fill="var(--muted)" font-family="Schibsted Grotesk,sans-serif">${t} anos</text>`);
-   g+=`<text x="${x(360)-4}" y="${y(360000)+24}" text-anchor="end" font-size="13" fill="var(--muted)" font-family="Schibsted Grotesk,sans-serif">aportado: R$ 360 mil</text>`;return [W,H,g]},
- financas(){const W=640,H=360,cats=[["Essenciais",55,"var(--muted)"],["Escolhas",30,"var(--accent)"],["Futuro",15,"var(--signal)"]];
-   let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/><text x="50" y="56" font-size="17" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">Para onde vai cada R$ 100</text>`;let xx=50;
-   cats.forEach(([n,p,c])=>{const w=(W-100)*p/100;g+=`<rect x="${xx}" y="100" width="${w-6}" height="120" rx="4" fill="${c}" fill-opacity="${c==="var(--muted)"?.35:.9}"/><text x="${xx}" y="256" font-size="16" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">${n}</text><text x="${xx}" y="282" font-size="15" fill="var(--muted)" font-family="IBM Plex Mono,monospace">R$ ${p}</text>`;xx+=w});
-   g+=`<text x="50" y="${H-30}" font-size="13" fill="var(--muted)" font-family="Schibsted Grotesk,sans-serif">Exemplo ilustrativo de divisão do orçamento</text>`;return [W,H,g]},
- aposentadoria(){const W=640,H=360,L=50,R=30,T=50,B=50;let a="",s=100,top=0;const pts=[];
-   for(let t=0;t<=50;t++){if(t<=25)s=s*1.05+30;else s=s*1.05-95;pts.push([t,Math.max(0,s)]);top=Math.max(top,s)}
-   const x=t=>L+(W-L-R)*t/50,y=v=>T+(H-T-B)*(1-v/(top*1.1));pts.forEach((p,j)=>a+=(j?"L":"M")+x(p[0]).toFixed(1)+" "+y(p[1]).toFixed(1));
-   let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/><rect x="${x(25)}" y="${T}" width="${x(50)-x(25)}" height="${H-T-B}" fill="var(--signal)" fill-opacity=".1"/>`;
-   g+=`<path d="${a} L${x(50)} ${y(0)} L${x(0)} ${y(0)}Z" fill="var(--accent)" fill-opacity=".14"/><path d="${a}" fill="none" stroke="var(--accent)" stroke-width="4"/>`;
-   g+=`<text x="${x(2)}" y="${T+22}" font-size="15" font-weight="700" fill="var(--ink)" font-family="Schibsted Grotesk,sans-serif">Acumulação</text><text x="${x(27)}" y="${T+22}" font-size="15" font-weight="700" fill="var(--signal)" font-family="Schibsted Grotesk,sans-serif">Viver de renda</text>`;
-   g+=`<line x1="${L}" x2="${W-R}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)"/><text x="${W-R}" y="${H-20}" text-anchor="end" font-size="13" fill="var(--muted)" font-family="Schibsted Grotesk,sans-serif">tempo →</text>`;return [W,H,g]}
-};
-document.querySelectorAll("[data-art]").forEach(el=>{const f=ART[el.dataset.art];if(!f)return;const[W,H,g]=f();
-  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${g}</svg>`});
-
-/* AdSense: preencha após a aprovação. Enquanto vazio, os espaços mostram "Sua marca aqui". */
-const ADSENSE={client:"",slots:{faixa:"",lateral:""}};
-if(ADSENSE.client&&/^ca-pub-\d+$/.test(ADSENSE.client)){
-  const sc=document.createElement("script");sc.async=true;sc.crossOrigin="anonymous";
-  sc.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+ADSENSE.client;document.head.appendChild(sc);
+/* ---------- AdSense: preencha após a aprovação ---------- */
+/* O script do AdSense já está no <head>. Para usar os espaços fixos, crie os blocos no AdSense e preencha os IDs abaixo. */
+const ADSENSE={client:"ca-pub-2224422141615380",slots:{faixa:"",lateral:""}};
+if(live&&Object.values(ADSENSE.slots).some(Boolean)){
   document.querySelectorAll("[data-ad-slot-name]").forEach(el=>{const id=ADSENSE.slots[el.dataset.adSlotName];if(!id)return;
     el.innerHTML=`<ins class="adsbygoogle ad-unit" data-ad-client="${ADSENSE.client}" data-ad-slot="${id}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
-    el.style.backgroundImage="none";el.style.borderStyle="solid";
-    try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
+    el.style.backgroundImage="none";try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
 }
-const cb=document.getElementById("copiar-email");
-if(cb)cb.addEventListener("click",async()=>{const t=document.getElementById("contato-email").textContent;
-  try{await navigator.clipboard.writeText(t);cb.textContent="Copiado"}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById("contato-email"));const sel=getSelection();sel.removeAllRanges();sel.addRange(r);cb.textContent="Selecionado, use Copiar"}
-  setTimeout(()=>cb.textContent="Copiar e-mail",2500)});
 
-/* Navegação por hash */
-const views=[...document.querySelectorAll("[data-view]")];
-const anchorsIn={"calc-milhao":"calculadoras","calc-aposentadoria":"calculadoras"};
-function route(){
-  const h=(location.hash||"#inicio").slice(1);
-  const v=views.find(s=>s.dataset.view===h)?h:(anchorsIn[h]||"inicio");
-  views.forEach(s=>s.hidden=s.dataset.view!==v);
-  const navKey=v;
-  document.querySelectorAll("nav.tabs a").forEach(a=>{a.toggleAttribute("aria-current",a.getAttribute("href")==="#"+navKey);if(a.hasAttribute("aria-current"))a.setAttribute("aria-current","page")});
-  const target=anchorsIn[h]?document.getElementById(h):null;
-  if(target)target.scrollIntoView({block:"start"});else window.scrollTo(0,0);
+/* ---------- Contato ---------- */
+$("copiar-email").addEventListener("click",async()=>{const b=$("copiar-email"),t=$("contato-email").textContent;
+  try{await navigator.clipboard.writeText(t);b.textContent="Copiado"}catch(e){const r=document.createRange();r.selectNodeContents($("contato-email"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selecionado"}
+  setTimeout(()=>b.textContent="Copiar",2500)});
+
+/* ---------- Menu: destaca a seção visível ---------- */
+const links=[...document.querySelectorAll("nav.tabs a")];
+const secoes=links.map(a=>document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+const header=document.querySelector("header.site");
+const ajustaAltura=()=>document.documentElement.style.setProperty("--header-h",header.offsetHeight+"px");
+ajustaAltura();addEventListener("resize",ajustaAltura);
+function marcar(){
+  const lim=header.offsetHeight+40;let atual=secoes[0];
+  for(const s of secoes){if(s.getBoundingClientRect().top-lim<=0)atual=s}
+  if((innerHeight+scrollY)>=document.documentElement.scrollHeight-4)atual=secoes[secoes.length-1];
+  links.forEach(a=>{const on=a.getAttribute("href")==="#"+atual.id;if(on)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");
+    if(on&&a.scrollIntoView&&nav.scrollWidth>nav.clientWidth){const r=a.getBoundingClientRect(),nr=nav.getBoundingClientRect();if(r.left<nr.left||r.right>nr.right)nav.scrollLeft+=r.left-nr.left-16}});
 }
-addEventListener("hashchange",route);route();
+const nav=document.querySelector("nav.tabs");
+let raf=0;addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;marcar()})},{passive:true});
+marcar();
+/* Ao abrir com âncora (ex.: #calc-aposentadoria vindo do e-mail), reposiciona depois de montar o conteúdo */
+if(location.hash.length>1){const alvo=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(alvo)setTimeout(()=>alvo.scrollIntoView({block:"start"}),60)}
 })();
 </script>
-
 </body>
 </html>

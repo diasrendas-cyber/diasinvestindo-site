@@ -1,0 +1,68 @@
+# Dias Investindo (diasinvestindo.com.br)
+
+Site de página única publicado pela Netlify a cada push na branch `main`.
+
+## Arquivos
+
+- `index.html`: o site inteiro (HTML, CSS, JavaScript e os dados das notícias).
+- `ads.txt`: autorização do Google AdSense (editor `pub-2224422141615380`).
+- `netlify.toml`: configuração de publicação.
+- `tools/validar.py`: valida o bloco de notícias antes de publicar.
+- `tools/preview.py`: gera a versão de prévia para o artifact do Claude.
+
+## Atualização diária das notícias
+
+A tarefa agendada altera **somente** o bloco
+`<script type="application/json" id="site-data">` do `index.html`.
+
+```json
+{
+  "atualizado": "dd/mm/aaaa",
+  "ticker": {
+    "selic": "13,75%",
+    "ibov": "166.191", "ibovVar": "-0,82%",
+    "dolar": "R$ 5,489", "dolarVar": "+0,67%",
+    "data": "dd/mm/aaaa"
+  },
+  "noticias": [
+    {
+      "editoria": "Juros | Mercados | Economia | Inteligência Artificial | Produtividade | Negócios",
+      "data": "dd/mm/aaaa",
+      "titulo": "Manchete com verbo e fato principal",
+      "resumo": "Uma frase que explica a notícia.",
+      "texto": ["Parágrafo 1: o fato.", "Parágrafo 2: causas e contexto.", "Parágrafo 3: próximos passos e consequências."],
+      "bolso": "Opcional: uma frase sobre o impacto no bolso do leitor, sem recomendação de investimento.",
+      "arte": { "...": "ver abaixo" },
+      "fontes": [{ "nome": "Veículo", "url": "https://endereço-da-matéria" }]
+    }
+  ]
+}
+```
+
+Regras: exatamente 3 notícias; `texto` com exatamente 3 parágrafos de pelo menos 200 caracteres cada,
+escritos com palavras próprias (nunca copiar trechos das fontes); variações sempre com sinal (`+0,67%`, `-0,82%`).
+
+### Ilustração (`arte`) de cada notícia
+
+A ilustração é desenhada pelo site a partir dos dados da própria notícia. Escolha o tipo que melhor mostra o fato:
+
+| tipo | quando usar | campos |
+|---|---|---|
+| `linha` | evolução no tempo (juros, inflação, preço) | `titulo`, `pontos: [["rótulo", número], ...]`, opcionais `degraus: true`, `destaque: "texto curto"` |
+| `indicador` | um número do dia (índice, cotação, PIB) | `rotulo`, `valor` (texto), `variacao` (`"+1,2%"`), opcional `secundarios: [{rotulo, valor, variacao}]` (até 2) |
+| `barras` | comparação de valores | `titulo`, `barras: [{rotulo, valor (número), destaque?: true}]` (1 a 4), opcionais `prefixo`, `sufixo`, `nota` |
+| `cena` | notícia sem número central | `titulo` curto (opcional) |
+
+Todos os tipos levam `tema`, o desenho de fundo:
+`juros`, `fiscal`, `ia`, `bolsa`, `cambio`, `inflacao`, `energia`, `tecnologia`, `imoveis`, `emprego`.
+
+Use apenas números confirmados nas fontes.
+
+### Passos
+
+```
+python3 tools/validar.py index.html      # precisa terminar com OK
+git diff --stat                           # só index.html pode mudar
+git commit -am "Notícias de dd/mm/aaaa" && git push origin main
+python3 tools/preview.py index.html /tmp/preview.html   # para republicar a prévia no Claude
+```
