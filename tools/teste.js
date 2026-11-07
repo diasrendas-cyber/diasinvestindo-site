@@ -38,7 +38,7 @@ check($("ticker").querySelectorAll(".up,.down").length >= 1, "cores da régua po
 
 // Notícias
 check(d.querySelectorAll("#destaques [data-open-noticia]").length === 3, "3 destaques");
-check(d.querySelectorAll("#news-list [data-open-noticia]").length === 3, "3 notícias na seção");
+check(d.querySelectorAll("#news-list [data-open-noticia]").length === Math.min(10, JSON.parse(d.getElementById("site-data").textContent).noticias.length), "notícias na seção (até 10)");
 d.querySelectorAll("#news-list .art svg").forEach((s, i) => check(s.querySelectorAll("path,rect,text").length > 10, "arte rica notícia " + i));
 DADOS.noticias.forEach((n, i) => {
   const svg = d.querySelectorAll("#news-list .art svg")[i].textContent;
