@@ -627,7 +627,7 @@ function runApos(){
   let s=pat,atinge=null;for(let m=1;m<=Math.max(0,(100-idade)*12);m++){s=s*(1+i)+ap;if(atinge===null&&s>=nec&&nec>0){atinge=m;break}}
   if(nec===0)set("a-exp","Com as outras rendas informadas, você já cobre a renda desejada.");
   else set("a-exp",`No ritmo atual, aos ${apos} anos o patrimônio sustentaria uma renda de ${brl.format(rendaGerada)} por mês${outras>0?" (já somando as outras rendas)":""}, contra ${brl.format(renda)} desejados. `+
-    (gap>=0?"Você chega lá com folga.":`Para fechar a conta, o aporte precisa ser de ${brl.format(need)} por mês. `+(atinge?`Mantendo ${brl.format(ap)} por mês, a meta seria atingida aos ${idade+Math.ceil(atinge/12)} anos.`:"")));
+    (gap>=0?"Você chega lá com folga.":`Para fechar a conta, o aporte precisa ser de ${brl.format(need)} por mês. `+(atinge?`Mantendo ${brl.format(ap)} por mês, a meta seria atingida em ${Math.floor(atinge/12)} anos e ${atinge%12} ${atinge%12===1?"mês":"meses"}, aos ${idade+Math.floor(atinge/12)} anos de idade.`:"")));
   const pts=[];let s2=pat;pts.push([0,s2,pat]);for(let m=1;m<=n;m++){s2=s2*(1+i)+ap;if(m%12===0||m===n)pts.push([m,s2,pat+ap*m])}
   grafico($("a-chart"),pts,{linha:nec,rotulo:"Necessário "+compact(nec),idade});
 }

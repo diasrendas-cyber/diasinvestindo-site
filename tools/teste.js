@@ -131,7 +131,9 @@ const proj = 100000 * g + 2000 * fvf, need = (3000000 - 100000 * g) / fvf;
 check(Math.abs(brlN(txt("a-proj")) - proj) < 2, "projetado confere", txt("a-proj") + " vs " + Math.round(proj));
 check(Math.abs(brlN(txt("a-need")) - need) < 2, "aporte necessário confere", txt("a-need") + " vs " + Math.round(need));
 check(/Falta/.test(txt("a-gap-lbl")) && $("a-gap-box").classList.contains("warn"), "diferença negativa em vermelho");
-check(/aos \d+ anos/.test(txt("a-exp")), "explica idade de atingir", txt("a-exp"));
+{ let sm = 100000, mm = 0; while (sm < 3000000) { sm = sm * (1 + i5) + 2000; mm++; }
+  const esperado = `em ${Math.floor(mm / 12)} anos e ${mm % 12} meses, aos ${40 + Math.floor(mm / 12)} anos de idade`;
+  check(txt("a-exp").includes(esperado), "idade em que atinge a meta (sem arredondar para cima)", txt("a-exp") + " | esperado: " + esperado); }
 setv("a-outras", "4.000");
 check(brlN(txt("a-nec")) === 1800000, "outras rendas reduzem (6k×12÷4%)", txt("a-nec"));
 setv("a-outras", "12.000"); check(/já cobre/.test(txt("a-exp")), "outras rendas cobrem tudo");
