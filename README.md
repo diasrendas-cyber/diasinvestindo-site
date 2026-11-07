@@ -18,6 +18,7 @@ O portal trata de finanças: **um número errado é pior do que nenhum número.*
 2. **Todo número** (texto, régua e ilustração) precisa estar confirmado em **duas fontes independentes**
    ou em **uma fonte oficial** (Banco Central, IBGE, B3, Tesouro, CVM, comunicado da própria empresa).
    - Selic e decisões do Copom: bcb.gov.br (comunicados do Copom).
+   - Quando duas fontes divergirem, busque uma terceira; publique o valor confirmado por pelo menos duas e registre a divergência.
    - Inflação (IPCA): IBGE. Câmbio Ptax: Banco Central. Ibovespa: B3 ou fechamento publicado por InfoMoney/Valor.
 3. **Séries no tempo** (ex.: a Selic mês a mês) são montadas a partir das decisões oficiais, ponto a ponto.
    Não preencha meses por estimativa; o valor de cada mês é o vigente no fim do mês.
