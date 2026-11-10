@@ -31,7 +31,7 @@ links.forEach(h => check(!!d.getElementById(h.slice(1)), "seção existe " + h))
 check(d.querySelectorAll("section[hidden]").length === 0, "nenhuma seção escondida (página única)");
 ["#contato", "#calc-milhao", "#calc-aposentadoria", "#conversor", "#calculadoras"].forEach(h => check(!!d.querySelector(h), "âncora " + h));
 check(links.includes("#ferramentas") && !links.includes("#calculadoras"), "aba Ferramentas no lugar de Calculadoras");
-check(d.querySelector(".logo small").textContent.trim()==="em você" && /Viva os dias investindo em você/.test(d.title), "slogan no cabeçalho e no título");
+check(d.querySelector(".logo small").textContent.trim()==="em você" && d.title === "Finanças Pessoais e Investimentos | DiasInvestindo", "slogan no cabeçalho e título de SEO");
 check(!d.querySelector("#inicio .author") && d.querySelector("#sobre .creds"), "apresentação do autor só no Sobre");
 check([...d.querySelectorAll("#conteudo > section")].pop().id === "sobre", "Sobre é a última seção da página");
 const intro = d.querySelector(".intro"), ordem = [...intro.children].map(e => e.tagName + (e.id ? "#" + e.id : ""));
