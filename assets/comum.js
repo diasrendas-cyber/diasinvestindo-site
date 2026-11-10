@@ -32,13 +32,15 @@ document.querySelectorAll(".capture form").forEach(f=>f.addEventListener("submit
   btn.disabled=false;btn.textContent="Quero receber";
 }));
 
-/* ---------- AdSense: preencha após a aprovação ---------- */
-/* O script do AdSense já está no <head>. Para usar os espaços fixos, crie os blocos no AdSense e preencha os IDs abaixo. */
-const ADSENSE={client:"ca-pub-2224422141615380",slots:{faixa:"",lateral:""}};
-if(live&&Object.values(ADSENSE.slots).some(Boolean)){
-  document.querySelectorAll("[data-ad-slot-name]").forEach(el=>{const id=ADSENSE.slots[el.dataset.adSlotName];if(!id)return;
-    el.innerHTML=`<ins class="adsbygoogle ad-unit" data-ad-client="${ADSENSE.client}" data-ad-slot="${id}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
-    el.style.backgroundImage="none";try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
+/* ---------- AdSense: blocos fixos nos espaços de patrocínio ---------- */
+/* Blocos criados no AdSense em 10/11/2026: "Faixa topo 970x90" e "Lateral 160x600".
+   O aviso "Sua marca aqui" fica visível até o anúncio carregar; sem anúncio, ele continua no lugar. */
+const ADSENSE={client:"ca-pub-2224422141615380",slots:{faixa:{id:"8353558655",formato:"horizontal"},lateral:{id:"7385972248",formato:"vertical"}}};
+if(live){
+  document.querySelectorAll("[data-ad-slot-name]").forEach(el=>{const s=ADSENSE.slots[el.dataset.adSlotName];if(!s||!s.id)return;
+    const ins=document.createElement("ins");ins.className="adsbygoogle ad-unit";
+    ins.dataset.adClient=ADSENSE.client;ins.dataset.adSlot=s.id;ins.dataset.adFormat=s.formato;ins.dataset.fullWidthResponsive="false";
+    el.classList.add("has-ad");el.appendChild(ins);try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
 }
 
 /* ---------- Bitcoin ao vivo na régua (CoinGecko). Sem resposta, o campo fica oculto: nunca mostra preço velho ---------- */

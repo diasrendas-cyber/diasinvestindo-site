@@ -12,6 +12,7 @@ Portal publicado pelo GitHub Pages (repositório diasrendas-cyber/diasinvestindo
 - Cotações ao vivo, consultadas pelo navegador do leitor e sempre com a fonte exibida: Bitcoin na régua (CoinGecko; se não responder, o campo some) e o Conversor de Moedas (PTAX de venda do Banco Central). Nenhuma delas é gravada em `noticias.json`.
 - `verificacao/AAAA-MM-DD.md`: registro de checagem de cada edição.
 - `ads.txt`: autorização do Google AdSense (editor `pub-2224422141615380`).
+- Blocos de anúncio fixos (AdSense): faixa do topo = bloco `8353558655` ("Faixa topo 970x90"); coluna lateral = bloco `7385972248` ("Lateral 160x600"). IDs em `assets/comum.js` (constante `ADSENSE`); os espaços são marcados com `data-ad-slot-name="faixa"` e `"lateral"`. O quadro "Apoio/Anuncie" (160 × 160) continua reservado para patrocínio direto.
 - `tools/validar.py` (valida `noticias.json`), `tools/gerar.py` (gera as páginas), `tools/preview.py` (prévia autocontida), `tools/teste.js` (testes; `npm install && npm test`).
 
 ## Regra de ouro: nenhum dado sem checagem
