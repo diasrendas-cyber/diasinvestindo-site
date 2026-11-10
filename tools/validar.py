@@ -19,7 +19,7 @@ ns = d.get("noticias", [])
 if len(ns) < 3: erros.append(f"são esperadas pelo menos 3 notícias, há {len(ns)}")
 TIPOS = {"linha", "indicador", "barras", "comparacao", "faixa", "rosca", "cena"}
 COM_DADOS = TIPOS - {"cena"}
-TEMAS = {"juros", "fiscal", "ia", "bolsa", "cambio", "inflacao", "energia", "tecnologia", "imoveis", "emprego", "cripto", "tesouro"}
+TEMAS = {"juros", "fiscal", "ia", "bolsa", "cambio", "inflacao", "energia", "tecnologia", "imoveis", "emprego", "cripto", "tesouro", "planilha"}
 vistos = set()
 for i, n in enumerate(ns, 1):
     p = f"notícia {i} ({n.get('titulo', '')[:40]}…)"

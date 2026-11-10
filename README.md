@@ -85,7 +85,7 @@ A ilustração é desenhada pelo site a partir dos dados da própria notícia. E
 | `imagem` | só em artigos: imagem pronta em 16:9 salva em `assets/img/` (ex.: logomarca do Tesouro Direto no artigo de Tesouro Direto) | `src` (`/assets/img/arquivo.png`), `alt`, `tema` (usado se a imagem falhar) |
 
 Todos os tipos levam `tema`, o desenho de fundo:
-`juros`, `fiscal`, `ia`, `bolsa`, `cambio`, `inflacao`, `energia`, `tecnologia`, `imoveis`, `emprego`, `cripto`, `tesouro` (título público: certificado, cupons e moedas).
+`juros`, `fiscal`, `ia`, `bolsa`, `cambio`, `inflacao`, `energia`, `tecnologia`, `imoveis`, `emprego`, `cripto`, `tesouro` (título público: certificado, cupons e moedas), `planilha` (planilha com setas de entrada e saída de dinheiro).
 
 **Varie as ilustrações** (o validador confere): na mesma edição, cada notícia usa um tipo diferente;
 a notícia de abertura não repete o tipo da abertura da edição anterior; e no máximo 2 tipos se repetem de um dia para o outro.

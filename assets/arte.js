@@ -28,6 +28,11 @@ const CENAS={
     <circle cx="140" cy="100" r="18"/><path d="M131 100l6 6 12-13"/><path d="M36 54h96M36 72h70M36 90h56"/>
     <path d="M180 20h46v120h-46" stroke-dasharray="6 5"/><path d="M190 46h26M190 80h26M190 114h26"/>
     ${[0,1,2,3].map(i=>`<ellipse cx="236" cy="${166-i*14}" rx="26" ry="8" fill="var(--surface)"/><path d="M210 ${166-i*14}v8a26 8 0 0 0 52 0v-8"/>`).join("")}</g>`},
+  planilha(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <rect x="10" y="10" width="150" height="160" rx="8"/><path d="M10 42h150M10 74h150M10 106h150M10 138h150M52 10v160M106 10v160"/>
+    <path d="M10 18a8 8 0 0 1 8-8h134a8 8 0 0 1 8 8v24H10z" fill="var(--accent)" fill-opacity=".25"/>
+    <circle cx="215" cy="52" r="30"/><path d="M215 66V38M203 50l12-12 12 12"/>
+    <circle cx="215" cy="132" r="30"/><path d="M215 118v28M203 134l12 12 12-12"/></g>`},
   ia(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".24">
     <rect x="70" y="50" width="100" height="100" rx="10"/><rect x="95" y="75" width="50" height="50" rx="4"/>
     ${[0,1,2,3].map(i=>`<path d="M${84+i*24} 50V20M${84+i*24} 150v30M70 ${64+i*24}H38M170 ${64+i*24}h32"/><circle cx="${84+i*24}" cy="16" r="4"/><circle cx="${84+i*24}" cy="184" r="4"/><circle cx="34" cy="${64+i*24}" r="4"/><circle cx="206" cy="${64+i*24}" r="4"/>`).join("")}</g>`},
