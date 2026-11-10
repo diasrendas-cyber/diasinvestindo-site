@@ -8,7 +8,7 @@ resumo: Sem medir, não dá para controlar. O método de 30 dias que organiza o 
 linha_fina: Em gestão de risco, ninguém controla o que não mede. Com o orçamento da casa é igual.
 calculadora: /#calc-aposentadoria
 video:
-arte: {"tipo":"cena","tema":"inflacao","titulo":"Essenciais · Escolhas · Futuro"}
+arte: {"tipo": "planilha", "tema": "inflacao", "titulo": "Exemplo de planilha do mês: receitas e despesas", "colunas": ["Item", "Grupo", "Valor"], "linhas": [{"item": "Salário", "grupo": "Receita", "valor": 5000, "tipo": "receita"}, {"item": "Moradia", "grupo": "Essencial", "valor": 1500, "tipo": "despesa"}, {"item": "Alimentação", "grupo": "Essencial", "valor": 1000, "tipo": "despesa"}, {"item": "Transporte e saúde", "grupo": "Essencial", "valor": 700, "tipo": "despesa"}, {"item": "Lazer e assinaturas", "grupo": "Escolha", "valor": 650, "tipo": "despesa"}, {"item": "Reserva e investimentos", "grupo": "Futuro", "valor": 750, "tipo": "despesa"}], "saldo": "Sobra do mês"}
 ---
 ## O problema: o dinheiro some e ninguém sabe onde
 

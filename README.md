@@ -81,6 +81,7 @@ A ilustração é desenhada pelo site a partir dos dados da própria notícia. E
 | `faixa` | um valor dentro de uma faixa de referência (ex.: inflação e o intervalo da meta) | `titulo`, `valor` (número), `min`, `max`, opcionais `faixa_min`, `faixa_max`, `alvo`, `rotulo_alvo`, `rotulo_faixa`, `rotulo`, `sufixo`, `decimais`, `nota` |
 | `rosca` | partes de um todo (até 4) | `titulo`, `partes: [{rotulo, valor (número)}]` (2 a 4), opcionais `sufixo`, `centro` |
 | `cena` | notícia sem número central | `titulo` curto (opcional) |
+| `planilha` | só em artigos: planilha de receitas e despesas; a última linha (saldo) é calculada automaticamente | `titulo`, `linhas: [{item, grupo (Receita, Essencial, Escolha, Futuro), valor (número), tipo: receita ou despesa}]` (até 7), opcionais `colunas`, `saldo` (rótulo da última linha) |
 | `imagem` | só em artigos: imagem pronta em 16:9 salva em `assets/img/` (ex.: logomarca do Tesouro Direto no artigo de Tesouro Direto) | `src` (`/assets/img/arquivo.png`), `alt`, `tema` (usado se a imagem falhar) |
 
 Todos os tipos levam `tema`, o desenho de fundo:

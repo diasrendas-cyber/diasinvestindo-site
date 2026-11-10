@@ -161,13 +161,37 @@ function artRosca(a){
   if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   return g;
 }
+function artPlanilha(a){
+  /* Planilha de receitas e despesas. A última linha (saldo) é calculada aqui: receitas menos despesas */
+  const reais=v=>"R$ "+v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+  const ls=(a.linhas||[]).slice(0,7),rec=ls.filter(l=>l.tipo==="receita").reduce((t,l)=>t+num(l.valor),0),desp=ls.filter(l=>l.tipo!=="receita").reduce((t,l)=>t+num(l.valor),0);
+  const todas=[...ls,{item:a.saldo||"Sobra do mês",grupo:"Saldo",valor:Math.round((rec-desp)*100)/100,tipo:"saldo"}];
+  const X0=24,X1=W-24,top=a.titulo?60:20,rh=Math.min(36,(H-top-14)/(todas.length+1)),cA=X0+34,cB=X0+304,cC=X0+430;
+  let g=`<rect width="${W}" height="${H}" fill="var(--surface)"/>`;
+  if(a.titulo)g+=txt(X0,40,a.titulo,{size:21,w:700,fill:"var(--ink)"});
+  const yT=top,yB=top+rh*(todas.length+1);
+  g+=`<rect x="${X0}" y="${yT}" width="${X1-X0}" height="${rh}" fill="var(--soft)"/>`;
+  g+=`<rect x="${X0}" y="${yT}" width="34" height="${yB-yT}" fill="var(--soft)"/>`;
+  const cab=a.colunas||["Item","Grupo","Valor"];
+  g+=txt(cA+10,yT+rh*.68,cab[0],{size:16,w:700,fill:"var(--ink)"})+txt(cB+10,yT+rh*.68,cab[1],{size:16,w:700,fill:"var(--ink)"})+txt(X1-12,yT+rh*.68,cab[2],{size:16,w:700,fill:"var(--ink)",anchor:"end"});
+  const corG={receita:"var(--up)",essencial:"var(--ink)",escolha:"var(--signal)",futuro:"var(--accent)",saldo:"var(--ink)"};
+  todas.forEach((l,i)=>{const y=yT+rh*(i+1),cy=y+rh*.66,sal=l.tipo==="saldo",cor=l.tipo==="receita"?"var(--up)":sal?(l.valor<0?"var(--down)":"var(--up)"):"var(--ink)";
+    if(sal)g+=`<rect x="${cA}" y="${y}" width="${X1-cA}" height="${rh}" fill="var(--signal-soft)"/>`;
+    g+=txt(X0+17,cy,String(i+1),{f:FONT_M,size:13,fill:"var(--muted)",anchor:"middle"});
+    g+=txt(cA+10,cy,l.item,{size:16,w:sal?700:500,fill:"var(--ink)"});
+    g+=txt(cB+10,cy,l.grupo||"",{size:15,w:600,fill:corG[String(l.grupo||"").toLowerCase()]||"var(--muted)"});
+    g+=txt(X1-12,cy,(l.tipo==="receita"||sal?"":"− ")+reais(Math.abs(num(l.valor))),{f:FONT_M,size:16,w:sal?600:500,fill:cor,anchor:"end"})});
+  for(let i=0;i<=todas.length+1;i++){const y=yT+rh*i;g+=`<line x1="${X0}" x2="${X1}" y1="${y}" y2="${y}" stroke="var(--line)"/>`}
+  [X0,cA,cB,X1].forEach(x=>g+=`<line x1="${x}" x2="${x}" y1="${yT}" y2="${yB}" stroke="var(--line)"/>`);
+  return g;
+}
 function artImagem(a){
   /* Imagem pronta em 16:9 guardada em /assets/img (ex.: marca enviada pelo Moisés) */
   return `<image href="${E(a.src)}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"><title>${E(a.alt||"")}</title></image>`;
 }
 function desenhar(a){
   if(!a||typeof a!=="object")a={tipo:"cena",tema:"bolsa"};
-  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):a.tipo==="comparacao"?artComparacao(a):a.tipo==="faixa"?artFaixa(a):a.tipo==="rosca"?artRosca(a):a.tipo==="imagem"&&/^\/assets\/img\/[\w.-]+$/.test(a.src||"")?artImagem(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
+  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):a.tipo==="comparacao"?artComparacao(a):a.tipo==="faixa"?artFaixa(a):a.tipo==="rosca"?artRosca(a):a.tipo==="planilha"?artPlanilha(a):a.tipo==="imagem"&&/^\/assets\/img\/[\w.-]+$/.test(a.src||"")?artImagem(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${g}</svg>`;
 }
 
