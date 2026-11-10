@@ -1,14 +1,175 @@
 {
-  "atualizado": "07/11/2026",
+  "atualizado": "10/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "168.498",
-    "ibovVar": "+1,39%",
-    "dolar": "R$ 5,511",
-    "dolarVar": "+0,44%",
-    "data": "06/11/2026"
+    "ibov": "172.236",
+    "ibovVar": "+2,22%",
+    "dolar": "R$ 5,506",
+    "dolarVar": "-0,06%",
+    "data": "09/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Juros",
+      "data": "10/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Ata do Copom diz que inflação exige juros altos por mais tempo e eleva projeção para 3,5%",
+      "resumo": "Documento da reunião que manteve a Selic em 13,75% aponta expectativas acima da meta em todos os prazos e lista petróleo, El Niño, custo do trabalho e câmbio como pressões.",
+      "texto": [
+        "O Banco Central divulgou nesta terça-feira, 10 de novembro, a ata da reunião do Comitê de Política Monetária (Copom) que manteve a Selic em 13,75% ao ano no dia 4. No documento, o colegiado afirma que, com as expectativas de inflação desancoradas, será preciso manter os juros em nível restritivo por mais tempo do que seria adequado em condições normais. A projeção do BC para a inflação em 12 meses no segundo trimestre de 2028, o horizonte que orienta as decisões, subiu de 3,1% para 3,5%. Para 2026 e 2027, as estimativas são de 5,6% e 4,7%, acima do teto de 4,5% da meta, cujo centro é 3%.",
+        "A ata cita quatro choques que pressionam os preços: o petróleo mais caro por causa dos conflitos no Oriente Médio, os efeitos do El Niño sobre a agricultura e a energia, o aumento do custo do trabalho com o fim da escala 6x1 e a desvalorização do real diante das incertezas na política doméstica. O comitê diz que não deve reagir ao primeiro impacto desses choques, mas promete agir com firmeza se eles contaminarem outros preços e as expectativas. O BC também registra que a economia vem perdendo fôlego e alerta que dúvidas sobre as contas públicas podem elevar a taxa de juros considerada neutra.",
+        "O mercado já ajustou as apostas: o Boletim Focus desta segunda-feira passou a prever a Selic em 13,75% no fim de 2026, ante 13,5% uma semana antes, e elevou a inflação esperada para 2027 de 4,76% para 4,90%. A ata não indica quando os cortes podem ser retomados e diz apenas que o comitê seguirá acompanhando o cenário. A próxima reunião do Copom, a última do ano, está marcada para 8 e 9 de dezembro, e o IPCA de outubro sai nesta quinta-feira, 12."
+      ],
+      "bolso": "Juros altos por mais tempo mantêm a renda fixa pós-fixada rendendo bem, mas também deixam caros o crédito, o financiamento e o rotativo do cartão.",
+      "arte": {
+        "tipo": "barras",
+        "tema": "inflacao",
+        "titulo": "Projeções do BC para o IPCA em 12 meses",
+        "barras": [
+          {
+            "rotulo": "2026",
+            "valor": 5.6
+          },
+          {
+            "rotulo": "2027",
+            "valor": 4.7
+          },
+          {
+            "rotulo": "2º tri de 2028",
+            "valor": 3.5,
+            "destaque": true
+          }
+        ],
+        "sufixo": "%",
+        "nota": "Centro da meta: 3%; teto: 4,5%",
+        "fonte": "Fonte: ata do Copom de 10/11/2026, via CNN Brasil e Money Times"
+      },
+      "fontes": [
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/na-ata-do-copom-bc-diz-que-cenario-exige-selic-alta-por-mais-tempo/"
+        },
+        {
+          "nome": "Money Times",
+          "url": "https://www.moneytimes.com.br/ata-do-copom-bc-ve-economia-perder-forca-mas-diz-que-inflacao-exige-juros-altos-por-mais-tempo-jcav/"
+        },
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/economia/ata-do-copom-reforca-cenario-desafiador-para-politica-monetaria/"
+        },
+        {
+          "nome": "Correio Braziliense (Boletim Focus)",
+          "url": "https://www.correiobraziliense.com.br/economia/2026/11/7535417-mercado-preve-manutencao-de-selic-em-1375-em-2026-e-ipca-em-522.html"
+        }
+      ],
+      "slug": "2026-11-10-ata-do-copom-diz-que-inflacao-exige-juros-altos-por-mais-tempo-e"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "09/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Ibovespa sobe 2,22% e volta aos 172 mil pontos; dólar fecha a R$ 5,506",
+      "resumo": "Queda forte do petróleo e recuperação de Wall Street abriram espaço para compras na bolsa, puxadas por Vale e bancos; o câmbio ficou praticamente estável.",
+      "texto": [
+        "O Ibovespa fechou a segunda-feira, 9 de novembro, em alta de 2,22%, aos 172.236 pontos, na máxima do dia. Foi o segundo pregão seguido de ganhos, depois de o índice ter encerrado a sexta-feira aos 168.498 pontos. O dólar comercial teve leve queda e terminou cotado a R$ 5,506. As ações da Vale e dos grandes bancos lideraram a subida, enquanto a Petrobras recuou junto com o petróleo.",
+        "O exterior deu o tom. Com a diminuição do temor de uma escalada do conflito no Oriente Médio, o barril do Brent para janeiro caiu 5,85%, para US$ 92,57. Em Nova York, as bolsas se recuperaram da onda de vendas em ações de tecnologia da semana anterior, e o índice Nasdaq avançou 2,74%. No Brasil, o pronunciamento do presidente Lula no domingo, em que reafirmou o compromisso com a responsabilidade fiscal sem detalhar medidas, foi recebido com cautela pelos analistas.",
+        "A semana segue carregada de indicadores. Nesta terça-feira saem a ata do Copom e a inflação ao consumidor dos Estados Unidos de outubro, e na quinta-feira o IBGE divulga o IPCA de outubro. Os investidores também acompanham a temporada de balanços do terceiro trimestre das empresas listadas. A definição da equipe econômica e da agenda fiscal do novo mandato continua sendo apontada como o principal fator de risco doméstico."
+      ],
+      "bolso": "Petróleo mais barato, se a queda se mantiver, tende a aliviar a pressão sobre os combustíveis; o dólar perto de R$ 5,50 ainda pesa em viagens e compras no exterior.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "bolsa",
+        "rotulo": "Ibovespa no fechamento, pontos",
+        "valor": "172.236",
+        "variacao": "+2,22%",
+        "secundarios": [
+          {
+            "rotulo": "Dólar comercial",
+            "valor": "R$ 5,506",
+            "variacao": "-0,06%"
+          },
+          {
+            "rotulo": "Petróleo Brent",
+            "valor": "US$ 92,57",
+            "variacao": "-5,85%"
+          }
+        ],
+        "fonte": "Fonte: CNN Brasil, Estadão Conteúdo, InfoMoney e BPMoney, fechamento de 09/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-9-novembro-2026/"
+        },
+        {
+          "nome": "Estadão Conteúdo, via DGABC",
+          "url": "https://www.dgabc.com.br/Noticia/4367793/ibovespa-volta-aos-172-mil-pontos-no-pico-do-dia-com-exterior-pro-risco"
+        },
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-09112026/"
+        },
+        {
+          "nome": "BPMoney",
+          "url": "https://bpmoney.com.br/mercado/ibovespa-sobe-222-fecha-maxima-172-mil-pontos/"
+        }
+      ],
+      "slug": "2026-11-09-ibovespa-sobe-2-22-e-volta-aos-172-mil-pontos-dolar-fecha-a-r-5-506"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "09/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Anthropic lança Claude Fable 5.2 e Mythos 5.2 com preço menor, às vésperas da estreia na bolsa",
+      "resumo": "Novos modelos chegam 30% mais rápidos e com corte de 20% no preço do Fable, enquanto a empresa mantém o plano de abrir capital na Nasdaq ainda em novembro.",
+      "texto": [
+        "A Anthropic, dona do assistente Claude, lançou na segunda-feira, 9 de novembro, os modelos Claude Fable 5.2 e Claude Mythos 5.2, que a empresa apresenta como os mais avançados que já produziu. Segundo a companhia, as novas versões respondem 30% mais rápido que as anteriores e melhoram em programação, raciocínio e leitura de imagens. O Fable 5.2 ficou mais barato: o preço caiu de US$ 10 para US$ 8 por milhão de tokens de entrada, um corte de 20%. O Mythos 5.2 continua restrito a organizações aprovadas nos programas de verificação da empresa para cibersegurança e ciências da vida.",
+        "A redução de preço acontece em meio a uma disputa acirrada entre as empresas de inteligência artificial, que repassam aos clientes parte dos ganhos de eficiência dos modelos. Os novos sistemas também chegaram no mesmo dia à Amazon Bedrock, plataforma de nuvem da Amazon usada por empresas. Junto com o lançamento, a Anthropic publicou relatórios técnicos de segurança, e a imprensa especializada destacou o debate sobre a capacidade desses modelos de acelerar o próprio desenvolvimento da IA.",
+        "O lançamento ocorre às vésperas da oferta inicial de ações da empresa. De acordo com o Wall Street Journal, a Anthropic mantém o plano de estrear na Nasdaq, com o código ANT, possivelmente já na próxima semana, apesar da recente volatilidade das ações de tecnologia. O jornal relata que parte dos investidores pressiona por um valor de mercado abaixo de US$ 1,5 trilhão, patamar discutido até a semana passada. O preço final das ações ainda não foi divulgado pela companhia."
+      ],
+      "arte": {
+        "tipo": "barras",
+        "tema": "ia",
+        "titulo": "Preço do Claude Fable, por milhão de tokens de entrada",
+        "barras": [
+          {
+            "rotulo": "Fable 5.1",
+            "valor": 10
+          },
+          {
+            "rotulo": "Fable 5.2",
+            "valor": 8,
+            "destaque": true
+          }
+        ],
+        "prefixo": "US$ ",
+        "nota": "Corte de 20% no preço",
+        "fonte": "Fonte: Yahoo Finanças e TechCrunch, 09/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Yahoo Finanças",
+          "url": "https://finance.yahoo.com/technology/article/anthropic-debuts-claude-fable-52-and-mythos-52-models-as-ipo-nears-190405087.html"
+        },
+        {
+          "nome": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/"
+        },
+        {
+          "nome": "AWS (blog oficial)",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws/"
+        },
+        {
+          "nome": "TechCrunch (IPO)",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/"
+        },
+        {
+          "nome": "Gizmodo",
+          "url": "https://gizmodo.com/anthropic-still-plans-to-go-public-as-soon-as-next-week-report-2000837422"
+        }
+      ],
+      "slug": "2026-11-09-anthropic-lanca-claude-fable-5-2-e-mythos-5-2-com-preco-menor-as"
+    },
     {
       "editoria": "Mercados",
       "data": "06/11/2026",
