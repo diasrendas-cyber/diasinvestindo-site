@@ -41,5 +41,19 @@ if(live&&Object.values(ADSENSE.slots).some(Boolean)){
     el.style.backgroundImage="none";try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
 }
 
+/* ---------- Bitcoin ao vivo na régua (CoinGecko). Sem resposta, o campo fica oculto: nunca mostra preço velho ---------- */
+const BTC_URL="https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true";
+async function bitcoin(){
+  const alvos=document.querySelectorAll("[data-btc]");if(!alvos.length||typeof fetch!=="function")return;
+  try{const r=await fetch(BTC_URL);if(!r.ok)throw new Error(r.status);const b=((await r.json())||{}).bitcoin||{};
+    const p=Number(b.usd),v=Number(b.usd_24h_change),t=Number(b.last_updated_at);if(!(p>0))throw new Error("sem preço");
+    const hora=t?new Date(t*1000).toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"}):"";
+    const var24=isFinite(v)?(v>=0?"+":"−")+Math.abs(v).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+"%":"";
+    alvos.forEach(el=>{el.innerHTML=`<span class="lbl">Bitcoin</span> US$ ${Math.round(p).toLocaleString("pt-BR")}${var24?` <span class="${v<0?"down":"up"}">${var24}</span>`:""} <span class="when">24h${hora?", "+hora:""}</span>`;
+      el.title="Preço do Bitcoin em dólar e variação em 24 horas. Fonte: CoinGecko"+(hora?", atualizado às "+hora+" (Brasília)":"");el.hidden=false});
+  }catch(e){alvos.forEach(el=>el.hidden=true)}
+}
+bitcoin();setInterval(()=>{if(!document.hidden)bitcoin()},5*60*1000);
+
 window.DILive=live;
 })();

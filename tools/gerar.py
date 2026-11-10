@@ -61,6 +61,7 @@ def ticker_html(t):
         partes.append(f'<span><span class="lbl">Dólar</span> {esc(t["dolar"])} <span class="{sinal(t.get("dolarVar"))}">{esc(fmtvar(t.get("dolarVar")))}</span></span>')
     if t.get("data"):
         partes.append(f'<span class="when">Fechamento de {esc(t["data"])}</span>')
+    partes.append('<span class="btc" data-btc hidden></span>')  # Bitcoin ao vivo, preenchido por assets/comum.js
     return "".join(partes)
 
 
@@ -96,14 +97,14 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head=""):
 <body>
 <header class="site" id="topo">
   <div class="wrap bar">
-    <a class="logo" href="/"><b>Dias<span>Investindo</span></b><small>finanças com cálculo</small></a>
+    <a class="logo" href="/"><b>Dias<span>Investindo</span></b><small>viva os dias investindo em você</small></a>
     <nav class="tabs" aria-label="Seções do site">
       <a href="/#inicio">Início</a>
       <a href="/noticias/" aria-current="{'true' if '/noticias/' in url else 'false'}">Notícias</a>
       <a href="/#financas">Finanças Pessoais</a>
       <a href="/#investimentos">Investimentos</a>
       <a href="/#produtividade">Produtividade</a>
-      <a href="/#calculadoras">Calculadoras</a>
+      <a href="/#ferramentas">Ferramentas</a>
       <a href="/#videoblog">VideoBlog</a>
       <a href="/#sobre">Sobre</a>
     </nav>
@@ -136,7 +137,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head=""):
 </div>
 </main>
 <footer class="site"><div class="wrap">
-  <p><strong style="color:var(--ink)">Dias Investindo</strong> · diasinvestindo.com.br · @diasinvestindo</p>
+  <p><strong style="color:var(--ink)">DiasInvestindo</strong> · viva os dias investindo em você · diasinvestindo.com.br · @diasinvestindo</p>
   <p class="foot-links"><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a><a href="/noticias/">Arquivo de notícias</a><a href="/privacidade/">Política de Privacidade</a></p>
   <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
 </div></footer>
@@ -300,6 +301,12 @@ def main():
     os.makedirs(caminho("privacidade"), exist_ok=True)
     open(caminho("privacidade", "index.html"), "w", encoding="utf-8").write(pagina_privacidade(novo, dados))
     open(caminho("404.html"), "w", encoding="utf-8").write(pagina_404(dados))
+
+    # índice da busca da home: todas as notícias e artigos (título, resumo, editoria, data e endereço)
+    busca = [{"k": "Notícia", "t": n["titulo"], "r": n["resumo"], "c": n["editoria"], "d": n.get("publicado", n["data"]), "u": f"/noticias/{n['slug']}/"} for n in todas]
+    busca += [{"k": "Artigo", "t": a["titulo"], "r": a["resumo"], "c": ART.CATEGORIAS[a["categoria"]][0], "d": a["data"], "u": f"/artigos/{a['slug']}/", "s": a["slug"]} for a in arts]
+    with open(caminho("busca.json"), "w", encoding="utf-8") as f:
+        json.dump(busca, f, ensure_ascii=False, separators=(",", ":"))
 
     # sitemap, robots e RSS
     hoje = iso(dados["atualizado"])

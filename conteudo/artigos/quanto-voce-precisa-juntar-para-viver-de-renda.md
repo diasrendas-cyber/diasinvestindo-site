@@ -1,6 +1,6 @@
 ---
 titulo: Quanto você precisa juntar para viver de renda
-categoria: investimentos
+categoria: financas-pessoais
 data: 06/11/2026
 leitura: 7
 destaque: sim

@@ -1,14 +1,184 @@
 {
-  "atualizado": "07/11/2026",
+  "atualizado": "10/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "168.498",
-    "ibovVar": "+1,39%",
-    "dolar": "R$ 5,511",
-    "dolarVar": "+0,44%",
-    "data": "06/11/2026"
+    "ibov": "172.236",
+    "ibovVar": "+2,22%",
+    "dolar": "R$ 5,506",
+    "dolarVar": "-0,06%",
+    "data": "09/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Juros",
+      "data": "10/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Ata do Copom diz que inflação exige juros altos por mais tempo",
+      "resumo": "Banco Central reforça a pausa na Selic em 13,75% e cita expectativas de inflação acima da meta; mercado já projeta a taxa parada até o fim do ano.",
+      "texto": [
+        "O Banco Central divulgou nesta terça-feira, 10 de novembro, a ata da reunião do Comitê de Política Monetária (Copom) de 3 e 4 de novembro, quando a Selic foi mantida em 13,75% ao ano. No documento, o colegiado afirma que, com as expectativas de inflação desancoradas, é preciso uma restrição monetária maior e por mais tempo. A ata não indica quando os cortes de juros podem ser retomados.",
+        "Segundo o BC, as expectativas de inflação seguem acima da meta de 3% em todos os horizontes. O texto cita pressões como o petróleo mais caro por causa dos conflitos no Oriente Médio, os efeitos do El Niño e a perda de valor do real, ao mesmo tempo em que reconhece sinais de moderação da atividade econômica. No Boletim Focus de segunda-feira (9), a mediana das projeções do mercado para a Selic no fim de 2026 subiu de 13,50% para 13,75%, e a do IPCA de 2026 ficou em 5,22%, acima do teto de 4,5%.",
+        "A próxima reunião do Copom, a última de 2026, está marcada para 8 e 9 de dezembro. Antes disso, o IBGE divulga nesta quinta-feira (12) o IPCA de outubro, um dos dados que o Banco Central acompanha para calibrar os próximos passos. Para os analistas, a ata reforça a leitura de que os juros devem continuar altos por um período prolongado."
+      ],
+      "bolso": "Juros altos por mais tempo mantêm a renda fixa pós-fixada, como o Tesouro Selic, com bom rendimento, mas também deixam caros o crédito, os financiamentos e o rotativo do cartão.",
+      "arte": {
+        "tipo": "faixa",
+        "tema": "inflacao",
+        "titulo": "IPCA esperado para 2026",
+        "valor": 5.22,
+        "sufixo": "%",
+        "decimais": 0,
+        "min": 0,
+        "max": 7,
+        "faixa_min": 1.5,
+        "faixa_max": 4.5,
+        "alvo": 3,
+        "rotulo_alvo": "Meta",
+        "rotulo_faixa": "Intervalo de tolerância da meta",
+        "rotulo": "Mediana das projeções do mercado",
+        "nota": "Acima do teto da meta",
+        "fonte": "Fonte: Boletim Focus (Banco Central), 09/11/2026; meta do CMN"
+      },
+      "fontes": [
+        {
+          "nome": "Money Times",
+          "url": "https://www.moneytimes.com.br/ata-do-copom-bc-ve-economia-perder-forca-mas-diz-que-inflacao-exige-juros-altos-por-mais-tempo-jcav/"
+        },
+        {
+          "nome": "Metrópoles",
+          "url": "https://www.metropoles.com/brasil/copom-diz-que-cenario-de-inflacao-exige-juros-mais-elevados-por-maior-tempo"
+        },
+        {
+          "nome": "IstoÉ Dinheiro",
+          "url": "https://istoedinheiro.com.br/boletim-focus-selic-1375-2026-inflacao-pib-dolar"
+        },
+        {
+          "nome": "Sou Brasília",
+          "url": "https://soubrasilia.com/boletim-focus-9-novembro-2026-selic-13-75-ipca-4-90-2027-pib-1-75-dolar-5-35/"
+        }
+      ],
+      "slug": "2026-11-10-ata-do-copom-diz-que-inflacao-exige-juros-altos-por-mais-tempo"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "09/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Ibovespa sobe 2,22% e volta aos 172 mil pontos; dólar fecha estável em R$ 5,51",
+      "resumo": "Alta em Wall Street e queda do petróleo puxaram a bolsa na segunda-feira, mas a cautela com as contas públicas limitou o otimismo.",
+      "texto": [
+        "O Ibovespa fechou a segunda-feira, 9 de novembro, em alta de 2,22%, aos 172.236 pontos, a segunda alta seguida depois de subir 1,39% na sexta-feira. Ações da Vale e de grandes bancos lideraram os ganhos do dia. O dólar comercial terminou praticamente estável, com leve queda de 0,06%, cotado a R$ 5,5058.",
+        "O impulso veio do exterior. Em Nova York, o índice S&P 500 subiu 2,34% e o Nasdaq avançou 2,74%, com a recuperação das ações de tecnologia depois das perdas da semana anterior. O petróleo caiu com o alívio das tensões no Oriente Médio, o que melhorou o humor dos investidores, mas pesou sobre as ações de petroleiras.",
+        "A cautela com as contas públicas limitou o otimismo. Em seu primeiro pronunciamento em rede nacional desde a reeleição, o presidente Lula reafirmou o compromisso com a responsabilidade fiscal, mas sem anunciar medidas concretas, segundo analistas. Nesta terça-feira, o mercado acompanha a ata do Copom e os dados de inflação ao consumidor dos Estados Unidos."
+      ],
+      "arte": {
+        "tipo": "linha",
+        "tema": "bolsa",
+        "titulo": "Ibovespa no fechamento, pontos",
+        "pontos": [
+          [
+            "05/11",
+            166191
+          ],
+          [
+            "06/11",
+            168498
+          ],
+          [
+            "09/11",
+            172236
+          ]
+        ],
+        "rotular": true,
+        "decimais": 0,
+        "destaque": "+2,22% no dia",
+        "fonte": "Fonte: CNN Brasil, Agência Brasil e InfoMoney, fechamentos de 05, 06 e 09/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-9-novembro-2026/"
+        },
+        {
+          "nome": "Agência Brasil, via O Tempo",
+          "url": "https://otempo.com.br/economia/2026/11/9/bolsa-sobe-2-22-e-registra-maior-alta-diaria-desde-outubro"
+        },
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-09112026/"
+        }
+      ],
+      "slug": "2026-11-09-ibovespa-sobe-2-22-e-volta-aos-172-mil-pontos-dolar-fecha-estavel-em"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "09/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Anthropic mira estreia na Nasdaq na próxima semana, mas recua de detalhes de preço enviados a bancos",
+      "resumo": "Segundo o Wall Street Journal, a criadora do Claude quer começar a negociar ações em 19 ou 20 de novembro; termos de preço foram retirados e serão atualizados.",
+      "texto": [
+        "A Anthropic, criadora do assistente de inteligência artificial Claude, planeja começar a negociar suas ações na Nasdaq em 19 ou 20 de novembro, com o código ANT, segundo reportagem do Wall Street Journal publicada na segunda-feira, 9 de novembro. De acordo com o jornal, a empresa pretende definir nesta semana a faixa de valuation da oferta.",
+        "Na mesma noite, a empresa enviou a bancos um documento com os termos da oferta e, em seguida, retirou os detalhes de preço, informando que os números estavam incorretos, segundo e-mails vistos pela agência Reuters. A Anthropic afirmou que vai atualizar o documento com os dados revisados e não comentou o assunto publicamente.",
+        "O valuation é o ponto mais sensível da operação. Investidores chegaram a discutir cerca de US$ 1,5 trilhão, abaixo dos até US$ 2 trilhões cogitados meses atrás, e parte deles agora fala em US$ 1,1 trilhão a US$ 1,3 trilhão, depois da forte queda das ações ligadas à IA após as eleições de meio de mandato nos EUA. Preço e data finais dependem da demanda nos próximos dias."
+      ],
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "ia",
+        "titulo": "Valuation da Anthropic em discussão",
+        "a": {
+          "rotulo": "Cogitado meses atrás",
+          "valor": "até US$ 2 tri"
+        },
+        "b": {
+          "rotulo": "Citado agora por investidores",
+          "valor": "US$ 1,1 a 1,3 tri"
+        },
+        "fonte": "Fontes: Bloomberg e Wall Street Journal, via Business Standard e Financial News, 10/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/"
+        },
+        {
+          "nome": "Business Standard",
+          "url": "https://www.business-standard.com/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html"
+        },
+        {
+          "nome": "Financial News (Coreia do Sul)",
+          "url": "https://en.fnnews.com/news/202611100926453970"
+        }
+      ],
+      "slug": "2026-11-09-anthropic-mira-estreia-na-nasdaq-na-proxima-semana-mas-recua-de"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "10/11/2026",
+      "publicado": "10/11/2026",
+      "titulo": "Bitcoin cai abaixo de US$ 75 mil com saída de recursos dos ETFs",
+      "resumo": "A criptomoeda opera cerca de 41% abaixo do recorde de US$ 126 mil, enquanto investidores aguardam a inflação dos Estados Unidos.",
+      "texto": [
+        "O bitcoin voltou a ser negociado abaixo de US$ 75 mil nesta terça-feira, 10 de novembro. Pela manhã, a criptomoeda era cotada perto de US$ 74 mil, cerca de 41% abaixo da máxima histórica de US$ 126.080. O recuo contrasta com a segunda-feira positiva nas bolsas, quando ações no Brasil e nos Estados Unidos subiram com força.",
+        "Um dos fatores de pressão é a saída de dinheiro dos fundos de bitcoin negociados em bolsa nos Estados Unidos, os ETFs. Na semana passada, esses fundos registraram resgates líquidos de cerca de US$ 1,28 bilhão, a maior retirada semanal em aproximadamente quatro meses. O desmonte de apostas alavancadas, com liquidações de posições compradas nos últimos dias, também ampliou as quedas.",
+        "Nesta terça-feira, o mercado acompanha a divulgação da inflação ao consumidor dos Estados Unidos referente a outubro. Números acima do esperado podem reforçar a perspectiva de juros altos por mais tempo no país e fortalecer o dólar, o que costuma pesar sobre ativos de risco, como as criptomoedas. Até a decisão do Fed de dezembro, os dados de inflação e emprego devem continuar ditando o humor do mercado."
+      ],
+      "bolso": "O bitcoin pode variar vários pontos percentuais em um único dia; por isso não serve como reserva de emergência, que precisa estar sempre disponível sem perda de valor.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "cripto",
+        "titulo": "Bitcoin abaixo de US$ 75 mil"
+      },
+      "fontes": [
+        {
+          "nome": "BitNotícias",
+          "url": "https://bitnoticias.com.br/mercado/preco-do-bitcoin-hoje-10-de-novembro-de-2026/"
+        },
+        {
+          "nome": "Bitcoin.com News",
+          "url": "https://news.bitcoin.com/market-updates/peter-schiff-sell-bitcoin-before-crash/"
+        }
+      ],
+      "slug": "2026-11-10-bitcoin-cai-abaixo-de-us-75-mil-com-saida-de-recursos-dos-etfs"
+    },
     {
       "editoria": "Mercados",
       "data": "06/11/2026",
@@ -65,25 +235,18 @@
       ],
       "bolso": "Juros altos nos EUA costumam atrair dinheiro para a economia americana e pressionar o dólar para cima, o que pode encarecer produtos importados no Brasil.",
       "arte": {
-        "tipo": "barras",
+        "tipo": "comparacao",
         "tema": "emprego",
-        "titulo": "Vagas criadas nos EUA, em milhares",
-        "barras": [
-          {
-            "rotulo": "Agosto (revisado)",
-            "valor": 186
-          },
-          {
-            "rotulo": "Setembro (revisado)",
-            "valor": 60
-          },
-          {
-            "rotulo": "Outubro",
-            "valor": 165,
-            "destaque": true
-          }
-        ],
-        "nota": "Para outubro, a expectativa era de 65 mil vagas",
+        "titulo": "Vagas criadas nos EUA em outubro",
+        "a": {
+          "rotulo": "Esperado pelos analistas",
+          "valor": "65 mil"
+        },
+        "b": {
+          "rotulo": "Criadas, segundo o BLS",
+          "valor": "165 mil"
+        },
+        "nota": "Desemprego em 4,1%",
         "fonte": "Fonte: BLS (Departamento do Trabalho dos EUA), 06/11/2026"
       },
       "fontes": [

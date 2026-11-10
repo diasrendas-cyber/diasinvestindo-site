@@ -1,6 +1,6 @@
 ---
 titulo: Juros compostos: por que o tempo pesa mais que o aporte
-categoria: investimentos
+categoria: financas-pessoais
 data: 06/11/2026
 leitura: 6
 destaque: sim

@@ -8,8 +8,8 @@ import html, json, os, re
 from urllib.parse import quote
 
 CATEGORIAS = {
-    "financas-pessoais": ("Finanças Pessoais", "Orçamento, reserva de emergência, dívidas e hábitos: a base antes de investir."),
-    "investimentos": ("Investimentos", "Juros compostos, renda fixa, aposentadoria e como fazer o dinheiro trabalhar por você."),
+    "financas-pessoais": ("Finanças Pessoais", "Orçamento, juros compostos e aposentadoria: a base para o dinheiro trabalhar por você."),
+    "investimentos": ("Investimentos", "Tesouro Direto e renda fixa: como funciona cada título e qual escolher para cada objetivo."),
     "produtividade": ("Produtividade", "Trabalhar melhor com inteligência artificial, organização e boas rotinas."),
 }
 OBRIGATORIOS = ["titulo", "categoria", "data", "leitura", "resumo", "linha_fina", "arte"]
@@ -47,6 +47,8 @@ def markdown(corpo):
             saida.append(f'<p class="callout">{inline(" ".join(l[2:] if l.startswith("> ") else l for l in b.splitlines()))}</p>')
         elif b.startswith(":: "):
             saida.append(f'<p class="src">{inline(b[3:])}</p>')
+        elif all(re.match(r"^\d+\. ", l) for l in b.splitlines()):
+            saida.append("<ol>" + "".join(f"<li>{inline(re.sub(r'^\d+\. ', '', l))}</li>" for l in b.splitlines()) + "</ol>")
         elif all(l.startswith("- ") for l in b.splitlines()):
             saida.append("<ul>" + "".join(f"<li>{inline(l[2:])}</li>" for l in b.splitlines()) + "</ul>")
         else:
@@ -167,7 +169,7 @@ def pagina_artigo(a, artigos, pagina, SITE, HOTMART, dados):
 </article>
 <div class="cta">
   <div><h3>Planilha Liberdade Financeira</h3><p>Descubra quanto precisa juntar, por quanto tempo e com que aporte para viver de renda.</p></div>
-  <div class="btns"><a class="btn" href="{HOTMART}" target="_blank" rel="noopener">Conhecer a planilha</a><a class="btn ghost" href="/#calculadoras">Calculadoras grátis</a></div>
+  <div class="btns"><a class="btn" href="{HOTMART}" target="_blank" rel="noopener">Conhecer a planilha</a><a class="btn ghost" href="/#ferramentas">Ferramentas grátis</a></div>
 </div>
 <section class="sec" aria-label="Leia também">
   <div class="sec-head"><h2>Leia também</h2><a href="/artigos/">Todos os artigos</a></div>
@@ -208,7 +210,7 @@ def pagina_todos(artigos, pagina, SITE, dados):
     corpo = f"""<section class="sec" aria-label="Artigos">
   <nav class="breadcrumb" aria-label="Você está em"><a href="/">Início</a> › <span>Artigos</span></nav>
   <div class="sec-head"><h2>Artigos</h2><span class="sub">{len(artigos)} artigos</span></div>
-  <p class="meta" style="margin:0;font-size:16px">Do problema à solução, com números honestos e calculadoras para você fazer as próprias contas.</p>
+  <p class="meta" style="margin:0;font-size:16px">Do problema à solução, com números honestos e ferramentas para você fazer as próprias contas.</p>
   {blocos}
 </section>
 <div class="capture-slot" data-origem="artigos"></div>"""

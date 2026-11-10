@@ -40,6 +40,9 @@ const CENAS={
     <rect x="20" y="30" width="170" height="110" rx="8"/><path d="M0 150h210l-12 14H12z"/><rect x="200" y="50" width="56" height="100" rx="10"/><path d="M220 138h16"/></g>`},
   imoveis(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
     <path d="M20 90 100 30l80 60v80H20z"/><rect x="80" y="120" width="40" height="50"/><rect x="150" y="70" width="80" height="100"/>${[0,1,2].map(i=>`<path d="M165 ${90+i*25}h50"/>`).join("")}</g>`},
+  cripto(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <circle cx="90" cy="90" r="70"/><circle cx="90" cy="90" r="56"/>${txt(90,114,"₿",{size:66,w:800,fill:"var(--accent)",anchor:"middle"})}
+    <path d="M176 40h50v50h-50zM196 90v24M176 130h50v50h-50z"/></g>`},
   emprego(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
     <rect x="30" y="60" width="180" height="110" rx="8"/><path d="M90 60V40h60v20M30 105h180"/><rect x="105" y="95" width="30" height="20"/></g>`}
 };
@@ -63,7 +66,7 @@ function artLinha(a){
     g+=`<path d="${d}" fill="none" stroke="${cor}" stroke-width="${si===0?4:2.5}" ${si?'stroke-dasharray="7 6"':""} stroke-linejoin="round" stroke-linecap="round"/>`;
   });
   if(a.rotular){const p0=series[0].pontos;p0.forEach((p,j)=>{const v=num(p[1]);if(j===0||v!==num(p0[j-1][1])){
-      g+=`<circle cx="${x(j)}" cy="${y(v)}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)+6,y(v)-10,v.toLocaleString("pt-BR",{minimumFractionDigits:2})+(a.sufixo||""),{f:FONT_M,size:14,w:500,fill:"var(--ink)"})}})}
+      g+=`<circle cx="${x(j)}" cy="${y(v)}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)+(j===n-1?-8:6),y(v)-14,v.toLocaleString("pt-BR",{minimumFractionDigits:a.decimais??2,maximumFractionDigits:a.decimais??2})+(a.sufixo||""),{f:FONT_M,size:14,w:500,fill:"var(--ink)",anchor:j===n-1?"end":"start"})}})}
   const last=series[0].pontos[n-1],lx=x(n-1),ly=y(num(last[1]));
   g+=`<circle cx="${lx}" cy="${ly}" r="8" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/>`;
   if(a.destaque){const w=a.destaque.length*10.2+28,bx=W-R-w,baixo=ly>(T+(H-T-B)/2),by=baixo?T-6:H-B-50;g+=`<rect x="${bx}" y="${by}" width="${w}" height="38" rx="7" fill="var(--ink)"/>`+txt(bx+w/2,by+25,a.destaque,{size:18,w:700,fill:"var(--surface)",anchor:"middle"})}
@@ -101,9 +104,60 @@ function artCena(a){
   if(a.titulo)g+=`<rect x="24" y="24" width="${a.titulo.length*9+28}" height="38" rx="6" fill="var(--ink)"/>`+txt(38,49,a.titulo,{size:16,w:700,fill:"var(--surface)"});
   return g;
 }
+function artComparacao(a){
+  /* Dois valores lado a lado: antes x depois, esperado x realizado */
+  let g=grid()+icone(a.tema);
+  g+=txt(28,48,a.titulo||"",{size:21,w:700,fill:"var(--ink)"});
+  const A=a.a||{},B=a.b||{},top=88,h=170,w=262;
+  const caixa=(x,o,forte)=>`<rect x="${x}" y="${top}" width="${w}" height="${h}" rx="10" fill="${forte?"var(--accent)":"var(--paper)"}" stroke="${forte?"var(--accent)":"var(--line)"}"/>`+
+    txt(x+20,top+38,o.rotulo||"",{size:16,w:600,fill:forte?"var(--surface)":"var(--muted)"})+
+    txt(x+20,top+104,o.valor||"",{size:Math.max(22,Math.min(46,Math.floor((w-40)/(Math.max(1,String(o.valor||"").length)*0.6)))),w:800,fill:forte?"var(--surface)":"var(--ink)"})+
+    (o.nota?txt(x+20,top+140,o.nota,{size:15,w:500,fill:forte?"var(--surface)":"var(--muted)"}):"");
+  g+=caixa(28,A,false)+caixa(W-28-w,B,true);
+  g+=`<path d="M${28+w+14} ${top+h/2}h${W-56-2*w-34}" stroke="var(--ink)" stroke-width="3"/><path d="M${W-28-w-12} ${top+h/2-9}l10 9-10 9" fill="none" stroke="var(--ink)" stroke-width="3"/>`;
+  if(a.variacao){const v=fmtVar(a.variacao),cl=sinal(a.variacao),cor=cl==="down"?"var(--down)":cl==="up"?"var(--up)":"var(--ink)",ww=v.length*12+30;
+    g+=`<rect x="${W-28-ww}" y="${top+h+16}" width="${ww}" height="36" rx="18" fill="${cor}"/>`+txt(W-28-ww/2,top+h+40,v,{f:FONT_M,size:18,fill:"var(--surface)",anchor:"middle"})}
+  if(a.nota)g+=txt(28,top+h+40,a.nota,{size:15,w:600,fill:"var(--ink)"});
+  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
+  return g;
+}
+function artFaixa(a){
+  /* Um valor numa régua com a faixa de referência (ex.: inflação e o intervalo da meta) */
+  let g=grid()+icone(a.tema);
+  g+=txt(28,48,a.titulo||"",{size:21,w:700,fill:"var(--ink)"});
+  const lo=num(a.min??0),hi=num(a.max??10),v=num(a.valor),L=40,R=40,y0=208,x=t=>L+(W-L-R)*(Math.min(hi,Math.max(lo,t))-lo)/(hi-lo),suf=a.sufixo||"";
+  const f=t=>num(t).toLocaleString("pt-BR",{minimumFractionDigits:a.decimais??0,maximumFractionDigits:2})+suf;
+  g+=txt(28,128,f(v),{size:72,w:800,fill:"var(--ink)"});
+  if(a.rotulo)g+=txt(30,156,a.rotulo,{size:16,w:600});
+  g+=`<rect x="${L}" y="${y0}" width="${W-L-R}" height="16" rx="8" fill="var(--line)"/>`;
+  if(a.faixa_min!=null&&a.faixa_max!=null)g+=`<rect x="${x(num(a.faixa_min))}" y="${y0}" width="${x(num(a.faixa_max))-x(num(a.faixa_min))}" height="16" fill="var(--up)" fill-opacity=".35"/>`+
+    txt((x(num(a.faixa_min))+x(num(a.faixa_max)))/2,y0+44,a.rotulo_faixa||"Faixa de referência",{size:14,w:600,fill:"var(--muted)",anchor:"middle"});
+  if(a.alvo!=null)g+=`<path d="M${x(num(a.alvo))} ${y0-8}v32" stroke="var(--up)" stroke-width="3"/>`+txt(x(num(a.alvo)),y0-14,(a.rotulo_alvo||"Meta")+" "+f(a.alvo),{size:14,w:700,fill:"var(--up)",anchor:"middle"});
+  [lo,hi].forEach((t,i)=>{g+=txt(i?W-R:L,y0+70,f(t),{f:FONT_M,size:13,anchor:i?"end":"start"})});
+  if(a.faixa_min!=null)[a.faixa_min,a.faixa_max].forEach(t=>{g+=txt(x(num(t)),y0+70,f(t),{f:FONT_M,size:13,anchor:"middle"})});
+  g+=`<circle cx="${x(v)}" cy="${y0+8}" r="13" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/>`;
+  if(a.nota){const ww=a.nota.length*8.8+28;g+=`<rect x="${W-28-ww}" y="98" width="${ww}" height="38" rx="7" fill="var(--signal-soft)"/>`+txt(W-28-ww/2,123,a.nota,{size:15,w:700,fill:"var(--ink)",anchor:"middle"})}
+  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
+  return g;
+}
+function artRosca(a){
+  /* Partes de um todo, até 4 fatias, com rótulos diretos */
+  let g=grid()+icone(a.tema);
+  g+=txt(28,48,a.titulo||"",{size:21,w:700,fill:"var(--ink)"});
+  const ps=(a.partes||[]).slice(0,4),tot=ps.reduce((t,p)=>t+num(p.valor),0)||1,cx=170,cy=214,r=104,rr=62;
+  const cores=["var(--accent)","var(--signal)","var(--muted)","var(--ink)"];let ang=-Math.PI/2;
+  ps.forEach((p,i)=>{const fr=num(p.valor)/tot,a1=ang,a2=ang+fr*2*Math.PI-1e-4;ang+=fr*2*Math.PI;const big=a2-a1>Math.PI?1:0;
+    const P=(rad,t)=>`${(cx+rad*Math.cos(t)).toFixed(1)} ${(cy+rad*Math.sin(t)).toFixed(1)}`;
+    g+=`<path d="M${P(r,a1)} A${r} ${r} 0 ${big} 1 ${P(r,a2)} L${P(rr,a2)} A${rr} ${rr} 0 ${big} 0 ${P(rr,a1)}Z" fill="${cores[i]}" fill-opacity="${i===2?.45:1}" stroke="var(--surface)" stroke-width="3"/>`;
+    const yy=128+i*52;g+=`<rect x="330" y="${yy-16}" width="18" height="18" rx="4" fill="${cores[i]}" fill-opacity="${i===2?.45:1}"/>`+txt(358,yy,p.rotulo,{size:17,w:600,fill:"var(--ink)"})+
+      txt(W-28,yy,num(p.valor).toLocaleString("pt-BR",{maximumFractionDigits:1})+(a.sufixo||""),{f:FONT_M,size:18,fill:"var(--ink)",anchor:"end"})});
+  if(a.centro)g+=txt(cx,cy+8,a.centro,{size:22,w:800,fill:"var(--ink)",anchor:"middle"});
+  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
+  return g;
+}
 function desenhar(a){
   if(!a||typeof a!=="object")a={tipo:"cena",tema:"bolsa"};
-  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
+  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):a.tipo==="comparacao"?artComparacao(a):a.tipo==="faixa"?artFaixa(a):a.tipo==="rosca"?artRosca(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${g}</svg>`;
 }
 

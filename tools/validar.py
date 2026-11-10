@@ -17,8 +17,9 @@ for k in ["ibovVar", "dolarVar"]:
     if t.get(k) and not re.match(r"^[+-]\d+,\d+%$", t[k]): erros.append(f"ticker.{k} deve ser como +0,67% ou -0,82%")
 ns = d.get("noticias", [])
 if len(ns) < 3: erros.append(f"são esperadas pelo menos 3 notícias, há {len(ns)}")
-TIPOS = {"linha", "indicador", "barras", "cena"}
-TEMAS = {"juros", "fiscal", "ia", "bolsa", "cambio", "inflacao", "energia", "tecnologia", "imoveis", "emprego"}
+TIPOS = {"linha", "indicador", "barras", "comparacao", "faixa", "rosca", "cena"}
+COM_DADOS = TIPOS - {"cena"}
+TEMAS = {"juros", "fiscal", "ia", "bolsa", "cambio", "inflacao", "energia", "tecnologia", "imoveis", "emprego", "cripto"}
 vistos = set()
 for i, n in enumerate(ns, 1):
     p = f"notícia {i} ({n.get('titulo', '')[:40]}…)"
@@ -38,7 +39,15 @@ for i, n in enumerate(ns, 1):
     a = n.get("arte", {})
     if a.get("tipo") not in TIPOS: erros.append(f"{p}: arte.tipo deve ser um de {sorted(TIPOS)}")
     if a.get("tema") not in TEMAS: erros.append(f"{p}: arte.tema deve ser um de {sorted(TEMAS)}")
-    if a.get("tipo") in ("linha", "indicador", "barras") and not a.get("fonte"): erros.append(f"{p}: arte com dados precisa do campo fonte")
+    if a.get("tipo") in COM_DADOS and not a.get("fonte"): erros.append(f"{p}: arte com dados precisa do campo fonte")
+    if a.get("tipo") == "comparacao" and not ((a.get("a") or {}).get("valor") and (a.get("b") or {}).get("valor")): erros.append(f"{p}: arte comparacao precisa de a.valor e b.valor")
+    if a.get("tipo") == "faixa":
+        try:
+            ok_f = float(a["min"]) < float(a["max"]) and float(a["min"]) <= float(a["valor"]) <= float(a["max"])
+        except Exception:
+            ok_f = False
+        if not ok_f: erros.append(f"{p}: arte faixa precisa de valor numérico entre min e max")
+    if a.get("tipo") == "rosca" and not (2 <= len(a.get("partes", [])) <= 4 and all(isinstance(x.get("valor"), (int, float)) for x in a.get("partes", []))): erros.append(f"{p}: arte rosca precisa de 2 a 4 partes com valor numérico")
     if a.get("tipo") == "linha" and len(a.get("pontos", [])) < 2: erros.append(f"{p}: arte linha precisa de 2+ pontos [rótulo, número]")
     if a.get("tipo") == "barras" and not (1 <= len(a.get("barras", [])) <= 4): erros.append(f"{p}: arte barras precisa de 1 a 4 barras")
     if a.get("tipo") == "barras" and not all(isinstance(b.get("valor"), (int, float)) for b in a.get("barras", [])): erros.append(f"{p}: valor das barras deve ser número")
@@ -47,6 +56,22 @@ for i, n in enumerate(ns, 1):
 datas = [iso(n["publicado"]) for n in ns if data_re.match(n.get("publicado", ""))]
 if datas != sorted(datas, reverse=True): erros.append("as edições devem estar da mais nova para a mais antiga (as notícias do dia entram no topo da lista)")
 if ns and d.get("atualizado") and ns[0].get("publicado") != d["atualizado"]: erros.append("as primeiras notícias devem ser da edição de hoje (publicado = atualizado)")
+# variedade das ilustrações: compara a edição mais nova com a anterior
+edicoes = []
+for n in ns:
+    if not edicoes or edicoes[-1][0] != n.get("publicado"):
+        edicoes.append((n.get("publicado"), []))
+    edicoes[-1][1].append(n)
+if edicoes:
+    hoje = edicoes[0][1]
+    if not (3 <= len(hoje) <= 4): erros.append(f"a edição de {edicoes[0][0]} deve ter 4 notícias (mínimo 3); tem {len(hoje)}")
+    tipos = [n.get("arte", {}).get("tipo") for n in hoje]
+    if len(tipos) != len(set(tipos)): erros.append(f"edição de {edicoes[0][0]}: cada notícia deve usar um tipo de ilustração diferente (tem {tipos})")
+    if len(edicoes) > 1:
+        antes = [n.get("arte", {}).get("tipo") for n in edicoes[1][1]]
+        if tipos and antes and tipos[0] == antes[0]: erros.append(f"edição de {edicoes[0][0]}: a notícia de abertura não pode repetir o tipo de ilustração da abertura anterior ({tipos[0]})")
+        comuns = set(tipos) & set(antes)
+        if len(comuns) > 2: erros.append(f"edição de {edicoes[0][0]}: no máximo 2 tipos de ilustração repetidos da edição anterior (repetiu {sorted(comuns)})")
 if erros:
     print("\n".join("ERRO: " + e for e in erros)); sys.exit(1)
 print(f"OK: noticias.json válido ({len(ns)} notícias)")
