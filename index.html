@@ -276,7 +276,7 @@
 
 <footer class="site"><div class="wrap">
   <p><strong style="color:var(--ink)">DiasInvestindo</strong> · viva os dias investindo em você · diasinvestindo.com.br · @diasinvestindo</p>
-  <p class="foot-links"><a href="#sobre">Sobre</a><a href="#contato">Contato</a><button type="button" id="abrir-privacidade">Política de Privacidade</button></p>
+  <p class="foot-links"><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="/privacidade/" id="abrir-privacidade">Política de Privacidade</a></p>
   <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
 </div></footer>
 
@@ -994,7 +994,7 @@ document.addEventListener("click",e=>{
   if(ba){if(live&&ba.tagName==="A")return;e.preventDefault();const t=$("artigo-"+ba.dataset.openArtigo);if(t)abrirLeitor(t.innerHTML,"Artigo");return}
 });
 window.DIPrivacidade=()=>abrirLeitor($("politica-privacidade").innerHTML,"Institucional");
-$("abrir-privacidade").addEventListener("click",window.DIPrivacidade);
+$("abrir-privacidade").addEventListener("click",e=>{e.preventDefault();window.DIPrivacidade();});
 pintarArtes(document);
 
 /* ---------- Calculadoras ---------- */
