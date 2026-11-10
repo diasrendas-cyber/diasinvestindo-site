@@ -161,9 +161,13 @@ function artRosca(a){
   if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   return g;
 }
+function artImagem(a){
+  /* Imagem pronta em 16:9 guardada em /assets/img (ex.: marca enviada pelo Moisés) */
+  return `<image href="${E(a.src)}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"><title>${E(a.alt||"")}</title></image>`;
+}
 function desenhar(a){
   if(!a||typeof a!=="object")a={tipo:"cena",tema:"bolsa"};
-  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):a.tipo==="comparacao"?artComparacao(a):a.tipo==="faixa"?artFaixa(a):a.tipo==="rosca"?artRosca(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
+  let g;try{g=a.tipo==="linha"?artLinha(a):a.tipo==="indicador"?artIndicador(a):a.tipo==="barras"?artBarras(a):a.tipo==="comparacao"?artComparacao(a):a.tipo==="faixa"?artFaixa(a):a.tipo==="rosca"?artRosca(a):a.tipo==="imagem"&&/^\/assets\/img\/[\w.-]+$/.test(a.src||"")?artImagem(a):artCena(a)}catch(e){console.error("arte",e);g=artCena({tema:a.tema})}
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${g}</svg>`;
 }
 
