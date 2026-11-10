@@ -31,7 +31,7 @@ links.forEach(h => check(!!d.getElementById(h.slice(1)), "seção existe " + h))
 check(d.querySelectorAll("section[hidden]").length === 0, "nenhuma seção escondida (página única)");
 ["#contato", "#calc-milhao", "#calc-aposentadoria", "#conversor", "#calculadoras"].forEach(h => check(!!d.querySelector(h), "âncora " + h));
 check(links.includes("#ferramentas") && !links.includes("#calculadoras"), "aba Ferramentas no lugar de Calculadoras");
-check(/viva os dias investindo em você/.test(d.querySelector(".logo small").textContent) && /Viva os dias investindo em você/.test(d.title), "slogan no cabeçalho e no título");
+check(d.querySelector(".logo small").textContent.trim()==="em você" && /Viva os dias investindo em você/.test(d.title), "slogan no cabeçalho e no título");
 check(!d.querySelector("#inicio .author") && d.querySelector("#sobre .creds"), "apresentação do autor só no Sobre");
 check([...d.querySelectorAll("#conteudo > section")].pop().id === "sobre", "Sobre é a última seção da página");
 const intro = d.querySelector(".intro"), ordem = [...intro.children].map(e => e.tagName + (e.id ? "#" + e.id : ""));
@@ -46,10 +46,10 @@ check(/Selic/.test(tk) && tk.includes(DADOS.ticker.ibov) && tk.includes(DADOS.ti
 check($("ticker").querySelectorAll(".up,.down").length >= 1, "cores da régua por sinal");
 
 // Notícias
-check(d.querySelectorAll("#destaques [data-open-noticia]").length === 3, "3 destaques");
-const maisEsperado = Math.max(0, Math.min(4, Math.min(10, DADOS.noticias.length) - 3));
+check(d.querySelectorAll("#destaques [data-open-noticia]").length === 4, "4 destaques");
+const maisEsperado = Math.max(0, Math.min(4, Math.min(10, DADOS.noticias.length) - 4));
 check(d.querySelectorAll("#mais-noticias [data-open-noticia]").length === maisEsperado, "bloco Mais notícias com 4", d.querySelectorAll("#mais-noticias [data-open-noticia]").length);
-check([...d.querySelectorAll("#mais-noticias [data-open-noticia]")].every((a, k) => a.dataset.openNoticia === String(k + 3)), "Mais notícias continua depois dos destaques");
+check([...d.querySelectorAll("#mais-noticias [data-open-noticia]")].every((a, k) => a.dataset.openNoticia === String(k + 4)), "Mais notícias continua depois dos destaques");
 check(d.querySelector("#mais-noticias").compareDocumentPosition(d.querySelector("#destaques")) & 2, "Mais notícias logo abaixo dos destaques");
 // régua: espaço do Bitcoin existe e fica oculto sem cotação (nunca mostra preço velho)
 check(d.querySelector("#ticker [data-btc]") && d.querySelector("#ticker [data-btc]").hidden, "Bitcoin oculto sem cotação ao vivo");

@@ -97,7 +97,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head=""):
 <body>
 <header class="site" id="topo">
   <div class="wrap bar">
-    <a class="logo" href="/"><b>Dias<span>Investindo</span></b><small>viva os dias investindo em você</small></a>
+    <a class="logo" href="/"><b>Dias<span>Investindo</span></b><small>em você</small></a>
     <nav class="tabs" aria-label="Seções do site">
       <a href="/#inicio">Início</a>
       <a href="/noticias/" aria-current="{'true' if '/noticias/' in url else 'false'}">Notícias</a>

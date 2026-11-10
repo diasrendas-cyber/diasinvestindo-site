@@ -37,7 +37,7 @@ O portal trata de finanças: **um número errado é pior do que nenhum número.*
 As notícias **se acumulam**: cada edição diária acrescenta **4 notícias** (mínimo 3, se não houver 4 com dados confirmados) **no topo** da lista `noticias`
 de `noticias.json`, sem apagar as anteriores. Também atualiza `atualizado` e `ticker` (Selic, Ibovespa, dólar e data do pregão; o Bitcoin é ao vivo e não entra aqui).
 O gerador cria a página própria de cada notícia (`/noticias/<slug>/`), o arquivo `/noticias/` (por mês, com filtro por editoria),
-a home (3 destaques, o bloco "Mais notícias" com as 4 seguintes e a lista com as 10 mais recentes), o índice da busca, o sitemap e o RSS.
+a home (4 destaques, o bloco "Mais notícias" com as 4 seguintes e a lista com as 10 mais recentes), o índice da busca, o sitemap e o RSS.
 
 ```json
 {
@@ -76,14 +76,14 @@ A ilustração é desenhada pelo site a partir dos dados da própria notícia. E
 |---|---|---|
 | `linha` | evolução no tempo (juros, inflação, preço) | `titulo`, `pontos: [["rótulo", número], ...]`, `fonte`, opcionais `degraus: true`, `rotular: true`, `sufixo`, `decimais` (casas nos rótulos; 0 para pontos do Ibovespa), `destaque: "texto curto"` |
 | `indicador` | um número do dia (índice, cotação, PIB) | `rotulo`, `valor` (texto), `variacao` (`"+1,2%"`), opcional `secundarios: [{rotulo, valor, variacao}]` (até 2) |
-| `barras` | comparação de valores | `titulo`, `barras: [{rotulo, valor (número), destaque?: true}]` (1 a 4), opcionais `prefixo`, `sufixo`, `nota` |
+| `barras` | comparação de valores | `titulo`, `barras: [{rotulo, valor (número), destaque?: true}]` (1 a 4), opcionais `prefixo`, `sufixo`, `nota`, `subtitulo` (premissas em letra legível), `decimais` (ex.: 2 para R$ 26.250,85) |
 | `comparacao` | dois valores lado a lado: esperado x realizado, antes x depois | `titulo`, `a: {rotulo, valor (texto), nota?}`, `b: {rotulo, valor, nota?}` (b fica em destaque), opcionais `variacao`, `nota` |
 | `faixa` | um valor dentro de uma faixa de referência (ex.: inflação e o intervalo da meta) | `titulo`, `valor` (número), `min`, `max`, opcionais `faixa_min`, `faixa_max`, `alvo`, `rotulo_alvo`, `rotulo_faixa`, `rotulo`, `sufixo`, `decimais`, `nota` |
 | `rosca` | partes de um todo (até 4) | `titulo`, `partes: [{rotulo, valor (número)}]` (2 a 4), opcionais `sufixo`, `centro` |
 | `cena` | notícia sem número central | `titulo` curto (opcional) |
 
 Todos os tipos levam `tema`, o desenho de fundo:
-`juros`, `fiscal`, `ia`, `bolsa`, `cambio`, `inflacao`, `energia`, `tecnologia`, `imoveis`, `emprego`, `cripto`.
+`juros`, `fiscal`, `ia`, `bolsa`, `cambio`, `inflacao`, `energia`, `tecnologia`, `imoveis`, `emprego`, `cripto`, `tesouro` (título público: certificado, cupons e moedas).
 
 **Varie as ilustrações** (o validador confere): na mesma edição, cada notícia usa um tipo diferente;
 a notícia de abertura não repete o tipo da abertura da edição anterior; e no máximo 2 tipos se repetem de um dia para o outro.

@@ -8,7 +8,7 @@ resumo: Mesma proteção contra a inflação, fluxos diferentes. Para quem acumu
 linha_fina: Os dois protegem da inflação e pagam uma taxa fixa por cima. A diferença está em quando o dinheiro volta para você, e isso muda o imposto e o resultado final.
 calculadora: /#calc-aposentadoria
 video:
-arte: {"tipo":"barras","tema":"inflacao","titulo":"Valor líquido após 10 anos, R$ mil","barras":[{"rotulo":"Tesouro IPCA+ (sem cupons)","valor":26.3,"destaque":true},{"rotulo":"Com juros semestrais reinvestidos","valor":25.5}],"nota":"Diferença de R$ 766 a favor do título sem cupons","fonte":"Simulação do artigo: R$ 10 mil, IPCA de 4% e IPCA + 7% ao ano"}
+arte: {"tipo": "barras", "tema": "inflacao", "titulo": "Quanto vira R$ 10.000,00 em 10 anos, após o IR", "subtitulo": "IPCA de 4% a.a. e taxa de IPCA + 7% a.a. nos dois títulos", "prefixo": "R$ ", "decimais": 2, "barras": [{"rotulo": "Valor investido", "valor": 10000.0}, {"rotulo": "Tesouro IPCA+ (sem cupons)", "valor": 26250.85, "destaque": true}, {"rotulo": "Tesouro IPCA+ com Juros Semestrais (cupons reinvestidos)", "valor": 25484.54}], "nota": "Sem cupons termina R$ 766,31 à frente", "fonte": "Simulação do artigo, valores após o imposto de renda"}
 ---
 ## O problema: duas versões do mesmo título
 

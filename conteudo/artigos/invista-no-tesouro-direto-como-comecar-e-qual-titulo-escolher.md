@@ -8,7 +8,7 @@ resumo: O jeito mais simples de emprestar dinheiro ao governo, com garantia do T
 linha_fina: Dá para começar com pouco dinheiro e com a garantia do Tesouro Nacional. O que separa um bom investimento de uma frustração é escolher o título certo para cada objetivo.
 calculadora: /#calc-milhao
 video:
-arte: {"tipo":"cena","tema":"fiscal","titulo":"Selic · Prefixado · IPCA+ · Reserva"}
+arte: {"tipo":"cena","tema":"tesouro","titulo":"Selic · Prefixado · IPCA+ · Reserva"}
 ---
 ## O problema: a renda fixa parece simples até a hora de escolher
 

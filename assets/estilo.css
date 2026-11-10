@@ -107,7 +107,12 @@ main{padding-block:26px 56px}
 
 /* Cartões no estilo portal */
 .lead-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
-.side-stack{display:flex;flex-direction:column;gap:24px}
+.side-stack,.lead-main{display:flex;flex-direction:column;gap:24px}
+.story.wide{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);grid-template-rows:auto auto 1fr auto;column-gap:18px;row-gap:8px;border-top:1px solid var(--line);padding-top:22px}
+.story.wide .art{grid-row:1/-1;align-self:start}
+.story.wide h3{font-size:19px;line-height:1.25}
+.story.wide p{font-size:15px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:520px){.story.wide{grid-template-columns:1fr}.story.wide .art{grid-row:auto}}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
 .four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
 .sub-head{border-bottom-width:1px;margin-top:4px}

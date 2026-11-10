@@ -23,6 +23,11 @@ const CENAS={
   fiscal(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
     <path d="M0 170H260"/><rect x="104" y="20" width="18" height="120"/><rect x="128" y="20" width="18" height="120"/><path d="M104 60h42M104 100h42"/>
     <path d="M20 150h70v-10H20z"/><path d="M28 140a27 22 0 0 1 54 0"/><path d="M170 150h70v-10h-70z"/><path d="M178 140q27 34 54 0"/></g>`},
+  tesouro(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".22">
+    <rect x="10" y="20" width="170" height="120" rx="6"/><rect x="20" y="30" width="150" height="100" rx="3" stroke-width="1.5"/>
+    <circle cx="140" cy="100" r="18"/><path d="M131 100l6 6 12-13"/><path d="M36 54h96M36 72h70M36 90h56"/>
+    <path d="M180 20h46v120h-46" stroke-dasharray="6 5"/><path d="M190 46h26M190 80h26M190 114h26"/>
+    ${[0,1,2,3].map(i=>`<ellipse cx="236" cy="${166-i*14}" rx="26" ry="8" fill="var(--surface)"/><path d="M210 ${166-i*14}v8a26 8 0 0 0 52 0v-8"/>`).join("")}</g>`},
   ia(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".24">
     <rect x="70" y="50" width="100" height="100" rx="10"/><rect x="95" y="75" width="50" height="50" rx="4"/>
     ${[0,1,2,3].map(i=>`<path d="M${84+i*24} 50V20M${84+i*24} 150v30M70 ${64+i*24}H38M170 ${64+i*24}h32"/><circle cx="${84+i*24}" cy="16" r="4"/><circle cx="${84+i*24}" cy="184" r="4"/><circle cx="34" cy="${64+i*24}" r="4"/><circle cx="206" cy="${64+i*24}" r="4"/>`).join("")}</g>`},
@@ -90,11 +95,12 @@ function artIndicador(a){
 function artBarras(a){
   let g=grid()+icone(a.tema);
   g+=txt(28,48,a.titulo||"",{size:21,w:700,fill:"var(--ink)"});
-  const bs=(a.barras||[]).slice(0,4),dec=bs.some(b=>num(b.valor)%1!==0)?1:0,mx=Math.max(...bs.map(b=>num(b.valor)))||1,L=28,maxW=W-L-170,top=96,area=H-top-(a.nota?72:24),slot=area/Math.max(1,bs.length),bh=Math.min(46,slot-34);
+  if(a.subtitulo)g+=txt(28,76,a.subtitulo,{size:16,w:600,fill:"var(--muted)"});
+  const bs=(a.barras||[]).slice(0,4),dec=a.decimais!=null?a.decimais:bs.some(b=>num(b.valor)%1!==0)?1:0,mx=Math.max(...bs.map(b=>num(b.valor)))||1,L=28,maxW=W-L-(a.decimais?190:170),top=a.subtitulo?110:96,area=H-top-(a.nota?72:24),slot=area/Math.max(1,bs.length),bh=Math.min(46,slot-34);
   bs.forEach((b,i)=>{const yy=top+i*slot,w=Math.max(4,maxW*num(b.valor)/mx),c=b.destaque?"var(--accent)":"var(--muted)";
     g+=txt(L,yy,b.rotulo,{size:17,w:600,fill:"var(--ink)"});
     g+=`<rect x="${L}" y="${yy+9}" width="${w}" height="${bh}" rx="5" fill="${c}" fill-opacity="${b.destaque?1:.4}"/>`;
-    g+=txt(L+w+12,yy+9+bh/2+8,(a.prefixo||"")+num(b.valor).toLocaleString("pt-BR",{minimumFractionDigits:dec,maximumFractionDigits:2})+(a.sufixo||""),{f:FONT_M,size:22,w:500,fill:"var(--ink)"})});
+    g+=txt(L+w+12,yy+9+bh/2+8,(a.prefixo||"")+num(b.valor).toLocaleString("pt-BR",{minimumFractionDigits:dec,maximumFractionDigits:Math.max(dec,2)})+(a.sufixo||""),{f:FONT_M,size:22,w:500,fill:"var(--ink)"})});
   if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   if(a.nota){g+=`<rect x="28" y="${H-58}" width="${a.nota.length*9.2+30}" height="38" rx="7" fill="var(--signal-soft)"/>`+txt(43,H-33,a.nota,{size:16,w:600,fill:"var(--ink)"})}
   return g;
