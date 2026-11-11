@@ -1,14 +1,186 @@
 {
-  "atualizado": "10/11/2026",
+  "atualizado": "11/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "172.236",
-    "ibovVar": "+2,22%",
-    "dolar": "R$ 5,506",
-    "dolarVar": "-0,06%",
-    "data": "09/11/2026"
+    "ibov": "171.337",
+    "ibovVar": "-0,52%",
+    "dolar": "R$ 5,586",
+    "dolarVar": "+1,46%",
+    "data": "10/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "10/11/2026",
+      "publicado": "11/11/2026",
+      "titulo": "Anthropic inicia roadshow do IPO com ações entre US$ 70 e US$ 78 e estreia prevista na Nasdaq em 19 de novembro",
+      "resumo": "A criadora do Claude oferecerá 825 milhões de ações sob o código ANT e pode levantar até US$ 64,4 bilhões na bolsa, além de US$ 26 bilhões com fornecedores de tecnologia.",
+      "texto": [
+        "A Anthropic, empresa que desenvolve o assistente Claude, anunciou nesta terça-feira, 10 de novembro, o início do roadshow de sua oferta inicial de ações, a etapa de apresentação aos investidores. Segundo o comunicado oficial, serão oferecidas 825 milhões de ações classe A, das quais 801,4 milhões emitidas pela própria empresa e 23,6 milhões vendidas por acionistas atuais, com faixa de preço de US$ 70 a US$ 78 por papel. A companhia pediu listagem na Nasdaq com o código ANT, e os bancos coordenadores terão opção de comprar até 123,75 milhões de ações adicionais.",
+        "No teto da faixa, a oferta movimentaria cerca de US$ 64,4 bilhões, e sete fornecedores de computação, entre eles Google, Nvidia e AMD, se comprometeram a comprar outros US$ 26 bilhões em ações pelo preço do IPO. Considerando todas as ações e opções, a avaliação chega a cerca de US$ 1,4 trilhão no teto da faixa, abaixo de patamares próximos de US$ 2 trilhões que circularam meses atrás. O anúncio veio depois de uma faixa preliminar ter sido enviada a bancos e retirada no dia anterior, episódio que gerou ruído entre investidores.",
+        "De acordo com a CNBC e outros veículos americanos, o início das negociações está previsto para 19 de novembro, logo depois da definição do preço final. Se confirmada nesses termos, a operação ficará entre as maiores aberturas de capital da história e servirá de termômetro para o apetite do mercado por empresas de inteligência artificial. O registro na SEC, a CVM americana, ainda não entrou em vigor, e as ações só podem ser vendidas depois dessa etapa."
+      ],
+      "bolso": "As ações serão negociadas nos Estados Unidos; investidores brasileiros só terão acesso por meio de corretoras com conta no exterior ou de produtos que venham a incluir o papel.",
+      "arte": {
+        "tipo": "rosca",
+        "tema": "ia",
+        "titulo": "Quanto a Anthropic pode captar, US$ bilhões",
+        "partes": [
+          {
+            "rotulo": "IPO na Nasdaq (teto)",
+            "valor": 64.4
+          },
+          {
+            "rotulo": "Fornecedores (privado)",
+            "valor": 26
+          }
+        ],
+        "sufixo": " bi",
+        "centro": "US$ 90,4 bi",
+        "fonte": "Fonte: Anthropic (comunicado de 10/11/2026), Yahoo Finance e The Next Web"
+      },
+      "fontes": [
+        {
+          "nome": "Anthropic",
+          "url": "https://www.anthropic.com/news/roadshow-launch"
+        },
+        {
+          "nome": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-sets-ipo-price-range-140602411.html"
+        },
+        {
+          "nome": "The Next Web",
+          "url": "https://thenextweb.com/news/anthropic-ipo-terms-1-4-trillion-valuation"
+        }
+      ],
+      "slug": "2026-11-10-anthropic-inicia-roadshow-do-ipo-com-acoes-entre-us-70-e-us-78-e"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "10/11/2026",
+      "publicado": "11/11/2026",
+      "titulo": "Dólar sobe 1,46% e fecha a R$ 5,586, maior valor em mais de 15 meses; Ibovespa cai 0,52%",
+      "resumo": "Inflação americana acima do esperado reforçou a aposta em juros mais altos nos EUA e levou a moeda ao maior fechamento desde julho de 2025.",
+      "texto": [
+        "O dólar comercial subiu 1,46% nesta terça-feira, 10 de novembro, e fechou cotado a R$ 5,586, o maior valor de fechamento desde julho de 2025. Na máxima do dia, a moeda passou de R$ 5,61. O Ibovespa recuou 0,52% e encerrou o pregão aos 171.337 pontos, depois de chegar a superar os 173 mil pontos pela manhã e de cair até 170.569 pontos.",
+        "O principal motivo foi a inflação ao consumidor dos Estados Unidos, que subiu 0,4% em outubro, acima da alta de 0,3% esperada pelos analistas. O dado reforçou a expectativa de que o Federal Reserve, o banco central americano, volte a subir os juros, o que torna os títulos dos EUA mais atraentes e tende a tirar recursos de mercados emergentes como o Brasil. Por aqui, os investidores também avaliaram a ata do Copom, que indicou juros altos por mais tempo, e a queda de 1,17% do petróleo Brent, a US$ 91,49, pesou sobre as ações ligadas à commodity.",
+        "Nesta quinta-feira, 12, o IBGE divulga o IPCA de outubro, o próximo dado relevante para as apostas sobre a Selic, mantida em 13,75% ao ano. A próxima reunião do Copom está marcada para 8 e 9 de dezembro, e o comportamento do câmbio é um dos fatores que o Banco Central acompanha para avaliar a inflação. Nos Estados Unidos, o Federal Reserve também se reúne em dezembro, e novos dados de inflação e emprego devem orientar a decisão."
+      ],
+      "bolso": "Dólar mais caro encarece viagens, compras em sites estrangeiros e, com algum atraso, produtos importados e combustíveis.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "cambio",
+        "rotulo": "Dólar comercial no fechamento",
+        "valor": "R$ 5,586",
+        "variacao": "+1,46%",
+        "secundarios": [
+          {
+            "rotulo": "Ibovespa, pontos",
+            "valor": "171.337",
+            "variacao": "-0,52%"
+          }
+        ],
+        "fonte": "Fonte: Metrópoles, InvestNews e Itabira Online, fechamento de 10/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Metrópoles",
+          "url": "https://www.metropoles.com/brasil/ibovespa-cai-052-com-inflacao-dos-eua-e-ata-do-copom-no-radar"
+        },
+        {
+          "nome": "InvestNews",
+          "url": "https://investnews.com.br/investimentos/ibovespa-fecha-queda-10-11-2026/"
+        },
+        {
+          "nome": "Itabira Online",
+          "url": "https://itabiraonline.com.br/2026/11/10/dolar-sobe-146-e-fecha-a-r-558-maior-valor-em-mais-de-15-meses-ibovespa-recua/"
+        },
+        {
+          "nome": "NC News",
+          "url": "https://ncnews.com.br/2026/11/10/dolar-sobe-559-ibovespa-cai-10/"
+        }
+      ],
+      "slug": "2026-11-10-dolar-sobe-1-46-e-fecha-a-r-5-586-maior-valor-em-mais-de-15-meses"
+    },
+    {
+      "editoria": "Economia",
+      "data": "10/11/2026",
+      "publicado": "11/11/2026",
+      "titulo": "Superávit comercial da China passa de US$ 1 trilhão em dez meses, com exportações em alta de 35,2% em outubro",
+      "resumo": "O país atingiu a marca um mês antes do que em 2025, impulsionado pela demanda por equipamentos ligados à inteligência artificial.",
+      "texto": [
+        "A China acumulou superávit comercial de US$ 1,04 trilhão entre janeiro e outubro de 2026, segundo dados da alfândega chinesa divulgados nesta terça-feira, 10 de novembro. Em outubro, as exportações cresceram 35,2% em relação ao mesmo mês de 2025 e somaram US$ 412,3 bilhões, enquanto as importações subiram 41,6%, para US$ 307,1 bilhões. O saldo do mês ficou em US$ 105,3 bilhões.",
+        "É o segundo ano seguido em que o superávit chinês ultrapassa US$ 1 trilhão, e a marca foi atingida um mês antes do que no ano passado, quando só veio em novembro. Tanto as exportações quanto as importações superaram as projeções de analistas consultados pela Reuters, que esperavam altas de 33,5% e 32%, respectivamente. Veículos internacionais atribuem parte do avanço à forte demanda global por produtos ligados à inteligência artificial, como chips e equipamentos de data centers.",
+        "Com o ritmo atual, o país caminha para superar o recorde de cerca de US$ 1,19 trilhão registrado em 2025. O saldo elevado tende a aumentar a pressão de parceiros comerciais para que Pequim estimule o consumo interno e reduza a dependência das vendas externas. Para o Brasil, que tem a China como principal destino de suas exportações, o vigor do comércio chinês é acompanhado de perto por produtores de commodities."
+      ],
+      "arte": {
+        "tipo": "barras",
+        "tema": "fiscal",
+        "titulo": "Comércio exterior da China em outubro, US$ bilhões",
+        "barras": [
+          {
+            "rotulo": "Exportações",
+            "valor": 412.3
+          },
+          {
+            "rotulo": "Importações",
+            "valor": 307.1
+          },
+          {
+            "rotulo": "Saldo do mês",
+            "valor": 105.3,
+            "destaque": true
+          }
+        ],
+        "decimais": 1,
+        "nota": "De janeiro a outubro: US$ 1,04 trilhão",
+        "fonte": "Fonte: alfândega da China, via Seoul Economic Daily, Trading Economics e Euronews, 10/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Seoul Economic Daily",
+          "url": "https://en.sedaily.com/world/2026/11/11/chinas-trade-surplus-tops-1-trillion-for-second-straight"
+        },
+        {
+          "nome": "Trading Economics",
+          "url": "https://tradingeconomics.com/china/balance-of-trade/news/507988"
+        },
+        {
+          "nome": "Yahoo Finance (Euronews)",
+          "url": "https://finance.yahoo.com/economy/policy/articles/chinas-trade-surplus-surpasses-1-042931697.html"
+        }
+      ],
+      "slug": "2026-11-10-superavit-comercial-da-china-passa-de-us-1-trilhao-em-dez-meses-com"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "10/11/2026",
+      "publicado": "11/11/2026",
+      "titulo": "OpenAI lança perfis de empresas e agentes de vendas dentro do ChatGPT",
+      "resumo": "Em versão de testes, o recurso permite que negócios atualizem suas informações, acompanhem menções no assistente e criem agentes para atender clientes.",
+      "texto": [
+        "A OpenAI lançou nesta terça-feira, 10 de novembro, em versão beta, o recurso Businesses in ChatGPT, que permite a empresas reivindicar e verificar um perfil dentro do assistente. Pelo painel chamado Business Hub, os negócios podem atualizar dados exibidos aos usuários, conectar catálogos de produtos com preço e disponibilidade e ver indicadores como menções nas respostas e cliques para o próprio site. Os chamados Business Agents, agentes que respondem dúvidas sobre produtos em nome da empresa, estão disponíveis inicialmente só para lojas virtuais e serviços online elegíveis nos Estados Unidos.",
+        "A iniciativa mira a mudança no comportamento de consumidores, que passaram a usar assistentes de inteligência artificial para pesquisar produtos e comparar ofertas antes de comprar. Lojistas da plataforma Shopify podem conectar suas lojas diretamente, e as conversas com agentes de empresas aparecem identificadas para que o usuário saiba que saiu do assistente geral. Segundo a OpenAI, as empresas recebem apenas dados agregados e não têm acesso às conversas individuais dos usuários.",
+        "Reivindicar o perfil e publicar um agente é gratuito no lançamento, mas a empresa não descartou cobranças no futuro, segundo a VentureBeat. A OpenAI também testa, com um grupo limitado de anunciantes, anúncios que levam o usuário diretamente a um agente da empresa. A expansão para outros países e categorias de negócio está prevista, sem data definida, o que pode abrir um novo canal de vendas e de publicidade dentro do ChatGPT."
+      ],
+      "bolso": "Para pequenos negócios, vale acompanhar como aparecem em assistentes de IA, que começam a funcionar como uma vitrine ao lado das buscas tradicionais.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "ia",
+        "titulo": "Empresas dentro do ChatGPT"
+      },
+      "fontes": [
+        {
+          "nome": "VentureBeat",
+          "url": "https://venturebeat.com/technology/openai-lets-you-claim-your-business-in-chatgpt-and-set-up-a-custom-agentic-ai-customer-sales-rep"
+        },
+        {
+          "nome": "PYMNTS",
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openai-gives-businesses-new-tools-to-reach-chatgpt-users/"
+        }
+      ],
+      "slug": "2026-11-10-openai-lanca-perfis-de-empresas-e-agentes-de-vendas-dentro-do-chatgpt"
+    },
     {
       "editoria": "Juros",
       "data": "10/11/2026",
