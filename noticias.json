@@ -1,14 +1,193 @@
 {
-  "atualizado": "11/11/2026",
+  "atualizado": "12/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "171.337",
-    "ibovVar": "-0,52%",
-    "dolar": "R$ 5,586",
-    "dolarVar": "+1,46%",
-    "data": "10/11/2026"
+    "ibov": "172.060",
+    "ibovVar": "+0,42%",
+    "dolar": "R$ 5,56",
+    "dolarVar": "-0,42%",
+    "data": "11/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Economia",
+      "data": "11/11/2026",
+      "publicado": "12/11/2026",
+      "titulo": "Governo apresenta pacote fiscal de R$ 50 bilhões a R$ 60 bilhões para 2027, com trava de 2% no crescimento das despesas",
+      "resumo": "O projeto, apresentado pelo ministro Bruno Moretti ao Congresso, permite congelar mais gastos para garantir a meta de superávit de 0,5% do PIB em 2027; a Bolsa subiu e o dólar caiu.",
+      "texto": [
+        "O ministro do Planejamento, Bruno Moretti, apresentou nesta quarta-feira, 11 de novembro, na Comissão Mista de Orçamento do Congresso, um pacote de medidas fiscais com impacto estimado entre R$ 50 bilhões e R$ 60 bilhões em 2027. As propostas foram reunidas em um projeto de lei complementar levado ao Senado pelo líder do governo, Jaques Wagner, com relatoria prevista de Eduardo Braga. A principal medida é uma trava: se as projeções indicarem risco para a meta fiscal, o crescimento real das despesas federais ficará limitado a 2% no ano, abaixo do teto de 2,5% previsto no arcabouço fiscal.",
+        "O pacote também prevê um novo corte linear de incentivos tributários, limites ao uso de créditos que as empresas têm a compensar com a Receita Federal e a retirada das receitas extraordinárias do petróleo do cálculo que corrige o piso de gastos com saúde. As metas não mudam: o governo mantém o objetivo de superávit primário de 0,5% do PIB em 2027 e diz querer chegar a 1,5% do PIB em 2030. Segundo a Reuters, analistas viram um sinal positivo, mas avaliaram que as medidas não alteram a tendência das contas públicas, que segue no centro das preocupações do mercado.",
+        "A reação nos mercados foi favorável: o Ibovespa subiu 0,42% e fechou aos 172.060 pontos, enquanto o dólar comercial caiu 0,42% e terminou a R$ 5,56, devolvendo parte da forte alta da véspera. Por ser um projeto de lei complementar, o texto precisa ser aprovado pela Câmara e pelo Senado, e o governo quer concluir a votação ainda em 2026. Os detalhes da limitação às compensações tributárias serão definidos depois, em ato do Executivo, e o próximo teste para os juros é o IPCA de outubro, divulgado pelo IBGE nesta quinta-feira, 12."
+      ],
+      "bolso": "Um ajuste fiscal crível tende a reduzir a pressão sobre os juros futuros e o câmbio, o que afeta o rendimento de títulos públicos e o custo do crédito; o efeito depende da aprovação no Congresso.",
+      "arte": {
+        "tipo": "faixa",
+        "tema": "fiscal",
+        "titulo": "Crescimento real da despesa federal em 2027",
+        "valor": 2,
+        "min": 0,
+        "max": 3,
+        "faixa_min": 0.6,
+        "faixa_max": 2.5,
+        "alvo": 2.5,
+        "rotulo_alvo": "Teto atual",
+        "rotulo_faixa": "Banda do arcabouço fiscal (0,6% a 2,5%)",
+        "rotulo": "Nova trava proposta: 2%",
+        "sufixo": "%",
+        "decimais": 1,
+        "nota": "Acionada se houver risco à meta de 2027",
+        "fonte": "Fonte: Reuters (via Investing.com) e Agência Brasil (via Bora Investir/B3), 11/11/2026; banda: Mais Retorno e Congresso em Foco"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters, via Investing.com",
+          "url": "https://br.investing.com/news/economy-news/projeto-fiscaltera-impacto-de-ate-r60-bi-em-2027-e-permite-congelamento-adicional-de-gasto-diz-moretti-2124282"
+        },
+        {
+          "nome": "Bora Investir (B3), com Agência Brasil",
+          "url": "https://borainvestir.b3.com.br/noticias/governo-anuncia-medidas-de-ajuste-para-economia-de-ate-r-60-bilhoes/"
+        },
+        {
+          "nome": "Imirante",
+          "url": "https://imirante.com/noticias/brasil/2026/11/11/dolar-cai-042-fecha-r-556-foco-pacote-fiscal"
+        },
+        {
+          "nome": "Diário do Sudoeste",
+          "url": "https://diariodosudoeste.com.br/ibovespa-sobe-042-e-dolar-cai-a-r-556-com-pacote-fiscal/"
+        }
+      ],
+      "slug": "2026-11-11-governo-apresenta-pacote-fiscal-de-r-50-bilhoes-a-r-60-bilhoes-para"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "11/11/2026",
+      "publicado": "12/11/2026",
+      "titulo": "Ações da Nvidia caem mais de 8% após o fechamento com relato de que o conselho avalia afastar Jensen Huang",
+      "resumo": "O conselho da maior fabricante de chips de inteligência artificial se reuniu na noite de quarta-feira para decidir o futuro do cofundador e presidente-executivo; até a manhã desta quinta, não havia decisão anunciada.",
+      "texto": [
+        "As ações da Nvidia fecharam o pregão regular desta quarta-feira, 11 de novembro, em alta de 2,9%, a US$ 173,73, mas recuaram 8,61% na negociação após o fechamento. A queda veio depois de o Wall Street Journal informar que o conselho de administração se preparava para afastar o cofundador e presidente-executivo Jensen Huang, que comanda a empresa desde a fundação. A Reuters relatou, com base em uma fonte próxima ao caso, que os conselheiros se reuniram na noite de quarta-feira para tratar do assunto, e até a manhã de quinta não havia decisão anunciada.",
+        "A crise começou no domingo, 8 de novembro, quando o conselho anunciou uma investigação independente, conduzida por diretores independentes com apoio jurídico externo, sobre reportagens de que Huang teria sido alvo de uma tentativa de espionagem estrangeira. Na ocasião, a empresa afirmou não ter motivos para acreditar que segredos comerciais ou a segurança nacional dos Estados Unidos tenham sido comprometidos e declarou confiança no executivo. Nos dias seguintes, novas reportagens da imprensa americana sobre a conduta pessoal de Huang aumentaram a pressão, e o tom do conselho mudou.",
+        "Segundo a Bloomberg, o conselho trabalha com uma consultoria externa para identificar possíveis substitutos, sem nomes oficialmente divulgados. A Nvidia tem resultado trimestral marcado para 17 de novembro, o que coloca a sucessão no centro das atenções de investidores do mundo todo, já que a empresa tem grande peso nos índices americanos. O episódio ocorreu num dia de alta em Nova York: o Nasdaq subiu 1,6%, o S&P 500 avançou 1,3% e a CoreWeave disparou 24,7% após balanço acima do esperado."
+      ],
+      "bolso": "Fundos e ETFs ligados ao Nasdaq, ao S&P 500 e a tecnologia têm a Nvidia entre as maiores posições, por isso oscilações da ação afetam esses produtos também no Brasil.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "tecnologia",
+        "titulo": "Ação da Nvidia em 11/11/2026",
+        "a": {
+          "rotulo": "Pregão regular",
+          "valor": "+2,9%",
+          "nota": "Fechou a US$ 173,73"
+        },
+        "b": {
+          "rotulo": "Após o fechamento",
+          "valor": "-8,61%",
+          "nota": "Depois do relato sobre o CEO"
+        },
+        "nota": "Sem decisão anunciada pelo conselho até a manhã de 12/11",
+        "fonte": "Fonte: Forbes, Euronews e StockTitan (dados da CNBC), 11/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Forbes",
+          "url": "https://www.forbes.com/sites/siladityaray/2026/11/12/nvidia-shares-plunge-as-board-reportedly-prepares-to-oust-ceo-jensen-huang/"
+        },
+        {
+          "nome": "Euronews",
+          "url": "https://www.euronews.com/2026/11/12/nvidia-shares-fall-on-reports-board-may-oust-ceo-jensen-huang"
+        },
+        {
+          "nome": "Reuters, via The Korea Times",
+          "url": "https://www.koreatimes.co.kr/world/20261112/nvidia-board-meets-to-decide-ceo-huangs-future-as-leadership-crisis-deepens"
+        },
+        {
+          "nome": "Nvidia (comunicado do conselho)",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/default.aspx"
+        }
+      ],
+      "slug": "2026-11-11-acoes-da-nvidia-caem-mais-de-8-apos-o-fechamento-com-relato-de-que-o"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "11/11/2026",
+      "publicado": "12/11/2026",
+      "titulo": "Petrobras lucra R$ 39,75 bilhões no terceiro trimestre, abaixo do esperado, e ação preferencial cai 3,11%",
+      "resumo": "O lucro cresceu 21,5% em um ano, mas ficou aquém da estimativa dos analistas; a estatal anunciou R$ 15,3 bilhões em proventos e elevou a projeção de produção de 2026.",
+      "texto": [
+        "A Petrobras registrou lucro líquido de R$ 39,75 bilhões no terceiro trimestre de 2026, alta de 21,5% sobre o mesmo período de 2025, em balanço divulgado na noite de terça-feira, 10 de novembro. O número ficou abaixo do consenso de R$ 47,02 bilhões compilado pela LSEG. A receita de vendas somou R$ 169,3 bilhões, avanço de 32,4% em um ano, e o Ebitda ajustado chegou a R$ 85,8 bilhões, alta de 34,3%. Na quarta-feira, 11, as ações preferenciais (PETR4) caíram 3,11% e as ordinárias (PETR3) recuaram 2,08%.",
+        "A frustração com o lucro pesou mais do que o crescimento das vendas, impulsionado pelos preços mais altos do petróleo no período. A companhia aprovou R$ 15,3 bilhões em proventos aos acionistas, cerca de R$ 1,19 por ação. Para o Bradesco BBI, citado pelo InfoMoney, o mercado poderia reagir mal ao aumento dos investimentos previstos e a uma remuneração abaixo do esperado. Pesou também o fato de a Petrobras ser uma das maiores empresas do Ibovespa, o que limitou a alta do índice no dia.",
+        "A estatal elevou a projeção de produção total de óleo e gás em 2026 para 3,3 a 3,4 milhões de barris de óleo equivalente por dia, ante 3,1 milhões na estimativa anterior. Também revisou para cima o plano de investimentos do ano, para até US$ 25,5 bilhões, contra US$ 19,4 bilhões antes. Os próximos passos observados pelos analistas são a evolução da produção, o ritmo dos investimentos e a política de dividendos, temas que devem orientar o comportamento das ações nos próximos meses."
+      ],
+      "bolso": "Quem tem ações da Petrobras ou fundos com o papel receberá os proventos conforme as datas de corte e pagamento definidas pela companhia; o valor por ação ficou em cerca de R$ 1,19.",
+      "arte": {
+        "tipo": "barras",
+        "tema": "energia",
+        "titulo": "Lucro da Petrobras no 3º trimestre de 2026, R$ bilhões",
+        "barras": [
+          {
+            "rotulo": "Consenso LSEG",
+            "valor": 47.02
+          },
+          {
+            "rotulo": "Lucro realizado",
+            "valor": 39.75,
+            "destaque": true
+          }
+        ],
+        "prefixo": "R$ ",
+        "decimais": 2,
+        "nota": "Alta de 21,5% sobre o 3º trimestre de 2025",
+        "fonte": "Fonte: Petrobras, via InfoMoney e Forbes Brasil, 10/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/petrobras-petr4-petr3-resultados-terceiro-trimestre-2026/"
+        },
+        {
+          "nome": "Forbes Brasil",
+          "url": "https://forbes.com.br/geral/2026/11/lucro-da-petrobras-cresce-215-no-3o-tri-e-empresa-eleva-projecoes/"
+        },
+        {
+          "nome": "O Tempo",
+          "url": "https://www.otempo.com.br/economia/2026/11/10/lucro-da-petrobras-cresce-21-5-no-terceiro-trimestre-para-r-39-7-bilhoes"
+        },
+        {
+          "nome": "O Tempo (fechamento de 11/11)",
+          "url": "https://www.otempo.com.br/economia/2026/11/11/com-pacote-fiscal-no-radar-ibovespa-termina-a-quarta-feira-no-azul"
+        }
+      ],
+      "slug": "2026-11-11-petrobras-lucra-r-39-75-bilhoes-no-terceiro-trimestre-abaixo-do"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "11/11/2026",
+      "publicado": "12/11/2026",
+      "titulo": "EUA e China vão criar canal direto para alertar sobre incidentes graves com inteligência artificial, diz Bessent",
+      "resumo": "O secretário do Tesouro americano afirmou que os dois países abrirão um diálogo sobre riscos da IA, com troca de práticas para testar modelos avançados, antes de novo encontro entre Trump e Xi Jinping.",
+      "texto": [
+        "O secretário do Tesouro dos Estados Unidos, Scott Bessent, afirmou em discurso em Nova York, divulgado nesta quarta-feira, 11 de novembro, que Washington e Pequim vão cooperar para administrar os riscos da inteligência artificial sem deixar de competir pela liderança na tecnologia. Segundo ele, os dois governos estão criando um canal direto para que cada lado alerte rapidamente o outro sobre incidentes graves envolvendo seus modelos de IA. O discurso foi feito a um público do Comitê Nacional de Relações EUA-China, entidade dedicada ao diálogo entre os dois países.",
+        "Bessent disse que o novo diálogo, aberto por orientação do presidente Donald Trump, busca evitar mal-entendidos entre os sistemas dos dois países e reduzir riscos compartilhados. Entre os temas previstos está a troca de boas práticas para avaliar e testar modelos avançados antes do lançamento, além do compromisso de manter o julgamento humano no controle da tecnologia. O secretário ponderou que os interesses e as abordagens de americanos e chineses nem sempre vão coincidir e defendeu uma postura realista, num momento em que a disputa por chips e modelos de IA está no centro da rivalidade econômica entre as duas potências.",
+        "O próximo passo é o encontro entre Trump e o presidente chinês, Xi Jinping, marcado para a próxima semana em Shenzhen, na China, que Bessent acompanhará e onde o diálogo sobre IA deve avançar. Um quarto encontro entre os dois líderes está previsto em Miami. Para empresas e investidores do setor, um canal oficial de comunicação sobre incidentes pode reduzir o risco de reações bruscas entre governos, embora ainda não estejam claros o formato do mecanismo e as regras de funcionamento."
+      ],
+      "arte": {
+        "tipo": "cena",
+        "tema": "ia",
+        "titulo": "EUA, China e os riscos da IA"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters, via Free Malaysia Today",
+          "url": "https://www.freemalaysiatoday.com/category/world/2026/11/11/us-and-china-should-stay-clear-eyed-on-ai-cooperation-and-competition-says-bessent"
+        },
+        {
+          "nome": "TRT World, com Anadolu",
+          "url": "https://www.trtworld.com/article/b990c4485c26"
+        }
+      ],
+      "slug": "2026-11-11-eua-e-china-vao-criar-canal-direto-para-alertar-sobre-incidentes"
+    },
     {
       "editoria": "Inteligência Artificial",
       "data": "10/11/2026",
