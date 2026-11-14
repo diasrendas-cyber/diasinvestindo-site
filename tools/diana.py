@@ -59,7 +59,7 @@ def faq():
 def _faq_html():
     itens = []
     for i, (p, r) in enumerate(faq(), 1):
-        r_html = esc(r).replace("Política de Privacidade", '<a href="/diana/politica-de-privacidade/">Política de Privacidade</a>', 1)
+        r_html = esc(r).replace("Política de Privacidade", '<a href="/diana/politica-de-privacidade/">Política de Privacidade da Diana</a>', 1)
         itens.append(f'<details class="dfaq" data-pergunta="{esc(p)}"><summary><h3>{esc(p)}</h3></summary><p>{r_html}</p></details>')
     return "\n".join(itens)
 

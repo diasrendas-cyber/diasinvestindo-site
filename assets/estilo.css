@@ -2,7 +2,7 @@
    seções empilhadas (o menu rola até cada uma) e coluna fina de patrocínio flutuando à direita. */
 :root{
   --paper:#F3F5F7; --surface:#FFFFFF; --ink:#0E1724; --muted:#566273; --line:#DCE1E7; --soft:#E9EDF2;
-  --accent:#1E4FD1; --accent-soft:#E3EAFB; --signal:#B98400; --signal-soft:#FBF1D6; --up:#13834F; --down:#C2362B;
+  --accent:#1E4FD1; --accent-soft:#E3EAFB; --signal:#B98400; --signal-soft:#FBF1D6; --up:#0E7343; --down:#C2362B;
   --display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
