@@ -5,6 +5,8 @@ const E=window.DIArte.E;
 /* ---------- Captura de e-mail ---------- */
 const API="https://nkdyvbvbwdqkwvlwfcnr.supabase.co/functions/v1/inscrever-site";
 const live=/(^|\.)diasinvestindo\.com\.br$/.test(location.hostname);
+/* Proteção contra clickjacking: o site publicado não pode ser exibido dentro de moldura (iframe) de outro site. */
+if(live&&window.top!==window.self){try{window.top.location.replace(window.self.location.href)}catch(e){document.documentElement.style.display="none"}}
 let fc=0;
 document.querySelectorAll(".capture-slot").forEach(slot=>{fc++;const id="cap"+fc;
   const d=document.createElement("div");d.className="capture";

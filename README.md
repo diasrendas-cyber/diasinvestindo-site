@@ -17,6 +17,12 @@ Portal publicado pelo GitHub Pages (repositório diasrendas-cyber/diasinvestindo
 - Blocos de anúncio fixos (AdSense): faixa do topo = bloco `8353558655` ("Faixa topo 970x90"); coluna lateral = bloco `7385972248` ("Lateral 160x600"). IDs em `assets/comum.js` (constante `ADSENSE`); os espaços são marcados com `data-ad-slot-name="faixa"` e `"lateral"`. O quadro "Apoio/Anuncie" (160 × 160) continua reservado para patrocínio direto.
 - `tools/validar.py` (valida `noticias.json`), `tools/gerar.py` (gera as páginas), `tools/preview.py` (prévia autocontida), `tools/teste.js` (testes; `npm install && npm test`).
 
+## Segurança
+
+- O GitHub Pages não aceita cabeçalhos HTTP próprios. Por isso as políticas vão em `<meta>`: `Content-Security-Policy` básica nas páginas com AdSense (`CSP_BASICA` em `tools/gerar.py`, e escrita à mão no `index.html`), CSP rígida com hash dos scripts embutidos na `/diana/` (`tools/diana.py`, calculada sozinha a cada geração) e `referrer` em todas.
+- `assets/comum.js` impede que o site publicado seja exibido dentro de moldura (iframe) de outro site (clickjacking).
+- Ao incluir um script ou serviço externo novo na `/diana/`, acrescente o domínio em `_csp()` de `tools/diana.py`, ou ele será bloqueado.
+
 ## Regra de ouro: nenhum dado sem checagem
 
 O portal trata de finanças: **um número errado é pior do que nenhum número.**

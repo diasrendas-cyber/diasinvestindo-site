@@ -43,6 +43,11 @@ LATERAL = """<aside class="rail" aria-label="Patrocínio lateral">
   </div>
 </aside>"""
 
+# Segurança (o GitHub Pages não permite cabeçalhos HTTP próprios; estas políticas vão em <meta>).
+# Páginas com AdSense: política básica que não interfere nos anúncios (sem plugins, sem <base> alheio, formulários só para o próprio site).
+CSP_BASICA = "object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+SEG_HEAD = '<meta name="referrer" content="strict-origin-when-cross-origin">\n'
+
 esc = lambda t: html.escape(str(t if t is not None else ""), quote=True)
 
 
@@ -94,7 +99,7 @@ def arte_div(arte):
     return f'<div class="art" data-arte="{esc(json.dumps(arte or {"tipo": "cena", "tema": "bolsa"}, ensure_ascii=False))}"></div>'
 
 
-def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem=""):
+def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem="", csp=CSP_BASICA):
     """Moldura comum: cabeçalho, régua, faixa de patrocínio, coluna lateral e rodapé.
     cheia=True: página de produto em largura total, sem anúncios (sem AdSense, faixa ou coluna lateral)."""
     adsense = "" if cheia else ADSENSE_HEAD
@@ -112,7 +117,8 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", 
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="{esc(csp)}">
+{SEG_HEAD}<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{esc(titulo)}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="{esc(descricao)}">

@@ -3,7 +3,7 @@
 TUDO O QUE VOCÊ PRECISA PREENCHER OU TROCAR ESTÁ NO DICIONÁRIO CONFIG ABAIXO.
 Depois de editar, rode: python3 tools/gerar.py  (e faça o commit/push).
 """
-import html, json, re
+import base64, hashlib, html, json, re
 
 esc = lambda t: html.escape(str(t if t is not None else ""), quote=True)
 
@@ -99,4 +99,22 @@ def pagina_diana(pagina, site, dados, arquivo_modelo):
     extra = ('<link rel="stylesheet" href="/assets/diana.css">\n<meta name="theme-color" content="#0F6E55">\n'
              + _jsonld(site) + ga + '<script defer src="/assets/diana.js"></script>\n')
     aviso = "A Diana organiza e calcula com base nas informações que você envia. Ela não faz recomendação de investimento."
-    return pagina(TITULO, DESCRICAO, f"{site}{URL}", corpo, dados, extra_head=extra, cheia=True, aviso=aviso, og_imagem=f"{site}{OG}")
+    args = dict(extra_head=extra, cheia=True, aviso=aviso, og_imagem=f"{site}{OG}")
+    # 1ª passada só para achar os scripts embutidos e liberar exatamente eles (hash) na política de segurança
+    rascunho = pagina(TITULO, DESCRICAO, f"{site}{URL}", corpo, dados, **args)
+    return pagina(TITULO, DESCRICAO, f"{site}{URL}", corpo, dados, csp=_csp(rascunho), **args)
+
+
+def _csp(html_):
+    """Política de segurança rígida da /diana/ (página sem anúncios): só scripts do próprio site
+    e os blocos embutidos conferidos por hash; dados só para o Supabase da Diana e as cotações da régua."""
+    hashes = []
+    for m in re.finditer(r"<script(?![^>]*\bsrc=)(?![^>]*application/ld\+json)[^>]*>(.*?)</script>", html_, re.S):
+        dig = base64.b64encode(hashlib.sha256(m.group(1).encode("utf-8")).digest()).decode()
+        hashes.append(f"'sha256-{dig}'")
+    ga = CONFIG.get("ga4")
+    script = " ".join(["'self'"] + hashes + (["https://www.googletagmanager.com"] if ga else []))
+    conecta = "'self' https://lhpehgymzouwolxgdmwv.supabase.co https://api.coingecko.com" + (" https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com" if ga else "")
+    return ("default-src 'self'; " f"script-src {script}; " "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            "font-src https://fonts.gstatic.com; " "img-src 'self' data:" + (" https://*.google-analytics.com https://www.googletagmanager.com" if ga else "") + "; "
+            f"connect-src {conecta}; " "frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests")
