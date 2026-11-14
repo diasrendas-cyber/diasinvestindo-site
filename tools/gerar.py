@@ -310,7 +310,8 @@ def main():
 
     # sitemap, robots e RSS
     hoje = iso(dados["atualizado"])
-    urls = [(f"{SITE}/", hoje, "daily"), (f"{SITE}/noticias/", hoje, "daily"), (f"{SITE}/privacidade/", "2026-11-06", "yearly")]
+    urls = [(f"{SITE}/", hoje, "daily"), (f"{SITE}/noticias/", hoje, "daily"), (f"{SITE}/privacidade/", "2026-11-06", "yearly"),
+            (f"{SITE}/diana/", "2026-11-14", "yearly"), (f"{SITE}/diana/politica-de-privacidade/", "2026-11-14", "yearly")]
     urls += [(f"{SITE}/artigos/", hoje, "weekly")] + [(f"{SITE}/{c}/", hoje, "weekly") for c in ART.CATEGORIAS]
     urls += [(f"{SITE}/artigos/{a['slug']}/", iso(a["data"]), "monthly") for a in arts]
     urls += [(f"{SITE}/noticias/{n['slug']}/", iso(n.get("publicado", n["data"])), "monthly") for n in todas]
