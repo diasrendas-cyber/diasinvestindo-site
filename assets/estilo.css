@@ -301,3 +301,6 @@ a.vcard{text-decoration:none;color:var(--ink)}
 @media (max-width:560px){.sobre-grid{grid-template-columns:1fr}}
 .ticker .btc .when{margin-left:2px}
 .explain:empty{display:none}
+
+/* menu: item da Diana com selo "novo" */
+nav.tabs a .novo{font:700 10px var(--display);letter-spacing:.06em;text-transform:uppercase;background:#0F6E55;color:#fff;border-radius:999px;padding:2px 6px;margin-left:4px;vertical-align:2px}

@@ -26,8 +26,9 @@ const setv = (id, v) => { $(id).value = v; fire($(id), "input"); const f = formD
 
 // Estrutura de página única
 const links = [...d.querySelectorAll("nav.tabs a")].map(a => a.getAttribute("href"));
-check(links.length === 8, "8 abas no menu", links.join(","));
-links.forEach(h => check(!!d.getElementById(h.slice(1)), "seção existe " + h));
+check(links.length === 9, "9 abas no menu (com Diana)", links.join(","));
+links.filter(h => h.startsWith("#")).forEach(h => check(!!d.getElementById(h.slice(1)), "seção existe " + h));
+check(links.includes("/diana/"), "menu aponta para /diana/");
 check(d.querySelectorAll("section[hidden]").length === 0, "nenhuma seção escondida (página única)");
 ["#contato", "#calc-milhao", "#calc-aposentadoria", "#conversor", "#calculadoras"].forEach(h => check(!!d.querySelector(h), "âncora " + h));
 check(links.includes("#ferramentas") && !links.includes("#calculadoras"), "aba Ferramentas no lugar de Calculadoras");

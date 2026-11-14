@@ -11,7 +11,8 @@ Portal publicado pelo GitHub Pages (repositório diasrendas-cyber/diasinvestindo
 - `assets/estilo.css`, `assets/arte.js` (ilustrações), `assets/comum.js` (formulário de e-mail, anúncios e preço do Bitcoin ao vivo na régua): compartilhados por todas as páginas.
 - Cotações ao vivo, consultadas pelo navegador do leitor e sempre com a fonte exibida: Bitcoin na régua (CoinGecko; se não responder, o campo some) e o Conversor de Moedas (PTAX de venda do Banco Central). Nenhuma delas é gravada em `noticias.json`.
 - `verificacao/AAAA-MM-DD.md`: registro de checagem de cada edição.
-- `diana/` e `diana/politica-de-privacidade/`: páginas da Diana (secretária financeira no WhatsApp), escritas à mão e **não** geradas; sem anúncios, sem cookies e sem formulários. O gerador não apaga essa pasta e só inclui as duas URLs no sitemap.
+- `diana/index.html`: página de vendas da Diana, **gerada** por `tools/gerar.py` a partir de `conteudo/diana.html` (texto), `tools/diana.py` (CONFIG: preço, plano, destino dos botões, GA4; FAQ e dados estruturados), `assets/diana.css` e `assets/diana.js` (abas, lista de espera e eventos). Página sem anúncios. A lista de espera grava na tabela `lista_espera` do Supabase da Diana (só inserção pela chave pública).
+- `diana/politica-de-privacidade/`: Política de Privacidade da Diana, escrita à mão (não gerada), sem anúncios e sem cookies.
 - `ads.txt`: autorização do Google AdSense (editor `pub-2224422141615380`).
 - Blocos de anúncio fixos (AdSense): faixa do topo = bloco `8353558655` ("Faixa topo 970x90"); coluna lateral = bloco `7385972248` ("Lateral 160x600"). IDs em `assets/comum.js` (constante `ADSENSE`); os espaços são marcados com `data-ad-slot-name="faixa"` e `"lateral"`. O quadro "Apoio/Anuncie" (160 × 160) continua reservado para patrocínio direto.
 - `tools/validar.py` (valida `noticias.json`), `tools/gerar.py` (gera as páginas), `tools/preview.py` (prévia autocontida), `tools/teste.js` (testes; `npm install && npm test`).

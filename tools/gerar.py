@@ -11,12 +11,37 @@ import html, json, os, re, shutil, sys, unicodedata
 from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import artigos as ART
+import diana as DIANA
 from datetime import date
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://diasinvestindo.com.br"
 HOTMART = "https://go.hotmart.com/R108167327G"
 MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+
+ADSENSE_HEAD = """<!-- ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2224422141615380" crossorigin="anonymous"></script>
+<!-- /ADSENSE -->
+"""
+FAIXA = """<div class="sponsor" aria-label="Patrocínio"><div class="wrap">
+  <div class="sponsor-slot" data-ad-slot-name="faixa">
+    <div><span class="ad-tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira</span></div>
+    <span class="ad-dim">970 × 90</span>
+  </div>
+</div></div>
+"""
+LATERAL = """<aside class="rail" aria-label="Patrocínio lateral">
+  <div class="slot" data-ad-slot-name="lateral">
+    <span class="ad-tag">Patrocínio</span>
+    <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
+    <span class="ad-dim">160 × 600</span>
+  </div>
+  <div class="slot short">
+    <span class="ad-tag">Apoio</span>
+    <div><strong>Anuncie</strong><p>contato@<wbr>diasinvestindo.com.br</p></div>
+    <span class="ad-dim">160 × 160</span>
+  </div>
+</aside>"""
 
 esc = lambda t: html.escape(str(t if t is not None else ""), quote=True)
 
@@ -69,8 +94,20 @@ def arte_div(arte):
     return f'<div class="art" data-arte="{esc(json.dumps(arte or {"tipo": "cena", "tema": "bolsa"}, ensure_ascii=False))}"></div>'
 
 
-def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head=""):
-    """Moldura comum: cabeçalho, régua, faixa de patrocínio, coluna lateral e rodapé."""
+def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem=""):
+    """Moldura comum: cabeçalho, régua, faixa de patrocínio, coluna lateral e rodapé.
+    cheia=True: página de produto em largura total, sem anúncios (sem AdSense, faixa ou coluna lateral)."""
+    adsense = "" if cheia else ADSENSE_HEAD
+    faixa = "" if cheia else FAIXA
+    if cheia:
+        miolo = f'<main class="wrap cheia">\n{corpo}\n</main>'
+    else:
+        miolo = f'<main class="wrap">\n<div class="layout">\n<div id="conteudo">\n{corpo}\n</div>\n{LATERAL}\n</div>\n</main>'
+    og = (f'<meta property="og:image" content="{esc(og_imagem)}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+          f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{esc(titulo)}">\n<meta name="twitter:description" content="{esc(descricao)}">\n<meta name="twitter:image" content="{esc(og_imagem)}">\n') if og_imagem else ""
+    nav_diana = "true" if "/diana/" in url else "false"
+    nav_noticias = "true" if "/noticias/" in url else "false"
+    aviso_html = f"\n  <p>{esc(aviso)}</p>" if aviso else ""
     return f"""<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -86,10 +123,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head=""):
 <meta property="og:url" content="{esc(url)}">
 <meta property="og:locale" content="pt_BR">
 <link rel="alternate" type="application/rss+xml" title="Dias Investindo: notícias" href="/feed.xml">
-<!-- ADSENSE -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2224422141615380" crossorigin="anonymous"></script>
-<!-- /ADSENSE -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
+{og}{adsense}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="/assets/estilo.css">
@@ -104,42 +138,19 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head=""):
       <a href="/#investimentos">Investimentos</a>
       <a href="/#ferramentas">Ferramentas</a>
       <a href="/#produtividade">Produtividade</a>
-      <a href="/noticias/" aria-current="{'true' if '/noticias/' in url else 'false'}">Notícias</a>
+      <a href="/noticias/" aria-current="{nav_noticias}">Notícias</a>
       <a href="/#videoblog">VideoBlog</a>
       <a href="/#sobre">Sobre</a>
+      <a class="nav-diana" href="/diana/" aria-current="{nav_diana}">Diana <span class="novo">novo</span></a>
     </nav>
   </div>
   <div class="ticker"><div class="wrap" aria-label="Indicadores de mercado">{ticker_html(dados.get("ticker", {}))}</div></div>
 </header>
-<div class="sponsor" aria-label="Patrocínio"><div class="wrap">
-  <div class="sponsor-slot" data-ad-slot-name="faixa">
-    <div><span class="ad-tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira</span></div>
-    <span class="ad-dim">970 × 90</span>
-  </div>
-</div></div>
-<main class="wrap">
-<div class="layout">
-<div id="conteudo">
-{corpo}
-</div>
-<aside class="rail" aria-label="Patrocínio lateral">
-  <div class="slot" data-ad-slot-name="lateral">
-    <span class="ad-tag">Patrocínio</span>
-    <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
-    <span class="ad-dim">160 × 600</span>
-  </div>
-  <div class="slot short">
-    <span class="ad-tag">Apoio</span>
-    <div><strong>Anuncie</strong><p>contato@<wbr>diasinvestindo.com.br</p></div>
-    <span class="ad-dim">160 × 160</span>
-  </div>
-</aside>
-</div>
-</main>
+{faixa}{miolo}
 <footer class="site"><div class="wrap">
   <p><strong style="color:var(--ink)">DiasInvestindo</strong> · viva os dias investindo em você · diasinvestindo.com.br · @diasinvestindo</p>
   <p class="foot-links"><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a><a href="/noticias/">Arquivo de notícias</a><a href="/privacidade/">Política de Privacidade</a></p>
-  <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
+  <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>{aviso_html}
 </div></footer>
 <script src="/assets/arte.js"></script>
 <script>
@@ -301,6 +312,8 @@ def main():
     os.makedirs(caminho("privacidade"), exist_ok=True)
     open(caminho("privacidade", "index.html"), "w", encoding="utf-8").write(pagina_privacidade(novo, dados))
     open(caminho("404.html"), "w", encoding="utf-8").write(pagina_404(dados))
+    os.makedirs(caminho("diana"), exist_ok=True)  # /diana/politica-de-privacidade/ é escrita à mão e não é tocada
+    open(caminho("diana", "index.html"), "w", encoding="utf-8").write(DIANA.pagina_diana(pagina, SITE, dados, caminho("conteudo", "diana.html")))
 
     # índice da busca da home: todas as notícias e artigos (título, resumo, editoria, data e endereço)
     busca = [{"k": "Notícia", "t": n["titulo"], "r": n["resumo"], "c": n["editoria"], "d": n.get("publicado", n["data"]), "u": f"/noticias/{n['slug']}/"} for n in todas]
