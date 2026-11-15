@@ -1,5 +1,5 @@
 {
-  "atualizado": "14/11/2026",
+  "atualizado": "15/11/2026",
   "ticker": {
     "selic": "13,75%",
     "ibov": "172.458",
@@ -9,6 +9,191 @@
     "data": "13/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Economia",
+      "data": "14/11/2026",
+      "publicado": "15/11/2026",
+      "titulo": "Fux leva ao plenário físico do STF a decisão de Dino sobre o fim da escala 6x1; jornada de 42 horas a partir de 16 de dezembro segue valendo",
+      "resumo": "O pedido de destaque zerou os quatro votos já dados no plenário virtual, mas a liminar que organiza a transição para a semana de dois dias de folga continua em vigor até novo julgamento.",
+      "texto": [
+        "O ministro Luiz Fux, do Supremo Tribunal Federal (STF), pediu destaque no sábado, 14 de novembro, e interrompeu o julgamento virtual da liminar do ministro Flávio Dino sobre a transição para o fim da escala 6x1. Até então, quatro ministros haviam votado para manter a decisão: o próprio Dino, Alexandre de Moraes, Cármen Lúcia e Gilmar Mendes. Com o destaque, o caso vai ao plenário físico e a votação recomeça do zero, em data que ainda será marcada pelo presidente do tribunal, Edson Fachin. Fux não explicou publicamente o motivo do pedido.",
+        "A liminar foi concedida por Dino em ações da Confederação Nacional do Comércio (CNC) e da Confederação Nacional da Indústria (CNI), que pediam mais prazo para reorganizar escalas e contratos. O ministro negou o adiamento, mas flexibilizou regras: a partir de 16 de dezembro de 2026, a jornada máxima cai de 44 para 42 horas semanais, com duas folgas remuneradas por semana e sem redução de salário, e chega a 40 horas em dezembro de 2027. Durante a transição, empresas podem distribuir as 42 horas em cinco dias, com turnos de até 8 horas e 24 minutos sem pagamento de hora extra pelos 24 minutos adicionais. As assessorias jurídicas da Câmara e do Senado pediram ao STF que preserve o texto aprovado pelo Congresso, e a deputada Erika Hilton (PSOL-SP) criticou a redação das regras de compensação.",
+        "Enquanto o plenário não julgar o caso, a decisão de Dino, que tem efeito imediato, continua valendo, e o calendário de 16 de dezembro permanece de pé. Empresas e sindicatos terão 90 dias, contados a partir dessa data, para renegociar acordos e convenções coletivas, e a mudança chega às vésperas das vendas de fim de ano no comércio. Sindicatos de comerciários de São Paulo e do Rio Grande do Sul já fecharam acordos com entidades patronais para adotar a escala 5x2. A data do novo julgamento vai definir por quanto tempo essa incerteza jurídica se estende."
+      ],
+      "bolso": "Para quem trabalha com carteira assinada em escala 6x1, a regra em vigor prevê duas folgas por semana e jornada de até 42 horas a partir de 16 de dezembro, sem corte de salário; os detalhes da compensação podem variar conforme o acordo coletivo de cada categoria.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "emprego",
+        "titulo": "Jornada máxima semanal pela liminar de Dino, em horas",
+        "pontos": [
+          [
+            "Hoje",
+            44
+          ],
+          [
+            "16/12/2026",
+            42
+          ],
+          [
+            "Dez/2027",
+            40
+          ]
+        ],
+        "degraus": true,
+        "rotular": true,
+        "sufixo": " h",
+        "decimais": 0,
+        "destaque": "Duas folgas remuneradas por semana",
+        "fonte": "Fonte: liminar do ministro Flávio Dino (STF), via Revista Fórum e SP Diário, 14/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Revista Fórum",
+          "url": "https://revistaforum.com.br/politica/escala-6x1-fux-julgamento-plenario-dino/"
+        },
+        {
+          "nome": "SP Diário",
+          "url": "https://spdiario.com.br/noticias/noticias-de-sp/fux-interrompe-julgamento-sobre-o-fim-da-escala-6x1-e-leva-caso-ao-plenario.html"
+        },
+        {
+          "nome": "InfoMoney (Agência O Globo)",
+          "url": "https://www.infomoney.com.br/brasil/comerciarios-de-sp-e-rs-fecham-acordo-para-reduzir-a-escala-6x1-para-5x2/"
+        }
+      ],
+      "slug": "2026-11-14-fux-leva-ao-plenario-fisico-do-stf-a-decisao-de-dino-sobre-o-fim-da"
+    },
+    {
+      "editoria": "Juros",
+      "data": "13/11/2026",
+      "publicado": "15/11/2026",
+      "titulo": "Dirigentes do Fed sinalizam alta de juros em dezembro, e rendimento do título de 10 anos dos EUA vai a 5,15%",
+      "resumo": "Mary Daly, Susan Collins e Austan Goolsbee disseram que a inflação americana está se espalhando, e o mercado passou a apostar em alta de 0,25 ponto na reunião de 8 e 9 de dezembro.",
+      "texto": [
+        "Três presidentes de bancos regionais do Federal Reserve (Fed), o banco central dos Estados Unidos, indicaram na sexta-feira, 13 de novembro, que os juros americanos devem subir novamente. Susan Collins, de Boston, disse que algum aperto adicional da política monetária deve ser apropriado em breve. Mary Daly, de São Francisco, afirmou que sua inclinação é de que a taxa precise subir, e Austan Goolsbee, de Chicago, disse que a inflação já se espalhou para itens que não dependem da energia. No mesmo dia, o rendimento do título do Tesouro americano de 10 anos fechou em torno de 5,15% ao ano.",
+        "A taxa básica dos Estados Unidos está hoje na faixa de 3,75% a 4% ao ano. O Fed subiu os juros em 0,25 ponto em setembro e manteve a taxa em 28 de outubro, numa decisão de 10 votos a 2 em que Lisa Cook e Beth Hammack defenderam nova alta. Segundo os dirigentes, a inflação de serviços não tem cedido, e as empresas estão repassando custos aos consumidores em vez de absorvê-los nas margens. Daly disse que o consumo americano tem resistido melhor do que o esperado e que vai observar as vendas de fim de ano antes de formar sua posição.",
+        "Investidores passaram a apostar em altas de 0,25 ponto nas reuniões do Fed de 8 e 9 de dezembro e de 26 e 27 de janeiro, segundo a Reuters. Juros mais altos nos Estados Unidos tendem a atrair recursos para os títulos americanos e a pressionar moedas de países emergentes, como o real, que já vinha enfraquecido pelas dúvidas sobre o pacote fiscal brasileiro. O Copom, do Banco Central do Brasil, também se reúne em 8 e 9 de dezembro, as mesmas datas da reunião do Fed."
+      ],
+      "bolso": "Juros mais altos nos EUA costumam pressionar o dólar, o que pode encarecer viagens, compras em moeda estrangeira e produtos importados.",
+      "arte": {
+        "tipo": "faixa",
+        "tema": "juros",
+        "titulo": "Juros nos EUA: título de 10 anos e a taxa do Fed",
+        "valor": 5.15,
+        "min": 3,
+        "max": 6,
+        "faixa_min": 3.75,
+        "faixa_max": 4,
+        "rotulo_faixa": "Taxa do Fed (3,75% a 4%)",
+        "rotulo": "Rendimento do título de 10 anos em 13/11/2026",
+        "sufixo": "%",
+        "decimais": 2,
+        "nota": "Mercado aposta em alta em dezembro",
+        "fonte": "Fonte: Federal Reserve (taxa); Stockinsky e Rio Times (título de 10 anos), 13/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters (via Yahoo Finance)",
+          "url": "https://finance.yahoo.com/economy/policy/articles/feds-collins-says-more-rate-163318090.html"
+        },
+        {
+          "nome": "Reuters (via Freedom 96.9)",
+          "url": "https://www.freedom969.com/business/fed-likely-to-need-to-raise-rates-amid-worsening-inflation-daly"
+        },
+        {
+          "nome": "Federal Reserve: comunicado de 28/10/2026",
+          "url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20261028a1.pdf"
+        },
+        {
+          "nome": "Federal Reserve: comunicado de 16/09/2026",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
+        },
+        {
+          "nome": "TMGM",
+          "url": "https://tmgm.com/en/analysis/market-insight/morning-brief-2026-11-13"
+        },
+        {
+          "nome": "The Rio Times",
+          "url": "https://www.riotimesonline.com/global-economy-briefing-november-14-2026/"
+        }
+      ],
+      "slug": "2026-11-13-dirigentes-do-fed-sinalizam-alta-de-juros-em-dezembro-e-rendimento-do"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "15/11/2026",
+      "publicado": "15/11/2026",
+      "titulo": "Bitcoin chega perto de US$ 62 mil no fim de semana, com saída de recursos dos ETFs e liquidações de cerca de US$ 2 bilhões",
+      "resumo": "A criptomoeda recuperou parte da queda na manhã de domingo, mas segue pressionada pela expectativa de alta de juros nos Estados Unidos.",
+      "texto": [
+        "O bitcoin caiu para perto de US$ 62 mil entre a noite de sábado, 14 de novembro, e a madrugada de domingo, 15, e depois recuperou parte da perda, sendo negociado acima de US$ 64 mil na manhã de domingo. No início da semana, a moeda digital era negociada em torno de US$ 75 mil. O ether, segunda maior criptomoeda, ficou abaixo de US$ 2 mil. Em 24 horas, posições alavancadas em criptomoedas que somavam cerca de US$ 2 bilhões foram encerradas à força pelas corretoras, a maior parte delas apostas na alta.",
+        "A queda acompanha a saída de dinheiro dos fundos de bitcoin negociados em bolsa nos Estados Unidos: segundo dados da Farside Investors, os ETFs à vista registraram resgates líquidos de cerca de US$ 1,91 bilhão em sete pregões seguidos, até sexta-feira, 13. Quando os preços caem rapidamente, as liquidações forçadas de posições alavancadas obrigam a venda de mais moedas, o que acelera o movimento. A perspectiva de juros mais altos nos Estados Unidos, após a inflação de outubro e as declarações de dirigentes do Fed, também reduz o apetite por ativos de maior risco.",
+        "Os analistas acompanham agora se os resgates dos ETFs continuam ao longo da semana e como o mercado reage à próxima decisão do Fed, marcada para 8 e 9 de dezembro. Os sites especializados apontam a região de US$ 60 mil como o próximo patamar observado pelos operadores. A semana também traz a estreia da Anthropic na Nasdaq, prevista para quinta-feira, 19, que deve testar o apetite dos investidores por empresas de tecnologia. A cotação do bitcoin pode ser acompanhada ao vivo na régua do topo do site."
+      ],
+      "bolso": "Criptomoedas podem oscilar muito em poucas horas; operações alavancadas ampliam tanto ganhos quanto perdas e podem ser encerradas automaticamente pela corretora.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "cripto",
+        "titulo": "Bitcoin sob pressão"
+      },
+      "fontes": [
+        {
+          "nome": "crypto.news",
+          "url": "https://crypto.news/bitcoin-price-falls-62000-etf-outflows-liquidations/"
+        },
+        {
+          "nome": "CryptoTicker",
+          "url": "https://cryptoticker.io/en/bitcoin-price-overnight-low-weekly-close-november-15-2026/"
+        },
+        {
+          "nome": "Aktualita",
+          "url": "https://aktualita.co/en/economy/bitcoin-price-today-november-15-2026-btcusd-plummets-to-us62000-btcidr-at-rp115-billion"
+        }
+      ],
+      "slug": "2026-11-15-bitcoin-chega-perto-de-us-62-mil-no-fim-de-semana-com-saida-de"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "14/11/2026",
+      "publicado": "15/11/2026",
+      "titulo": "Pane no controle aéreo dos EUA para voos por mais de quatro horas e provoca milhares de cancelamentos no fim de semana",
+      "resumo": "A interrupção nacional de decolagens da sexta-feira foi a mais longa em 25 anos, e o governo americano quer mais US$ 30 bilhões para modernizar o sistema.",
+      "texto": [
+        "A Administração Federal de Aviação dos Estados Unidos (FAA) suspendeu as decolagens em todo o país por mais de quatro horas na sexta-feira, 13 de novembro, depois de uma falha nos sistemas de comunicação e radar do controle de tráfego aéreo. A restrição foi retirada por volta das 20h15 no horário de Washington. Foi a paralisação nacional mais longa em 25 anos, segundo a Associated Press. Os efeitos continuaram no sábado, 14, quando mais de 2.500 voos foram cancelados nos Estados Unidos, de acordo com o site FlightAware, além de centenas de atrasos.",
+        "Segundo autoridades americanas, a combinação de equipamentos novos com partes antigas da rede sobrecarregou o sistema e causou falhas intermitentes de comunicação e de radar. O secretário de Transportes, Sean Duffy, afirmou que o problema não tem relação com a ferramenta de inteligência artificial adotada recentemente pela FAA e atribuiu a pane aos equipamentos antigos. Até agora, o governo não apresentou indício de ataque cibernético, e a investigação sobre a causa exata continua.",
+        "O Congresso já aprovou US$ 12,5 bilhões para a modernização do controle aéreo, e o governo busca cerca de US$ 30 bilhões adicionais. Duffy alertou que novas falhas podem ocorrer até que a troca dos equipamentos termine. As autoridades esperam que a operação esteja normalizada antes do feriado de Ação de Graças, em 26 de novembro, um dos períodos de maior movimento nos aeroportos do país. Passageiros com viagens marcadas para os Estados Unidos devem consultar as companhias aéreas sobre a situação dos voos."
+      ],
+      "bolso": "Quem tem viagem marcada para os Estados Unidos nos próximos dias deve confirmar o voo com a companhia aérea antes de ir ao aeroporto.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "tecnologia",
+        "titulo": "Modernização do controle aéreo dos EUA",
+        "a": {
+          "rotulo": "Já aprovado pelo Congresso",
+          "valor": "US$ 12,5 bi"
+        },
+        "b": {
+          "rotulo": "Valor adicional pedido pelo governo",
+          "valor": "US$ 30 bi"
+        },
+        "nota": "Paralisação de 13/11 foi a mais longa em 25 anos",
+        "fonte": "Fonte: Associated Press, Yahoo News e InfoMoney, 14/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Associated Press (via CP24)",
+          "url": "https://www.cp24.com/news/world/2026/11/14/more-than-2000-flights-cancelled-saturday-after-us-faa-ground-stop-lifted/"
+        },
+        {
+          "nome": "Yahoo News",
+          "url": "https://www.yahoo.com/news/us/article/faa-issues-nationwide-ground-stop-on-all-departing-flights-citing-communication-issue-213136811.html"
+        },
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mundo/crise-aerea-nos-eua-o-que-provocou-e-quais-os-riscos-veja-perguntas-e-respostas/"
+        }
+      ],
+      "slug": "2026-11-14-pane-no-controle-aereo-dos-eua-para-voos-por-mais-de-quatro-horas-e"
+    },
     {
       "editoria": "Mercados",
       "data": "13/11/2026",
