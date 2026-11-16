@@ -1,5 +1,5 @@
 {
-  "atualizado": "15/11/2026",
+  "atualizado": "16/11/2026",
   "ticker": {
     "selic": "13,75%",
     "ibov": "172.458",
@@ -9,6 +9,178 @@
     "data": "13/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Economia",
+      "data": "16/11/2026",
+      "publicado": "16/11/2026",
+      "titulo": "Economia da China perde fôlego em outubro: produção industrial cresce 4,8% e vendas no varejo sobem só 0,4%",
+      "resumo": "Os dados de outubro ficaram abaixo das previsões em indústria, consumo e investimento, sinal de demanda interna fraca na segunda maior economia do mundo.",
+      "texto": [
+        "O Escritório Nacional de Estatísticas da China informou nesta segunda-feira, 16 de novembro, que a produção industrial do país cresceu 4,8% em outubro na comparação com o mesmo mês de 2025, abaixo dos 5,5% de setembro e dos 5,3% previstos por economistas ouvidos pela Reuters. As vendas no varejo subiram apenas 0,4%, contra 1,1% no mês anterior e expectativa de 0,8%. O investimento em ativos fixos caiu 8,1% de janeiro a outubro, queda maior que a de 7,2% registrada até setembro. A taxa de desemprego urbano recuou de 5,2% para 5,1%.",
+        "O resultado do varejo chamou atenção porque outubro contou com o feriado nacional de sete dias e com o início do festival de compras do Dia dos Solteiros, que costumam estimular o consumo. Analistas atribuem parte da fraqueza ao programa oficial de troca de bens, que antecipou compras de eletrodomésticos e carros. O investimento no setor imobiliário seguiu em forte retração, enquanto a fabricação de produtos de alta tecnologia continuou crescendo, puxada pela demanda global ligada à inteligência artificial. As exportações têm sustentado a atividade, mas a procura doméstica segue fraca.",
+        "Pequim anunciou recentemente crédito mais barato para infraestrutura e tecnologia, além de mais apoio a compradores de imóveis, mas parte dos analistas não espera novos estímulos até o fim do ano. Uma economia chinesa mais lenta tende a reduzir a demanda por matérias-primas como minério de ferro e petróleo, itens importantes da pauta de exportações do Brasil. Por isso, os números costumam pesar sobre ações de mineradoras e siderúrgicas na bolsa brasileira. O mercado também acompanha se o governo chinês vai anunciar novas medidas de apoio ao consumo em 2027."
+      ],
+      "bolso": "A desaceleração chinesa costuma afetar empresas exportadoras de minério e petróleo, que têm peso grande no Ibovespa e em fundos de ações.",
+      "arte": {
+        "tipo": "barras",
+        "tema": "energia",
+        "titulo": "China: indicadores de outubro de 2026, variação anual",
+        "barras": [
+          {
+            "rotulo": "Produção industrial",
+            "valor": 4.8,
+            "destaque": true
+          },
+          {
+            "rotulo": "Vendas no varejo",
+            "valor": 0.4
+          },
+          {
+            "rotulo": "Investimento (jan-out)",
+            "valor": -8.1
+          }
+        ],
+        "sufixo": "%",
+        "decimais": 1,
+        "subtitulo": "Previsões da Reuters: indústria +5,3%, varejo +0,8%, investimento -7,0%",
+        "fonte": "Fonte: Escritório Nacional de Estatísticas da China, via Reuters, Business Standard e ActionForex, 16/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters (via MarketScreener)",
+          "url": "https://www.marketscreener.com/news/china-s-factory-output-retail-sales-growth-slow-in-october-ce785ededf81fe2c"
+        },
+        {
+          "nome": "Business Standard",
+          "url": "https://www.business-standard.com/amp/world-news/china-s-economy-slows-in-oct-as-factory-output-retail-sales-miss-forecasts-126111600592_1.html"
+        },
+        {
+          "nome": "ActionForex",
+          "url": "https://www.actionforex.com/live-comments/660975-china-industrial-output-slows-to-4-8-retail-sales-growth-falls-to-0-4/"
+        }
+      ],
+      "slug": "2026-11-16-economia-da-china-perde-folego-em-outubro-producao-industrial-cresce"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "13/11/2026",
+      "publicado": "16/11/2026",
+      "titulo": "Cosan volta ao lucro no terceiro trimestre, com R$ 190 milhões, reduz dívida em 48% e anuncia troca de CEO",
+      "resumo": "A holding reverteu o prejuízo de R$ 1,19 bilhão de um ano antes e informou que Marcelo Martins deixa o comando em janeiro de 2027.",
+      "texto": [
+        "A Cosan (CSAN3) teve lucro líquido de R$ 190 milhões no terceiro trimestre de 2026, segundo balanço divulgado na noite de sexta-feira, 13 de novembro. No mesmo período de 2025, a holding havia registrado prejuízo de R$ 1,19 bilhão. A receita líquida consolidada somou R$ 11,29 bilhões, alta de 6% em um ano. A dívida líquida expandida terminou setembro em R$ 9,5 bilhões, 48% menor que um ano antes e 3% maior que no fim de junho.",
+        "A virada se deveu principalmente à maior contribuição das empresas controladas, à melhora do resultado financeiro e ao corte de despesas administrativas. Entre as investidas, a distribuidora de gás Compass lucrou R$ 591 milhões, alta de 37%, e a Rumo lucrou R$ 439 milhões, alta de 6%. A comparação também foi favorecida porque a Raízen, que passa por reestruturação, não teve resultado reconhecido no balanço do trimestre. Em 2025, a holding passou por uma capitalização que trouxe novos sócios ao grupo.",
+        "Junto com o balanço, a empresa informou que o presidente, Marcelo Martins, deixará o cargo em 4 de janeiro de 2027, após 20 anos no grupo. Guilherme Penin, hoje vice-presidente de Estratégia, assumirá como presidente interino, e Martins continuará nos conselhos da Cosan, da Rumo, da Compass e da Moove. A companhia afirmou que a transição foi planejada para manter a estratégia, mas não informou quando será escolhido o executivo definitivo. O pregão desta segunda-feira, 16, é o primeiro após a divulgação do balanço e da mudança."
+      ],
+      "bolso": "Quem tem ações da Cosan, diretamente ou por meio de fundos, passa a acompanhar uma troca no comando da holding em meio à redução da dívida.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "bolsa",
+        "titulo": "Resultado líquido da Cosan no 3º trimestre",
+        "a": {
+          "rotulo": "3º trimestre de 2025",
+          "valor": "-R$ 1,19 bi",
+          "nota": "Prejuízo"
+        },
+        "b": {
+          "rotulo": "3º trimestre de 2026",
+          "valor": "R$ 190 mi",
+          "nota": "Lucro"
+        },
+        "nota": "Dívida líquida expandida: R$ 9,5 bi, queda de 48% em um ano",
+        "fonte": "Fonte: Cosan, via InfoMoney (Reuters), Money Times e Análise de Ações, 13/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney (Reuters)",
+          "url": "https://www.infomoney.com.br/mercados/cosan-csan3-resultados-terceiro-trimestre-2026/"
+        },
+        {
+          "nome": "Money Times",
+          "url": "https://www.moneytimes.com.br/cosan-csan3-lucra-r-190-milhoes-no-3t26-reduz-divida-e-anuncia-troca-de-ceo-para-2027-pads/"
+        },
+        {
+          "nome": "Análise de Ações",
+          "url": "https://www.analisedeacoes.com/noticias/cosan-csan3-registra-lucro-de-190-milhoes-no-3t26-reduz-divida-e-inicia-transicao-de-ceo/"
+        }
+      ],
+      "slug": "2026-11-13-cosan-volta-ao-lucro-no-terceiro-trimestre-com-r-190-milhoes-reduz"
+    },
+    {
+      "editoria": "Economia",
+      "data": "16/11/2026",
+      "publicado": "16/11/2026",
+      "titulo": "PIB do Japão recua 0,1% em ritmo anualizado no terceiro trimestre, primeira contração em um ano",
+      "resumo": "A queda do consumo das famílias e a alta das importações levaram a economia japonesa ao primeiro resultado negativo em quatro trimestres.",
+      "texto": [
+        "O Produto Interno Bruto do Japão encolheu 0,1% em taxa anualizada entre julho e setembro, segundo a estimativa preliminar do Gabinete do governo divulgada nesta segunda-feira, 16 de novembro. Na comparação com o trimestre anterior, a variação foi de -0,02%. É a primeira contração em quatro trimestres, e o resultado ficou abaixo das projeções de mercado, que apontavam para leve crescimento. O consumo das famílias caiu 0,3% no trimestre, enquanto o investimento das empresas subiu 1,6%.",
+        "O consumo privado, que responde por cerca de metade da economia japonesa, recuou pelo segundo trimestre seguido, pressionado pela inflação persistente e por compras antecipadas no período anterior. As exportações caíram 0,2%, e as importações subiram 2,5%, o que reduz a conta do PIB. O avanço do investimento empresarial foi puxado por gastos ligados à inteligência artificial, como servidores e equipamentos para fabricação de chips. O consumo do governo também teve leve queda, e o investimento em moradias recuou no período.",
+        "O dado chega antes da reunião de dezembro do Banco do Japão, e os analistas se dividem sobre o efeito na decisão de juros. Parte deles avalia que a fraqueza do consumo reflete a alta de preços e reforça a necessidade de aperto, enquanto outros veem mais resistência no conselho a novas altas. Por isso, os próximos dados de inflação e de consumo no Japão devem ganhar peso nas apostas do mercado. A decisão do Banco do Japão pode afetar o iene e o fluxo de capital para outros mercados, inclusive emergentes como o Brasil."
+      ],
+      "arte": {
+        "tipo": "indicador",
+        "tema": "juros",
+        "rotulo": "PIB do Japão no 3º trimestre de 2026, taxa anualizada",
+        "valor": "-0,1%",
+        "variacao": "-0,1%",
+        "secundarios": [
+          {
+            "rotulo": "Consumo das famílias, no trimestre",
+            "valor": "-0,3%",
+            "variacao": "-0,3%"
+          },
+          {
+            "rotulo": "Investimento das empresas, no trimestre",
+            "valor": "+1,6%",
+            "variacao": "+1,6%"
+          }
+        ],
+        "fonte": "Fonte: Gabinete do governo do Japão, via Xinhua e Seoul Economic Daily, 16/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Xinhua",
+          "url": "https://english.news.cn/20261116/0c28de96af58410caa740fd0f0001fe6/c.html"
+        },
+        {
+          "nome": "Seoul Economic Daily",
+          "url": "https://en.sedaily.com/world/2026/11/16/japans-gdp-shrinks-01-percent-in-third-quarter-first-drop"
+        }
+      ],
+      "slug": "2026-11-16-pib-do-japao-recua-0-1-em-ritmo-anualizado-no-terceiro-trimestre"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "15/11/2026",
+      "publicado": "16/11/2026",
+      "titulo": "EUA e oito parceiros firmam acordo para proteger cadeias de suprimento de inteligência artificial diante da China",
+      "resumo": "A declaração prevê uma lista de tecnologias e etapas da produção de IA que precisam de proteção extra, como projeto de chips, equipamentos e portos.",
+      "texto": [
+        "Estados Unidos, Japão, Coreia do Sul, Austrália, Reino Unido, Índia, Israel, Catar e Emirados Árabes Unidos concordaram em identificar e proteger tecnologias e cadeias de suprimento de inteligência artificial consideradas vulneráveis à China. A informação foi publicada pelo jornal Financial Times e repercutida pela Bloomberg no domingo, 15 de novembro. O documento recebeu o nome de Declaração de São Francisco. Alemanha, Suécia, Holanda e a Comissão Europeia devem aderir na próxima semana.",
+        "O acordo faz parte da Pax Silica, iniciativa liderada por Washington para tornar mais seguras as cadeias de produção ligadas à IA, que incluem chips, minerais críticos e energia. Os países se comprometem a montar uma lista de pontos sensíveis, como tecnologia de projeto de semicondutores, equipamentos de fabricação e infraestrutura logística, incluindo portos. A disputa entre Estados Unidos e China pela liderança em IA tem levado o governo americano a buscar coordenação com aliados para reduzir a dependência de fornecedores chineses. Na semana passada, os dois países também anunciaram um canal direto para alertas sobre incidentes graves com IA.",
+        "As reportagens não detalham medidas concretas, como novas restrições de exportação ou investimentos conjuntos, que dependem da lista a ser montada pelos signatários. O tema interessa diretamente a fabricantes de chips e equipamentos, como Nvidia, TSMC, ASML e Micron, cujas ações reagem a qualquer sinal de mudança nas regras de comércio de tecnologia. A próxima etapa é a adesão dos países europeus, prevista para os próximos dias. O avanço do acordo pode influenciar a disputa comercial entre as duas maiores economias do mundo nos próximos meses."
+      ],
+      "arte": {
+        "tipo": "cena",
+        "tema": "ia",
+        "titulo": "Cadeias da IA sob proteção"
+      },
+      "fontes": [
+        {
+          "nome": "Bloomberg (relato do Financial Times)",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-15/us-allies-agree-to-guard-ai-supply-chains-from-china-ft-says"
+        },
+        {
+          "nome": "TipRanks (The Fly)",
+          "url": "https://www.tipranks.com/news/the-fly/us-allies-agree-to-protect-ai-supply-chains-from-china-ft-says-thefly-news"
+        },
+        {
+          "nome": "Bloomingbit",
+          "url": "https://en.bloomingbit.io/feed/news/124501"
+        }
+      ],
+      "slug": "2026-11-15-eua-e-oito-parceiros-firmam-acordo-para-proteger-cadeias-de"
+    },
     {
       "editoria": "Economia",
       "data": "14/11/2026",
