@@ -1,14 +1,218 @@
 {
-  "atualizado": "16/11/2026",
+  "atualizado": "18/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "172.458",
-    "ibovVar": "+0,66%",
-    "dolar": "R$ 5,657",
-    "dolarVar": "+0,11%",
-    "data": "13/11/2026"
+    "ibov": "169.817",
+    "ibovVar": "+0,31%",
+    "dolar": "R$ 5,782",
+    "dolarVar": "+0,08%",
+    "data": "17/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Mercados",
+      "data": "17/11/2026",
+      "publicado": "18/11/2026",
+      "titulo": "Dólar fecha a R$ 5,78, maior nível desde abril de 2025, e Ibovespa sobe 0,31% à espera da votação final do ajuste fiscal",
+      "resumo": "A moeda americana renovou a máxima de fechamento em mais de um ano e meio, enquanto a Bolsa recuperou parte da queda de segunda-feira à espera do Senado.",
+      "texto": [
+        "O dólar comercial terminou a terça-feira (17) cotado a R$ 5,782, alta de 0,08%, e renovou o maior patamar de fechamento desde abril de 2025. Na véspera, a moeda americana já havia subido mais de 2%. O Ibovespa avançou 0,31%, aos 169.817 pontos, e recuperou parte da queda de 1,83% da segunda-feira (16), quando fechou aos 169.295 pontos. O índice chegou a subir mais pela manhã, mas perdeu força à tarde com a queda de ações de bancos e das bolsas de Nova York.",
+        "A pressão sobre o câmbio vem da desconfiança do mercado com as contas públicas. O Senado aprovou na semana passada o texto-base do PLP 299/2026, o projeto de ajuste fiscal do governo, mas adiou para esta quarta-feira (18) a análise de quatro destaques que ainda podem mudar a proposta. Na segunda-feira, o banco Morgan Stanley rebaixou a recomendação para as ações brasileiras de neutra para abaixo da média do mercado. Investidores estrangeiros retiraram cerca de R$ 5,5 bilhões da Bolsa em novembro, até o dia 12, segundo dados da B3.",
+        "A votação dos destaques no Senado é o próximo teste para o câmbio e para os juros futuros, que subiram desde o anúncio do pacote. Um gestor ouvido pela imprensa tratou o alívio de terça como \"um ajuste pontual\", e não como mudança de tendência. No exterior, os investidores acompanham o balanço da Nvidia, divulgado após o fechamento de terça, e a reunião de dezembro do Federal Reserve, o banco central dos EUA. O Boletim Focus desta semana já elevou para R$ 5,40 a projeção do dólar no fim de 2026."
+      ],
+      "bolso": "Com o dólar mais caro, viagens ao exterior, compras internacionais e produtos importados ou cotados na moeda americana tendem a pesar mais no orçamento.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "bolsa",
+        "titulo": "Ibovespa no fechamento, em pontos",
+        "pontos": [
+          [
+            "13/11",
+            172458
+          ],
+          [
+            "16/11",
+            169295
+          ],
+          [
+            "17/11",
+            169817
+          ]
+        ],
+        "rotular": true,
+        "decimais": 0,
+        "destaque": "Dólar a R$ 5,782 (+0,08%) em 17/11",
+        "fonte": "Fonte: fechamentos da B3 publicados por O Tempo, Floresta Notícias, Diário do Sudoeste e Aciara, 13 a 17/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "O Tempo",
+          "url": "https://www.otempo.com.br/economia/2026/11/16/dolar-dispara-e-fecha-a-r-5-77"
+        },
+        {
+          "nome": "Floresta Notícias",
+          "url": "https://www.florestanoticias.com/2026/11/16/ibovespa-cai-183-e-dolar-comercial-sobe-para-r-57777-no-fechamento/"
+        },
+        {
+          "nome": "Diário do Sudoeste",
+          "url": "https://diariodosudoeste.com.br/ibovespa-sobe-031-e-dolar-fecha-a-r-578-nesta-terca/"
+        },
+        {
+          "nome": "Aciara",
+          "url": "https://aciara.com.br/dolar-fecha-ibovespa-sobe-com-fiscal/"
+        },
+        {
+          "nome": "GPS Brasília",
+          "url": "https://gpsbrasilia.com.br/dolar-sobe-008-a-r-578-com-mercado-a-espera-de-votacao-de-destaques-do-ajuste-fiscal/"
+        },
+        {
+          "nome": "ND Mais",
+          "url": "https://ndmais.com.br/economia/dolar-supera-r-577-e-ibovespa-cai-mais-de-2-com-preocupacao-fiscal-e-rebaixamento-do-brasil/"
+        },
+        {
+          "nome": "Rádio Senado",
+          "url": "https://www12.senado.leg.br/radio/1/noticia/2026/11/12/senado-aprova-texto-base-do-ajuste-fiscal-e-analisara-quatro-destaques-na-terca"
+        }
+      ],
+      "slug": "2026-11-17-dolar-fecha-a-r-5-78-maior-nivel-desde-abril-de-2025-e-ibovespa-sobe"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "17/11/2026",
+      "publicado": "18/11/2026",
+      "titulo": "Nvidia fatura US$ 115,8 bilhões no terceiro trimestre, o dobro de um ano antes, e conselho descarta volta de Jensen Huang",
+      "resumo": "No primeiro balanço desde a saída do cofundador, a fabricante de chips superou as previsões e projetou receita de US$ 130 bilhões para o trimestre seguinte.",
+      "texto": [
+        "A Nvidia informou na terça-feira (17) receita de US$ 115,8 bilhões no terceiro trimestre do ano fiscal de 2027, encerrado em 25 de outubro, alta de 103% sobre o mesmo período do ano anterior e de 20% em relação ao trimestre anterior. A divisão de data centers, que reúne os chips usados em inteligência artificial, faturou US$ 107,6 bilhões, avanço de 110% em um ano. O lucro ajustado por ação foi de US$ 2,68, acima dos US$ 2,47 esperados por analistas. A receita também superou a projeção média do mercado, de cerca de US$ 109 bilhões.",
+        "Foi o primeiro balanço desde a saída de Jensen Huang, cofundador que deixou o comando da empresa em 12 de novembro; a diretora financeira Colette Kress ocupa o cargo de forma interina. Na divulgação, o presidente do conselho, Harvey Jones, afirmou que o colegiado não pretende reconduzir Huang ao posto. A empresa contratou a consultoria Heidrick & Struggles para buscar um novo presidente-executivo, entre nomes de dentro e de fora da companhia, sem pressa para a escolha. A companhia não respondeu a perguntas sobre as circunstâncias da renúncia.",
+        "Para o quarto trimestre fiscal, a Nvidia projeta receita de US$ 130 bilhões, com margem de 3% para mais ou para menos, número que inclui uma semana extra no período. A estimativa não considera vendas de chips de data center para a China: a empresa vendeu cerca de US$ 2,4 bilhões em processadores Hopper ao país no trimestre, mas parou de embarcá-los após novas restrições de exportação dos EUA. As ações subiram no pregão estendido logo após a divulgação. O resultado era aguardado como termômetro dos investimentos em inteligência artificial, num momento de dúvidas sobre o ritmo desses gastos."
+      ],
+      "bolso": "Fundos e ETFs de ações americanas e de tecnologia, inclusive os negociados na B3, costumam ter a Nvidia entre as maiores posições, e o resultado tende a pesar no desempenho dessas carteiras.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "ia",
+        "rotulo": "Receita da Nvidia no 3º trimestre fiscal de 2027, ante um ano antes",
+        "valor": "US$ 115,8 bi",
+        "variacao": "+103%",
+        "secundarios": [
+          {
+            "rotulo": "Data centers, ante um ano antes",
+            "valor": "US$ 107,6 bi",
+            "variacao": "+110%"
+          },
+          {
+            "rotulo": "Receita ante o 2º trimestre fiscal",
+            "valor": "+20%",
+            "variacao": "+20%"
+          }
+        ],
+        "fonte": "Fonte: Nvidia, comunicado de resultados de 17/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Nvidia (comunicado, via StockTitan)",
+          "url": "https://stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-third-quarter-fiscal-fpx9dw5egxqa.html"
+        },
+        {
+          "nome": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/live/nvidia-earnings-live-nvidia-posts-q3-beat-board-says-it-will-not-reinstate-jensen-huang-as-ceo-221428433.html"
+        },
+        {
+          "nome": "Investing.com",
+          "url": "https://www.investing.com/news/company-news/nvidia-q3-fy27-slides-revenue-doubles-to-1158b-on-ai-demand-93CH-5034317"
+        },
+        {
+          "nome": "BigGo Finance",
+          "url": "https://finance.biggo.com/news/US_NVDA_2026-11-17"
+        }
+      ],
+      "slug": "2026-11-17-nvidia-fatura-us-115-8-bilhoes-no-terceiro-trimestre-o-dobro-de-um"
+    },
+    {
+      "editoria": "Economia",
+      "data": "16/11/2026",
+      "publicado": "18/11/2026",
+      "titulo": "Focus: mercado reduz projeção de inflação de 2026 para 5,11%, mas eleva a de 2027 para 5% e vê dólar a R$ 5,40",
+      "resumo": "O boletim do Banco Central mostrou expectativas de inflação ainda acima do teto da meta e piora nas projeções de juros e câmbio para o próximo ano.",
+      "texto": [
+        "O Boletim Focus divulgado pelo Banco Central na segunda-feira (16) mostrou que os economistas do mercado reduziram a projeção para o IPCA de 2026 de 5,22% para 5,11%. Para 2027, porém, a estimativa subiu de 4,90% para 5,00%. A previsão para a Selic no fim de 2026 foi mantida em 13,75%, enquanto a do fim de 2027 passou de 12,50% para 12,75%. A projeção de crescimento do PIB em 2026 recuou de 1,75% para 1,72%.",
+        "As duas projeções de inflação seguem acima de 4,5%, o teto do intervalo de tolerância da meta, que é de 3% com margem de 1,5 ponto percentual para cima ou para baixo. A revisão veio numa semana de desconfiança com as contas públicas, após o anúncio do pacote de ajuste fiscal do governo. O câmbio também entrou na conta: a mediana para o dólar no fim de 2026 subiu de R$ 5,35 para R$ 5,40. Desde então, a moeda americana passou de R$ 5,78 no mercado.",
+        "As projeções do Focus servem de referência para o Comitê de Política Monetária (Copom), que faz a última reunião do ano em dezembro e mantém a Selic em 13,75% desde setembro. Expectativas de inflação mais altas para 2027 reduzem o espaço para cortes de juros no próximo ano, pela lógica do regime de metas. O próximo boletim sai na segunda-feira (23) e deve mostrar se a alta recente do dólar já chegou às estimativas dos economistas."
+      ],
+      "bolso": "Juros altos por mais tempo mantêm a renda fixa pós-fixada com boa remuneração, mas deixam financiamentos e crédito ao consumidor mais caros.",
+      "arte": {
+        "tipo": "faixa",
+        "tema": "inflacao",
+        "titulo": "IPCA projetado para 2026 e a meta de inflação",
+        "valor": 5.11,
+        "min": 0,
+        "max": 6,
+        "faixa_min": 1.5,
+        "faixa_max": 4.5,
+        "alvo": 3,
+        "rotulo_alvo": "Meta: 3%",
+        "rotulo_faixa": "Tolerância (1,5% a 4,5%)",
+        "rotulo": "Projeção do Focus para 2026",
+        "sufixo": "%",
+        "decimais": 2,
+        "nota": "Para 2027, a projeção subiu de 4,90% para 5,00%",
+        "fonte": "Fonte: Banco Central, Boletim Focus de 16/11/2026 (via A Crítica e Paraíba Business); meta: CMN"
+      },
+      "fontes": [
+        {
+          "nome": "A Crítica",
+          "url": "https://acritica.net/economia/focus-16-novembro-selic-13-75-pib-1-72-dolar-5-40-ipca/"
+        },
+        {
+          "nome": "Paraíba Business",
+          "url": "https://paraibabusiness.com.br/focus-reduz-ipca-de-2026-para-511-e-eleva-o-de-2027-para-5/"
+        },
+        {
+          "nome": "O Tempo",
+          "url": "https://www.otempo.com.br/economia/2026/11/16/dolar-dispara-e-fecha-a-r-5-77"
+        }
+      ],
+      "slug": "2026-11-16-focus-mercado-reduz-projecao-de-inflacao-de-2026-para-5-11-mas-eleva"
+    },
+    {
+      "editoria": "Economia",
+      "data": "17/11/2026",
+      "publicado": "18/11/2026",
+      "titulo": "Vendas no varejo dos EUA sobem 0,2% em outubro e perdem ritmo após alta de 0,8% em setembro",
+      "resumo": "O consumo americano desacelerou diante da inflação alta, mas o grupo de controle usado no cálculo do PIB cresceu 0,6%.",
+      "texto": [
+        "As vendas no varejo dos Estados Unidos cresceram 0,2% em outubro na comparação com setembro, informou o Departamento de Comércio na terça-feira (17). O ritmo é bem menor que o de setembro, quando as vendas haviam subido 0,8%. O chamado grupo de controle, que exclui automóveis, combustíveis, materiais de construção e serviços de alimentação e entra no cálculo do PIB, avançou 0,6%. Esse resultado ficou acima das previsões dos economistas consultados pela Reuters.",
+        "A desaceleração ocorre num momento de inflação em alta, que corrói o poder de compra principalmente das famílias de renda baixa e média. Uma economista ouvida pela Associated Press avaliou que, descontada a inflação, o consumo encolheu no mês. Entre os segmentos, as vendas de concessionárias de veículos e de lojas de móveis recuaram, enquanto o comércio pela internet cresceu, impulsionado por promoções da Amazon em outubro.",
+        "O dado chega às vésperas da temporada de compras do Dia de Ação de Graças e da Black Friday, quando os varejistas esperam forte movimento. Para o Federal Reserve, o banco central americano, a combinação de consumo ainda resistente e inflação elevada reforça a discussão sobre alta de juros: os mercados já precificam um aumento de 0,25 ponto percentual em dezembro, segundo a Reuters. O próximo indicador acompanhado de perto pelo Fed é o índice de preços de gastos com consumo (PCE) de outubro."
+      ],
+      "bolso": "Juros mais altos nos EUA costumam fortalecer o dólar diante do real, o que pode encarecer compras internacionais e viagens.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "inflacao",
+        "titulo": "Vendas no varejo dos EUA, variação mensal",
+        "a": {
+          "rotulo": "Setembro de 2026",
+          "valor": "+0,8%"
+        },
+        "b": {
+          "rotulo": "Outubro de 2026",
+          "valor": "+0,2%"
+        },
+        "nota": "Grupo de controle (base do PIB): +0,6% em outubro",
+        "fonte": "Fonte: Departamento de Comércio dos EUA, via Reuters e AP, 17/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters (via Investing.com)",
+          "url": "https://www.investing.com/news/economy-news/us-retail-sales-increase-moderately-in-october-5033051"
+        },
+        {
+          "nome": "Associated Press (via PBS)",
+          "url": "https://www.pbs.org/newshour/economy/retail-spending-slowed-in-october-as-high-prices-gave-shoppers-pause"
+        }
+      ],
+      "slug": "2026-11-17-vendas-no-varejo-dos-eua-sobem-0-2-em-outubro-e-perdem-ritmo-apos"
+    },
     {
       "editoria": "Economia",
       "data": "16/11/2026",
