@@ -17,14 +17,14 @@ CONFIG = {
     "checkout": "",   # ex.: "https://pay.hotmart.com/XXXX"
 
     # Planos e preço (os marcadores aparecem na página até você trocar)
-    "plano": "[PLANO]",
-    "preco": "[PREÇO]",
-    "periodo_teste": "[PERÍODO DE TESTE]",
-    "garantia": "[GARANTIA]",
-    "como_cancelar": "[COMO CANCELAR]",
+    "plano": "Profissional · preço de fundador",
+    "preco": "R$ 39,90/mês",
+    "preco_obs": "por 12 meses para quem entrar no piloto · depois R$ 59,90/mês",
+    "periodo_teste": "7 dias grátis, sem cartão",
+    "garantia": "Garantia de 7 dias: devolução integral",
     # Preço só em número, para os dados estruturados (ex.: 49.90). Enquanto for None, o bloco
     # "offers" fica fora do JSON-LD, porque um preço em texto invalidaria os dados estruturados.
-    "preco_numero": None,
+    "preco_numero": 39.90,
 
     # Google Analytics 4 (ex.: "G-XXXXXXX"). Vazio = sem GA; os eventos continuam indo para window.dataLayer.
     "ga4": "",
@@ -50,7 +50,7 @@ def faq():
         ("A Diana recomenda investimentos?",
          "Não. Ela registra aportes, resgates e proventos e acompanha o seu caminho rumo à independência financeira. A Diana organiza e calcula; ela não recomenda compra ou venda de ativos."),
         ("Como cancelo?",
-         f"{c['como_cancelar']} Se também quiser apagar os seus dados, mande \"apagar meus dados\" para a Diana ou escreva para diasrendas@gmail.com. A exclusão é concluída em até 30 dias."),
+         "Você cancela quando quiser, pelo próprio WhatsApp (é só mandar \"cancelar\" para a Diana) ou pelo e-mail de contato do site. No plano mensal não há fidelidade nem multa, e o acesso continua até o fim do período já pago. No plano anual, se cancelar nos primeiros 7 dias, devolvemos o valor integral; depois disso, o cancelamento interrompe a renovação. Antes de sair, você pode pedir a exportação dos seus dados. Depois do cancelamento, eles são excluídos em até 30 dias, conforme a LGPD."),
         ("Meus dados estão seguros?",
          "Cada cliente só vê os próprios dados. O banco de dados fica no Brasil, em servidor em São Paulo, com acesso restrito; os arquivos ficam em armazenamento privado e as comunicações são criptografadas. Para entender textos, fotos e PDFs, a Diana usa inteligência artificial de parceiros listados na Política de Privacidade."),
     ]
@@ -87,7 +87,7 @@ def pagina_diana(pagina, site, dados, arquivo_modelo):
     c = CONFIG
     corpo = open(arquivo_modelo, encoding="utf-8").read()
     cta = {"modo": c["cta_modo"], "whatsapp": c["whatsapp"], "checkout": c["checkout"]}
-    trocas = {"faq": _faq_html(), "plano": esc(c["plano"]), "preco": esc(c["preco"]),
+    trocas = {"faq": _faq_html(), "plano": esc(c["plano"]), "preco": esc(c["preco"]), "preco_obs": esc(c["preco_obs"]),
               "periodo_teste": esc(c["periodo_teste"]), "garantia": esc(c["garantia"]),
               "cta_json": esc(json.dumps(cta, ensure_ascii=False))}
     corpo = re.sub(r"\{\{(\w+)\}\}", lambda m: trocas[m.group(1)], corpo)
@@ -102,7 +102,10 @@ def pagina_diana(pagina, site, dados, arquivo_modelo):
     args = dict(extra_head=extra, cheia=True, aviso=aviso, og_imagem=f"{site}{OG}")
     # 1ª passada só para achar os scripts embutidos e liberar exatamente eles (hash) na política de segurança
     rascunho = pagina(TITULO, DESCRICAO, f"{site}{URL}", corpo, dados, **args)
-    return pagina(TITULO, DESCRICAO, f"{site}{URL}", corpo, dados, csp=_csp(rascunho), **args)
+    final = pagina(TITULO, DESCRICAO, f"{site}{URL}", corpo, dados, csp=_csp(rascunho), **args)
+    geral = '<a href="/privacidade/">Política de Privacidade</a>'
+    assert geral in final, "link da política geral não encontrado no rodapé"
+    return final.replace(geral, geral + '<a href="/diana/politica-de-privacidade/">Política de Privacidade da Diana</a>', 1)
 
 
 def _csp(html_):
