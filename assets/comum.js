@@ -35,13 +35,13 @@ document.querySelectorAll(".capture form").forEach(f=>f.addEventListener("submit
 }));
 
 /* ---------- AdSense: blocos fixos nos espaços de patrocínio ---------- */
-/* Blocos criados no AdSense em 10/11/2026: "Faixa topo 970x90" e "Lateral 160x600".
+/* Blocos criados no AdSense em 10/11/2026: "Faixa topo 970x90" e "Lateral 160x600"; em 19/11/2026: "01" (responsivo, dentro do conteúdo).
    O aviso "Sua marca aqui" fica visível até o anúncio carregar; sem anúncio, ele continua no lugar. */
-const ADSENSE={client:"ca-pub-2224422141615380",slots:{faixa:{id:"8353558655",formato:"horizontal"},lateral:{id:"7385972248",formato:"vertical"}}};
+const ADSENSE={client:"ca-pub-2224422141615380",slots:{faixa:{id:"8353558655",formato:"horizontal"},lateral:{id:"7385972248",formato:"vertical"},conteudo:{id:"7135902252",formato:"auto",responsivo:true}}};
 if(live){
   document.querySelectorAll("[data-ad-slot-name]").forEach(el=>{const s=ADSENSE.slots[el.dataset.adSlotName];if(!s||!s.id)return;
     const ins=document.createElement("ins");ins.className="adsbygoogle ad-unit";
-    ins.dataset.adClient=ADSENSE.client;ins.dataset.adSlot=s.id;ins.dataset.adFormat=s.formato;ins.dataset.fullWidthResponsive="false";
+    ins.dataset.adClient=ADSENSE.client;ins.dataset.adSlot=s.id;ins.dataset.adFormat=s.formato;ins.dataset.fullWidthResponsive=s.responsivo?"true":"false";if(s.responsivo)ins.style.display="block";
     el.classList.add("has-ad");el.appendChild(ins);try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}});
 }
 

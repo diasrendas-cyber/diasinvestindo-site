@@ -167,6 +167,7 @@ def pagina_artigo(a, artigos, pagina, SITE, HOTMART, dados):
   {corpo_artigo(a, h1_id=False)}
   <div class="share"><span>Compartilhe:</span><a href="https://wa.me/?text={quote(a["titulo"] + " " + url)}" target="_blank" rel="noopener">WhatsApp</a><button type="button" id="copiar-link">Copiar link</button>{calc}</div>
 </article>
+<div class="ad-conteudo" data-ad-slot-name="conteudo"></div>
 <div class="cta">
   <div><h3>Planilha Liberdade Financeira</h3><p>Descubra quanto precisa juntar, por quanto tempo e com que aporte para viver de renda.</p></div>
   <div class="btns"><a class="btn" href="{HOTMART}" target="_blank" rel="noopener">Conhecer a planilha</a><a class="btn ghost" href="/#ferramentas">Ferramentas grátis</a></div>
@@ -194,6 +195,7 @@ def pagina_categoria(cat, artigos, pagina, SITE, dados):
   {grade}
   {extra}
 </section>
+<div class="ad-conteudo" data-ad-slot-name="conteudo"></div>
 <div class="capture-slot" data-origem="{cat}"></div>"""
     return pagina(f"{nome} | Dias Investindo", desc, f"{SITE}/{cat}/", corpo, dados)
 
@@ -213,5 +215,6 @@ def pagina_todos(artigos, pagina, SITE, dados):
   <p class="meta" style="margin:0;font-size:16px">Do problema à solução, com números honestos e ferramentas para você fazer as próprias contas.</p>
   {blocos}
 </section>
+<div class="ad-conteudo" data-ad-slot-name="conteudo"></div>
 <div class="capture-slot" data-origem="artigos"></div>"""
     return pagina("Artigos | Dias Investindo", "Todos os artigos do Dias Investindo sobre finanças pessoais, investimentos e produtividade.", f"{SITE}/artigos/", corpo, dados)

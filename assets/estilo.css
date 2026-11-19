@@ -304,3 +304,8 @@ a.vcard{text-decoration:none;color:var(--ink)}
 
 /* menu: item da Diana com selo "novo" */
 nav.tabs a .novo{font:700 10px var(--display);letter-spacing:.06em;text-transform:uppercase;background:#0F6E55;color:#fff;border-radius:999px;padding:2px 6px;margin-left:4px;vertical-align:2px}
+
+/* Bloco de anúncio responsivo dentro do conteúdo: não ocupa espaço até o anúncio carregar e some se não houver anúncio */
+.ad-conteudo{margin:8px 0;min-width:0}
+.ad-conteudo.has-ad::before{content:"Publicidade";display:block;font:600 10px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ad-conteudo ins.adsbygoogle[data-ad-status="unfilled"],.ad-conteudo:has(ins[data-ad-status="unfilled"]){display:none!important}

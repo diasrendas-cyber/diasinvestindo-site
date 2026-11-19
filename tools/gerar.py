@@ -206,6 +206,7 @@ def pagina_noticia(n, todas, dados):
   <p class="src">{"Fontes" if len(n.get("fontes", [])) > 1 else "Fonte"}: {fontes}. Resumo escrito pelo Dias Investindo a partir das reportagens citadas; os números foram conferidos em mais de uma fonte ou em fonte oficial.</p>
   <div class="share"><span>Compartilhe:</span><a href="{wa}" target="_blank" rel="noopener">WhatsApp</a><button type="button" id="copiar-link">Copiar link</button></div>
 </article>
+<div class="ad-conteudo" data-ad-slot-name="conteudo"></div>
 <div class="cta">
   <div><h3>Planilha Liberdade Financeira</h3><p>Descubra quanto precisa juntar, por quanto tempo e com que aporte para viver de renda.</p></div>
   <div class="btns"><a class="btn" href="{HOTMART}" target="_blank" rel="noopener">Conhecer a planilha</a><a class="btn ghost" href="/#calc-aposentadoria">Simular grátis</a></div>
@@ -240,6 +241,7 @@ def pagina_arquivo(todas, dados):
   <div class="filtros" role="group" aria-label="Filtrar por editoria">{filtros}</div>
   {blocos}
 </section>
+<div class="ad-conteudo" data-ad-slot-name="conteudo"></div>
 <div class="capture-slot" data-origem="arquivo"></div>"""
     return pagina("Notícias | Dias Investindo", "Todas as notícias do Dias Investindo sobre economia, investimentos, IA e negócios, explicadas pelo impacto no seu bolso.", f"{SITE}/noticias/", corpo, dados)
 
