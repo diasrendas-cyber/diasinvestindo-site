@@ -1,14 +1,204 @@
 {
-  "atualizado": "18/11/2026",
+  "atualizado": "19/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "169.817",
-    "ibovVar": "+0,31%",
-    "dolar": "R$ 5,782",
-    "dolarVar": "+0,08%",
-    "data": "17/11/2026"
+    "ibov": "167.538",
+    "ibovVar": "-1,34%",
+    "dolar": "R$ 5,867",
+    "dolarVar": "+1,46%",
+    "data": "18/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Economia",
+      "data": "18/11/2026",
+      "publicado": "19/11/2026",
+      "titulo": "Senado conclui votação do ajuste fiscal por 69 votos a 2 e envia o PLP 299/2026 à Câmara",
+      "resumo": "Senadores aprovaram o turno suplementar do pacote que limita o crescimento das despesas e rejeitaram três destaques da oposição.",
+      "texto": [
+        "O Senado terminou na quarta-feira, 18 de novembro, a votação do PLP 299/2026, o projeto de ajuste fiscal do governo, com 69 votos favoráveis e 2 contrários no turno suplementar. O texto principal já havia passado em 12 de novembro, mas a análise das mudanças finais vinha sendo adiada. Dos 15 pedidos de emenda apresentados nesta etapa, dois foram acolhidos por inteiro e um em parte. Agora a proposta segue para a Câmara dos Deputados.",
+        "O relator, senador Eduardo Braga (MDB-AM), estima que as medidas melhorem o resultado primário de 2027 entre R$ 45,1 bilhões e R$ 56,1 bilhões. Um dos pontos centrais limita a 2% o crescimento real dos gastos nos anos em que houver contenção e bloqueio adicional de despesas, abaixo dos 2,5% previstos na lei do arcabouço fiscal. A oposição tentou baixar esse teto para 0,6% ao ano, mas o destaque foi rejeitado por 47 votos a 30. Outros dois destaques, sobre a compensação previdenciária e a compensação de créditos tributários, também foram derrubados.",
+        "A tramitação na Câmara não tem prazo definido no texto, e o mercado acompanha de perto o ritmo da votação, que vinha pesando sobre o câmbio e a Bolsa. Se a lei for sancionada, o Congresso terá 60 dias para regulamentar o teto salarial do serviço público, prazo reduzido de 120 dias por emenda aprovada no Senado. O texto também prevê que, se o resultado primário do ano anterior ficar abaixo de 0,5% do PIB, o governo terá de explicar as causas em audiência pública na Comissão Mista de Orçamento."
+      ],
+      "bolso": "O andamento do ajuste fiscal influencia o dólar e os juros futuros, que por sua vez afetam preços de importados, crédito e a rentabilidade de títulos prefixados.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "fiscal",
+        "titulo": "Limite de crescimento real das despesas em anos de contenção",
+        "a": {
+          "rotulo": "Arcabouço fiscal (LC 200/2023)",
+          "valor": "2,5%"
+        },
+        "b": {
+          "rotulo": "PLP 299/2026 aprovado no Senado",
+          "valor": "2%"
+        },
+        "nota": "Melhora estimada no resultado primário de 2027: R$ 45,1 bi a R$ 56,1 bi",
+        "fonte": "Fonte: Agência Senado, 18/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Agência Senado",
+          "url": "https://www12.senado.leg.br/noticias/materias/2026/11/18/senado-completa-votacao-e-ajuste-fiscal-segue-para-a-camara"
+        },
+        {
+          "nome": "Senado Federal — PLP 299/2026",
+          "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176328"
+        },
+        {
+          "nome": "O Tempo",
+          "url": "https://www.otempo.com.br/economia/2026/11/18/dolar-dispara-e-supera-a-marca-de-r-5-80"
+        }
+      ],
+      "slug": "2026-11-18-senado-conclui-votacao-do-ajuste-fiscal-por-69-votos-a-2-e-envia-o"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "18/11/2026",
+      "publicado": "19/11/2026",
+      "titulo": "Dólar sobe 1,46% e fecha a R$ 5,87, maior valor desde abril de 2025; Ibovespa cai 1,34%",
+      "resumo": "Receio com o ritmo do ajuste fiscal e a perspectiva de juros mais altos nos EUA levaram a moeda americana ao maior patamar em 19 meses.",
+      "texto": [
+        "O dólar comercial terminou a quarta-feira, 18 de novembro, cotado a R$ 5,867, com alta de 1,46%, o maior fechamento desde 15 de abril de 2025. O Ibovespa recuou 1,34%, para 167.538 pontos, pressionado por bancos e petroleiras. As ações do Banco do Brasil caíram 3,42%, as preferenciais da Petrobras perderam 1,84% e as da Vale, 2,22%. Durante o dia, o Banco Central fez leilões de linha que somaram US$ 1 bilhão para dar liquidez ao mercado de câmbio.",
+        "Os investidores reagiram ao vaivém na votação do pacote fiscal no Senado, cujos destaques foram adiados ao longo do dia e só concluídos à noite, depois do fechamento dos mercados. Também pesou a expectativa de nova alta de juros nos Estados Unidos, reforçada pela ata do Federal Reserve divulgada no mesmo dia, que torna os ativos americanos mais atraentes. Dúvidas sobre a composição da equipe econômica do próximo mandato do presidente Lula completaram o quadro de cautela.",
+        "Com o texto do ajuste aprovado no Senado, a atenção passa para a tramitação na Câmara dos Deputados, que pode definir o humor do mercado nas próximas semanas. No exterior, a reunião do Fed marcada para 8 e 9 de dezembro deve continuar no centro das atenções de quem acompanha câmbio e Bolsa."
+      ],
+      "bolso": "Com o dólar mais caro, viagens ao exterior, compras internacionais e produtos cotados na moeda americana tendem a pesar mais no orçamento.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "cambio",
+        "rotulo": "Dólar comercial no fechamento de 18/11/2026",
+        "valor": "R$ 5,867",
+        "variacao": "+1,46%",
+        "secundarios": [
+          {
+            "rotulo": "Ibovespa (pontos)",
+            "valor": "167.538",
+            "variacao": "-1,34%"
+          }
+        ],
+        "fonte": "Fonte: InfoMoney, O Tempo, Agora no Vale e DGABC, fechamento de 18/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-com-receios-sobre-cenario-fiscal-e-juro-maior-nos-eua/"
+        },
+        {
+          "nome": "O Tempo",
+          "url": "https://www.otempo.com.br/economia/2026/11/18/dolar-dispara-e-supera-a-marca-de-r-5-80"
+        },
+        {
+          "nome": "Agora no Vale",
+          "url": "https://agoranovale.com.br/noticias/brasil/dolar-dispara-e-fecha-a-r-586-maior-valor-em-19-meses/"
+        },
+        {
+          "nome": "DGABC",
+          "url": "https://www.dgabc.com.br/Noticia/4369582/fechamento-do-mercado-financeiro"
+        },
+        {
+          "nome": "TradeMap",
+          "url": "https://trademap.com.br/noticias/news-8619036"
+        }
+      ],
+      "slug": "2026-11-18-dolar-sobe-1-46-e-fecha-a-r-5-87-maior-valor-desde-abril-de-2025"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "18/11/2026",
+      "publicado": "19/11/2026",
+      "titulo": "Anthropic fixa preço de US$ 83 por ação, acima da faixa prevista, e capta cerca de US$ 81,3 bilhões no maior IPO da história",
+      "resumo": "A criadora do Claude estreia nesta quinta-feira na Nasdaq com avaliação de cerca de US$ 1,5 trilhão.",
+      "texto": [
+        "A Anthropic, desenvolvedora do assistente de inteligência artificial Claude, fixou na quarta-feira, 18 de novembro, o preço de sua oferta inicial de ações em US$ 83 por papel. O valor ficou acima da faixa indicativa de US$ 70 a US$ 78, e a quantidade de ações foi ampliada de 825 milhões para 980 milhões. Com isso, a operação soma cerca de US$ 81,3 bilhões, a maior oferta inicial já registrada. As ações começam a ser negociadas nesta quinta-feira, 19 de novembro, na Nasdaq, com o código ANT.",
+        "Ao preço definido, a empresa passa a valer cerca de US$ 1,5 trilhão, em base totalmente diluída. A oferta supera a da SpaceX em junho, que captou inicialmente US$ 75 bilhões. Parte das ações vendidas pertence a acionistas existentes, que ficam com esses recursos, de modo que nem todo o valor é capital novo para a companhia. A demanda acima do previsto levou à ampliação da oferta e ao preço superior ao teto da faixa.",
+        "A liquidação da oferta está prevista para 20 de novembro, e os bancos coordenadores têm opção de vender até 147 milhões de ações adicionais em 30 dias, o que pode elevar o total captado. O desempenho no primeiro pregão será acompanhado como termômetro do interesse do mercado por outras empresas de IA que planejam abrir capital. Com ações listadas, a Anthropic passa a divulgar resultados trimestrais e fica sujeita às regras de transparência das companhias abertas."
+      ],
+      "arte": {
+        "tipo": "barras",
+        "tema": "ia",
+        "titulo": "IPO da Anthropic: preço por ação",
+        "barras": [
+          {
+            "rotulo": "Piso da faixa",
+            "valor": 70
+          },
+          {
+            "rotulo": "Teto da faixa",
+            "valor": 78
+          },
+          {
+            "rotulo": "Preço fixado",
+            "valor": 83,
+            "destaque": true
+          }
+        ],
+        "prefixo": "US$ ",
+        "decimais": 0,
+        "subtitulo": "Oferta de 980 milhões de ações, cerca de US$ 81,3 bilhões",
+        "fonte": "Fonte: TechCrunch, ABC News, Tech Funding News e Ynet (Reuters), 18/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/"
+        },
+        {
+          "nome": "ABC News",
+          "url": "https://abcnews.com/Business/anthropic-announces-price-83-share-ipo/story?id=138245320"
+        },
+        {
+          "nome": "Tech Funding News",
+          "url": "https://techfundingnews.com/anthropic-prices-ipo-at-83-per-share-in-an-81-3b-offering-that-values-it-at-about-1-5t/"
+        },
+        {
+          "nome": "Ynet (com Reuters)",
+          "url": "https://www.ynetnews.com/business/article/byz00lzh0ml"
+        }
+      ],
+      "slug": "2026-11-18-anthropic-fixa-preco-de-us-83-por-acao-acima-da-faixa-prevista-e"
+    },
+    {
+      "editoria": "Juros",
+      "data": "18/11/2026",
+      "publicado": "19/11/2026",
+      "titulo": "Ata do Fed mostra quase todos os dirigentes a favor de novas altas de juros e cita a corrida da IA como risco para a inflação",
+      "resumo": "O documento da reunião de outubro indica que uma alta maior que 0,25 ponto pode ser discutida em dezembro.",
+      "texto": [
+        "O Federal Reserve divulgou na quarta-feira, 18 de novembro, a ata da reunião de 27 e 28 de outubro, em que manteve os juros americanos na faixa de 3,75% a 4% ao ano. A decisão teve dois votos contrários, de Lisa Cook e Beth Hammack, que defendiam nova alta de 0,25 ponto. Segundo o documento, quase todos os participantes consideram provável que mais aumentos sejam necessários para levar a inflação de volta à meta de 2%. Alguns dirigentes disseram que uma alta superior a 0,25 ponto pode merecer avaliação na próxima reunião, caso os dados de preços venham desfavoráveis.",
+        "O Fed já havia subido os juros em 0,25 ponto em setembro, diante de pressões de preços espalhadas pela economia e da energia cara, embora o efeito das tarifas de importação esteja perdendo força. A ata traz um alerta novo: muitos participantes veem a expansão da infraestrutura de inteligência artificial como fonte relevante de risco inflacionário. O temor é que os investimentos em centros de dados aumentem a demanda mais rápido do que a capacidade de oferta, além do crescimento acelerado das dívidas ligadas ao setor.",
+        "A próxima decisão do Fed está marcada para 8 e 9 de dezembro, e o mercado já trabalha com uma alta de pelo menos 0,25 ponto. O governador Christopher Waller defendeu publicamente um aumento de 0,5 ponto, enquanto o presidente do Fed de Nova York, John Williams, disse não ver necessidade de um passo desse tamanho. Juros mais altos nos Estados Unidos tendem a fortalecer o dólar e a atrair recursos de mercados emergentes, como o Brasil."
+      ],
+      "bolso": "Juros mais altos nos EUA costumam pressionar o dólar para cima no Brasil, o que encarece importados e pode influenciar as decisões do Banco Central brasileiro.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "juros",
+        "titulo": "Fed prepara nova alta"
+      },
+      "fontes": [
+        {
+          "nome": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm"
+        },
+        {
+          "nome": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/economy/policy/article/fed-minutes-officials-favored-holding-rates-steady-in-october-but-they-see-hikes-ahead-195719301.html"
+        },
+        {
+          "nome": "Breitbart Business",
+          "url": "https://www.breitbart.com/economy/2026/11/18/fed-minutes-show-officials-raised-possibility-of-bigger-december-hike/"
+        },
+        {
+          "nome": "Trading and Investment News",
+          "url": "https://www.tradingandinvestmentnews.co.uk/fed-rate-hikes-minutes-ai/"
+        },
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-com-receios-sobre-cenario-fiscal-e-juro-maior-nos-eua/"
+        }
+      ],
+      "slug": "2026-11-18-ata-do-fed-mostra-quase-todos-os-dirigentes-a-favor-de-novas-altas-de"
+    },
     {
       "editoria": "Mercados",
       "data": "17/11/2026",
