@@ -1,14 +1,201 @@
 {
-  "atualizado": "19/11/2026",
+  "atualizado": "20/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "167.538",
-    "ibovVar": "-1,34%",
-    "dolar": "R$ 5,867",
-    "dolarVar": "+1,46%",
-    "data": "18/11/2026"
+    "ibov": "166.376",
+    "ibovVar": "-0,69%",
+    "dolar": "R$ 5,934",
+    "dolarVar": "+1,15%",
+    "data": "19/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Mercados",
+      "data": "19/11/2026",
+      "publicado": "20/11/2026",
+      "titulo": "Dólar sobe pela sexta sessão seguida e fecha a R$ 5,93 mesmo após venda de US$ 1 bilhão pelo BC; Ibovespa cai 0,69%",
+      "resumo": "A moeda americana subiu 1,15% na quinta-feira, véspera do feriado da Consciência Negra, pressionada pela desconfiança com as contas públicas e pelo mau humor em Wall Street.",
+      "texto": [
+        "O dólar comercial fechou a quinta-feira (19) em alta de 1,15%, cotado a R$ 5,934, na sexta valorização consecutiva e no maior nível de fechamento em mais de um ano. A alta veio mesmo depois de o Banco Central vender US$ 1 bilhão em um leilão extraordinário no mercado à vista, feito por volta do meio-dia. O Ibovespa recuou 0,69% e encerrou o pregão aos 166.376 pontos. Na semana, o dólar acumulou valorização de quase 5%.",
+        "A pressão sobre o câmbio continua ligada às dúvidas sobre as contas públicas. O Senado concluiu na quarta-feira a votação do pacote de ajuste fiscal, mas a economia estimada para 2027 caiu de cerca de R$ 56 bilhões para algo perto de R$ 50 bilhões ao longo da tramitação. Pesou ainda a declaração do presidente Lula de que não tem pressa para definir a nova equipe ministerial, incluindo o comando da Fazenda. No exterior, as bolsas americanas caíram mais de 2%, e a perspectiva de juros mais altos nos Estados Unidos favoreceu a busca por ativos considerados mais seguros.",
+        "Com o feriado da Consciência Negra nesta sexta-feira, os negócios na bolsa brasileira só voltam na segunda-feira (23). O pacote fiscal ainda precisa passar pela Câmara dos Deputados, e o resultado dessa votação tende a orientar o humor do mercado nas próximas semanas. Investidores também acompanham a reunião do Federal Reserve marcada para 8 e 9 de dezembro, em que uma alta de juros é dada como provável. A trajetória do câmbio também dependerá da definição do novo comando da equipe econômica."
+      ],
+      "bolso": "Dólar mais caro encarece viagens, compras em sites estrangeiros e, com o tempo, produtos importados e combustíveis.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "cambio",
+        "titulo": "Dólar comercial no fechamento, em R$",
+        "pontos": [
+          [
+            "13/11",
+            5.66
+          ],
+          [
+            "16/11",
+            5.78
+          ],
+          [
+            "17/11",
+            5.78
+          ],
+          [
+            "18/11",
+            5.87
+          ],
+          [
+            "19/11",
+            5.93
+          ]
+        ],
+        "rotular": true,
+        "decimais": 2,
+        "destaque": "Ibovespa: 166.376 pontos (-0,69%) em 19/11",
+        "fonte": "Fonte: fechamentos publicados por SBT News, GCMais, IstoÉ, InfoMoney, O Tempo e outros, 13 a 19/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "SBT News",
+          "url": "https://sbtnews.sbt.com.br/noticia/economia/dolar-sobe-1-15-e-fecha-a-r-5-9344-apos-leilao-do-bc"
+        },
+        {
+          "nome": "IstoÉ",
+          "url": "https://istoe.com.br/dolar-hoje-19-novembro-2026-alta-593-banco-central"
+        },
+        {
+          "nome": "GCMais",
+          "url": "https://gcmais.com.br/noticias/2026/11/19/dolar-fecha-em-r-5-93-e-ibovespa-cai-quase-0-7-nesta-quinta-feira-19"
+        }
+      ],
+      "slug": "2026-11-19-dolar-sobe-pela-sexta-sessao-seguida-e-fecha-a-r-5-93-mesmo-apos"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "19/11/2026",
+      "publicado": "20/11/2026",
+      "titulo": "Ações da Anthropic estreiam na Nasdaq com alta de 17% e fecham o primeiro dia a US$ 97,17",
+      "resumo": "Depois de abrir 34% acima do preço da oferta, o papel perdeu parte do ganho ao longo da tarde, num dia de forte queda das bolsas americanas.",
+      "texto": [
+        "As ações da Anthropic, criadora do assistente Claude, encerraram o primeiro dia de negociação na Nasdaq, na quinta-feira (19), cotadas a US$ 97,17, alta de cerca de 17,1% sobre o preço de US$ 83 fixado na oferta. O primeiro negócio saiu a US$ 111,50, cerca de 34% acima do preço do IPO, e o papel chegou a US$ 115,10 na máxima do dia. A empresa captou cerca de US$ 81,3 bilhões com a venda de 980 milhões de ações, a maior oferta inicial de ações da história. As ações são negociadas com o código ANT.",
+        "A forte procura já tinha levado a companhia a elevar o preço acima da faixa inicial e a ampliar o número de ações oferecidas. Ao longo da tarde, porém, parte dos investidores realizou lucros, e o papel devolveu boa parte da valorização da abertura num dia de queda generalizada em Wall Street. O valor de mercado da empresa no fechamento varia conforme a base de ações considerada, e as estimativas publicadas diferem em centenas de bilhões de dólares, a depender da inclusão de opções e outros títulos que podem virar ações.",
+        "A estreia é vista como um termômetro do apetite dos investidores por empresas de inteligência artificial de ponta, num momento de dúvidas sobre o retorno dos investimentos bilionários do setor. A Anthropic definiu várias datas escalonadas para o fim do período em que acionistas antigos ficam impedidos de vender, o que pode aumentar a oferta de papéis ao longo dos próximos meses. O resultado também deve influenciar os planos de abertura de capital de outras empresas do setor, como a OpenAI."
+      ],
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "ia",
+        "titulo": "Anthropic (ANT): preço por ação",
+        "a": {
+          "rotulo": "Preço do IPO",
+          "valor": "US$ 83,00"
+        },
+        "b": {
+          "rotulo": "Fechamento em 19/11",
+          "valor": "US$ 97,17",
+          "nota": "Máxima do dia: US$ 115,10"
+        },
+        "variacao": "+17,1%",
+        "fonte": "Fonte: Yahoo Finance, Forbes e TradingKey, 19/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-anthropic-stock-begins-trading-in-record-81b-raise-with-15t-valuation-192410598.html"
+        },
+        {
+          "nome": "Forbes",
+          "url": "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/"
+        },
+        {
+          "nome": "TradingKey",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262313953-us-stock-nasdaq-falls-anthropic-ipo-debut-amd-short-report-tradingkey"
+        }
+      ],
+      "slug": "2026-11-19-acoes-da-anthropic-estreiam-na-nasdaq-com-alta-de-17-e-fecham-o"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "19/11/2026",
+      "publicado": "20/11/2026",
+      "titulo": "Bolsas de Nova York caem mais de 2%, e S&P 500 fecha aos 7.175 pontos com venda de ações de tecnologia",
+      "resumo": "A euforia com a estreia da Anthropic durou pouco: Dow Jones, S&P 500 e Nasdaq viraram para o negativo e tiveram uma das piores sessões do mês.",
+      "texto": [
+        "As principais bolsas dos Estados Unidos fecharam a quinta-feira (19) em forte queda. O S&P 500 recuou 2,02% e terminou aos 7.175,83 pontos, o Dow Jones caiu 2,19%, para 49.097,06 pontos, e o Nasdaq perdeu 2,25%, aos 23.879,20 pontos. Pela manhã, os mercados chegaram a operar em alta, animados pela estreia da Anthropic.",
+        "A virada foi puxada pelas ações de tecnologia e de semicondutores, num movimento de realização de lucros depois da abertura de capital da Anthropic. Também pesaram as dúvidas sobre o retorno dos grandes investimentos em inteligência artificial e a perspectiva de juros mais altos por mais tempo nos Estados Unidos. A ata da última reunião do Federal Reserve, divulgada na véspera, mostrou a maioria dos dirigentes inclinada a novas altas, com a taxa básica hoje entre 3,75% e 4% ao ano.",
+        "O próximo grande teste para os mercados é a reunião do Fed de 8 e 9 de dezembro, em que investidores avaliam a chance de nova alta de juros. A queda em Nova York contaminou outros mercados, inclusive o brasileiro, e reforçou a procura por proteção. Analistas acompanham ainda os próximos balanços de empresas ligadas à inteligência artificial em busca de sinais sobre a demanda por chips e centros de dados."
+      ],
+      "arte": {
+        "tipo": "indicador",
+        "tema": "bolsa",
+        "rotulo": "S&P 500 no fechamento de 19/11/2026",
+        "valor": "7.175,83 pontos",
+        "variacao": "-2,02%",
+        "secundarios": [
+          {
+            "rotulo": "Nasdaq",
+            "valor": "23.879,20",
+            "variacao": "-2,25%"
+          },
+          {
+            "rotulo": "Dow Jones",
+            "valor": "49.097,06",
+            "variacao": "-2,19%"
+          }
+        ],
+        "fonte": "Fonte: TradingKey, The Rio Times e Investing.com, fechamento de 19/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "TradingKey",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262313953-us-stock-nasdaq-falls-anthropic-ipo-debut-amd-short-report-tradingkey"
+        },
+        {
+          "nome": "The Rio Times",
+          "url": "https://www.riotimesonline.com/global-economy-briefing-november-20-2026/"
+        }
+      ],
+      "slug": "2026-11-19-bolsas-de-nova-york-caem-mais-de-2-e-s-p-500-fecha-aos-7-175-pontos"
+    },
+    {
+      "editoria": "Economia",
+      "data": "20/11/2026",
+      "publicado": "20/11/2026",
+      "titulo": "Inflação núcleo do Japão sobe para 2,2% em outubro, abaixo do esperado, mas reforça aposta de alta de juros em dezembro",
+      "resumo": "O índice que exclui alimentos frescos acelerou em relação a setembro e segue acima da meta de 2% do Banco do Japão.",
+      "texto": [
+        "Os preços ao consumidor no Japão, medidos pelo núcleo que exclui alimentos frescos, subiram 2,2% em outubro na comparação com o mesmo mês do ano passado, segundo dados divulgados nesta sexta-feira (20). O resultado ficou um pouco abaixo da mediana de 2,3% esperada pelos economistas, mas superou a alta de 2,1% registrada em setembro. Uma medida mais restrita, que também deixa de fora os combustíveis, avançou 2,2% no período.",
+        "O Banco do Japão persegue uma meta de inflação de 2% e mantém sua taxa básica de juros em 1,25% ao ano. Com a inflação acima desse patamar, o presidente da instituição, Kazuo Ueda, vem sinalizando que novas altas são possíveis. A tendência de juros mais altos não é exclusiva do Japão: bancos centrais de economias desenvolvidas, como o Federal Reserve e o Banco da Inglaterra, também discutem ou já fizeram aumentos recentes.",
+        "Boa parte do mercado espera que o Banco do Japão eleve os juros de 1,25% para 1,5% na reunião de dezembro, e os dados de inflação de outubro estão entre os indicadores que a instituição vai examinar. Juros mais altos no Japão podem fortalecer o iene e levar investidores japoneses a trazer recursos de volta para casa. Esse movimento costuma afetar os mercados globais, inclusive os de países emergentes como o Brasil."
+      ],
+      "arte": {
+        "tipo": "faixa",
+        "tema": "inflacao",
+        "titulo": "Japão: inflação núcleo em outubro e a meta do BoJ",
+        "valor": 2.2,
+        "min": 0,
+        "max": 4,
+        "alvo": 2,
+        "rotulo_alvo": "Meta: 2%",
+        "rotulo": "Núcleo (sem alimentos frescos), 12 meses",
+        "sufixo": "%",
+        "decimais": 1,
+        "nota": "Previsão dos economistas: 2,3%; setembro: 2,1%",
+        "fonte": "Fonte: Reuters (via Investing.com e Yahoo Finance) e The Rio Times, 20/11/2026; meta: Banco do Japão"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters (via Investing.com)",
+          "url": "https://www.investing.com/news/economic-indicators/japan-oct-core-cpi-rises-22-yryr-5040343"
+        },
+        {
+          "nome": "Reuters (via Yahoo Finance)",
+          "url": "https://finance.yahoo.com/economy/articles/japan-oct-core-cpi-rises-233628741.html"
+        },
+        {
+          "nome": "Reuters (reprodução)",
+          "url": "https://www.1049thewolf.com/2026/11/19/japans-core-inflation-accelerates-in-october-cementing-rate-hike-expectations/"
+        }
+      ],
+      "slug": "2026-11-20-inflacao-nucleo-do-japao-sobe-para-2-2-em-outubro-abaixo-do-esperado"
+    },
     {
       "editoria": "Economia",
       "data": "18/11/2026",
