@@ -1,5 +1,5 @@
 {
-  "atualizado": "20/11/2026",
+  "atualizado": "21/11/2026",
   "ticker": {
     "selic": "13,75%",
     "ibov": "166.376",
@@ -9,6 +9,206 @@
     "data": "19/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Mercados",
+      "data": "20/11/2026",
+      "publicado": "21/11/2026",
+      "titulo": "S&P 500 cai 3,7% e entra em correção; Nasdaq despenca 5,3% e passa a acumular perda em 2026",
+      "resumo": "A venda de ações ligadas à inteligência artificial levou o S&P 500 a mais de 10% abaixo do recorde de outubro, a definição técnica de correção.",
+      "texto": [
+        "As bolsas de Nova York tiveram na sexta-feira, 20 de novembro, um dos piores pregões do ano. O S&P 500 recuou 3,7%, ou 265,44 pontos, e fechou aos 6.910,39 pontos. O Nasdaq, carregado de empresas de tecnologia, perdeu 5,3% e terminou aos 22.617,73 pontos, enquanto o Dow Jones caiu 1,9%, para 48.147,33 pontos. Com o tombo, o S&P 500 ficou mais de 10% abaixo da máxima histórica de 6 de outubro, o que o mercado chama de correção.",
+        "O movimento foi puxado pela venda de ações de inteligência artificial, diante do temor de que os investimentos bilionários em data centers não tragam o retorno esperado. Os fabricantes de chips lideraram as perdas: a Nvidia caiu cerca de 14% depois de uma reportagem da Reuters sobre uma investigação da SEC, a CVM americana, e AMD e Micron recuaram mais de 13%. Com a queda, o Nasdaq apagou o ganho que acumulava em 2026 e passou a registrar perda no ano.",
+        "A sexta-feira fechou a semana com perdas fortes em Wall Street, e a B3 retoma os negócios na segunda-feira, 23, depois do feriado da Consciência Negra, já sob o efeito desse ambiente externo. Na semana que vem, as bolsas americanas fecham na quinta-feira, 26, pelo feriado de Ação de Graças, e operam só meio período na sexta. Investidores também acompanham a reunião do Federal Reserve de 8 e 9 de dezembro, em que dirigentes sinalizaram nova alta de juros."
+      ],
+      "bolso": "Quem tem fundos ou ETFs de ações americanas, ou BDRs de tecnologia, deve ver a queda refletida nas cotas e nos preços a partir da reabertura da B3.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "bolsa",
+        "rotulo": "S&P 500 no fechamento de 20/11/2026",
+        "valor": "6.910,39 pontos",
+        "variacao": "-3,7%",
+        "secundarios": [
+          {
+            "rotulo": "Nasdaq",
+            "valor": "22.617,73",
+            "variacao": "-5,3%"
+          },
+          {
+            "rotulo": "Dow Jones",
+            "valor": "48.147,33",
+            "variacao": "-1,9%"
+          }
+        ],
+        "fonte": "Fonte: AP (Decatur Daily, La Nación), FinanceFeeds e Yahoo Finance, fechamento de 20/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "AP (Decatur Daily)",
+          "url": "https://www.decaturdaily.com/business/s-p-500-sinks-3-7-and-the-nasdaq-composite-goes-negative-for-the-year/article_dba9a471-6525-448c-9d01-20e82a1c821b.html"
+        },
+        {
+          "nome": "AP (La Nación)",
+          "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-11202026-nid20112026/"
+        },
+        {
+          "nome": "FinanceFeeds",
+          "url": "https://financefeeds.com/anthropic-ant-stock-88-91-saturday-week-ahead-after-friday-low-tested-83-ipo-price-bull-97-bear-80/"
+        },
+        {
+          "nome": "StockTitan",
+          "url": "https://stocktitan.net/articles/stock-market-today-live-november-20-2026"
+        }
+      ],
+      "slug": "2026-11-20-s-p-500-cai-3-7-e-entra-em-correcao-nasdaq-despenca-5-3-e-passa-a"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "20/11/2026",
+      "publicado": "21/11/2026",
+      "titulo": "Nvidia despenca 14% e fecha a US$ 125,53 após reportagem sobre investigação contábil da SEC",
+      "resumo": "Segundo a Reuters, a SEC, órgão regulador do mercado nos EUA, examina possíveis problemas na contabilidade da fabricante de chips.",
+      "texto": [
+        "As ações da Nvidia caíram 14,01% na sexta-feira, 20 de novembro, e fecharam a US$ 125,53. A queda ganhou força depois de uma reportagem exclusiva da agência Reuters, publicada à tarde, segundo a qual a SEC, a comissão que regula o mercado de capitais dos Estados Unidos, investiga possíveis problemas contábeis da companhia. Em uma só sessão, a fabricante de chips perdeu perto de US$ 500 bilhões em valor de mercado.",
+        "A Reuters ouviu duas pessoas a par do caso e não conseguiu apurar quando a investigação começou nem quais pontos estão em análise; a agência lembra que uma investigação não significa irregularidade comprovada. Na terça-feira, o Wall Street Journal já havia informado que a SEC examinava se as informações divulgadas pela Nvidia enganaram investidores. A SEC não comentou o caso, e a empresa não respondeu de imediato aos pedidos de comentário.",
+        "A ação acumula forte desvalorização desde o recorde de 6 de outubro, e a Nvidia informou que o relatório trimestral completo à SEC deve sair nas próximas semanas, junto com a conclusão de uma apuração de um comitê independente do conselho. Como a empresa tem um dos maiores pesos nos índices americanos, novos detalhes da investigação tendem a afetar o S&P 500, o Nasdaq e os fundos que replicam esses índices."
+      ],
+      "bolso": "Fundos e ETFs que seguem o Nasdaq ou o S&P 500 têm a Nvidia entre as maiores posições, por isso sentem diretamente a oscilação da ação.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "tecnologia",
+        "titulo": "Nvidia (NVDA): preço da ação no fechamento",
+        "a": {
+          "rotulo": "19/11/2026",
+          "valor": "US$ 145,98"
+        },
+        "b": {
+          "rotulo": "20/11/2026",
+          "valor": "US$ 125,53",
+          "nota": "Queda de US$ 20,45 no dia"
+        },
+        "variacao": "-14,01%",
+        "fonte": "Fonte: Yahoo Finance e Investing.com, fechamento de 20/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters (Investing.com)",
+          "url": "https://www.investing.com/news/economy-news/exclusiveus-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-5042460"
+        },
+        {
+          "nome": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html"
+        },
+        {
+          "nome": "The Motley Fool",
+          "url": "https://www.fool.com/investing/2026/11/20/nvidia-stock-plunge-wipes-out-nearly-usd500-billion-in-one-day-as-sec-reportedly-probes-its-accounting/"
+        },
+        {
+          "nome": "Dealroom",
+          "url": "https://dealroom.co/news/174723-sec-probe-of-nvidia-turns-to-its-accounting-as-shares-fall-14-and-close-/"
+        }
+      ],
+      "slug": "2026-11-20-nvidia-despenca-14-e-fecha-a-us-125-53-apos-reportagem-sobre"
+    },
+    {
+      "editoria": "Economia",
+      "data": "19/11/2026",
+      "publicado": "21/11/2026",
+      "titulo": "Câmara vota ajuste fiscal na segunda-feira, e relator mantém sem mudanças o texto aprovado pelo Senado",
+      "resumo": "O deputado Mauro Benevides Filho deu parecer favorável ao PLP 299/2026, que precisa de 257 votos para ser aprovado e seguir à sanção.",
+      "texto": [
+        "A Câmara dos Deputados vota na segunda-feira, 23 de novembro, em sessão extraordinária convocada pelo presidente da Casa, Hugo Motta, o pacote de ajuste fiscal do PLP 299/2026. O relator, deputado Mauro Benevides Filho (União-CE), apresentou na quinta-feira, 19, parecer favorável que mantém sem alterações o texto aprovado pelo Senado por 69 votos a 2. Por se tratar de projeto de lei complementar, a aprovação exige maioria absoluta, de pelo menos 257 dos 513 deputados.",
+        "O pacote prevê melhora de cerca de R$ 50 bilhões nas contas públicas em 2027, abaixo da estimativa inicial de cerca de R$ 56 bilhões, reduzida pelas concessões feitas no Senado. Entre as medidas estão um teto menor para o crescimento das despesas, de 2,5% para 2% ao ano em anos com bloqueio de gastos, e o aumento do corte linear de benefícios fiscais de 10% para 20%. A incerteza sobre o alcance do ajuste ajudou a pressionar o mercado: o Ibovespa acumulou queda de 3,53% na semana encerrada na quinta, e o dólar fechou a R$ 5,934.",
+        "Se os deputados aprovarem o texto sem mudança de mérito, o projeto segue direto para a sanção do presidente Lula; se houver alteração, volta ao Senado. A manutenção do texto foi a estratégia escolhida para acelerar a tramitação antes da votação do Orçamento de 2027, marcada para dezembro. A B3 reabre na mesma segunda-feira, depois do feriado de sexta, e o resultado da votação deve influenciar os juros futuros e o câmbio."
+      ],
+      "bolso": "O resultado da votação pode mexer com os juros futuros, que influenciam as taxas de títulos prefixados e as do crédito.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "fiscal",
+        "titulo": "Ajuste fiscal na Câmara"
+      },
+      "fontes": [
+        {
+          "nome": "Brasil 247",
+          "url": "https://www.brasil247.com/economia/relator-mantem-ajuste-fiscal-do-senado-e-abre-caminho-para-votacao-na-camara/"
+        },
+        {
+          "nome": "A Crítica de Campo Grande",
+          "url": "https://acritica.net/economia/ajuste-fiscal-camara-votacao-segunda-relator-sem-mudancas-lei-kandir-ms/"
+        },
+        {
+          "nome": "ND Mais",
+          "url": "https://ndmais.com.br/politica/ajuste-fiscal-governo-votacao-camara/"
+        },
+        {
+          "nome": "Plox",
+          "url": "https://plox.com.br/noticia/19/11/2026/camara-vota-pacote-ajuste-fiscal"
+        },
+        {
+          "nome": "Suno",
+          "url": "https://www.suno.com.br/noticias/ibovespa-vale-vale3-dolar-fiscal-2/"
+        }
+      ],
+      "slug": "2026-11-19-camara-vota-ajuste-fiscal-na-segunda-feira-e-relator-mantem-sem"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "20/11/2026",
+      "publicado": "21/11/2026",
+      "titulo": "Ações da Anthropic caem 8,5% no segundo pregão, fecham a US$ 88,91 e chegam a tocar US$ 83,05, perto do preço do IPO",
+      "resumo": "Depois da estreia em alta de 17%, os papéis da criadora do Claude devolveram parte do ganho em meio à venda generalizada de ações de IA.",
+      "texto": [
+        "As ações da Anthropic, negociadas na Nasdaq com o código ANT, recuaram 8,5% na sexta-feira, 20 de novembro, segundo dia de negociação, e fecharam a US$ 88,91. Na mínima do dia, os papéis chegaram a US$ 83,05, apenas cinco centavos acima do preço de US$ 83 fixado na oferta inicial. Na véspera, na estreia, a ação havia aberto a US$ 111,50 e fechado a US$ 97,17, com ganho de cerca de 17% sobre o preço do IPO.",
+        "A queda acompanhou a forte venda de ações de inteligência artificial em Wall Street, que levou o S&P 500 a entrar em correção e derrubou a Nvidia em cerca de 14%. Analistas também citaram a reavaliação do valor das empresas do setor depois da euforia da estreia, considerada a maior oferta inicial de ações da história. Ainda assim, quem comprou no IPO segue com ganho, já que o fechamento ficou acima dos US$ 83.",
+        "Os próximos meses trazem eventos que costumam pesar sobre ações recém-listadas, como o fim dos períodos de restrição de venda para acionistas antigos e a divulgação do primeiro balanço como companhia aberta. Na semana que vem, a negociação será mais curta, com as bolsas americanas fechadas na quinta-feira, 26, pelo feriado de Ação de Graças, o que pode reduzir o volume de negócios com o papel."
+      ],
+      "arte": {
+        "tipo": "barras",
+        "tema": "ia",
+        "titulo": "Anthropic (ANT): preço por ação",
+        "barras": [
+          {
+            "rotulo": "Preço do IPO",
+            "valor": 83
+          },
+          {
+            "rotulo": "Fechamento 19/11",
+            "valor": 97.17
+          },
+          {
+            "rotulo": "Mínima 20/11",
+            "valor": 83.05
+          },
+          {
+            "rotulo": "Fechamento 20/11",
+            "valor": 88.91,
+            "destaque": true
+          }
+        ],
+        "prefixo": "US$ ",
+        "decimais": 2,
+        "subtitulo": "Queda de 8,5% no segundo dia de negociação",
+        "fonte": "Fonte: FinanceFeeds, StockTitan, Fortune e Yahoo Finance, 20/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "FinanceFeeds",
+          "url": "https://financefeeds.com/anthropic-ant-stock-88-91-saturday-week-ahead-after-friday-low-tested-83-ipo-price-bull-97-bear-80/"
+        },
+        {
+          "nome": "Fortune",
+          "url": "https://fortune.com/2026/11/20/anthropic-stock-teeters-close-to-ipo-price-in-second-day-of-trading/"
+        },
+        {
+          "nome": "Fortune (Yahoo Finance)",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-slid-just-5-cents-164439785.html"
+        },
+        {
+          "nome": "StockTitan",
+          "url": "https://stocktitan.net/articles/stock-market-today-live-november-20-2026"
+        }
+      ],
+      "slug": "2026-11-20-acoes-da-anthropic-caem-8-5-no-segundo-pregao-fecham-a-us-88-91-e"
+    },
     {
       "editoria": "Mercados",
       "data": "19/11/2026",
