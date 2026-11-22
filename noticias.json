@@ -1,5 +1,5 @@
 {
-  "atualizado": "21/11/2026",
+  "atualizado": "22/11/2026",
   "ticker": {
     "selic": "13,75%",
     "ibov": "166.376",
@@ -9,6 +9,188 @@
     "data": "19/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Negócios",
+      "data": "20/11/2026",
+      "publicado": "22/11/2026",
+      "titulo": "Oracle diz que contrato com a OpenAI está totalmente financiado após captação de US$ 20 bilhões",
+      "resumo": "A empresa afirmou que já tem todo o dinheiro para a construção de data centers prometida à OpenAI, depois de levantar US$ 10 bilhões em ações e US$ 10 bilhões em dívida.",
+      "texto": [
+        "A Oracle afirmou na sexta-feira, 20 de novembro, logo após o fechamento de Wall Street, que o contrato de infraestrutura com a OpenAI está totalmente financiado. A declaração foi publicada na conta oficial da empresa no X e veio depois da captação de US$ 20 bilhões concluída no início do mês. A operação somou cerca de US$ 10 bilhões em ações, vendidas a US$ 116 cada, e US$ 10 bilhões em notas com juros entre 7% e 8,65% ao ano. Segundo a Reuters, a ação da Oracle chegou a subir 3,3% nas negociações após o fechamento.",
+        "O contrato com a OpenAI é estimado em cerca de US$ 300 bilhões em compra de capacidade de computação, segundo reportagens publicadas desde o ano passado, e prevê 4,5 gigawatts adicionais de capacidade nos Estados Unidos. O tamanho do compromisso levantou dúvidas no mercado sobre a capacidade da Oracle de bancar as obras sem ampliar demais o endividamento. Na mesma mensagem, a empresa disse que reportagens que afirmassem o contrário estariam erradas. A declaração saiu num dia de forte venda de ações de tecnologia, em meio ao temor de que os gastos com inteligência artificial demorem a dar retorno.",
+        "A Oracle projeta voltar a ter fluxo de caixa livre positivo a partir do segundo semestre do ano fiscal de 2028, quando parte dos data centers já estiver em operação. Até lá, os investidores devem acompanhar o ritmo das obras, o custo da dívida nova e a saúde financeira da OpenAI, principal cliente do projeto. Analistas também vão avaliar se a empresa precisará de novas captações para concluir a expansão. O próximo balanço trimestral deve trazer novos dados sobre o andamento dos investimentos."
+      ],
+      "bolso": "Quem tem fundos de ações americanas ou BDRs de tecnologia está exposto às dúvidas sobre o financiamento da corrida da inteligência artificial, que tem movido as cotações nas últimas semanas.",
+      "arte": {
+        "tipo": "rosca",
+        "tema": "tecnologia",
+        "titulo": "Captação da Oracle em novembro de 2026 (US$ bilhões)",
+        "partes": [
+          {
+            "rotulo": "Ações (a US$ 116)",
+            "valor": 10
+          },
+          {
+            "rotulo": "Notas de dívida",
+            "valor": 10
+          }
+        ],
+        "sufixo": " bi",
+        "centro": "US$ 20 bi",
+        "fonte": "Fonte: Oracle (comunicado de 02/11/2026) e Reuters, 20/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Reuters (Investing.com)",
+          "url": "https://www.investing.com/news/stock-market-news/oracle-says-openai-infrastructure-deal-is-fully-funded-after-final-capital-raise-5042771"
+        },
+        {
+          "nome": "The Next Web",
+          "url": "https://thenextweb.com/news/oracle-openai-contract-fully-funded-20bn-raise"
+        },
+        {
+          "nome": "Oracle, comunicado da oferta (Finviz)",
+          "url": "https://finviz.com/news/413887/oracle-announces-pricing-of-20-billion-of-common-stock-and-senior-notes"
+        },
+        {
+          "nome": "Startups",
+          "url": "https://startups.com.br/negocios/big-techs/oracle-levanta-us-20b-com-acoes-e-titulos-para-bancar-expansao-em-ia/"
+        }
+      ],
+      "slug": "2026-11-20-oracle-diz-que-contrato-com-a-openai-esta-totalmente-financiado-apos"
+    },
+    {
+      "editoria": "Economia",
+      "data": "21/11/2026",
+      "publicado": "22/11/2026",
+      "titulo": "Semana nos EUA tem revisão do PIB e inflação do PCE antes de reunião em que o Fed deve subir juros",
+      "resumo": "Os Estados Unidos divulgam na quarta-feira a segunda estimativa do PIB do terceiro trimestre e o índice de preços PCE de outubro, numa semana encurtada pelo feriado de Ação de Graças.",
+      "texto": [
+        "A agenda econômica americana desta semana se concentra na quarta-feira, 25 de novembro, quando saem a segunda estimativa do PIB do terceiro trimestre e o índice de preços PCE de outubro, a medida de inflação preferida pelo Federal Reserve. Na primeira leitura, divulgada em 29 de outubro, o Departamento do Comércio apontou crescimento anualizado de 3,4% no terceiro trimestre, acima dos 2,2% do segundo. Na mesma divulgação, o núcleo do PCE, que exclui alimentos e energia, subiu 2,5% em ritmo anualizado no trimestre. A confiança do consumidor de novembro sai na terça-feira, 24.",
+        "Segundo a Associated Press, a aceleração da economia no terceiro trimestre foi puxada em boa parte pelos investimentos ligados à inteligência artificial. A inflação, porém, segue acima da meta de 2% do Fed, pressionada pela energia mais cara desde o início do conflito com o Irã e pelas tarifas de importação. Os pedidos de seguro-desemprego, que também saem na quarta-feira por causa do feriado, continuam em níveis historicamente baixos, sinal de que as demissões seguem moderadas. Esse conjunto reforça a leitura de que o banco central ainda precisa conter a demanda.",
+        "Os dados chegam antes da reunião do Fed de 8 e 9 de dezembro, na qual dirigentes já sinalizaram nova alta da taxa de juros. Um PCE acima do esperado tende a reforçar as apostas em juros mais altos por mais tempo, o que costuma fortalecer o dólar e pesar sobre bolsas de países emergentes, como o Brasil. As bolsas americanas fecham na quinta-feira, 26, pelo Dia de Ação de Graças, e operam só meio período na sexta-feira, 27. A data também marca o início informal da temporada de compras de fim de ano nos Estados Unidos."
+      ],
+      "bolso": "Juros mais altos nos EUA costumam pressionar o dólar para cima, o que encarece viagens, compras internacionais e produtos importados no Brasil.",
+      "arte": {
+        "tipo": "faixa",
+        "tema": "inflacao",
+        "titulo": "Núcleo do PCE dos EUA no 3º trimestre de 2026 e a meta do Fed",
+        "valor": 2.5,
+        "min": 0,
+        "max": 4,
+        "alvo": 2,
+        "rotulo_alvo": "Meta do Fed: 2%",
+        "rotulo": "Núcleo do PCE (anualizado)",
+        "sufixo": "%",
+        "decimais": 1,
+        "nota": "Primeira estimativa, de 29/10/2026; revisão sai em 25/11",
+        "fonte": "Fonte: BEA (Departamento do Comércio dos EUA), 29/10/2026"
+      },
+      "fontes": [
+        {
+          "nome": "AP (WRAL)",
+          "url": "https://www.wral.com/news/ap/6c207-inflation-economic-growth-and-the-mood-of-us-consumers-in-focus-this-week/"
+        },
+        {
+          "nome": "AP (Journal-News)",
+          "url": "https://www.journal-news.com/nation-world/inflation-economic-growth-and-the-mood-of-us-consumers-in-focus-this-week/article_e0b70a47-1eac-5a17-bdd0-37fcc7401794.html"
+        },
+        {
+          "nome": "BEA, PIB do 3º trimestre de 2026",
+          "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026/"
+        }
+      ],
+      "slug": "2026-11-21-semana-nos-eua-tem-revisao-do-pib-e-inflacao-do-pce-antes-de-reuniao"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "19/11/2026",
+      "publicado": "22/11/2026",
+      "titulo": "Petrobras apresenta na terça-feira o Plano de Negócios 2027-2031, depois de antecipar R$ 15,3 bilhões aos acionistas",
+      "resumo": "A estatal detalha seus investimentos para os próximos cinco anos em entrevista coletiva no dia 24, no Rio de Janeiro.",
+      "texto": [
+        "A Petrobras apresenta na terça-feira, 24 de novembro, às 13h30, o Plano de Negócios 2027-2031, em entrevista coletiva na sede da companhia, no centro do Rio de Janeiro, com transmissão também pela internet. O aviso foi divulgado pela própria empresa em 19 de novembro. O plano define quanto a estatal pretende investir nos próximos cinco anos e em quais áreas, como exploração no pré-sal, refino e energias de baixo carbono. É um dos documentos mais acompanhados pelos investidores da maior empresa da bolsa brasileira.",
+        "A divulgação vem duas semanas depois de a Petrobras aprovar, em 10 de novembro, a antecipação de R$ 15,3 bilhões em remuneração aos acionistas, o equivalente a R$ 1,18732774 por ação. Na mesma data, a empresa elevou a projeção de produção de 2026 para até 3,4 milhões de barris de óleo equivalente por dia e ampliou a estimativa de investimentos do ano para até US$ 25,5 bilhões. A política atual prevê a distribuição de 45% do fluxo de caixa livre, desde que a dívida bruta fique dentro do limite do plano estratégico. Por isso, o tamanho dos investimentos previstos afeta diretamente o espaço para dividendos.",
+        "Os analistas vão observar o total de investimentos para o período, as metas de produção e as premissas de preço do petróleo, além de sinais sobre a remuneração futura aos acionistas. Os R$ 15,3 bilhões já aprovados serão pagos em duas parcelas, em 22 de fevereiro e 22 de março de 2027, para quem tiver ações no fim do pregão de 21 de dezembro de 2026. A forma do pagamento, em dividendos ou juros sobre capital próprio, deve ser definida até 10 de dezembro. O plano costuma mexer com as ações da companhia nos pregões seguintes à divulgação."
+      ],
+      "bolso": "Quem tem ações da Petrobras até 21 de dezembro recebe a antecipação aprovada em novembro; o novo plano dá pistas sobre o espaço para dividendos nos próximos anos.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "energia",
+        "titulo": "Petrobras: Plano de Negócios 2027-2031"
+      },
+      "fontes": [
+        {
+          "nome": "Agência Petrobras",
+          "url": "https://agencia.petrobras.com.br/w/negocio/aviso-de-pauta-petrobras-realiza-coletiva-sobre-plano-de-neg%C3%B3cios-2027-2031"
+        },
+        {
+          "nome": "Atlas Público (fato relevante à CVM)",
+          "url": "https://atlaspublico.com.br/cvm/noticias/petrobras-aprova-antecipacao-de-rs-15-3-bilhoes-em-100485"
+        },
+        {
+          "nome": "Click Petróleo e Gás",
+          "url": "https://clickpetroleoegas.com.br/petrobras-prd-30-novembro-bt13c-btl96/"
+        },
+        {
+          "nome": "Brasil Inovador",
+          "url": "https://brasilinovador.com.br/petrobras-eleva-projecoes-de-producao-e-capex-para-2026-com-avanco-no-pre-sal/"
+        },
+        {
+          "nome": "Plantão Brasil",
+          "url": "https://plantaobrasil.net/noticias/164576-petrobras-prepara-anuncio-estrategico-para-o-proximo-quinquenio"
+        }
+      ],
+      "slug": "2026-11-19-petrobras-apresenta-na-terca-feira-o-plano-de-negocios-2027-2031"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "19/11/2026",
+      "publicado": "22/11/2026",
+      "titulo": "Google libera o Genie 4 para desenvolvedores, e mundo virtual gerado por IA custa cerca de US$ 0,10 por segundo",
+      "resumo": "O modelo que cria ambientes interativos em vídeo chegou à Gemini API um dia após estrear para assinantes do plano mais caro do Google.",
+      "texto": [
+        "O Google abriu em 19 de novembro o Genie 4, seu modelo de mundos virtuais interativos, para desenvolvedores na Gemini API e no Google AI Studio. Um dia antes, o modelo havia sido liberado ao público no Project Genie, restrito aos assinantes do plano AI Ultra. O Genie 4 gera ambientes em vídeo de 720p, a 24 quadros por segundo e com áudio, que respondem em tempo real aos comandos do usuário. Pela API, cada sessão dura no máximo 120 segundos.",
+        "A cobrança é feita por tokens: US$ 1,50 por milhão de tokens de entrada e US$ 17,50 por milhão de tokens de saída de vídeo, com o áudio incluído. Na prática, o custo fica em torno de US$ 0,10 por segundo de mundo gerado, ou cerca de US$ 6 por minuto, segundo cálculos de publicações especializadas. Não há camada gratuita, e todo o conteúdo sai com a marca d'água digital SynthID, usada pelo Google para identificar material criado por inteligência artificial. Os chamados modelos de mundo são vistos como base para jogos, simulações e treinamento de robôs.",
+        "Com a abertura, empresas e programadores podem testar o modelo em seus próprios aplicativos, mas o custo por minuto ainda limita o uso em grande escala. A disputa nessa área envolve outros laboratórios de inteligência artificial, que também desenvolvem modelos capazes de simular ambientes físicos. O lançamento ocorre numa semana de forte queda das ações de tecnologia, com investidores cobrando retorno dos investimentos bilionários no setor. A expectativa é que o preço caia à medida que a tecnologia ganhe eficiência."
+      ],
+      "arte": {
+        "tipo": "barras",
+        "tema": "ia",
+        "titulo": "Preço do Genie 4 na Gemini API",
+        "subtitulo": "Em US$ por milhão de tokens",
+        "barras": [
+          {
+            "rotulo": "Entrada",
+            "valor": 1.5
+          },
+          {
+            "rotulo": "Saída de vídeo com áudio",
+            "valor": 17.5,
+            "destaque": true
+          }
+        ],
+        "prefixo": "US$ ",
+        "decimais": 2,
+        "nota": "Cerca de US$ 0,10 por segundo de mundo gerado",
+        "fonte": "Fonte: FourWeekMBA, TestingCatalog e PPC Land, 19/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "PPC Land",
+          "url": "https://ppc.land/google-charges-developers-about-10-cents-a-second-for-genie-4-worlds/"
+        },
+        {
+          "nome": "FourWeekMBA",
+          "url": "https://fourweekmba.com/ai-genie-4-hits-the-gemini-api-at-6-05-a-minute-363-an-hour/"
+        },
+        {
+          "nome": "TestingCatalog",
+          "url": "https://www.testingcatalog.com/google-opens-genie-4-world-model-to-developers-in-gemini-api.md"
+        }
+      ],
+      "slug": "2026-11-19-google-libera-o-genie-4-para-desenvolvedores-e-mundo-virtual-gerado"
+    },
     {
       "editoria": "Mercados",
       "data": "20/11/2026",
