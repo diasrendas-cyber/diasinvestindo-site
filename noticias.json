@@ -58,7 +58,12 @@
           "url": "https://www.esmaelmorais.com.br/camara-aprova-ajuste-fiscal-plp-299-sancao/"
         }
       ],
-      "slug": "2026-11-23-camara-aprova-ajuste-fiscal-por-353-votos-a-128-e-projeto-que-limita"
+      "slug": "2026-11-23-camara-aprova-ajuste-fiscal-por-353-votos-a-128-e-projeto-que-limita",
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-24-1.png",
+        "alt": "Barra com os 486 votos da Câmara: 353 a favor, 128 contra e 5 abstenções; a linha do mínimo de 257 votos mostra que o ajuste fiscal passou com 96 votos de folga.",
+        "fonte": "Fonte: Câmara dos Deputados, via Atlas Público e TMC, votação de 23/11/2026"
+      }
     },
     {
       "editoria": "Negócios",
@@ -107,7 +112,12 @@
           "url": "https://forbes.com.br/geral/2026/11/petrobras-aprova-plano-de-us-122-bilhoes-em-investimentos-ate-2031/"
         }
       ],
-      "slug": "2026-11-23-petrobras-preve-investir-us-122-bilhoes-de-2027-a-2031-com-mais-de-70"
+      "slug": "2026-11-23-petrobras-preve-investir-us-122-bilhoes-de-2027-a-2031-com-mais-de-70",
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-24-2.png",
+        "alt": "Barras comparando o investimento do plano anterior da Petrobras, US$ 109 bilhões, com o plano 2027-2031, US$ 122 bilhões (113 em implantação e 9 em avaliação): alta de 12%.",
+        "fonte": "Fonte: Petrobras (CVM), InfoMoney e Reuters"
+      }
     },
     {
       "editoria": "Mercados",
@@ -174,7 +184,12 @@
           "url": "https://www.metropoles.com/brasil/dolar-cai-015-e-fecha-a-r-592-apos-superar-r-6-durante-a-manha"
         }
       ],
-      "slug": "2026-11-23-dolar-passa-de-r-6-pela-manha-mas-fecha-em-queda-de-0-15-a-r-5-93"
+      "slug": "2026-11-23-dolar-passa-de-r-6-pela-manha-mas-fecha-em-queda-de-0-15-a-r-5-93",
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-24-3.png",
+        "alt": "Linha com os fechamentos do dólar de 5/11 a 23/11/2026, de R$ 5,49 a R$ 5,93, alta de quase 8%; em 23/11 a máxima do dia chegou a R$ 6,0055, acima da linha de R$ 6.",
+        "fonte": "Fonte: O Povo, Metrópoles e TradeMap; fechamentos de 05/11 a 23/11/2026"
+      }
     },
     {
       "editoria": "Economia",
@@ -220,7 +235,12 @@
           "url": "https://agoralitoral.com.br/2026/11/23/boletim-focus-altera-projecoes-para-inflacao-e-pib-em-2026/"
         }
       ],
-      "slug": "2026-11-23-focus-mercado-eleva-projecao-de-inflacao-de-2026-para-5-15-e-passa-a"
+      "slug": "2026-11-23-focus-mercado-eleva-projecao-de-inflacao-de-2026-para-5-15-e-passa-a",
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-24-4.png",
+        "alt": "Projeções do Focus para o IPCA: 2026 subiu de 5,11% para 5,15% e 2027 de 5,00% para 5,12%, ambas acima do teto da meta de 4,5% (centro em 3%).",
+        "fonte": "Fonte: Banco Central (Boletim Focus de 23/11/2026) e InfoMoney"
+      }
     },
     {
       "editoria": "Negócios",

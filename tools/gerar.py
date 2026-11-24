@@ -95,11 +95,17 @@ def ticker_html(t):
     return "".join(partes)
 
 
+def grafico_fig(gr):
+    """Gráfico pronto (PNG 1600x900 gerado por graficos/AAAA-MM-DD.py com tools/grafico.py)."""
+    return (f'<figure class="grafico"><img src="{esc(gr["src"])}" alt="{esc(gr["alt"])}" width="1600" height="900" decoding="async">'
+            f'<figcaption>{esc(gr.get("fonte", ""))}</figcaption></figure>')
+
+
 def arte_div(arte):
     return f'<div class="art" data-arte="{esc(json.dumps(arte or {"tipo": "cena", "tema": "bolsa"}, ensure_ascii=False))}"></div>'
 
 
-def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem="", csp=CSP_BASICA):
+def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem="", csp=CSP_BASICA, og_dim=(1200, 630)):
     """Moldura comum: cabeçalho, régua, faixa de patrocínio, coluna lateral e rodapé.
     cheia=True: página de produto em largura total, sem anúncios (sem AdSense, faixa ou coluna lateral)."""
     adsense = "" if cheia else ADSENSE_HEAD
@@ -108,7 +114,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", 
         miolo = f'<main class="wrap cheia">\n{corpo}\n</main>'
     else:
         miolo = f'<main class="wrap">\n<div class="layout">\n<div id="conteudo">\n{corpo}\n</div>\n{LATERAL}\n</div>\n</main>'
-    og = (f'<meta property="og:image" content="{esc(og_imagem)}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+    og = (f'<meta property="og:image" content="{esc(og_imagem)}">\n<meta property="og:image:width" content="{og_dim[0]}">\n<meta property="og:image:height" content="{og_dim[1]}">\n'
           f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{esc(titulo)}">\n<meta name="twitter:description" content="{esc(descricao)}">\n<meta name="twitter:image" content="{esc(og_imagem)}">\n') if og_imagem else ""
     nav_diana = "true" if "/diana/" in url else "false"
     nav_noticias = "true" if "/noticias/" in url else "false"
@@ -198,7 +204,7 @@ def pagina_noticia(n, todas, dados):
   <h1>{esc(n["titulo"])}</h1>
   <p class="dek">{esc(n["resumo"])}</p>
   <p class="meta">Por Dias Investindo · publicado em {esc(n.get("publicado", n["data"]))}</p>
-  {arte_div(n.get("arte"))}
+  {grafico_fig(n["grafico"]) if n.get("grafico") else arte_div(n.get("arte"))}
   <div class="corpo">
 {paragrafos}
 {bolso}
@@ -217,7 +223,8 @@ def pagina_noticia(n, todas, dados):
 </section>
 <div class="capture-slot" data-origem="noticia"></div>"""
     head = f'<meta property="article:published_time" content="{iso(n.get("publicado", n["data"]))}">\n<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n'
-    return pagina(f'{n["titulo"]} | Dias Investindo', n["resumo"], url, corpo, dados, "article", head)
+    og = dict(og_imagem=SITE + n["grafico"]["src"], og_dim=(1600, 900)) if n.get("grafico") else {}
+    return pagina(f'{n["titulo"]} | Dias Investindo', n["resumo"], url, corpo, dados, "article", head, **og)
 
 
 def pagina_arquivo(todas, dados):

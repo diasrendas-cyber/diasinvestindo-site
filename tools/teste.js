@@ -231,7 +231,13 @@ todas.forEach((n, i) => {
   const pg = carregar(`https://diasinvestindo.com.br/noticias/${n.slug}/`, autocontido(rel)).window.document;
   check(pg.querySelector("h1").textContent === n.titulo, "título da página " + (i + 1));
   check(pg.querySelectorAll(".corpo > p:not(.callout)").length === 3, "3 parágrafos na página " + (i + 1));
-  check(pg.querySelector(".art svg") && pg.querySelector(".art svg").textContent.includes(n.arte.titulo || n.arte.valor || ""), "ilustração na página " + (i + 1));
+  if (n.grafico) {
+    const img = pg.querySelector(".grafico img");
+    check(img && img.getAttribute("src") === n.grafico.src && fs.existsSync(path.join(RAIZ, n.grafico.src)), "gráfico na página " + (i + 1));
+    check((pg.querySelector('meta[property="og:image"]') || {}).content === "https://diasinvestindo.com.br" + n.grafico.src, "og:image do gráfico na página " + (i + 1));
+  } else {
+    check(pg.querySelector(".art svg") && pg.querySelector(".art svg").textContent.includes(n.arte.titulo || n.arte.valor || ""), "ilustração na página " + (i + 1));
+  }
   check(pg.querySelector(".capture form"), "formulário na página " + (i + 1));
   check(pg.querySelector(".ticker .wrap").textContent.includes("Selic"), "régua na página " + (i + 1));
   check(pg.querySelector('script[type="application/ld+json"]'), "dados estruturados na página " + (i + 1));

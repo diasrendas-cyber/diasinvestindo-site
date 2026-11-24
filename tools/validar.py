@@ -34,6 +34,13 @@ for i, n in enumerate(ns, 1):
     if len(tx) != 3: erros.append(f"{p}: texto deve ter exatamente 3 parágrafos (tem {len(tx)})")
     for j, par in enumerate(tx, 1):
         if len(par) < 200: erros.append(f"{p}: parágrafo {j} curto demais ({len(par)} caracteres; mínimo 200)")
+    gr = n.get("grafico")
+    if gr is not None:
+        src = str(gr.get("src", ""))
+        if not re.match(r"^/assets/img/noticias/[\w.-]+\.png$", src): erros.append(f"{p}: grafico.src deve ser /assets/img/noticias/<nome>.png")
+        elif not os.path.isfile(os.path.join(raiz, src.lstrip("/"))): erros.append(f"{p}: grafico.src aponta para arquivo inexistente ({src})")
+        if len(str(gr.get("alt", ""))) < 30: erros.append(f"{p}: grafico.alt deve descrever o gráfico e a conclusão (mínimo 30 caracteres)")
+        if not str(gr.get("fonte", "")).startswith("Fonte"): erros.append(f"{p}: grafico.fonte deve começar com 'Fonte'")
     f = n.get("fontes", [])
     if not f or not all(x.get("nome") and str(x.get("url", "")).startswith("https://") for x in f): erros.append(f"{p}: fontes precisam de nome e url https")
     a = n.get("arte", {})

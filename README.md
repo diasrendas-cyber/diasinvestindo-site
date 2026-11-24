@@ -108,9 +108,23 @@ vigente no fim do mês, `degraus: true` e `rotular: true` (escreve o valor em ca
 Exemplo conferido nas decisões do Copom de 2026: jan 15; fev 15; mar 14,75; abr 14,5; mai 14,5; jun 14,25;
 jul 14,25; ago 14; set 13,75; out 13,75; nov 13,75.
 
+### Gráfico da notícia (`grafico`, recomendado)
+
+Além da `arte` (que continua obrigatória e serve de reserva e de miniatura na home), cada notícia com
+número confirmado ganha um gráfico pronto em PNG, feito com o método Storytelling with Data
+(skill "graficos-noticias-swd"). Quando existe, ele substitui a `arte` na página da notícia e vira a
+imagem de compartilhamento (og:image).
+
+- Script da edição: `graficos/AAAA-MM-DD.py`, usando `tools/grafico.py` (`quadro`, `limpar`, `salvar`, `br` e as cores).
+  Rodar da raiz: `python3 graficos/AAAA-MM-DD.py`. Gera `assets/img/noticias/AAAA-MM-DD-N.png` (1600x900), N = ordem da notícia.
+- Campo: `"grafico": {"src": "/assets/img/noticias/AAAA-MM-DD-N.png", "alt": "o que o gráfico mostra e a conclusão", "fonte": "Fonte: ..."}`.
+- O validador exige arquivo existente, `alt` com 30+ caracteres e `fonte` começando com "Fonte".
+- Só números já conferidos em `verificacao/AAAA-MM-DD.md`. Notícia sem número confirmado fica sem `grafico` (usa `cena`).
+
 ### Passos
 
 ```
+python3 graficos/AAAA-MM-DD.py            # gráficos da edição (antes de validar)
 python3 tools/validar.py                  # precisa terminar com OK
 python3 tools/gerar.py                    # gera páginas, arquivo, home, sitemap e RSS
 npm install && npm test                   # testes (se o npm estiver disponível)

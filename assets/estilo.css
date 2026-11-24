@@ -309,3 +309,7 @@ nav.tabs a .novo{font:700 10px var(--display);letter-spacing:.06em;text-transfor
 .ad-conteudo{margin:8px 0;min-width:0}
 .ad-conteudo.has-ad::before{content:"Publicidade";display:block;font:600 10px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .ad-conteudo ins.adsbygoogle[data-ad-status="unfilled"],.ad-conteudo:has(ins[data-ad-status="unfilled"]){display:none!important}
+
+.grafico{margin:0 0 1.2rem}
+.grafico img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
+.grafico figcaption{font-size:.78rem;color:var(--muted,#6B7280);margin-top:.35rem}
