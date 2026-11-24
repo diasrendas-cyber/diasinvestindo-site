@@ -12,8 +12,8 @@ def css(m):
     return "<style>\n" + open(os.path.join(raiz, m.group(1).lstrip("/")), encoding="utf-8").read() + "</style>"
 def js(m):
     return "<script>\n" + open(os.path.join(raiz, m.group(1).lstrip("/")), encoding="utf-8").read() + "</script>"
-s = re.sub(r'<link rel="stylesheet" href="(/assets/[^"]+\.css)">', css, s)
-s = re.sub(r'<script src="(/assets/[^"]+\.js)"></script>', js, s)
+s = re.sub(r'<link rel="stylesheet" href="(/assets/[^"?]+\.css)(?:\?v=\w+)?">', css, s)
+s = re.sub(r'<script src="(/assets/[^"?]+\.js)(?:\?v=\w+)?"></script>', js, s)
 if not completo:
     s = re.sub(r"^<!doctype html>\s*<html[^>]*>\s*<head>\s*", "", s, flags=re.I)
     s = re.sub(r'<meta charset="utf-8">\s*<meta name="viewport"[^>]*>\s*', "", s)

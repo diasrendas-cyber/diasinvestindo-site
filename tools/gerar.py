@@ -7,7 +7,7 @@ Uso: python3 tools/gerar.py
 - Gera /noticias/<slug>/index.html (uma página por notícia), /noticias/index.html (arquivo),
   /privacidade/index.html, 404.html, sitemap.xml, robots.txt e feed.xml.
 """
-import html, json, os, re, shutil, sys, unicodedata
+import hashlib, html, json, os, re, shutil, sys, unicodedata
 from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import artigos as ART
@@ -95,9 +95,20 @@ def ticker_html(t):
     return "".join(partes)
 
 
+def versao(rel):
+    """?v=<hash do arquivo>: o navegador e o Cloudflare baixam de novo quando o arquivo muda."""
+    return hashlib.md5(open(caminho(*rel.split("/")), "rb").read()).hexdigest()[:8]
+
+
+def versionar(html):
+    for rel in ("assets/estilo.css", "assets/arte.js", "assets/comum.js"):
+        html = re.sub(r'/' + re.escape(rel) + r'(\?v=\w+)?"', f'/{rel}?v={versao(rel)}"', html)
+    return html
+
+
 def grafico_fig(gr):
     """Gráfico pronto (PNG 1600x900 gerado por graficos/AAAA-MM-DD.py com tools/grafico.py)."""
-    return (f'<figure class="grafico"><img src="{esc(gr["src"])}" alt="{esc(gr["alt"])}" width="1600" height="900" decoding="async">'
+    return (f'<figure class="grafico"><img src="{esc(gr["src"])}" alt="{esc(gr["alt"])}" width="1600" height="900" style="display:block;width:100%;height:auto" decoding="async">'
             f'<figcaption>{esc(gr.get("fonte", ""))}</figcaption></figure>')
 
 
@@ -358,6 +369,16 @@ def main():
     rss = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Dias Investindo: notícias</title>'
            f"<link>{SITE}/noticias/</link><description>Notícias que mexem com o seu bolso, explicadas.</description><language>pt-br</language>{itens}</channel></rss>\n")
     open(caminho("feed.xml"), "w", encoding="utf-8").write(rss)
+    # versão (?v=hash) no CSS e nos scripts de todas as páginas, para o cache nunca servir arquivo velho
+    for raiz_dir, dirs, arqs in os.walk(caminho()):
+        dirs[:] = [d for d in dirs if d not in ("node_modules", ".git")]
+        for a in arqs:
+            if a.endswith(".html"):
+                p = os.path.join(raiz_dir, a)
+                h = open(p, encoding="utf-8").read()
+                n = versionar(h)
+                if n != h:
+                    open(p, "w", encoding="utf-8").write(n)
     print(f"OK: {len(todas)} notícias, {len(arts)} artigos, páginas, arquivos, sitemap ({len(urls)} URLs), RSS e home atualizados")
 
 
