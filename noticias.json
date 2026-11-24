@@ -1,14 +1,227 @@
 {
-  "atualizado": "22/11/2026",
+  "atualizado": "24/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "166.376",
-    "ibovVar": "-0,69%",
-    "dolar": "R$ 5,934",
-    "dolarVar": "+1,15%",
-    "data": "19/11/2026"
+    "ibov": "164.796",
+    "ibovVar": "-0,95%",
+    "dolar": "R$ 5,926",
+    "dolarVar": "-0,15%",
+    "data": "23/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Economia",
+      "data": "23/11/2026",
+      "publicado": "24/11/2026",
+      "titulo": "Câmara aprova ajuste fiscal por 353 votos a 128, e projeto que limita gastos e compensações segue para sanção",
+      "resumo": "Os deputados aprovaram na segunda-feira o texto-base do PLP 299/2026 sem mudanças em relação ao Senado, o que leva o projeto direto à sanção presidencial.",
+      "texto": [
+        "A Câmara dos Deputados aprovou na noite de segunda-feira, 23 de novembro, o texto-base do projeto de lei complementar 299/2026, que dá ao governo novos instrumentos de ajuste das contas públicas. Foram 353 votos a favor, 128 contra e 5 abstenções, bem acima dos 257 votos exigidos para um projeto de lei complementar. O relator na Câmara, deputado Mauro Benevides Filho (União-CE), recomendou rejeitar todas as alterações propostas em plenário. Como o texto ficou igual ao aprovado pelo Senado, o projeto segue para a sanção do presidente.",
+        "Entre as principais medidas está a redução do limite de crescimento real das despesas, de 2,5% para 2% ao ano, nos anos em que houver contingenciamento, a partir de 2027. O texto também autoriza o Executivo a restringir a compensação de tributos federais por empresas e prevê corte em benefícios tributários. As estimativas de efeito citadas durante a tramitação chegam a cerca de R$ 56 bilhões em 2027. O Senado havia concluído a votação em 18 de novembro, por 69 votos a 2, no turno suplementar.",
+        "A votação ocorreu num dia de pressão no mercado de câmbio, em que o dólar chegou a passar de R$ 6 pela manhã antes de recuar. Com a sanção, o governo passa a ter mais ferramentas para tentar cumprir a meta de resultado primário do próximo ano. O efeito prático deve aparecer nos relatórios bimestrais de receitas e despesas de 2027, que mostram se será preciso bloquear gastos. Analistas vão acompanhar também se o corte de benefícios tributários e a limitação das compensações serão regulamentados a tempo de reforçar a arrecadação já no início do ano."
+      ],
+      "bolso": "Regras mais rígidas para os gastos públicos tendem a influenciar o câmbio e os juros futuros, que afetam o custo do crédito e o rendimento da renda fixa.",
+      "arte": {
+        "tipo": "barras",
+        "tema": "fiscal",
+        "titulo": "Votação do texto-base do PLP 299/2026 na Câmara",
+        "barras": [
+          {
+            "rotulo": "A favor",
+            "valor": 353,
+            "destaque": true
+          },
+          {
+            "rotulo": "Contra",
+            "valor": 128
+          },
+          {
+            "rotulo": "Abstenções",
+            "valor": 5
+          }
+        ],
+        "decimais": 0,
+        "nota": "Mínimo necessário: 257 votos",
+        "fonte": "Fonte: Câmara dos Deputados (via Atlas Público), TMC e Blog do Esmael, 23/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Atlas Público (Câmara dos Deputados)",
+          "url": "https://atlaspublico.com.br/camara/noticias/camara-aprova-texto-base-do-plp-299-2026-que-da-ao-104407"
+        },
+        {
+          "nome": "TMC",
+          "url": "https://tmc.com.br/politica/camara-aprova-plp-299-ajuste-fiscal-353-votos/"
+        },
+        {
+          "nome": "Blog do Esmael",
+          "url": "https://www.esmaelmorais.com.br/camara-aprova-ajuste-fiscal-plp-299-sancao/"
+        }
+      ],
+      "slug": "2026-11-23-camara-aprova-ajuste-fiscal-por-353-votos-a-128-e-projeto-que-limita"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "23/11/2026",
+      "publicado": "24/11/2026",
+      "titulo": "Petrobras prevê investir US$ 122 bilhões de 2027 a 2031, com mais de 70% em exploração e produção",
+      "resumo": "O Conselho de Administração da estatal aprovou o Plano de Negócios 2027-2031, que amplia os investimentos e a previsão de dividendos ordinários.",
+      "texto": [
+        "O Conselho de Administração da Petrobras aprovou na segunda-feira, 23 de novembro, o Plano de Negócios 2027-2031, com investimentos de US$ 122 bilhões em cinco anos. Desse total, US$ 113 bilhões estão em projetos em implantação e US$ 9 bilhões em projetos ainda em avaliação. Mais de 70% dos recursos vão para exploração e produção de petróleo, e o refino recebe US$ 24 bilhões. A companhia prevê pagar entre US$ 55 bilhões e US$ 60 bilhões em dividendos ordinários no período.",
+        "O valor é cerca de 12% maior que o do plano anterior, de US$ 109 bilhões, e reforça a aposta da empresa no pré-sal. A estatal projeta produção de 2,9 milhões de barris por dia de óleo e líquidos de gás natural ao longo do período, acima do que previa o plano passado. A política de remuneração foi mantida, com distribuição de 45% do fluxo de caixa livre quando a dívida estiver dentro do limite. O plano fixa caixa mínimo de US$ 6 bilhões e teto de US$ 75 bilhões para a dívida bruta, que deve convergir para US$ 65 bilhões.",
+        "O anúncio chega num momento ruim para as ações da empresa, que vinham caindo com a queda do petróleo e o temor de investimentos maiores, que reduzem o espaço para dividendos. Na segunda-feira, antes da divulgação, os papéis da estatal estiveram entre as maiores quedas do Ibovespa. A diretoria detalha o plano a jornalistas e investidores nesta terça-feira, 24, no Rio de Janeiro. O mercado vai avaliar se o ritmo de investimento é compatível com a promessa de dividendos e com o preço do petróleo nos próximos anos."
+      ],
+      "bolso": "Para quem tem ações da Petrobras ou fundos com o papel, o plano indica quanto dinheiro pode voltar aos acionistas como dividendos nos próximos anos.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "energia",
+        "rotulo": "Investimento previsto no Plano de Negócios 2027-2031",
+        "valor": "US$ 122 bi",
+        "secundarios": [
+          {
+            "rotulo": "Refino",
+            "valor": "US$ 24 bi"
+          },
+          {
+            "rotulo": "Dividendos ordinários previstos",
+            "valor": "US$ 55 a 60 bi"
+          }
+        ],
+        "fonte": "Fonte: Petrobras (fato relevante de 23/11/2026, via InfoMoney, Suno e Atlas Público)"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/petrobras-petr3-petr4-aprova-investimentos-de-us-122-bi-em-plano-de-negocios-2027-2031/"
+        },
+        {
+          "nome": "Suno",
+          "url": "https://www.suno.com.br/noticias/petr4-petrobras-plano-negocios-2027-2031-241126/"
+        },
+        {
+          "nome": "Atlas Público (CVM)",
+          "url": "https://atlaspublico.com.br/cvm/noticias/petrobras-preve-us-122-bilhoes-em-investimentos-de-2027-a-104381"
+        },
+        {
+          "nome": "Forbes Brasil (Reuters)",
+          "url": "https://forbes.com.br/geral/2026/11/petrobras-aprova-plano-de-us-122-bilhoes-em-investimentos-ate-2031/"
+        }
+      ],
+      "slug": "2026-11-23-petrobras-preve-investir-us-122-bilhoes-de-2027-a-2031-com-mais-de-70"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "23/11/2026",
+      "publicado": "24/11/2026",
+      "titulo": "Dólar passa de R$ 6 pela manhã, mas fecha em queda de 0,15%, a R$ 5,93; Ibovespa cai 0,95%",
+      "resumo": "A moeda americana superou R$ 6 pela primeira vez desde abril de 2025, mas recuou ao longo da tarde, enquanto a bolsa perdeu os 165 mil pontos.",
+      "texto": [
+        "O dólar comercial chegou a R$ 6,0055 na manhã de segunda-feira, 23 de novembro, a primeira vez acima de R$ 6 desde abril de 2025. A moeda perdeu força ao longo do dia e fechou em queda de 0,15%, cotada a R$ 5,9262. O Ibovespa terminou o pregão em baixa de 0,95%, aos 164.796 pontos, abaixo do patamar de 165 mil. As ações da Petrobras e dos grandes bancos estiveram entre as que mais pesaram no índice.",
+        "A pressão no câmbio vem de semanas de preocupação com as contas públicas e do dólar forte no exterior, com a expectativa de alta de juros nos Estados Unidos. Na semana anterior, encurtada pelo feriado de 20 de novembro, a moeda acumulou alta de cerca de 5%. O Boletim Focus divulgado na manhã de segunda-feira elevou as projeções de inflação e de câmbio. A queda de mais de 3% do petróleo também pesou sobre as ações ligadas à commodity.",
+        "O recuo da moeda à tarde coincidiu com a expectativa pela votação do ajuste fiscal na Câmara, aprovada à noite, e com a sinalização de nomes para a diretoria do Banco Central. Nos Estados Unidos, as bolsas tiveram forte recuperação no dia, depois das perdas da semana anterior. Nesta semana, os investidores acompanham a sanção do projeto fiscal e, na quarta-feira, a revisão do PIB e a inflação do PCE americanos. O feriado de Ação de Graças reduz o horário das bolsas americanas na quinta e na sexta-feira."
+      ],
+      "bolso": "Com o dólar perto de R$ 6, compras em moeda estrangeira, viagens e produtos importados ficam mais caros para o consumidor.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "cambio",
+        "titulo": "Dólar comercial no fechamento, em R$",
+        "pontos": [
+          [
+            "13/11",
+            5.66
+          ],
+          [
+            "16/11",
+            5.78
+          ],
+          [
+            "17/11",
+            5.78
+          ],
+          [
+            "18/11",
+            5.87
+          ],
+          [
+            "19/11",
+            5.93
+          ],
+          [
+            "23/11",
+            5.93
+          ]
+        ],
+        "rotular": true,
+        "decimais": 2,
+        "destaque": "Máxima de R$ 6,0055 em 23/11",
+        "fonte": "Fonte: fechamentos publicados por InfoMoney, O Tempo, O Povo, Metrópoles e outros, 13 a 23/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "O Povo",
+          "url": "https://www.opovo.com.br/noticias/economia/2026/11/23/apos-tocar-rs-600-dolar-recua-015-a-rs-59262-com-nomes-para-bc-no-radar.html"
+        },
+        {
+          "nome": "O Repórter",
+          "url": "https://oreporter.com/economia/dolar-recua-ibovespa-cai-23-novembro-2026"
+        },
+        {
+          "nome": "TradeMap",
+          "url": "https://trademap.com.br/noticias/news-8632330"
+        },
+        {
+          "nome": "Metrópoles",
+          "url": "https://www.metropoles.com/brasil/dolar-cai-015-e-fecha-a-r-592-apos-superar-r-6-durante-a-manha"
+        }
+      ],
+      "slug": "2026-11-23-dolar-passa-de-r-6-pela-manha-mas-fecha-em-queda-de-0-15-a-r-5-93"
+    },
+    {
+      "editoria": "Economia",
+      "data": "23/11/2026",
+      "publicado": "24/11/2026",
+      "titulo": "Focus: mercado eleva projeção de inflação de 2026 para 5,15% e passa a ver dólar a R$ 5,55 no fim do ano",
+      "resumo": "O boletim do Banco Central também mostrou alta na projeção de inflação de 2027 e na Selic esperada para o fim do próximo ano.",
+      "texto": [
+        "O Boletim Focus divulgado pelo Banco Central na segunda-feira, 23 de novembro, mostrou alta na projeção de inflação de 2026, de 5,11% para 5,15%. Para 2027, a estimativa do IPCA subiu de 5,00% para 5,12%. A projeção para o dólar no fim de 2026 passou de R$ 5,40 para R$ 5,55, e a de 2027, de R$ 5,45 para R$ 5,50. A Selic esperada para o fim deste ano ficou em 13,75%, enquanto a do fim de 2027 subiu de 12,75% para 13%.",
+        "O levantamento reúne as estimativas de economistas de bancos e consultorias e reflete a disparada recente do dólar, que encarece produtos importados e pressiona os preços. As projeções seguem bem acima da meta de inflação de 3%, cujo limite de tolerância é de 4,5%. Para o crescimento, a estimativa do PIB de 2026 caiu de 1,72% para 1,70%, e a de 2027, de 1,02% para 1%. O quadro combina inflação mais alta com atividade mais fraca.",
+        "A piora das expectativas reduz o espaço para cortes de juros no próximo ano, como mostra a revisão da Selic esperada para o fim de 2027. O Comitê de Política Monetária do Banco Central acompanha essas projeções para decidir a taxa básica, hoje em 13,75% ao ano. A próxima reunião do Copom, a última de 2026, acontece em dezembro. Até lá, o comportamento do câmbio e a execução do ajuste fiscal aprovado pelo Congresso devem pesar nas novas edições do Focus."
+      ],
+      "bolso": "Inflação esperada mais alta e Selic elevada por mais tempo mantêm caros os empréstimos e favorecem o rendimento de aplicações atreladas aos juros.",
+      "arte": {
+        "tipo": "faixa",
+        "tema": "inflacao",
+        "titulo": "IPCA projetado para 2026 e a meta de inflação",
+        "valor": 5.15,
+        "min": 0,
+        "max": 6,
+        "faixa_min": 1.5,
+        "faixa_max": 4.5,
+        "alvo": 3,
+        "rotulo_alvo": "Meta: 3%",
+        "rotulo_faixa": "Tolerância (1,5% a 4,5%)",
+        "rotulo": "Projeção do Focus para 2026",
+        "sufixo": "%",
+        "decimais": 2,
+        "nota": "Para 2027, a projeção subiu de 5,00% para 5,12%",
+        "fonte": "Fonte: Banco Central, Boletim Focus de 23/11/2026 (via InfoMoney e Safras & Mercado); meta: CMN"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/boletim-focus-projecoes-23112026/"
+        },
+        {
+          "nome": "Safras & Mercado",
+          "url": "https://safras.com.br/focus-eleva-estimativas-para-inflacao-e-dolar"
+        },
+        {
+          "nome": "Agora Litoral",
+          "url": "https://agoralitoral.com.br/2026/11/23/boletim-focus-altera-projecoes-para-inflacao-e-pib-em-2026/"
+        }
+      ],
+      "slug": "2026-11-23-focus-mercado-eleva-projecao-de-inflacao-de-2026-para-5-15-e-passa-a"
+    },
     {
       "editoria": "Negócios",
       "data": "20/11/2026",
