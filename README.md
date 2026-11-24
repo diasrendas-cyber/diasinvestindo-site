@@ -110,9 +110,9 @@ jul 14,25; ago 14; set 13,75; out 13,75; nov 13,75.
 
 ### Gráfico da notícia (`grafico`, recomendado)
 
-Além da `arte` (que continua obrigatória e serve de reserva e de miniatura na home), cada notícia com
+Além da `arte` (que continua obrigatória e serve de reserva), cada notícia com
 número confirmado ganha um gráfico pronto em PNG, feito com o método Storytelling with Data
-(skill "graficos-noticias-swd"). Quando existe, ele substitui a `arte` na página da notícia e vira a
+(skill "graficos-noticias-swd"). Quando existe, ele substitui a `arte` em todos os lugares onde a notícia aparece (página da notícia, destaques, "Mais notícias", lista e leitor da home) e vira a
 imagem de compartilhamento (og:image).
 
 - Script da edição: `graficos/AAAA-MM-DD.py`, usando `tools/grafico.py` (`quadro`, `limpar`, `salvar`, `br` e as cores).

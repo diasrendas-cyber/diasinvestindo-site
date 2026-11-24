@@ -55,11 +55,22 @@ check(d.querySelector("#mais-noticias").compareDocumentPosition(d.querySelector(
 // régua: espaço do Bitcoin existe e fica oculto sem cotação (nunca mostra preço velho)
 check(d.querySelector("#ticker [data-btc]") && d.querySelector("#ticker [data-btc]").hidden, "Bitcoin oculto sem cotação ao vivo");
 check(d.querySelectorAll("#news-list [data-open-noticia]").length === Math.min(10, JSON.parse(d.getElementById("site-data").textContent).noticias.length), "notícias na seção (até 10)");
-d.querySelectorAll("#news-list .art svg").forEach((s, i) => check(s.querySelectorAll("path,rect,text,circle,line,polyline").length > 5, "arte desenhada na notícia " + i));
-DADOS.noticias.forEach((n, i) => {
-  const svg = d.querySelectorAll("#news-list .art svg")[i].textContent;
+const cartoesLista = [...d.querySelectorAll("#news-list [data-open-noticia]")];
+DADOS.noticias.slice(0, cartoesLista.length).forEach((n, i) => {
+  const art = cartoesLista[i].querySelector(".art");
+  if (n.grafico) {
+    const img = art && art.querySelector("img");
+    check(img && img.getAttribute("src") === n.grafico.src && fs.existsSync(path.join(RAIZ, n.grafico.src)), "gráfico na lista da home, notícia " + (i + 1));
+    return;
+  }
+  const s = art && art.querySelector("svg");
+  check(s && s.querySelectorAll("path,rect,text,circle,line,polyline").length > 5, "arte desenhada na notícia " + i);
   const esperado = n.arte.titulo || n.arte.valor || n.arte.rotulo || "";
-  check(!esperado || svg.includes(esperado), "arte contextual da notícia " + (i + 1), esperado);
+  check(!esperado || (s && s.textContent.includes(esperado)), "arte contextual da notícia " + (i + 1), esperado);
+});
+DADOS.noticias.slice(0, 4).forEach((n, i) => {
+  const a = d.querySelector(`#destaques [data-open-noticia="${i}"] .art`);
+  check(a && (n.grafico ? a.querySelector("img") && a.querySelector("img").getAttribute("src") === n.grafico.src : a.querySelector("svg")), "ilustração no destaque " + (i + 1));
 });
 
 // Leitor de notícia

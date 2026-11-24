@@ -960,6 +960,8 @@
 "use strict";
 const $=id=>document.getElementById(id);
 const {desenhar,E,sinal,fmtVar,compact,brl,FONT_D,FONT_M}=window.DIArte;
+/* Gráfico pronto (PNG Storytelling with Data) quando existe; senão a ilustração desenhada */
+const ilustra=n=>n.grafico&&/^\/assets\/img\/noticias\/[\w.-]+\.png$/.test(n.grafico.src||"")?`<img src="${E(n.grafico.src)}" alt="${E(n.grafico.alt||"")}" width="1600" height="900" loading="lazy" decoding="async">`:desenhar(n.arte);
 
 /* ---------- Dados ---------- */
 let DATA={atualizado:"",ticker:{},noticias:[]};
@@ -982,7 +984,7 @@ const N=(DATA.noticias||[]).slice(0,10);
 /* No site publicado cada notícia tem página própria; na prévia do Claude abre no leitor */
 const live=/(^|\.)diasinvestindo\.com\.br$/.test(location.hostname);
 const cartao=(n,i,big,mini,wide)=>`<a class="story${big?" big":""}${mini?" mini":""}${wide?" wide":""}" href="/noticias/${E(n.slug)}/" data-open-noticia="${i}">
-  <div class="art">${desenhar(n.arte)}</div>
+  <div class="art">${ilustra(n)}</div>
   <span class="kicker">${E(n.editoria)}${n.data?" · "+E(n.data):""}</span>
   <h3>${E(n.titulo)}</h3>${mini?"":`<p>${E(n.resumo)}</p>`}<span class="more">${mini?"Ler":"Ler notícia completa"}</span></a>`;
 $("destaques").innerHTML=N.length?`<div class="lead-main">${cartao(N[0],0,true)}${N[3]?cartao(N[3],3,false,false,true):""}</div><div class="side-stack">${N.slice(1,3).map((n,k)=>cartao(n,k+1,false)).join("")}</div>`:`<p class="meta">As notícias do dia aparecem aqui.</p>`;
@@ -1044,7 +1046,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dlg.hasAttribute("o
 corpo.addEventListener("click",e=>{const a=e.target.closest("[data-fecha-leitor]");if(a){fecharLeitor()}});
 function htmlNoticia(n){
   return `<article class="reading"><span class="kicker">${E(n.editoria)} · ${E(n.data)}</span><h1 id="leitor-titulo">${E(n.titulo)}</h1>
-  <p class="dek">${E(n.resumo)}</p><div class="art">${desenhar(n.arte)}</div>
+  <p class="dek">${E(n.resumo)}</p><div class="art">${ilustra(n)}</div>
   ${(n.texto||[]).map(t=>`<p>${E(t)}</p>`).join("")}
   ${n.bolso?`<p class="callout"><strong>Para o seu bolso:</strong> ${E(n.bolso)}</p>`:""}
   <p class="src">${(n.fontes||[]).length>1?"Fontes":"Fonte"}: ${(n.fontes||[]).map(f=>`<a href="${E(f.url)}" target="_blank" rel="noopener">${E(f.nome)}</a>`).join(" · ")}. Resumo escrito pelo Dias Investindo a partir das reportagens citadas.</p></article>`;
