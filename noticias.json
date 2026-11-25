@@ -1,14 +1,240 @@
 {
-  "atualizado": "24/11/2026",
+  "atualizado": "25/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "164.796",
-    "ibovVar": "-0,95%",
-    "dolar": "R$ 5,926",
-    "dolarVar": "-0,15%",
-    "data": "23/11/2026"
+    "ibov": "164.090",
+    "ibovVar": "-0,43%",
+    "dolar": "R$ 5,91",
+    "dolarVar": "-0,26%",
+    "data": "24/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Economia",
+      "data": "24/11/2026",
+      "publicado": "25/11/2026",
+      "titulo": "Lula sanciona sem vetos o ajuste fiscal, e governo prepara PEC com uma segunda rodada de medidas",
+      "resumo": "O pacote aprovado pelo Congresso virou lei na terça-feira, em edição extra do Diário Oficial, e o Planejamento confirmou que uma proposta de emenda constitucional está em preparação.",
+      "texto": [
+        "O presidente Luiz Inácio Lula da Silva sancionou sem vetos, na terça-feira (24), o projeto de ajuste fiscal (PLP 299/2026), poucas horas depois de a Câmara concluir a votação por 353 votos a 128. A lei saiu em edição extra do Diário Oficial da União no mesmo dia. Entre as regras, o limite de crescimento real da despesa cai de 2,5% para 2% ao ano nos exercícios em que o governo precisar contingenciar gastos, a partir de 2027. O governo estima efeito de cerca de R$ 50 bilhões nas contas de 2027, abaixo dos até R$ 56 bilhões previstos antes das mudanças feitas no Senado.",
+        "O pacote também amplia o corte linear de benefícios tributários e restringe o uso de créditos tributários pelas empresas para abater impostos federais. A meta de resultado primário de 2027 é um superávit de 0,5% do PIB, o equivalente a R$ 73,2 bilhões, e as medidas foram desenhadas para ajudar a cumpri-la e conter o avanço da dívida pública. A aprovação rápida nas duas Casas ocorreu num momento de pressão no câmbio, com o dólar chegando a superar R$ 6 durante a segunda-feira.",
+        "O ministro do Planejamento, Bruno Moretti, confirmou que o governo prepara uma proposta de emenda constitucional com novas medidas de ajuste, com aval do presidente. Segundo ele, as medidas terão caráter emergencial e estrutural e valerão também para os orçamentos dos anos seguintes, não só para 2027. O texto ainda está em elaboração nos ministérios da Fazenda e do Planejamento, e o presidente da Câmara, Hugo Motta, sinalizou disposição de votar novas medidas ainda em 2026."
+      ],
+      "bolso": "Regras de gasto mais duras costumam influenciar o câmbio e os juros futuros, que se refletem no custo do crédito e no rendimento de títulos prefixados e atrelados à inflação.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "fiscal",
+        "titulo": "Limite de alta real da despesa em anos com contingenciamento",
+        "a": {
+          "rotulo": "Regra anterior",
+          "valor": "2,5%"
+        },
+        "b": {
+          "rotulo": "Nova lei (a partir de 2027)",
+          "valor": "2%"
+        },
+        "fonte": "Fonte: Times Brasil (Estadão Conteúdo), Diário de S. Paulo e Jornal Opção, 24/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Times Brasil",
+          "url": "https://timesbrasil.com.br/brasil/governo-sanciona-sem-vetos-lei-do-ajuste-fiscal-impacto-e-estimado-em-r-50-bilhoes"
+        },
+        {
+          "nome": "Diário de S. Paulo",
+          "url": "https://spdiario.com.br/noticias/economia/lula-sanciona-sem-vetos-pacote-fiscal-que-pode-gerar-economia-de-r-56-bilhoes-em-2027.html"
+        },
+        {
+          "nome": "Jornal Opção",
+          "url": "https://www.jornalopcao.com.br/ultimas-noticias/governo-prepara-nova-pec-de-ajuste-fiscal-apos-aprovacao-de-pacote-no-congresso-899668/"
+        },
+        {
+          "nome": "ND Mais",
+          "url": "https://ndmais.com.br/politica/governo-prepara-nova-fase-de-ajuste-fiscal-motta-e-alcolumbre-sinalizam-apoio/"
+        }
+      ],
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-25-1.png",
+        "alt": "Duas barras comparam o limite de crescimento real da despesa em anos com contingenciamento: 2,5% pela regra anterior e 2% pela nova lei sancionada em 24/11, um corte de 0,5 ponto percentual a partir de 2027.",
+        "fonte": "Fonte: Times Brasil (Estadão Conteúdo), Diário de S. Paulo e Jornal Opção, 24/11/2026"
+      },
+      "slug": "2026-11-24-lula-sanciona-sem-vetos-o-ajuste-fiscal-e-governo-prepara-pec-com-uma"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "24/11/2026",
+      "publicado": "25/11/2026",
+      "titulo": "Ações da Anthropic caem 6,5% e fecham a US$ 81,9, abaixo do preço de US$ 83 do IPO",
+      "resumo": "No quarto pregão desde a estreia na Nasdaq, o papel perdeu o preço da oferta em meio à venda de ações de tecnologia em Nova York.",
+      "texto": [
+        "As ações da Anthropic fecharam a terça-feira (24) cotadas a cerca de US$ 81,9, queda de aproximadamente 6,5% no dia, e ficaram pela primeira vez abaixo do preço de US$ 83 fixado na oferta inicial. Foi o quarto pregão desde a estreia, em 19 de novembro, quando o papel fechou a US$ 97,17. Desde então, a ação recuou para US$ 88,91 no segundo pregão e para US$ 87,64 na segunda-feira (23). No primeiro dia, ela chegou a abrir a US$ 111,50.",
+        "A queda acompanhou a venda de ações de tecnologia em Wall Street: na terça, o Nasdaq Composite recuou 1,48% e o setor de tecnologia do S&P 500 foi o de pior desempenho. Reportagens apontam ainda que parte dos funcionários e investidores internos pôde vender ações desde o primeiro dia, com novas liberações previstas em etapas. Com a opção de lote suplementar já exercida pelos coordenadores da oferta, deixou de existir o mecanismo de compra de ações para sustentar o preço quando ele fica abaixo do valor do IPO.",
+        "No mesmo dia, o site Axios publicou que funcionários da Anthropic e da OpenAI debatem internamente se modelos ainda não lançados são poderosos demais para serem liberados com segurança; as empresas disseram ao veículo que podem atrasar lançamentos quando necessário. Para as próximas semanas, o mercado acompanha a entrada da ação em índices globais, que pode trazer compras de fundos passivos. A trajetória do papel também tende a seguir o humor dos investidores com as empresas de inteligência artificial."
+      ],
+      "bolso": "Ações recém-listadas costumam oscilar muito nas primeiras semanas; o preço do IPO não funciona como piso para a cotação.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "ia",
+        "titulo": "Anthropic: fechamento por pregão (US$)",
+        "pontos": [
+          [
+            "19/11",
+            97.17
+          ],
+          [
+            "20/11",
+            88.91
+          ],
+          [
+            "23/11",
+            87.64
+          ],
+          [
+            "24/11",
+            81.9
+          ]
+        ],
+        "rotular": true,
+        "decimais": 2,
+        "destaque": "Preço do IPO: US$ 83",
+        "fonte": "Fonte: fechamentos publicados no site; 24/11: Seoul Economic Daily e CappNotes"
+      },
+      "fontes": [
+        {
+          "nome": "Yahoo Finanças",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-shares-fall-below-ipo-181906660.html"
+        },
+        {
+          "nome": "Seoul Economic Daily",
+          "url": "https://en.sedaily.com/market/2026/11/25/anthropic-falls-below-ipo-price-in-four-sessions-down-30"
+        },
+        {
+          "nome": "CappNotes",
+          "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-24"
+        },
+        {
+          "nome": "Anadolu (relato do Axios)",
+          "url": "https://www.aa.com.tr/en/world/insiders-say-anthropic-openai-struggle-to-contain-unreleased-ai-models-axios/4136091"
+        }
+      ],
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-25-2.png",
+        "alt": "Linha com os fechamentos da ação da Anthropic: US$ 97,17 em 19/11, US$ 88,91 em 20/11, US$ 87,64 em 23/11 e US$ 81,9 em 24/11, quando ficou abaixo da linha do preço do IPO, de US$ 83.",
+        "fonte": "Fonte: Yahoo Finanças, Seoul Economic Daily, CappNotes; fechamentos publicados no site"
+      },
+      "slug": "2026-11-24-acoes-da-anthropic-caem-6-5-e-fecham-a-us-81-9-abaixo-do-preco-de-us"
+    },
+    {
+      "editoria": "Mercados",
+      "data": "24/11/2026",
+      "publicado": "25/11/2026",
+      "titulo": "Vale cai 5,5% e leva o Ibovespa a recuar 0,43%, aos 164.090 pontos; dólar cai a R$ 5,91",
+      "resumo": "A bolsa devolveu a alta da manhã com a pressão da mineradora e da Petrobras, enquanto o câmbio recuou no dia da sanção do ajuste fiscal.",
+      "texto": [
+        "O Ibovespa fechou a terça-feira (24) em queda de 0,43%, aos 164.089,81 pontos, depois de ter chegado a 167.579,78 pontos na máxima da manhã. A maior pressão veio da Vale, cuja ação ordinária caiu 5,51%, a R$ 55,19, e da Petrobras, com recuo de 1,82% da ação preferencial, a R$ 40,55. No câmbio, o dólar comercial caiu 0,26% e fechou a R$ 5,91, depois de ter fechado a R$ 5,93 na segunda-feira.",
+        "A queda da Vale ocorreu mesmo com o minério de ferro em alta na China, e outras mineradoras globais também recuaram. A Petrobras reagiu ao plano de negócios 2027-2031, com investimento previsto de US$ 122 bilhões, divulgado na véspera. O dólar perdeu força com a sanção do ajuste fiscal, enquanto em Nova York o Nasdaq caiu 1,48% e o S&P 500 recuou 0,50%, em mais um dia de venda de ações de tecnologia.",
+        "Na agenda dos próximos dias está a prévia da inflação de novembro, o IPCA-15, que o IBGE divulga na quinta-feira (26). Os investidores também acompanham o andamento da nova proposta de emenda constitucional de ajuste fiscal anunciada pelo governo. Nos Estados Unidos, a expectativa de alta de juros pelo Fed em dezembro continua no radar e influencia o fluxo de recursos para países emergentes."
+      ],
+      "bolso": "A oscilação do dólar afeta preços de produtos importados, viagens e compras em moeda estrangeira; quedas de ações grandes como Vale e Petrobras pesam em fundos que acompanham o Ibovespa.",
+      "arte": {
+        "tipo": "indicador",
+        "tema": "bolsa",
+        "rotulo": "Ibovespa (pontos)",
+        "valor": "164.090",
+        "variacao": "-0,43%",
+        "secundarios": [
+          {
+            "rotulo": "Dólar comercial",
+            "valor": "R$ 5,91",
+            "variacao": "-0,26%"
+          },
+          {
+            "rotulo": "Vale ON",
+            "valor": "R$ 55,19",
+            "variacao": "-5,51%"
+          }
+        ],
+        "fonte": "Fonte: O Repórter, Brasil em Folhas, Misto Brasil, The Rio Times, fechamento de 24/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "O Repórter",
+          "url": "https://oreporter.com/economia/dolar-cai-bolsa-recua-vale-24-novembro-2026"
+        },
+        {
+          "nome": "Brasil em Folhas",
+          "url": "https://brasilemfolhas.com.br/2026/11/dolar-cai-e-ibovespa-fecha-em-queda-nesta-terca-feira/"
+        },
+        {
+          "nome": "Misto Brasil",
+          "url": "https://mistobrasil.com/2026/11/24/ibovespa-devolve-ganhos-e-fecha-em-leve-queda-aos-1647-mil/"
+        },
+        {
+          "nome": "The Rio Times",
+          "url": "https://www.riotimesonline.com/brazils-financial-morning-call-for-wednesday-november-25-2026/"
+        }
+      ],
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-25-3.png",
+        "alt": "Barras com as variações de 24/11: Vale ON caiu 5,51%, Petrobras PN 1,82% e o Ibovespa 0,43%; a queda da Vale, em destaque, foi a maior pressão sobre o índice.",
+        "fonte": "Fonte: O Repórter, The Rio Times, Brasil em Folhas, fechamento de 24/11/2026"
+      },
+      "slug": "2026-11-24-vale-cai-5-5-e-leva-o-ibovespa-a-recuar-0-43-aos-164-090-pontos-dolar"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "24/11/2026",
+      "publicado": "25/11/2026",
+      "titulo": "Braskem fecha acordo preliminar com credores, e ação despenca 14% com risco de diluição",
+      "resumo": "A proposta prevê converter até US$ 3,6 bilhões em dívidas em ações e uma oferta de US$ 2,25 bilhões em novas ações, o que pode reduzir a fatia dos atuais acionistas.",
+      "texto": [
+        "A Braskem anunciou um acordo preliminar com credores para reestruturar dívidas que somam cerca de US$ 11 bilhões, e as ações preferenciais (BRKM5) caíram 14,09% na terça-feira (24), a R$ 2,50, menor nível do ano. Na véspera, os papéis tinham fechado em alta de quase 12%. O plano prevê reduzir o endividamento em até US$ 3,6 bilhões, com conversão de dívida em ações ou desconto de 30%. Também está prevista uma oferta de novas ações de US$ 2,25 bilhões, dos quais US$ 1,3 bilhão com garantia de compra dos principais acionistas ou de terceiros.",
+        "A petroquímica, controlada em conjunto pela Petrobras e pela IG4, enfrenta pressão financeira e negocia com os credores há meses. A conversão de créditos em ações tende a diluir de forma significativa a participação dos atuais acionistas, o que explica a reversão da alta da segunda-feira. A nova dívida proposta teria juros de 10,5% ao ano e vencimentos apenas a partir de 2031, com garantia de ativos da empresa.",
+        "Os termos ainda não são vinculantes, e a Braskem pediu à Justiça mais 20 dias úteis para apresentar o plano atualizado, já que o prazo original terminava em 22 de novembro. Os credores ainda vão escolher entre as opções oferecidas, e falta definir o preço pelo qual a dívida será convertida em ações. A participação da Petrobras no aumento de capital e a aprovação final dos credores são os próximos pontos a acompanhar."
+      ],
+      "bolso": "Quando dívida vira ação, o acionista atual pode ficar com uma fatia menor da empresa; em reestruturações, a cotação tende a oscilar muito até a definição dos termos.",
+      "arte": {
+        "tipo": "rosca",
+        "tema": "bolsa",
+        "titulo": "Oferta de novas ações proposta (US$ bilhões)",
+        "partes": [
+          {
+            "rotulo": "Com garantia de compra",
+            "valor": 1.3
+          },
+          {
+            "rotulo": "Sem garantia",
+            "valor": 0.95
+          }
+        ],
+        "centro": "US$ 2,25 bi",
+        "fonte": "Fonte: InfoMoney, CNN Brasil (Reuters), Bloomberg Línea, Times Brasil, 24/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "InfoMoney",
+          "url": "https://www.infomoney.com.br/mercados/braskem-brkm5-cai-apos-forte-alta-com-acordo-que-pode-diluir-atuais-acionistas/"
+        },
+        {
+          "nome": "CNN Brasil (Reuters)",
+          "url": "https://www.cnnbrasil.com.br/economia/money/mercado/braskem-desaba-14-na-bolsa-apos-acordo-com-credores/"
+        },
+        {
+          "nome": "Bloomberg Línea",
+          "url": "https://www.bloomberglinea.com.br/negocios/braskem-fecha-acordo-para-reestruturacao-mas-pede-prazo-maior-para-concluir-operacao/"
+        },
+        {
+          "nome": "Times Brasil",
+          "url": "https://timesbrasil.com.br/empresas-e-negocios/braskem-acordo-credores-reducao-divida/"
+        }
+      ],
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-25-4.png",
+        "alt": "Barras horizontais mostram as dívidas de cerca de US$ 11 bilhões em reestruturação, a conversão de até US$ 3,6 bilhões em ações, em destaque, e a oferta de US$ 2,25 bilhões em novas ações, o que pode diluir os atuais acionistas.",
+        "fonte": "Fonte: InfoMoney, CNN Brasil (Reuters), Bloomberg Línea, Times Brasil, 24/11/2026"
+      },
+      "slug": "2026-11-24-braskem-fecha-acordo-preliminar-com-credores-e-acao-despenca-14-com"
+    },
     {
       "editoria": "Economia",
       "data": "23/11/2026",
