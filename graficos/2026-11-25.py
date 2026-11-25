@@ -60,25 +60,29 @@ ax.set_yticks([]); ax.tick_params(colors=APAGADO, labelsize=9)
 ax.set_xticks(d); ax.xaxis.set_major_formatter(mdates.DateFormatter("%d/nov"))
 src["anthropic"] = salvar(fig, "2026-11-25-2")
 
-# 3) MERCADO — barras ordenadas (quem pressionou)
+# 3) MERCADO — colunas abaixo do zero (quedas do dia)
 fig = moldura("Bolsa · fechamento de 24/11",
               "Vale cai 5,5% e pesa no Ibovespa",
-              "Variação no dia, em %.",
+              "Variação no dia, em %. Todas as barras são quedas a partir do zero.",
               "O Repórter, The Rio Times, Brasil em Folhas")
-ax = fig.add_axes([0.22, 0.16, 0.7, 0.52])
+ax = fig.add_axes([0.1, 0.12, 0.8, 0.58])
 limpar(ax)
 nomes = ["Vale ON", "Petrobras PN", "Ibovespa"]
 vals = [-5.51, -1.82, -0.43]
 cores = [VERMELHO, CINZA, CINZA]
-ys = [2, 1, 0]
-ax.barh(ys, [abs(x) for x in vals], height=0.55, color=cores)
-ax.set_xlim(0, 7); ax.set_ylim(-0.6, 2.6)
-for y, x, c in zip(ys, vals, cores):
-    ax.text(abs(x) + 0.12, y, br(x, 2, sufixo="%"), va="center", fontsize=13 if c == VERMELHO else 11,
-            color=VERMELHO if c == VERMELHO else APAGADO, weight="bold" if c == VERMELHO else "normal")
-ax.set_yticks(ys); ax.set_yticklabels(nomes, fontsize=11)
-ax.get_yticklabels()[0].set_weight("bold"); ax.get_yticklabels()[0].set_color(TINTA)
-ax.set_xticks([])
+xs = [0, 1, 2]
+ax.bar(xs, vals, width=0.55, color=cores)
+ax.axhline(0, color=TINTA, lw=1.4)
+ax.text(-0.45, 0.12, "0%", fontsize=10, color=APAGADO, va="bottom")
+ax.set_xlim(-0.6, 2.6); ax.set_ylim(-7.0, 1.3)
+for x, v, c, n in zip(xs, vals, cores, nomes):
+    forte = c == VERMELHO
+    ax.text(x, v - 0.2, br(v, 2, sufixo="%"), ha="center", va="top",
+            fontsize=16 if forte else 13, weight="bold",
+            color=VERMELHO if forte else TINTA)
+    ax.text(x, 0.3, n, ha="center", va="bottom", fontsize=12,
+            color=TINTA if forte else APAGADO, weight="bold" if forte else "normal")
+ax.set_xticks([]); ax.set_yticks([])
 src["mercado"] = salvar(fig, "2026-11-25-3")
 
 # 4) BRASKEM — concentração (o que vira ação)
