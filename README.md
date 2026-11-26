@@ -121,6 +121,22 @@ imagem de compartilhamento (og:image).
 - O validador exige arquivo existente, `alt` com 30+ caracteres e `fonte` começando com "Fonte".
 - Só números já conferidos em `verificacao/AAAA-MM-DD.md`. Notícia sem número confirmado fica sem `grafico` (usa `cena`).
 
+**Conte uma história, não só compare barras** (regra de 26/11/2026, a pedido do editor). Antes de desenhar, defina o enredo
+(antes → virada → agora → o que vem) e escolha o formato que o conta:
+- linha com fases anotadas: blocos curtos de texto sobre cada trecho ("Set–Nov: dólar sobe 8%", "23/11: toca R$ 6"), só os pontos de virada rotulados;
+- linha atravessando uma faixa de referência sombreada (meta, teto, faixa recomendada), destaque só no trecho fora dela;
+- inclinação com várias categorias, rótulo e valor dos dois lados, texto explicativo colorido com a cor da linha (sem legenda);
+- colunas 100% empilhadas no tempo, só a parte que importa colorida e rotulada;
+- área ou linha com eventos anotados (linha-guia + "quando" em negrito + "por quê");
+- pequenos múltiplos; linha do tempo de próximos passos com o "hoje" marcado; grade de quadrados para proporções ("1 em cada 9").
+
+Composição: título de ação alinhado à esquerda com subtítulo, rótulos e fonte; rótulo direto no dado e texto colorido no lugar de legenda;
+1 a 3 blocos de texto explicativo dentro do gráfico; nada redundante (categoria "Todos", decimais à toa, eixo quando os valores já estão rotulados).
+
+Variedade obrigatória por edição: **no máximo 1 gráfico de barras** (qualquer tipo); **pelo menos 2 com eixo de tempo ou antes/depois**;
+**pelo menos 1 com texto de fases ou eventos dentro do gráfico**. Para séries, reaproveite os fechamentos já conferidos em `graficos/*.py`
+e `verificacao/*.md`; sem série confirmada, prefira inclinação, faixa, linha do tempo ou grade de quadrados a uma barra.
+
 ### Passos
 
 ```
