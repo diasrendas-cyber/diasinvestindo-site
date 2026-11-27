@@ -11,6 +11,7 @@ import hashlib, html, json, os, re, shutil, sys, unicodedata
 from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import artigos as ART
+import institucional as INST
 import diana as DIANA
 from datetime import date
 
@@ -23,25 +24,38 @@ ADSENSE_HEAD = """<!-- ADSENSE -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2224422141615380" crossorigin="anonymous"></script>
 <!-- /ADSENSE -->
 """
-FAIXA = """<div class="sponsor" aria-label="Patrocínio"><div class="wrap">
-  <div class="sponsor-slot" data-ad-slot-name="faixa">
-    <div><span class="ad-tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira</span></div>
-    <span class="ad-dim">970 × 90</span>
-  </div>
+# Espaços de anúncio vazios até o AdSense preencher: sem aviso "Sua marca aqui" (página com caixas vazias parece site inacabado).
+FAIXA = """<div class="sponsor" aria-label="Publicidade"><div class="wrap">
+  <div class="sponsor-slot" data-ad-slot-name="faixa"></div>
 </div></div>
 """
-LATERAL = """<aside class="rail" aria-label="Patrocínio lateral">
-  <div class="slot" data-ad-slot-name="lateral">
-    <span class="ad-tag">Patrocínio</span>
-    <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
-    <span class="ad-dim">160 × 600</span>
-  </div>
-  <div class="slot short">
-    <span class="ad-tag">Apoio</span>
-    <div><strong>Anuncie</strong><p>contato@<wbr>diasinvestindo.com.br</p></div>
-    <span class="ad-dim">160 × 160</span>
-  </div>
+LATERAL = """<aside class="rail" aria-label="Publicidade">
+  <div class="slot" data-ad-slot-name="lateral"></div>
 </aside>"""
+
+# Seções sem conteúdo ficam fora do menu e da home até ganharem conteúdo (definido em main()).
+SECOES = {"produtividade": True, "videoblog": True}
+# Notícias só entram no índice do Google quando trazem a análise própria ("analise", mínimo de caracteres abaixo).
+ANALISE_MIN = 400
+
+
+def tem_analise(n):
+    return sum(len(p) for p in n.get("analise", [])) >= ANALISE_MIN
+
+
+def nav_links(atual=""):
+    itens = [("/#inicio", "Início"), ("/#financas", "Finanças Pessoais"), ("/#investimentos", "Investimentos"), ("/#ferramentas", "Ferramentas")]
+    if SECOES["produtividade"]:
+        itens.append(("/#produtividade", "Produtividade"))
+    itens.append(("/noticias/", "Notícias"))
+    if SECOES["videoblog"]:
+        itens.append(("/#videoblog", "VideoBlog"))
+    itens.append(("/sobre/", "Sobre"))
+    return "\n".join(f'      <a href="{h}"' + (f' aria-current="{"true" if atual == h else "false"}"' if h.startswith("/n") or h.startswith("/s") else "") + f'>{t}</a>' for h, t in itens)
+
+
+FOOT_LINKS = ('<a href="/sobre/">Sobre</a><a href="/contato/">Contato</a><a href="/politica-editorial/">Política Editorial</a>'
+              '<a href="/termos-de-uso/">Termos de Uso</a><a href="/privacidade/">Política de Privacidade</a><a href="/noticias/">Arquivo de notícias</a>')
 
 # Segurança (o GitHub Pages não permite cabeçalhos HTTP próprios; estas políticas vão em <meta>).
 # Páginas com AdSense: política básica que não interfere nos anúncios (sem plugins, sem <base> alheio, formulários só para o próprio site).
@@ -116,7 +130,7 @@ def arte_div(arte):
     return f'<div class="art" data-arte="{esc(json.dumps(arte or {"tipo": "cena", "tema": "bolsa"}, ensure_ascii=False))}"></div>'
 
 
-def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem="", csp=CSP_BASICA, og_dim=(1200, 630)):
+def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", cheia=False, aviso="", og_imagem="", csp=CSP_BASICA, og_dim=(1200, 630), indexar=True):
     """Moldura comum: cabeçalho, régua, faixa de patrocínio, coluna lateral e rodapé.
     cheia=True: página de produto em largura total, sem anúncios (sem AdSense, faixa ou coluna lateral)."""
     adsense = "" if cheia else ADSENSE_HEAD
@@ -128,7 +142,8 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", 
     og = (f'<meta property="og:image" content="{esc(og_imagem)}">\n<meta property="og:image:width" content="{og_dim[0]}">\n<meta property="og:image:height" content="{og_dim[1]}">\n'
           f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{esc(titulo)}">\n<meta name="twitter:description" content="{esc(descricao)}">\n<meta name="twitter:image" content="{esc(og_imagem)}">\n') if og_imagem else ""
     nav_diana = "true" if "/diana/" in url else "false"
-    nav_noticias = "true" if "/noticias/" in url else "false"
+    atual = "/noticias/" if "/noticias/" in url else ("/sobre/" if url.endswith("/sobre/") else "")
+    robots = "" if indexar else '<meta name="robots" content="noindex,follow">\n'
     aviso_html = f"\n  <p>{esc(aviso)}</p>" if aviso else ""
     return f"""<!doctype html>
 <html lang="pt-BR">
@@ -136,7 +151,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", 
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="{esc(csp)}">
 {SEG_HEAD}<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>{esc(titulo)}</title>
+{robots}<title>{esc(titulo)}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="{esc(descricao)}">
 <link rel="canonical" href="{esc(url)}">
@@ -156,14 +171,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", 
   <div class="wrap bar">
     <a class="logo" href="/"><b>Dias<span>Investindo</span></b><small>com você</small></a>
     <nav class="tabs" aria-label="Seções do site">
-      <a href="/#inicio">Início</a>
-      <a href="/#financas">Finanças Pessoais</a>
-      <a href="/#investimentos">Investimentos</a>
-      <a href="/#ferramentas">Ferramentas</a>
-      <a href="/#produtividade">Produtividade</a>
-      <a href="/noticias/" aria-current="{nav_noticias}">Notícias</a>
-      <a href="/#videoblog">VideoBlog</a>
-      <a href="/#sobre">Sobre</a>
+{nav_links(atual)}
       <a class="nav-diana" href="/diana/" aria-current="{nav_diana}">Diana <span class="novo">novo</span></a>
     </nav>
   </div>
@@ -172,7 +180,7 @@ def pagina(titulo, descricao, url, corpo, dados, tipo="website", extra_head="", 
 {faixa}{miolo}
 <footer class="site"><div class="wrap">
   <p><strong style="color:var(--ink)">DiasInvestindo</strong> · viva os dias investindo em você · diasinvestindo.com.br · @diasinvestindo</p>
-  <p class="foot-links"><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a><a href="/noticias/">Arquivo de notícias</a><a href="/privacidade/">Política de Privacidade</a></p>
+  <p class="foot-links">{FOOT_LINKS}</p>
   <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>{aviso_html}
 </div></footer>
 <script src="/assets/arte.js"></script>
@@ -204,6 +212,9 @@ def pagina_noticia(n, todas, dados):
     paragrafos = "\n".join(f"<p>{esc(t)}</p>" for t in n.get("texto", []))
     # as fontes ficam em noticias.json e em verificacao/ (checagem), mas não aparecem na página (decisão do editor, 27/11/2026)
     bolso = f'<p class="callout"><strong>Para o seu bolso:</strong> {esc(n["bolso"])}</p>' if n.get("bolso") else ""
+    if n.get("analise"):  # análise própria do site (2 parágrafos); substitui a frase curta "Para o seu bolso"
+        bolso = ('<section class="analise" aria-label="Análise"><h2>O que isso muda para você</h2>'
+                 + "".join(f"<p>{esc(t)}</p>" for t in n["analise"]) + "</section>")
     outras = [o for o in todas if o["slug"] != n["slug"]][:4]
     wa = "https://wa.me/?text=" + quote(f'{n["titulo"]} {url}')
     ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": n["titulo"], "description": n["resumo"],
@@ -234,7 +245,7 @@ def pagina_noticia(n, todas, dados):
 <div class="capture-slot" data-origem="noticia"></div>"""
     head = f'<meta property="article:published_time" content="{iso(n.get("publicado", n["data"]))}">\n<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n'
     og = dict(og_imagem=SITE + n["grafico"]["src"], og_dim=(1600, 900)) if n.get("grafico") else {}
-    return pagina(f'{n["titulo"]} | Dias Investindo', n["resumo"], url, corpo, dados, "article", head, **og)
+    return pagina(f'{n["titulo"]} | Dias Investindo', n["resumo"], url, corpo, dados, "article", head, indexar=tem_analise(n), **og)
 
 
 def pagina_arquivo(todas, dados):
@@ -276,6 +287,19 @@ def pagina_404(dados):
     return pagina("Página não encontrada | Dias Investindo", "Página não encontrada.", f"{SITE}/404", corpo, dados)
 
 
+def ajustar_home(h):
+    """Home (index.html, escrita à mão): espaços de anúncio sem aviso, seções vazias ocultas, menu e rodapé com as páginas institucionais."""
+    h = re.sub(r'<div class="sponsor" aria-label="[^"]*"><div class="wrap">\s*<div class="sponsor-slot" data-ad-slot-name="faixa">.*?</div>\s*</div></div>',
+               '<div class="sponsor" aria-label="Publicidade"><div class="wrap">\n  <div class="sponsor-slot" data-ad-slot-name="faixa"></div>\n</div></div>', h, count=1, flags=re.S)
+    h = re.sub(r'<aside class="rail" aria-label="[^"]*">.*?</aside>', LATERAL, h, count=1, flags=re.S)
+    for sec in SECOES:
+        h = re.sub(rf'<section class="sec" id="{sec}"( hidden)?', f'<section class="sec" id="{sec}"' + ("" if SECOES[sec] else " hidden"), h)
+        h = re.sub(rf'<a href="#{sec}"( hidden)?>', f'<a href="#{sec}"' + ("" if SECOES[sec] else " hidden") + ">", h)
+    h = re.sub(r'<p class="note">Patrocínio:.*?</p>', '<p class="note">Patrocínio e parcerias: escreva com o assunto "Patrocínio". Mais formas de contato na página <a href="/contato/">Contato</a>. O conteúdo do site é educativo; não faço recomendação individual de investimentos.</p>', h, count=1, flags=re.S)
+    h = re.sub(r'<p class="foot-links">.*?</p>', '<p class="foot-links">' + FOOT_LINKS.replace('<a href="/privacidade/">', '<a href="/privacidade/" id="abrir-privacidade">') + '</p>', h, count=1, flags=re.S)
+    return h
+
+
 def main():
     dados = json.load(open(caminho("noticias.json"), encoding="utf-8"))
     todas = dados["noticias"]
@@ -305,6 +329,9 @@ def main():
         if q != 1:
             sys.exit(f"ERRO: marcador GERADO:{marca} não encontrado no index.html")
         return r
+    SECOES["produtividade"] = any(a["categoria"] == "produtividade" for a in arts)
+    SECOES["videoblog"] = any(a["video_id"] for a in arts)
+    novo = ajustar_home(novo)
     home = ([a for a in arts if a["destaque"]] + [a for a in arts if not a["destaque"]])[:2]
     novo = preencher(novo, "home-artigos", "".join(ART.cartao(a) for a in home) + "\n")
     for cat in ART.CATEGORIAS:
@@ -322,6 +349,8 @@ def main():
         open(caminho("artigos", a["slug"], "index.html"), "w", encoding="utf-8").write(ART.pagina_artigo(a, arts, pagina, SITE, HOTMART, dados))
     open(caminho("artigos", "index.html"), "w", encoding="utf-8").write(ART.pagina_todos(arts, pagina, SITE, dados))
     for cat in ART.CATEGORIAS:
+        if cat == "produtividade" and not SECOES["produtividade"]:
+            continue  # sem artigos, a página da seção não é publicada
         os.makedirs(caminho(cat))
         open(caminho(cat, "index.html"), "w", encoding="utf-8").write(ART.pagina_categoria(cat, arts, pagina, SITE, dados))
 
@@ -337,6 +366,9 @@ def main():
     os.makedirs(caminho("privacidade"), exist_ok=True)
     open(caminho("privacidade", "index.html"), "w", encoding="utf-8").write(pagina_privacidade(novo, dados))
     open(caminho("404.html"), "w", encoding="utf-8").write(pagina_404(dados))
+    for slug_, titulo_, desc_, corpo_ in INST.PAGINAS:
+        os.makedirs(caminho(slug_), exist_ok=True)
+        open(caminho(slug_, "index.html"), "w", encoding="utf-8").write(pagina(titulo_, desc_, f"{SITE}/{slug_}/", corpo_, dados))
     os.makedirs(caminho("diana"), exist_ok=True)  # /diana/politica-de-privacidade/ é escrita à mão e não é tocada
     open(caminho("diana", "index.html"), "w", encoding="utf-8").write(DIANA.pagina_diana(pagina, SITE, dados, caminho("conteudo", "diana.html")))
 
@@ -350,9 +382,10 @@ def main():
     hoje = iso(dados["atualizado"])
     urls = [(f"{SITE}/", hoje, "daily"), (f"{SITE}/noticias/", hoje, "daily"), (f"{SITE}/privacidade/", "2026-11-06", "yearly"),
             (f"{SITE}/diana/", "2026-11-18", "yearly"), (f"{SITE}/diana/politica-de-privacidade/", "2026-11-14", "yearly")]
-    urls += [(f"{SITE}/artigos/", hoje, "weekly")] + [(f"{SITE}/{c}/", hoje, "weekly") for c in ART.CATEGORIAS]
+    urls += [(f"{SITE}/{p_[0]}/", iso(INST.ATUALIZADO), "yearly") for p_ in INST.PAGINAS]
+    urls += [(f"{SITE}/artigos/", hoje, "weekly")] + [(f"{SITE}/{c}/", hoje, "weekly") for c in ART.CATEGORIAS if c != "produtividade" or SECOES["produtividade"]]
     urls += [(f"{SITE}/artigos/{a['slug']}/", iso(a["data"]), "monthly") for a in arts]
-    urls += [(f"{SITE}/noticias/{n['slug']}/", iso(n.get("publicado", n["data"])), "monthly") for n in todas]
+    urls += [(f"{SITE}/noticias/{n['slug']}/", iso(n.get("publicado", n["data"])), "monthly") for n in todas if tem_analise(n)]  # sem análise: noindex, fora do sitemap
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f"  <url><loc>{esc(u)}</loc><lastmod>{d}</lastmod><changefreq>{c}</changefreq></url>" for u, d, c in urls]
     sm.append("</urlset>")

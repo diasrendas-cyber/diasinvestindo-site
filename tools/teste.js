@@ -29,7 +29,7 @@ const links = [...d.querySelectorAll("nav.tabs a")].map(a => a.getAttribute("hre
 check(links.length === 9, "9 abas no menu (com Diana)", links.join(","));
 links.filter(h => h.startsWith("#")).forEach(h => check(!!d.getElementById(h.slice(1)), "seção existe " + h));
 check(links.includes("/diana/"), "menu aponta para /diana/");
-check(d.querySelectorAll("section[hidden]").length === 0, "nenhuma seção escondida (página única)");
+check([...d.querySelectorAll("section[hidden]")].every(x => ["produtividade", "videoblog"].includes(x.id)), "só seções sem conteúdo ficam escondidas (página única)");
 ["#contato", "#calc-milhao", "#calc-aposentadoria", "#conversor", "#calculadoras"].forEach(h => check(!!d.querySelector(h), "âncora " + h));
 check(links.includes("#ferramentas") && !links.includes("#calculadoras"), "aba Ferramentas no lugar de Calculadoras");
 check(d.querySelector(".logo small").textContent.trim()==="com você" && d.title === "Finanças Pessoais e Investimentos | DiasInvestindo", "slogan no cabeçalho e título de SEO");
@@ -93,6 +93,8 @@ check(d.querySelectorAll("#inicio [data-open-artigo]").length === Math.min(2, AR
 // A home mostra os mais recentes (vitrines e VideoBlog com até 12); os demais ficam em /artigos/ e nas páginas de categoria
 const TODOS_ARTS = fs.readFileSync(path.join(RAIZ, "artigos/index.html"), "utf8");
 check(!!d.querySelector('#videoblog a[href="/artigos/"]'), "VideoBlog tem link para todos os artigos");
+["/sobre/", "/contato/", "/politica-editorial/", "/termos-de-uso/", "/privacidade/"].forEach(h => check(!!d.querySelector(`.foot-links a[href="${h}"]`), "rodapé com " + h));
+check(![...d.querySelectorAll("section:not([hidden]), .sponsor, .rail")].some(x => /Sua marca aqui|em produção|entram aqui/.test(x.textContent)), "sem avisos de espaço vazio ou conteúdo em produção");
 ARTS.forEach(a => {
   check(TODOS_ARTS.includes(`/artigos/${a}/`), "artigo listado em /artigos/ " + a);
   const b = d.querySelector(`[data-open-artigo="${a}"]`);
@@ -269,7 +271,7 @@ ARTS.forEach(slug => {
   check(pg.querySelectorAll("section .three .story").length >= 1, "leia também " + slug);
   check(pg.querySelector('link[rel="canonical"]').getAttribute("href").endsWith(`/artigos/${slug}/`), "canonical do artigo " + slug);
 });
-["financas-pessoais", "investimentos", "produtividade", "artigos"].forEach(c => {
+["financas-pessoais", "investimentos", "produtividade", "artigos"].filter(c => fs.existsSync(path.join(RAIZ, `${c}/index.html`)) || c !== "produtividade").forEach(c => {  // produtividade só existe quando tiver artigos
   const rel = `${c}/index.html`;
   check(fs.existsSync(path.join(RAIZ, rel)), "página " + c);
   const pg = carregar(`https://diasinvestindo.com.br/${c}/`, autocontido(rel)).window.document;
@@ -285,7 +287,9 @@ bt.click();
 check([...arq.querySelectorAll(".lista li")].every(li => li.hidden === (li.dataset.ed !== bt.dataset.ed)), "filtro por editoria");
 // Arquivos de apoio
 ["sitemap.xml", "robots.txt", "feed.xml", "ads.txt", "404.html", "privacidade/index.html"].forEach(f => check(fs.existsSync(path.join(RAIZ, f)), "arquivo " + f));
-check(todas.every(n => sm.includes(`/noticias/${n.slug}/`)), "sitemap com todas as notícias");
+const comAnalise = n => (n.analise || []).join("").length >= 400;
+check(todas.every(n => sm.includes(`/noticias/${n.slug}/`) === comAnalise(n)), "sitemap só com as notícias que têm análise própria");
+check(todas.every(n => /name="robots" content="noindex/.test(fs.readFileSync(path.join(RAIZ, `noticias/${n.slug}/index.html`), "utf8")) === !comAnalise(n)), "notícia sem análise própria fica fora do índice (noindex)");
 
 // Prévia fora do domínio: formulário avisa
 const dom2 = carregar("https://claude.ai/x");

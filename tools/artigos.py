@@ -124,7 +124,7 @@ def corpo_artigo(a, h1_id=True):
 def vitrine(artigos, categoria, limite=3):
     lista = [a for a in artigos if a["categoria"] == categoria][:limite]
     if not lista:
-        return '  <p class="meta">Os primeiros artigos desta seção estão em produção. Cadastre-se para receber assim que saírem.</p>\n'
+        return ""  # seção sem artigos fica oculta na home (gerar.py)
     return '  <div class="three">' + "".join(cartao(a) for a in lista) + "</div>\n"
 
 
@@ -137,7 +137,7 @@ def videoblog(artigos):
                        f'<div class="vthumb" style="background-image:url(https://i.ytimg.com/vi/{a["video_id"]}/mqdefault.jpg);background-size:cover" aria-hidden="true"></div>'
                        f'<div><b>{esc(a["titulo"])}</b><span>Assistir no YouTube</span></div></a>' for a in com_video)
     else:
-        vids = '<div class="vcard"><div class="vthumb" aria-hidden="true"></div><div><b>Os vídeos dos artigos entram aqui</b><span>Em produção para o YouTube</span></div></div>'
+        vids = ""  # sem vídeos, a seção VideoBlog fica oculta na home (gerar.py)
     return (f'  <div class="two"><div><span class="kicker">Artigos</span><ul class="vlist">{itens}</ul></div>'
             f'<div class="vstack"><span class="kicker">Vídeos</span>{vids}</div></div>\n')
 

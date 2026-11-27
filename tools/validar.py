@@ -34,6 +34,12 @@ for i, n in enumerate(ns, 1):
     if len(tx) != 3: erros.append(f"{p}: texto deve ter exatamente 3 parágrafos (tem {len(tx)})")
     for j, par in enumerate(tx, 1):
         if len(par) < 200: erros.append(f"{p}: parágrafo {j} curto demais ({len(par)} caracteres; mínimo 200)")
+    # análise própria (seção "O que isso muda para você"): obrigatória a partir da edição de 28/11/2026;
+    # sem ela a página sai com noindex e fica fora do sitemap (exigência de qualidade do Google AdSense)
+    an = n.get("analise")
+    if an is not None or (data_re.match(n.get("publicado", "")) and iso(n["publicado"]) >= "2026-11-28"):
+        if not isinstance(an, list) or not (1 <= len(an) <= 3): erros.append(f"{p}: analise deve ter de 1 a 3 parágrafos")
+        elif sum(len(x) for x in an) < 400: erros.append(f"{p}: analise curta demais ({sum(len(x) for x in an)} caracteres; mínimo 400 no total)")
     gr = n.get("grafico")
     if gr is not None:
         src = str(gr.get("src", ""))

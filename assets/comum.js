@@ -36,7 +36,7 @@ document.querySelectorAll(".capture form").forEach(f=>f.addEventListener("submit
 
 /* ---------- AdSense: blocos fixos nos espaços de patrocínio ---------- */
 /* Blocos criados no AdSense em 10/11/2026: "Faixa topo 970x90" e "Lateral 160x600"; em 19/11/2026: "01" (responsivo, dentro do conteúdo).
-   O aviso "Sua marca aqui" fica visível até o anúncio carregar; sem anúncio, ele continua no lugar. */
+   Os espaços ficam vazios (sem aviso) e só ocupam lugar quando o AdSense entrega um anúncio (ver estilo.css). */
 const ADSENSE={client:"ca-pub-2224422141615380",slots:{faixa:{id:"8353558655",formato:"horizontal"},lateral:{id:"7385972248",formato:"vertical"},conteudo:{id:"7135902252",formato:"auto",responsivo:true}}};
 if(live){
   document.querySelectorAll("[data-ad-slot-name]").forEach(el=>{const s=ADSENSE.slots[el.dataset.adSlotName];if(!s||!s.id)return;

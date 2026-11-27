@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="/assets/estilo.css?v=a28428f3">
+<link rel="stylesheet" href="/assets/estilo.css?v=12f36642">
 </head>
 <body>
 
@@ -29,9 +29,9 @@
       <a href="#financas">Finanças Pessoais</a>
       <a href="#investimentos">Investimentos</a>
       <a href="#ferramentas">Ferramentas</a>
-      <a href="#produtividade">Produtividade</a>
+      <a href="#produtividade" hidden>Produtividade</a>
       <a href="#noticias">Notícias</a>
-      <a href="#videoblog">VideoBlog</a>
+      <a href="#videoblog" hidden>VideoBlog</a>
       <a href="#sobre">Sobre</a>
       <a class="nav-diana" href="/diana/">Diana <span class="novo">novo</span></a>
     </nav>
@@ -39,11 +39,8 @@
   <div class="ticker"><div class="wrap" id="ticker" aria-label="Indicadores de mercado"></div></div>
 </header>
 
-<div class="sponsor" aria-label="Patrocínio"><div class="wrap">
-  <div class="sponsor-slot" data-ad-slot-name="faixa">
-    <div><span class="ad-tag">Patrocínio</span><br><strong>Sua marca aqui</strong><span class="t">Espaço para parceiros de educação financeira</span></div>
-    <span class="ad-dim">970 × 90</span>
-  </div>
+<div class="sponsor" aria-label="Publicidade"><div class="wrap">
+  <div class="sponsor-slot" data-ad-slot-name="faixa"></div>
 </div></div>
 
 <main class="wrap">
@@ -212,10 +209,9 @@
 </section>
 
 <!-- PRODUTIVIDADE -->
-<section class="sec" id="produtividade" aria-label="Produtividade">
+<section class="sec" id="produtividade" hidden aria-label="Produtividade">
   <div class="sec-head"><h2>Produtividade</h2><a class="so-site" href="/produtividade/">Todos os artigos</a></div>
 <!-- GERADO:produtividade -->
-  <p class="meta">Os primeiros artigos desta seção estão em produção. Cadastre-se para receber assim que saírem.</p>
 <!-- /GERADO -->
   <div class="soon">
     <div>
@@ -238,10 +234,10 @@
 </section>
 
 <!-- VIDEOBLOG -->
-<section class="sec" id="videoblog" aria-label="VideoBlog">
+<section class="sec" id="videoblog" hidden aria-label="VideoBlog">
   <div class="sec-head"><h2>VideoBlog</h2><a class="so-site" href="/artigos/">Todos os artigos</a></div>
 <!-- GERADO:videoblog -->
-  <div class="two"><div><span class="kicker">Artigos</span><ul class="vlist"><li><a href="/artigos/invista-no-tesouro-direto-como-comecar-e-qual-titulo-escolher/" data-open-artigo="invista-no-tesouro-direto-como-comecar-e-qual-titulo-escolher"><span class="n">01</span><b>Invista no Tesouro Direto: como começar e qual título escolher</b></a></li><li><a href="/artigos/reserva-de-emergencia-tesouro-selic-ou-tesouro-reserva/" data-open-artigo="reserva-de-emergencia-tesouro-selic-ou-tesouro-reserva"><span class="n">02</span><b>Reserva de emergência: qual o melhor, Tesouro Selic ou Tesouro Reserva?</b></a></li><li><a href="/artigos/tesouro-ipca-com-ou-sem-juros-semestrais/" data-open-artigo="tesouro-ipca-com-ou-sem-juros-semestrais"><span class="n">03</span><b>Tesouro IPCA+: qual o melhor, com ou sem juros semestrais?</b></a></li><li><a href="/artigos/antes-de-investir-descubra-para-onde-vai-o-seu-dinheiro/" data-open-artigo="antes-de-investir-descubra-para-onde-vai-o-seu-dinheiro"><span class="n">04</span><b>Antes de investir, descubra para onde vai o seu dinheiro</b></a></li><li><a href="/artigos/juros-compostos-o-tempo-pesa-mais-que-o-aporte/" data-open-artigo="juros-compostos-o-tempo-pesa-mais-que-o-aporte"><span class="n">05</span><b>Juros compostos: por que o tempo pesa mais que o aporte</b></a></li><li><a href="/artigos/quanto-voce-precisa-juntar-para-viver-de-renda/" data-open-artigo="quanto-voce-precisa-juntar-para-viver-de-renda"><span class="n">06</span><b>Quanto você precisa juntar para viver de renda</b></a></li></ul></div><div class="vstack"><span class="kicker">Vídeos</span><div class="vcard"><div class="vthumb" aria-hidden="true"></div><div><b>Os vídeos dos artigos entram aqui</b><span>Em produção para o YouTube</span></div></div></div></div>
+  <div class="two"><div><span class="kicker">Artigos</span><ul class="vlist"><li><a href="/artigos/invista-no-tesouro-direto-como-comecar-e-qual-titulo-escolher/" data-open-artigo="invista-no-tesouro-direto-como-comecar-e-qual-titulo-escolher"><span class="n">01</span><b>Invista no Tesouro Direto: como começar e qual título escolher</b></a></li><li><a href="/artigos/reserva-de-emergencia-tesouro-selic-ou-tesouro-reserva/" data-open-artigo="reserva-de-emergencia-tesouro-selic-ou-tesouro-reserva"><span class="n">02</span><b>Reserva de emergência: qual o melhor, Tesouro Selic ou Tesouro Reserva?</b></a></li><li><a href="/artigos/tesouro-ipca-com-ou-sem-juros-semestrais/" data-open-artigo="tesouro-ipca-com-ou-sem-juros-semestrais"><span class="n">03</span><b>Tesouro IPCA+: qual o melhor, com ou sem juros semestrais?</b></a></li><li><a href="/artigos/antes-de-investir-descubra-para-onde-vai-o-seu-dinheiro/" data-open-artigo="antes-de-investir-descubra-para-onde-vai-o-seu-dinheiro"><span class="n">04</span><b>Antes de investir, descubra para onde vai o seu dinheiro</b></a></li><li><a href="/artigos/juros-compostos-o-tempo-pesa-mais-que-o-aporte/" data-open-artigo="juros-compostos-o-tempo-pesa-mais-que-o-aporte"><span class="n">05</span><b>Juros compostos: por que o tempo pesa mais que o aporte</b></a></li><li><a href="/artigos/quanto-voce-precisa-juntar-para-viver-de-renda/" data-open-artigo="quanto-voce-precisa-juntar-para-viver-de-renda"><span class="n">06</span><b>Quanto você precisa juntar para viver de renda</b></a></li></ul></div><div class="vstack"><span class="kicker">Vídeos</span></div></div>
 <!-- /GERADO -->
 </section>
 
@@ -263,29 +259,20 @@
     <div class="contact-card"><div><small>E-mail</small><b id="contato-email">contato@diasinvestindo.com.br</b></div><button class="btn ghost" type="button" id="copiar-email">Copiar</button></div>
     <div class="contact-card"><div><small>Instagram</small><b>@diasinvestindo</b></div><a class="btn ghost" href="https://www.instagram.com/diasinvestindo/" target="_blank" rel="noopener">Abrir perfil</a></div>
   </div>
-  <p class="note">Patrocínio: a faixa abaixo da régua de mercado (970 × 90) e a coluna lateral (160 × 600 e 160 × 160). Escreva com o assunto "Patrocínio". O conteúdo do site é educativo; não faço recomendação individual de investimentos.</p>
+  <p class="note">Patrocínio e parcerias: escreva com o assunto "Patrocínio". Mais formas de contato na página <a href="/contato/">Contato</a>. O conteúdo do site é educativo; não faço recomendação individual de investimentos.</p>
 </section>
 
 </div>
 
-<aside class="rail" aria-label="Patrocínio lateral">
-  <div class="slot" data-ad-slot-name="lateral">
-    <span class="ad-tag">Patrocínio</span>
-    <div><strong>Sua marca aqui</strong><p>Espaço para parceiros de educação financeira.</p></div>
-    <span class="ad-dim">160 × 600</span>
-  </div>
-  <div class="slot short">
-    <span class="ad-tag">Apoio</span>
-    <div><strong>Anuncie</strong><p>contato@<wbr>diasinvestindo.com.br</p></div>
-    <span class="ad-dim">160 × 160</span>
-  </div>
+<aside class="rail" aria-label="Publicidade">
+  <div class="slot" data-ad-slot-name="lateral"></div>
 </aside>
 </div>
 </main>
 
 <footer class="site"><div class="wrap">
   <p><strong style="color:var(--ink)">DiasInvestindo</strong> · viva os dias investindo em você · diasinvestindo.com.br · @diasinvestindo</p>
-  <p class="foot-links"><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="/privacidade/" id="abrir-privacidade">Política de Privacidade</a></p>
+  <p class="foot-links"><a href="/sobre/">Sobre</a><a href="/contato/">Contato</a><a href="/politica-editorial/">Política Editorial</a><a href="/termos-de-uso/">Termos de Uso</a><a href="/privacidade/" id="abrir-privacidade">Política de Privacidade</a><a href="/noticias/">Arquivo de notícias</a></p>
   <p>Conteúdo educativo. Nada aqui constitui recomendação de investimento. Rentabilidade passada não garante resultados futuros.</p>
 </div></footer>
 
@@ -1212,6 +1199,6 @@ marcar();
 if(location.hash.length>1){const alvo=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(alvo)setTimeout(()=>alvo.scrollIntoView({block:"start"}),60)}
 })();
 </script>
-<script src="/assets/comum.js?v=c48238b8"></script>
+<script src="/assets/comum.js?v=58d81975"></script>
 </body>
 </html>

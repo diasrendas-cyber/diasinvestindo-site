@@ -6,6 +6,8 @@ Portal publicado pelo GitHub Pages (repositório diasrendas-cyber/diasinvestindo
 
 - `noticias.json`: **a base de todas as notícias**, da mais nova para a mais antiga. É o único arquivo de conteúdo que a tarefa diária edita.
 - `index.html`: a página inicial (página única com seções). O bloco `site-data` é preenchido pelo gerador; não edite à mão.
+- `sobre/`, `contato/`, `politica-editorial/` e `termos-de-uso/`: **geradas** a partir de `tools/institucional.py` (texto escrito à mão lá).
+- Seções sem conteúdo (Produtividade sem artigos, VideoBlog sem vídeos) ficam ocultas no menu e na home até ganharem conteúdo, e não existem avisos "em produção" nem "Sua marca aqui" nos espaços de anúncio.
 - `noticias/<slug>/index.html`, `noticias/index.html`, `artigos/`, páginas de categoria, `privacidade/`, `404.html`, `sitemap.xml`, `robots.txt`, `feed.xml` e `busca.json` (índice da busca da home): **gerados** por `tools/gerar.py`. Não edite à mão.
 - `conteudo/artigos/*.md`: os artigos (cabeçalho entre `---` e corpo em Markdown simples). O nome do arquivo é o endereço permanente.
 - `assets/estilo.css`, `assets/arte.js` (ilustrações), `assets/comum.js` (formulário de e-mail, anúncios e preço do Bitcoin ao vivo na régua): compartilhados por todas as páginas.
@@ -64,7 +66,7 @@ a home (4 destaques, o bloco "Mais notícias" com as 4 seguintes e a lista com a
       "titulo": "Manchete com verbo e fato principal",
       "resumo": "Uma frase que explica a notícia.",
       "texto": ["Parágrafo 1: o fato.", "Parágrafo 2: causas e contexto.", "Parágrafo 3: próximos passos e consequências."],
-      "bolso": "Opcional: uma frase sobre o impacto no bolso do leitor, sem recomendação de investimento.",
+      "analise": ["Parágrafo de análise própria: o que o fato muda para quem cuida do próprio dinheiro.", "Segundo parágrafo: o que acompanhar e como pensar a decisão (orçamento, reserva, dívidas, investimentos), sem recomendação de investimento."],
       "arte": { "...": "ver abaixo" },
       "fontes": [{ "nome": "Veículo", "url": "https://endereço-da-matéria" }]
     }
@@ -75,6 +77,14 @@ a home (4 destaques, o bloco "Mais notícias" com as 4 seguintes e a lista com a
 Regras: 4 notícias novas por edição (mínimo 3), inseridas no topo; não altere nem remova notícias antigas
 (o campo `slug` é criado pelo gerador e nunca deve mudar, porque é o endereço permanente da página); `texto` com exatamente 3 parágrafos de pelo menos 200 caracteres cada,
 escritos com palavras próprias (nunca copiar trechos das fontes); variações sempre com sinal (`+0,67%`, `-0,82%`).
+
+**Análise própria (`analise`), obrigatória desde 28/11/2026.** É o que diferencia o site de um agregador de notícias, exigência do Google AdSense
+(o site foi recusado por "conteúdo de baixo valor" em 27/11/2026). São 2 parágrafos (mínimo de 400 caracteres no total) com a leitura do
+Dias Investindo, publicados na seção "O que isso muda para você": o que o fato significa para o orçamento, a reserva, as dívidas, os
+investimentos ou o planejamento do leitor; o que acompanhar daqui para a frente; quando fizer sentido, um link de raciocínio com os
+artigos e as ferramentas do site. Não é resumo dos 3 parágrafos, não repete números novos sem checagem e nunca recomenda comprar ou vender ativos.
+O campo antigo `bolso` (uma frase) não é mais usado nas notícias novas.
+Notícias sem `analise` continuam no site, mas saem com `noindex` e ficam fora do sitemap (regra em `tools/gerar.py`, função `tem_analise`).
 
 ### Ilustração (`arte`) de cada notícia
 

@@ -314,3 +314,13 @@ nav.tabs a .novo{font:700 10px var(--display);letter-spacing:.06em;text-transfor
 .grafico img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
 .grafico figcaption{font-size:.78rem;color:var(--muted,#6B7280);margin-top:.35rem}
 .art img{display:block;width:100%;height:100%;object-fit:contain;background:#fff}
+
+/* Espaços de anúncio: sem moldura nem aviso; ocupam espaço só quando o AdSense entrega um anúncio */
+.sponsor-slot,.slot{border:0!important;background:none!important;min-height:0!important;padding:0!important}
+.sponsor .wrap{padding-block:0}
+.sponsor-slot:has(ins[data-ad-status="filled"]){padding-block:14px 0!important}
+ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
+/* Análise própria das notícias */
+.analise{margin-top:28px;padding:20px 22px;border-left:4px solid var(--accent);background:var(--surface)}
+.analise h2{font:800 20px/1.25 var(--display);margin:0 0 10px}
+.analise p:last-child{margin-bottom:0}
