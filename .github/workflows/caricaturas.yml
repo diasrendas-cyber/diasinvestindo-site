@@ -1,0 +1,83 @@
+name: Caricaturas das notícias (Gemini)
+
+# Disparado quando a tarefa diária envia caricaturas/AAAA-MM-DD.json.
+# Gera as caricaturas pela API do Gemini, monta a figura de cada notícia,
+# atualiza o site e publica. Se o Gemini falhar, nada é alterado: a notícia
+# fica com a figura que já tinha.
+
+on:
+  push:
+    branches: [main]
+    paths: ["caricaturas/*.json"]
+  workflow_dispatch:
+    inputs:
+      data:
+        description: "Data da edição (AAAA-MM-DD). Vazio = a mais recente."
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: caricaturas
+  cancel-in-progress: false
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Dependências
+        run: pip install --quiet pillow
+
+      - name: Gerar caricaturas
+        id: car
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL }}
+        run: |
+          if [ -z "$GEMINI_IMAGE_MODEL" ]; then unset GEMINI_IMAGE_MODEL; fi
+          python3 tools/caricatura.py ${{ github.event.inputs.data }} | tee /tmp/saida.txt
+          echo "resultado=$(tail -1 /tmp/saida.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Validar, gerar páginas e testar
+        if: steps.car.outputs.resultado == 'MUDOU'
+        run: |
+          python3 tools/validar.py
+          python3 tools/gerar.py
+          npm install --silent
+          npm test
+          git checkout -- diana/ 2>/dev/null || true
+
+      - name: Publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Dias Investindo"
+          git config user.email "contato@diasinvestindo.com.br"
+          git add caricaturas/
+          if [ "${{ steps.car.outputs.resultado }}" = "MUDOU" ]; then
+            git add -A -- noticias.json index.html noticias/ artigos/ financas-pessoais/ investimentos/ produtividade/ \
+              sitemap.xml feed.xml busca.json privacidade/ 404.html assets/img/noticias/
+          fi
+          if git diff --cached --quiet; then echo "Nada para publicar."; exit 0; fi
+          git commit -m "Caricaturas das notícias ($(date -u +%d/%m/%Y))"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            sleep 5
+          done
+          if [ "${{ steps.car.outputs.resultado }}" = "MUDOU" ]; then
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null 2>&1 \
+              && echo "Build do GitHub Pages solicitado." || echo "Pedido de build do Pages não aceito; o push já dispara a publicação."
+          fi
