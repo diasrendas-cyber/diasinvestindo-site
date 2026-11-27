@@ -1,14 +1,215 @@
 {
-  "atualizado": "26/11/2026",
+  "atualizado": "27/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "166.685",
-    "ibovVar": "+1,58%",
-    "dolar": "R$ 5,82",
-    "dolarVar": "-1,59%",
-    "data": "25/11/2026"
+    "ibov": "176.800",
+    "ibovVar": "+6,07%",
+    "dolar": "R$ 5,74",
+    "dolarVar": "-1,25%",
+    "data": "26/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Mercados",
+      "data": "26/11/2026",
+      "publicado": "27/11/2026",
+      "titulo": "Ibovespa sobe 6,07% com Trabuco cotado para a Fazenda, e Planalto confirma que ele aceitou o convite",
+      "resumo": "A bolsa teve a maior alta diária desde 5 de outubro e o dólar caiu a R$ 5,74; depois do pregão, o governo confirmou Luiz Carlos Trabuco como ministro da Fazenda a partir de 2027.",
+      "texto": [
+        "O Ibovespa fechou a quinta-feira (26) em alta de 6,07%, aos 176.799,84 pontos, a maior valorização em um único dia desde 5 de outubro, logo depois do primeiro turno das eleições. Nos minutos finais do pregão, o índice chegou a 177.024,45 pontos. O dólar comercial recuou 1,25% e terminou cotado a R$ 5,7441, no quarto pregão seguido de queda. O índice das ações do setor financeiro subiu 8,98%.",
+        "O movimento foi atribuído à expectativa de que Luiz Carlos Trabuco Cappi, presidente do Conselho de Administração do Bradesco, assumisse o Ministério da Fazenda no próximo mandato do presidente Luiz Inácio Lula da Silva. Trabuco foi a Brasília para se reunir com Lula, e investidores viram na possível escolha um sinal de condução mais previsível das contas públicas. A prévia da inflação abaixo do esperado também ajudou a derrubar os juros futuros. Com as bolsas de Nova York fechadas pelo feriado de Ação de Graças, o volume de negócios ficou abaixo do habitual.",
+        "Depois do fechamento, o Palácio do Planalto confirmou em nota que Trabuco aceitou o convite para comandar a Fazenda a partir de 2027. Até lá, Dario Durigan continua à frente do ministério. A nomeação formal, a posse e a composição da equipe econômica ainda serão definidas. Nesta sexta-feira, o mercado avalia se a confirmação sustenta os ganhos do dia anterior."
+      ],
+      "bolso": "A queda do dólar barateia viagens e compras no exterior, e a alta do índice favorece fundos que acompanham a bolsa; movimentos tão fortes em um só dia também podem ser revertidos depois.",
+      "arte": {
+        "tipo": "linha",
+        "tema": "bolsa",
+        "titulo": "Ibovespa: fechamento por pregão (pontos)",
+        "pontos": [
+          [
+            "19/11",
+            166376
+          ],
+          [
+            "23/11",
+            164796
+          ],
+          [
+            "24/11",
+            164090
+          ],
+          [
+            "25/11",
+            166685
+          ],
+          [
+            "26/11",
+            176800
+          ]
+        ],
+        "rotular": true,
+        "decimais": 0,
+        "destaque": "26/11: +6,07%",
+        "fonte": "Fonte: Jornal do Comércio, O Repórter, Campo Grande News; fechamentos anteriores já publicados no site"
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-27-1.png",
+        "alt": "Linha do Ibovespa nos fechamentos de 19/11 a 26/11/2026: depois de duas quedas seguidas em 23 e 24/11, até 164.090 pontos, o índice sobe a 166.685 em 25/11 e salta 6,07% em 26/11, a 176.800 pontos, com Trabuco cotado para a Fazenda.",
+        "fonte": "Fonte: Jornal do Comércio, O Repórter, Campo Grande News, fechamentos de 19/11 a 26/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Jornal do Comércio",
+          "url": "https://www.jornaldocomercio.com/economia/2026/11/1271955-ibovespa-tem-maior-alta-desde-1-turno-com-expectativa-de-trabuco-na-fazenda.html"
+        },
+        {
+          "nome": "O Repórter",
+          "url": "https://oreporter.com/economia/ibovespa-dispara-dolar-cai-fechamento-26-novembro-2026"
+        },
+        {
+          "nome": "Campo Grande News",
+          "url": "https://www.campograndenews.com.br/economia/dolar-recua-pelo-quarto-pregao-seguido-e-fecha-a-r-5-74"
+        },
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/politica/planalto-confirma-que-trabuco-aceitou-convite-para-comandar-fazenda/"
+        }
+      ],
+      "slug": "2026-11-26-ibovespa-sobe-6-07-com-trabuco-cotado-para-a-fazenda-e-planalto"
+    },
+    {
+      "editoria": "Economia",
+      "data": "26/11/2026",
+      "publicado": "27/11/2026",
+      "titulo": "Prévia da inflação desacelera para 0,22% em novembro, mas acumulado em 12 meses vai a 4,64%, acima do teto da meta",
+      "resumo": "O IPCA-15 subiu menos que em outubro e que o previsto, com queda em transportes, mas os alimentos voltaram a pressionar os preços.",
+      "texto": [
+        "O IPCA-15, prévia da inflação oficial calculada pelo IBGE, subiu 0,22% em novembro de 2026, abaixo dos 0,32% registrados em outubro. Com o resultado, o índice acumula alta de 4,64% em 12 meses e de 4,38% no ano. O acumulado em 12 meses fica acima de 4,5%, o teto do intervalo de tolerância da meta de inflação, cujo centro é de 3%. Em novembro de 2025, a prévia havia subido 0,20%.",
+        "O grupo alimentação e bebidas subiu 1,51% e foi a principal pressão do mês. Do outro lado, o grupo transportes caiu 0,71%, com recuo nas passagens aéreas e na gasolina. A energia elétrica residencial também ficou mais barata, com a manutenção da bandeira tarifária verde. O resultado geral veio abaixo das projeções dos analistas consultados antes da divulgação.",
+        "A desaceleração no mês ajudou a derrubar os juros futuros na quinta-feira, mas o acumulado acima do teto mantém o Banco Central atento, com a Selic em 13,75% ao ano. O IBGE ainda divulga o IPCA fechado de novembro, que confirmará ou não o ritmo da prévia. O mercado também acompanha se a alta dos alimentos vai continuar nos próximos meses."
+      ],
+      "bolso": "Alimentos mais caros pesam mais no orçamento das famílias, enquanto a queda de combustíveis e passagens aéreas alivia quem viaja ou depende do carro.",
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "inflacao",
+        "titulo": "IPCA-15 no mês",
+        "a": {
+          "rotulo": "Outubro",
+          "valor": "0,32%"
+        },
+        "b": {
+          "rotulo": "Novembro",
+          "valor": "0,22%",
+          "nota": "12 meses: 4,64%"
+        },
+        "nota": "Teto da meta: 4,5%",
+        "fonte": "Fonte: IBGE, via O Repórter e Portal do Agronegócio, 26/11/2026"
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-27-2.png",
+        "alt": "À esquerda, o IPCA-15 mensal cai de 0,32% em outubro para 0,22% em novembro de 2026; à direita, o acumulado em 12 meses, de 4,64%, aparece em vermelho acima do teto de 4,5% da meta, cujo centro é 3%.",
+        "fonte": "Fonte: IBGE, via O Repórter, Portal do Agronegócio e CNN Brasil, 26/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "O Repórter",
+          "url": "https://oreporter.com/economia/ibovespa-dispara-dolar-cai-fechamento-26-novembro-2026"
+        },
+        {
+          "nome": "Portal do Agronegócio",
+          "url": "https://www.portaldoagronegocio.com.br/economia/mercado-financeiro/noticias/ipca-15-desacelera-para-0-22-em-novembro-mas-alimentos-sobem-1-51-e-tomate-dispara-38-92"
+        },
+        {
+          "nome": "CNN Brasil",
+          "url": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/ipca-15-hoje-26-novembro-2026/"
+        }
+      ],
+      "slug": "2026-11-26-previa-da-inflacao-desacelera-para-0-22-em-novembro-mas-acumulado-em"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "26/11/2026",
+      "publicado": "27/11/2026",
+      "titulo": "Nvidia suspende envio de servidores de IA para quatro países do Sudeste Asiático, dizem jornais",
+      "resumo": "A empresa orientou parceiros como Dell e Super Micro a pausar entregas para Malásia, Singapura, Tailândia e Indonésia enquanto avalia as novas exigências de exportação dos EUA.",
+      "texto": [
+        "A Nvidia orientou parceiros fabricantes de servidores, entre eles Dell e Super Micro, a suspender o envio de servidores de inteligência artificial para Malásia, Singapura, Tailândia e Indonésia. A informação foi publicada pelo Financial Times e pelo Wall Street Journal e repercutiu na quinta-feira (26) e nesta sexta-feira (27). Segundo as reportagens, a pausa não tem data para terminar. A empresa não havia comentado o assunto publicamente.",
+        "A medida está ligada às regras mais rígidas adotadas neste mês pelo Departamento de Comércio dos Estados Unidos para a venda de capacidade de computação no exterior. Washington quer fechar a brecha pela qual empresas chinesas usavam centros de dados em outros países para acessar chips avançados de IA. Segundo as reportagens, a Nvidia quer verificar se os parceiros da região cumprem as exigências americanas antes de retomar as entregas.",
+        "A suspensão pode atrasar projetos de centros de dados no Sudeste Asiático, região que vinha atraindo investimentos em inteligência artificial. Ainda não está claro se a pausa será curta nem quantas encomendas foram afetadas. Investidores acompanham o efeito sobre as vendas da Nvidia e de seus parceiros e possíveis novos ajustes nas regras de exportação dos Estados Unidos."
+      ],
+      "arte": {
+        "tipo": "cena",
+        "tema": "tecnologia",
+        "titulo": "Nvidia pausa envios ao Sudeste Asiático"
+      },
+      "fontes": [
+        {
+          "nome": "Analytics India Magazine",
+          "url": "https://analyticsindiamag.com/ai-news/nvidia-halts-ai-server-shipments-to-4-southeast-asian-countries-report"
+        },
+        {
+          "nome": "The AI Insider",
+          "url": "https://theaiinsider.tech/2026/11/27/nvidia-halts-server-shipments-to-four-southeast-asian-countries-over-export-compliance-review/"
+        }
+      ],
+      "slug": "2026-11-26-nvidia-suspende-envio-de-servidores-de-ia-para-quatro-paises-do"
+    },
+    {
+      "editoria": "Negócios",
+      "data": "26/11/2026",
+      "publicado": "27/11/2026",
+      "titulo": "Opep+ se reúne no domingo e deve manter as metas de produção de petróleo, dizem fontes",
+      "resumo": "Os ministros do grupo tendem a adiar decisões maiores sobre as cotas de 2027, enquanto a guerra no Irã segue afetando exportações do Oriente Médio.",
+      "texto": [
+        "A Opep+ faz no domingo (29) uma reunião ministerial em que pode manter as metas atuais de produção de petróleo, segundo duas pessoas com conhecimento do assunto ouvidas pela Reuters. Até quinta-feira (26), nenhuma decisão havia sido tomada. As metas mensais vêm sendo definidas por sete países: Arábia Saudita, Rússia, Iraque, Kuwait, Cazaquistão, Argélia e Omã. As cotas atuais são de cerca de 10,5 milhões de barris por dia para a Arábia Saudita, 9,9 milhões para a Rússia e 4,4 milhões para o Iraque.",
+        "A guerra envolvendo o Irã continua prejudicando as exportações de países do grupo no Oriente Médio, o que reduz a margem para mudanças bruscas na oferta. O grupo também precisa definir as bases de produção de 2027, que dependem de uma revisão da capacidade de cada país. O Iraque defende uma referência mais alta para a sua cota. Os Emirados Árabes Unidos deixaram a Opep em maio de 2026.",
+        "Analistas esperam que os ministros mantenham as metas e deixem as decisões maiores sobre cotas para 2027. Uma manutenção tende a ter efeito limitado sobre os preços no curto prazo, mas o mercado vai acompanhar qualquer sinal sobre a produção do próximo ano. Para o Brasil, o preço do petróleo influencia a receita da Petrobras e o valor dos combustíveis nas bombas."
+      ],
+      "bolso": "O preço do petróleo influencia gasolina e diesel; metas estáveis tendem a reduzir surpresas, mas a guerra no Oriente Médio segue como fonte de volatilidade.",
+      "arte": {
+        "tipo": "barras",
+        "tema": "energia",
+        "titulo": "Cotas atuais (milhões de barris por dia)",
+        "barras": [
+          {
+            "rotulo": "Arábia Saudita",
+            "valor": 10.5
+          },
+          {
+            "rotulo": "Rússia",
+            "valor": 9.9
+          },
+          {
+            "rotulo": "Iraque",
+            "valor": 4.4,
+            "destaque": true
+          }
+        ],
+        "decimais": 1,
+        "nota": "Reunião da Opep+ em 29/11",
+        "fonte": "Fonte: The Rio Times e House of Saud, com dados da Opep"
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-27-4.png",
+        "alt": "Barras com as cotas atuais de produção na Opep+: Arábia Saudita 10,5, Rússia 9,9 e Iraque 4,4 milhões de barris por dia; a cota do Iraque, em destaque, é menos da metade da saudita, e o país pede base maior para 2027.",
+        "fonte": "Fonte: The Rio Times e House of Saud, com dados da Opep, 26/11/2026"
+      },
+      "fontes": [
+        {
+          "nome": "Business Standard (Reuters)",
+          "url": "https://www.business-standard.com/amp/world-news/opec-may-roll-over-current-oil-output-targets-at-its-sunday-meeting-126112601024_1.html"
+        },
+        {
+          "nome": "The Rio Times",
+          "url": "https://www.riotimesonline.com/opec-plus-weighs-january-oil-quota-rollover-2026"
+        },
+        {
+          "nome": "House of Saud",
+          "url": "https://houseofsaud.com/opec-nov29-2027-quotas/"
+        }
+      ],
+      "slug": "2026-11-26-opep-se-reune-no-domingo-e-deve-manter-as-metas-de-producao-de"
+    },
     {
       "editoria": "Mercados",
       "data": "25/11/2026",
