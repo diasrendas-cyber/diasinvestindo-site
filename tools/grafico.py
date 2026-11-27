@@ -108,7 +108,13 @@ def banda_meta(ax, valor, rotulo_valor, piso=1.5, centro=3.0, teto=4.5, ymin=0.0
         ax.plot([0.05, 0.95], [y, y], ls=estilo, color=TINTA if nome != nome_centro else APAGADO, lw=1.3)
         ax.text(0.06, y + (ymax - ymin) * 0.015, f"{nome} {br(y, 1 if y % 1 else 0, sufixo=sufixo)}",
                 ha="left", va="bottom", fontsize=10, color=TINTA if nome != nome_centro else APAGADO, weight=peso)
-    ax.scatter([0.62], [valor], s=230, color=cor, zorder=4)
+    # O ponto nunca encosta numa linha de referência: o raio fica abaixo de 70% da distância
+    # (em pixels) até a linha mais próxima, para não sugerir que o valor está no limite.
+    fig = ax.figure
+    alt_px = ax.get_position().height * fig.get_figheight() * fig.dpi
+    dist_px = min(abs(valor - y) for y in (piso, centro, teto)) * alt_px / (ymax - ymin)
+    raio_pt = min(7.5, 0.7 * dist_px * 72 / fig.dpi)
+    ax.scatter([0.62], [valor], s=max(raio_pt, 1.5) ** 2 * 4, color=cor, zorder=4, lw=0)
     folga = (ymax - ymin) * 0.03
     y_txt, va = (valor + folga, "bottom") if valor > teto else ((valor - folga, "top") if valor < piso else (valor, "center"))
     ax.text(0.70, y_txt, rotulo_valor, ha="left", va=va, fontsize=15, color=cor, weight="bold")

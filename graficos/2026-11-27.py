@@ -61,7 +61,7 @@ fig.text(0.07, 0.69, "No mês", ha="left", va="center", fontsize=13, color=TINTA
 a2 = fig.add_axes([0.62, 0.15, 0.34, 0.5])
 banda_meta(a2, 4.64, "4,64%", ymin=0.5, ymax=5.6)
 fig.text(0.62 + 0.34 * 0.05, 0.69, "Em 12 meses", ha="left", va="center", fontsize=13, color=TINTA, weight="bold")
-src["ipca15"] = salvar(fig, "2026-11-27-2-v2")
+src["ipca15"] = salvar(fig, "2026-11-27-2-v3")
 
 # 4) OPEP+ — barras ordenadas, só o protagonista colorido
 fig, ax = quadro("Petróleo · reunião da Opep+ em 29/11",

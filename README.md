@@ -132,7 +132,7 @@ imagem de compartilhamento (og:image).
 
 **Inflação e meta** (regra de 27/11/2026, a pedido do editor):
 - Valor x meta de inflação: use `banda_meta()` de `tools/grafico.py`. Três linhas horizontais: **teto em cima, meta no meio, piso embaixo** (hoje 4,5%, 3% e 1,5%).
-  Valor **dentro** da faixa: faixa sombreada e ponto em **verde**. Valor **fora** (acima do teto ou abaixo do piso): só a região de fora sombreada e o ponto em **vermelho**.
+  Valor **dentro** da faixa: faixa sombreada e ponto em **verde**. Valor **fora** (acima do teto ou abaixo do piso): só a região de fora sombreada e o ponto em **vermelho**. O ponto nunca encosta numa linha de referência (a função reduz o ponto sozinha), para não sugerir que o valor está no limite.
 - Tendência mensal (IPCA, IPCA-15, IGP-M etc.): **no mínimo 3 meses, de preferência 6**, cada mês conferido (publicação do IBGE ou duas fontes). Dois pontos (antes x depois) não mostram tendência.
 
 Composição: título de ação alinhado à esquerda com subtítulo, rótulos e fonte; rótulo direto no dado e texto colorido no lugar de legenda;
