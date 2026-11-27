@@ -10,7 +10,7 @@ Entrada: caricaturas/AAAA-MM-DD.json, escrito pela tarefa diária:
     {
       "slug": "<slug da notícia em noticias.json>",
       "n": 1,                               # posição da notícia na edição (1 a 4)
-      "modo": "caricatura" | "misto",       # misto = gráfico + caricatura na mesma figura
+      "modo": "caricatura" | "misto" | "objeto",  # misto = gráfico + caricatura; objeto = objeto personificado
       "pessoa": "Nome Completo",
       "prompt": "Stylized editorial caricature of ...",   # template de estilo preenchido
       "grafico_base": "/assets/img/noticias/AAAA-MM-DD-N.png",  # só no modo misto

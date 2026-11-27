@@ -148,7 +148,8 @@ Regra de 27/11/2026, a pedido do editor. Para cada notícia, a figura segue esta
 - **Só dados** → gráfico Storytelling with Data (acima).
 - **Notícia sobre uma personalidade pública** (fala, decisão, nomeação, perfil) → caricatura editorial gerada no Gemini.
 - **Dados + fala ou ação da personalidade** → figura mista: caricatura à esquerda e o gráfico à direita, na mesma imagem.
-- **Nenhum dos dois** → `arte` do tipo `cena`.
+- **Sem personalidade e sem gráfico, mas com um sujeito central que pode ser personificado** (chip, computador, servidor, foguete, animal, material, nuvem, moeda etc.) → caricatura antropomorfizada do objeto (modo `objeto`), com o template de objeto abaixo.
+- **Nenhum dos casos acima** → `arte` do tipo `cena`.
 
 A figura escolhida vai no campo `grafico` e aparece em todos os espaços da notícia (página, destaques, "Mais notícias", lista, leitor e og:image).
 
@@ -156,12 +157,16 @@ Template de estilo (obrigatório; preencher os colchetes em inglês):
 
 > Stylized editorial caricature of [FULL NAME OF PUBLIC FIGURE], [RECOGNIZABLE FACIAL TRAITS & EXPRESSION MATCHING THE NEWS], clearly exaggerated cartoon caricature (not photorealistic), subtle bobblehead proportions. Crisp black outlines, flat vector colors, modern graphic poster aesthetic on a dominant bright red background. Wearing [SIGNATURE OUTFIT], holding [SYMBOLIC PROP RELATED TO THE NEWS]. Left side: [ARCHITECTURAL OR SCENE ELEMENT] in stark white and black. Right side: minimalist white and yellow vector icons representing [CORE THEME OF THE NEWS]. High contrast, clean composition, no text, no letters, no numbers, no logos anywhere (any certificates, papers, screens or signs are blank), no watermark.
 
+Template de objeto (modo `objeto`; preencher os colchetes em inglês; o selo só entra quando há marca, empresa, produto ou sigla central na notícia, com o nome exato, e sem selo a frase do selo sai inteira):
+
+> Stylized editorial caricature of an anthropomorphic [SUBJECT] with [EXPRESSIVE FACE, EYES AND EXPRESSION MATCHING THE NEWS, EXAGGERATED VISUAL DETAILS], stubby arms and legs, subtle bobblehead proportions. Crisp black outlines, flat vector colors, no complex realistic shading, modern graphic poster aesthetic on a dominant bright red background (#D92323). Wearing no clothing and holding [SYMBOLIC PROP]. Left side: [LEFT SCENE ELEMENT] in stark black and white. Right side: minimalist white and yellow vector icons representing [NEWS CONTEXT], with a small crisp graphic badge reading "[EXACT_BRAND_OR_NAME]". No other text, letters or numbers anywhere. High contrast, clean composition, no watermark.
+
 Cuidados: tom neutro e respeitoso (sem deboche, sem opinião política); sem balão de fala ou frase atribuída à pessoa; só personalidades públicas citadas na notícia.
 
 Como funciona (o ambiente da tarefa não alcança a API do Google, então a geração roda no GitHub Actions):
 1. A tarefa publica a edição normalmente (com gráfico ou `arte`) e grava `caricaturas/AAAA-MM-DD.json` com um item por notícia:
-   `slug`, `n`, `modo` (`caricatura` ou `misto`), `pessoa`, `prompt`, `grafico_base` (só no misto), `alt`, `fonte` e `legenda_social`.
-   No modo `caricatura`, use `"fonte": "Fonte: ilustração gerada com IA (Gemini)"`; no misto, a fonte dos dados + "; caricatura gerada com IA (Gemini)".
+   `slug`, `n`, `modo` (`caricatura`, `misto` ou `objeto`), `pessoa` (a personalidade ou, no modo objeto, o sujeito), `prompt`, `grafico_base` (só no misto), `alt`, `fonte` e `legenda_social`.
+   Nos modos `caricatura` e `objeto`, use `"fonte": "Fonte: ilustração gerada com IA (Gemini)"`; no misto, a fonte dos dados + "; caricatura gerada com IA (Gemini)".
 2. O push desse arquivo dispara `.github/workflows/caricaturas.yml`, que roda `tools/caricatura.py`: gera a imagem (modelo `gemini-3.1-flash-image`,
    ou o definido na variável `GEMINI_IMAGE_MODEL` do repositório), salva `assets/img/noticias/AAAA-MM-DD-N-car.png` ou `-mix.png`,
    aponta o `grafico` da notícia para ela, valida, gera as páginas, roda os testes e publica.
