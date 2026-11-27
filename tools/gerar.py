@@ -109,7 +109,7 @@ def versionar(html):
 def grafico_fig(gr):
     """Gráfico pronto (PNG 1600x900 gerado por graficos/AAAA-MM-DD.py com tools/grafico.py)."""
     return (f'<figure class="grafico"><img src="{esc(gr["src"])}" alt="{esc(gr["alt"])}" width="1600" height="900" style="display:block;width:100%;height:auto" decoding="async">'
-            + (f'<figcaption>{esc(gr["fonte"])}</figcaption>' if gr.get("fonte") else "") + '</figure>')
+            '</figure>')  # sem legenda de fonte (decisão do editor, 27/11/2026)
 
 
 def arte_div(arte):

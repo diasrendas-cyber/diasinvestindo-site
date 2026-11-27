@@ -40,13 +40,11 @@ for i, n in enumerate(ns, 1):
         if not re.match(r"^/assets/img/noticias/[\w.-]+\.png$", src): erros.append(f"{p}: grafico.src deve ser /assets/img/noticias/<nome>.png")
         elif not os.path.isfile(os.path.join(raiz, src.lstrip("/"))): erros.append(f"{p}: grafico.src aponta para arquivo inexistente ({src})")
         if len(str(gr.get("alt", ""))) < 30: erros.append(f"{p}: grafico.alt deve descrever o gráfico e a conclusão (mínimo 30 caracteres)")
-        if gr.get("fonte") and not str(gr["fonte"]).startswith("Fonte"): erros.append(f"{p}: grafico.fonte, quando existe, deve começar com 'Fonte'")
     f = n.get("fontes", [])
     if not f or not all(x.get("nome") and str(x.get("url", "")).startswith("https://") for x in f): erros.append(f"{p}: fontes precisam de nome e url https")
     a = n.get("arte", {})
     if a.get("tipo") not in TIPOS: erros.append(f"{p}: arte.tipo deve ser um de {sorted(TIPOS)}")
     if a.get("tema") not in TEMAS: erros.append(f"{p}: arte.tema deve ser um de {sorted(TEMAS)}")
-    if a.get("tipo") in COM_DADOS and not a.get("fonte"): erros.append(f"{p}: arte com dados precisa do campo fonte")
     if a.get("tipo") == "comparacao" and not ((a.get("a") or {}).get("valor") and (a.get("b") or {}).get("valor")): erros.append(f"{p}: arte comparacao precisa de a.valor e b.valor")
     if a.get("tipo") == "faixa":
         try:

@@ -80,7 +80,6 @@ function artLinha(a){
   const last=series[0].pontos[n-1],lx=x(n-1),ly=y(num(last[1]));
   g+=`<circle cx="${lx}" cy="${ly}" r="8" fill="var(--signal)" stroke="var(--surface)" stroke-width="3"/>`;
   if(a.destaque){const w=a.destaque.length*10.2+28,bx=W-R-w,baixo=ly>(T+(H-T-B)/2),by=baixo?T-6:H-B-50;g+=`<rect x="${bx}" y="${by}" width="${w}" height="38" rx="7" fill="var(--ink)"/>`+txt(bx+w/2,by+25,a.destaque,{size:18,w:700,fill:"var(--surface)",anchor:"middle"})}
-  if(a.fonte)g+=txt(W-12,H-4,a.fonte,{size:11,anchor:"end"});
   (a.marcas||[]).forEach(m=>{const j=m[0];const v=num(series[0].pontos[j][1]);g+=`<circle cx="${x(j)}" cy="${y(v)}" r="6" fill="var(--signal)" stroke="var(--surface)" stroke-width="2"/>`+txt(x(j)-10,y(v)-16,m[1],{size:17,w:700,fill:"var(--ink)",anchor:"end"})});
   return g;
 }
@@ -92,7 +91,6 @@ function artIndicador(a){
   const v=fmtVar(a.variacao||""),w=v.length*15+52;
   g+=`<rect x="32" y="170" width="${w}" height="46" rx="23" fill="${cor}"/>`;
   g+=`<path d="M52 ${cl==="down"?186:200} l9 ${cl==="down"?14:-14} l9 ${cl==="down"?-14:14}z" fill="var(--surface)"/>`+txt(78,202,v,{f:FONT_M,size:24,w:500,fill:"var(--surface)"});
-  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   (a.secundarios||[]).slice(0,2).forEach((s,i)=>{const yy=268+i*46,c2=sinal(s.variacao);
     g+=`<line x1="32" x2="372" y1="${yy-28}" y2="${yy-28}" stroke="var(--line)"/>`+txt(32,yy,s.rotulo,{size:18,w:600,fill:"var(--muted)"})+txt(372,yy,s.valor+(s.variacao&&!/%/.test(s.valor)?"  "+fmtVar(s.variacao):""),{f:FONT_M,size:18,fill:c2==="down"?"var(--down)":c2==="up"?"var(--up)":"var(--ink)",anchor:"end"})});
   return g;
@@ -106,7 +104,6 @@ function artBarras(a){
     g+=txt(L,yy,b.rotulo,{size:17,w:600,fill:"var(--ink)"});
     g+=`<rect x="${L}" y="${yy+9}" width="${w}" height="${bh}" rx="5" fill="${c}" fill-opacity="${b.destaque?1:.4}"/>`;
     g+=txt(L+w+12,yy+9+bh/2+8,(a.prefixo||"")+num(b.valor).toLocaleString("pt-BR",{minimumFractionDigits:dec,maximumFractionDigits:Math.max(dec,2)})+(a.sufixo||""),{f:FONT_M,size:22,w:500,fill:"var(--ink)"})});
-  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   if(a.nota){g+=`<rect x="28" y="${H-58}" width="${a.nota.length*9.2+30}" height="38" rx="7" fill="var(--signal-soft)"/>`+txt(43,H-33,a.nota,{size:16,w:600,fill:"var(--ink)"})}
   return g;
 }
@@ -129,7 +126,6 @@ function artComparacao(a){
   if(a.variacao){const v=fmtVar(a.variacao),cl=sinal(a.variacao),cor=cl==="down"?"var(--down)":cl==="up"?"var(--up)":"var(--ink)",ww=v.length*12+30;
     g+=`<rect x="${W-28-ww}" y="${top+h+16}" width="${ww}" height="36" rx="18" fill="${cor}"/>`+txt(W-28-ww/2,top+h+40,v,{f:FONT_M,size:18,fill:"var(--surface)",anchor:"middle"})}
   if(a.nota)g+=txt(28,top+h+40,a.nota,{size:15,w:600,fill:"var(--ink)"});
-  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   return g;
 }
 function artFaixa(a){
@@ -148,7 +144,6 @@ function artFaixa(a){
   if(a.faixa_min!=null)[a.faixa_min,a.faixa_max].forEach(t=>{g+=txt(x(num(t)),y0+70,f(t),{f:FONT_M,size:13,anchor:"middle"})});
   g+=`<circle cx="${x(v)}" cy="${y0+8}" r="13" fill="var(--signal)" stroke="var(--surface)" stroke-width="4"/>`;
   if(a.nota){const ww=a.nota.length*8.8+28;g+=`<rect x="${W-28-ww}" y="98" width="${ww}" height="38" rx="7" fill="var(--signal-soft)"/>`+txt(W-28-ww/2,123,a.nota,{size:15,w:700,fill:"var(--ink)",anchor:"middle"})}
-  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   return g;
 }
 function artRosca(a){
@@ -163,7 +158,6 @@ function artRosca(a){
     const yy=128+i*52;g+=`<rect x="330" y="${yy-16}" width="18" height="18" rx="4" fill="${cores[i]}" fill-opacity="${i===2?.45:1}"/>`+txt(358,yy,p.rotulo,{size:17,w:600,fill:"var(--ink)"})+
       txt(W-28,yy,num(p.valor).toLocaleString("pt-BR",{maximumFractionDigits:1})+(a.sufixo||""),{f:FONT_M,size:18,fill:"var(--ink)",anchor:"end"})});
   if(a.centro)g+=txt(cx,cy+8,a.centro,{size:22,w:800,fill:"var(--ink)",anchor:"middle"});
-  if(a.fonte)g+=txt(W-12,H-8,a.fonte,{size:11,anchor:"end"});
   return g;
 }
 function artPlanilha(a){

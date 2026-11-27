@@ -118,8 +118,8 @@ imagem de compartilhamento (og:image).
 - Script da edição: `graficos/AAAA-MM-DD.py`, usando `tools/grafico.py` (`quadro`, `limpar`, `salvar`, `br` e as cores).
   Rodar da raiz: `python3 graficos/AAAA-MM-DD.py`. Gera `assets/img/noticias/AAAA-MM-DD-N.png` (1600x900), N = ordem da notícia.
 - Campo: `"grafico": {"src": "/assets/img/noticias/AAAA-MM-DD-N.png", "alt": "o que o gráfico mostra e a conclusão", "fonte": "Fonte: ..."}`.
-- O validador exige arquivo existente e `alt` com 30+ caracteres; `fonte` (legenda) é obrigatória nos gráficos de dados e começa com "Fonte". Caricaturas e objetos ficam sem legenda.
-- **Fontes das notícias** (regra de 27/11/2026, a pedido do editor): o campo `fontes` continua obrigatório em noticias.json e as fontes continuam em `verificacao/`, mas o site não mostra mais a lista de fontes na página nem no leitor da home.
+- O validador exige arquivo existente e `alt` com 30+ caracteres.
+- **Fontes das notícias** (regra de 27/11/2026, a pedido do editor): o campo `fontes` continua obrigatório em noticias.json e as fontes continuam em `verificacao/`, mas o site não mostra mais fonte nenhuma: nem a lista no fim da notícia, nem legenda embaixo de gráficos e caricaturas, nem a linha "Fonte" dentro das imagens (`quadro()` de `tools/grafico.py` não desenha mais a fonte) ou das ilustrações (`arte`). Os campos `fonte` de `arte` e `grafico` são opcionais e não aparecem no site; o registro de onde vem cada número fica em `verificacao/AAAA-MM-DD.md`.
 - Só números já conferidos em `verificacao/AAAA-MM-DD.md`. Notícia sem número confirmado fica sem `grafico` (usa `cena`).
 
 **Conte uma história, não só compare barras** (regra de 26/11/2026, a pedido do editor). Antes de desenhar, defina o enredo

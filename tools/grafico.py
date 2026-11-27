@@ -52,8 +52,7 @@ def quadro(chapeu, titulo, subtitulo, fonte, area=(0.07, 0.15, 0.86, 0.55)):
     fig.text(0.05, 0.925, chapeu.upper(), fontsize=8.5, color=APAGADO, weight="semibold")
     fig.text(0.05, 0.845, titulo, fontsize=17, color=TINTA, weight="bold")
     fig.text(0.05, 0.785, subtitulo, fontsize=9.5, color=APAGADO)
-    fonte = fonte if fonte.lower().startswith("fonte") else f"Fonte: {fonte}"
-    fig.text(0.05, 0.035, fonte, fontsize=7.5, color=APAGADO)
+    # a fonte não é mais desenhada no gráfico (decisão do editor, 27/11/2026); fica só em verificacao/
     fig.text(0.95, 0.035, "diasinvestindo.com.br", fontsize=7.5, color=APAGADO, ha="right", weight="semibold")
     ax = fig.add_axes(list(area))
     limpar(ax)
