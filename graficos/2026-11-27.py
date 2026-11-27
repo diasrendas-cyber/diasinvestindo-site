@@ -33,34 +33,35 @@ ax.set_xticks(dias); ax.set_xticklabels(rot, fontsize=12)
 ax.set_yticks([])
 src["mercado"] = salvar(fig, "2026-11-27-1")
 
-# 2) IPCA-15 — inclinação (out x nov) + faixa de referência (12 meses x teto)
+# 2) IPCA-15 — tendência de 6 meses (linha) + faixa da meta (teto, meta e piso)
 fig, ax = quadro("Inflação · IPCA-15 de novembro",
                  "Prévia desacelera, mas 12 meses passa do teto",
-                 "Variação mensal e acumulado em 12 meses, em %.",
-                 "IBGE, via O Repórter, Portal do Agronegócio e CNN Brasil, 26/11/2026")
+                 "IPCA-15 no mês (jun–nov/2026) e acumulado em 12 meses, em %.",
+                 "IBGE; Fazenda, B3, Agência Gov, Exame, O Repórter, Portal do Agronegócio")
 ax.remove()
-a1 = fig.add_axes([0.08, 0.15, 0.34, 0.5]); limpar(a1)
-a1.set_xlim(-0.4, 1.4); a1.set_ylim(0.1, 0.42)
-a1.plot([0, 1], [0.32, 0.22], color=AZUL, lw=3)
-a1.scatter([0], [0.32], s=80, color=CINZA, zorder=3)
-a1.scatter([1], [0.22], s=130, color=AZUL, zorder=4)
-a1.text(0, 0.34, "0,32%", ha="center", va="bottom", fontsize=14, color=APAGADO)
-a1.text(1, 0.20, "0,22%", ha="center", va="top", fontsize=17, color=AZUL, weight="bold")
-a1.text(0.5, 0.42, "No mês", ha="center", va="top", fontsize=14, color=TINTA, weight="bold")
-a1.set_xticks([0, 1]); a1.set_xticklabels(["Outubro", "Novembro"], fontsize=12); a1.set_yticks([])
-a2 = fig.add_axes([0.52, 0.15, 0.42, 0.5]); limpar(a2)
-a2.set_xlim(2.5, 5.3); a2.set_ylim(-1, 1.2)
-a2.axvspan(4.5, 5.3, color=VERMELHO_BG, lw=0)
-a2.plot([2.5, 5.3], [0, 0], color=CLARO, lw=2)
-a2.axvline(4.5, color=TINTA, ls="--", lw=1.3)
-a2.axvline(3.0, color=APAGADO, ls=":", lw=1.2)
-a2.text(4.47, 0.55, "Teto 4,5%", ha="right", fontsize=13, color=TINTA)
-a2.text(3.03, 0.55, "Meta 3%", ha="left", fontsize=13, color=APAGADO)
-a2.scatter([4.64], [0], s=260, color=VERMELHO, zorder=4)
-a2.text(4.9, -0.3, "4,64%", ha="center", va="top", fontsize=17, color=VERMELHO, weight="bold")
-a2.text(3.75, 1.15, "Em 12 meses", ha="center", va="top", fontsize=14, color=TINTA, weight="bold")
-a2.set_xticks([]); a2.set_yticks([])
-src["ipca15"] = salvar(fig, "2026-11-27-2")
+a1 = fig.add_axes([0.07, 0.15, 0.5, 0.5]); limpar(a1)
+meses = ["jun", "jul", "ago", "set", "out", "nov"]
+mensal = [0.41, 0.06, -0.40, 0.70, 0.32, 0.22]
+x = list(range(6))
+a1.axhline(0, color=CLARO, lw=1.2)
+a1.plot(x[:4], mensal[:4], color=CINZA, lw=2.5)
+a1.plot(x[3:], mensal[3:], color=AZUL, lw=3.5)
+a1.scatter(x[:3], mensal[:3], s=40, color=CINZA, zorder=3)
+a1.scatter(x[3:], mensal[3:], s=[60, 60, 120], color=AZUL, zorder=4)
+for i, v in enumerate(mensal):
+    cor = AZUL if i >= 3 else APAGADO
+    abaixo = v < 0 or i == 4
+    a1.text(i, v + (-0.09 if abaixo else 0.09), br(v, 2, sufixo="%"), ha="center",
+            va="top" if abaixo else "bottom", fontsize=13 if i == 5 else 11, color=cor,
+            weight="bold" if i == 5 else "normal")
+a1.text(4.0, -0.42, "Out–nov: duas\ndesacelerações seguidas", ha="center", va="center", fontsize=11, color=AZUL, weight="bold")
+a1.set_xlim(-0.4, 5.4); a1.set_ylim(-0.65, 0.95)
+a1.set_xticks(x); a1.set_xticklabels(meses, fontsize=11); a1.set_yticks([])
+fig.text(0.07, 0.69, "No mês", ha="left", va="center", fontsize=13, color=TINTA, weight="bold")
+a2 = fig.add_axes([0.62, 0.15, 0.34, 0.5])
+banda_meta(a2, 4.64, "4,64%", ymin=0.5, ymax=5.6)
+fig.text(0.62 + 0.34 * 0.05, 0.69, "Em 12 meses", ha="left", va="center", fontsize=13, color=TINTA, weight="bold")
+src["ipca15"] = salvar(fig, "2026-11-27-2-v2")
 
 # 4) OPEP+ — barras ordenadas, só o protagonista colorido
 fig, ax = quadro("Petróleo · reunião da Opep+ em 29/11",

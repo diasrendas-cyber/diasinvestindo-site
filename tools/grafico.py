@@ -27,6 +27,8 @@ AZUL = "#1D4E89"     # destaque neutro/positivo
 AZUL_CLARO = "#8DA9CC"
 VERMELHO = "#B42318" # destaque de alerta (perda, acima do teto, abaixo da meta)
 VERMELHO_BG = "#F6DCDA"
+VERDE = "#1E7B4A"    # destaque de valor dentro da faixa-alvo (inflação entre piso e teto)
+VERDE_BG = "#DDF0E4"
 
 _fontes = [f for f in fm.findSystemFonts() if os.path.basename(f).startswith("Inter")]
 for f in _fontes:
@@ -81,3 +83,34 @@ def salvar(fig, nome):
         pass
     print(f"ok {caminho} ({os.path.getsize(caminho)//1024} KB)")
     return f"/assets/img/noticias/{nome}.png"
+
+
+def banda_meta(ax, valor, rotulo_valor, piso=1.5, centro=3.0, teto=4.5, ymin=0.0, ymax=6.0,
+               sufixo="%", casas=2, nome_centro="Meta"):
+    """Faixa da meta de inflação (regra de 27/11/2026, pedido do editor).
+
+    Três linhas horizontais: teto em cima, centro (meta) no meio e piso embaixo.
+    Valor DENTRO da faixa: faixa sombreada e ponto em VERDE.
+    Valor FORA (acima do teto ou abaixo do piso): a região de fora sombreada e o ponto em VERMELHO.
+    """
+    limpar(ax)
+    ax.set_xlim(0, 1); ax.set_ylim(ymin, ymax)
+    dentro = piso <= valor <= teto
+    cor = VERDE if dentro else VERMELHO
+    if dentro:
+        ax.axhspan(piso, teto, xmin=0.05, xmax=0.95, color=VERDE_BG, lw=0)
+    elif valor > teto:
+        ax.axhspan(teto, ymax, xmin=0.05, xmax=0.95, color=VERMELHO_BG, lw=0)
+    else:
+        ax.axhspan(ymin, piso, xmin=0.05, xmax=0.95, color=VERMELHO_BG, lw=0)
+    for y, nome, estilo, peso in ((teto, "Teto", "--", "semibold"), (centro, nome_centro, ":", "normal"),
+                                  (piso, "Piso", "--", "semibold")):
+        ax.plot([0.05, 0.95], [y, y], ls=estilo, color=TINTA if nome != nome_centro else APAGADO, lw=1.3)
+        ax.text(0.06, y + (ymax - ymin) * 0.015, f"{nome} {br(y, 1 if y % 1 else 0, sufixo=sufixo)}",
+                ha="left", va="bottom", fontsize=10, color=TINTA if nome != nome_centro else APAGADO, weight=peso)
+    ax.scatter([0.62], [valor], s=230, color=cor, zorder=4)
+    folga = (ymax - ymin) * 0.03
+    y_txt, va = (valor + folga, "bottom") if valor > teto else ((valor - folga, "top") if valor < piso else (valor, "center"))
+    ax.text(0.70, y_txt, rotulo_valor, ha="left", va=va, fontsize=15, color=cor, weight="bold")
+    ax.set_xticks([]); ax.set_yticks([])
+    return dentro

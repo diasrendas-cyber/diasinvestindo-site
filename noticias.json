@@ -106,9 +106,9 @@
         "fonte": "Fonte: IBGE, via O Repórter e Portal do Agronegócio, 26/11/2026"
       },
       "grafico": {
-        "src": "/assets/img/noticias/2026-11-27-2.png",
-        "alt": "À esquerda, o IPCA-15 mensal cai de 0,32% em outubro para 0,22% em novembro de 2026; à direita, o acumulado em 12 meses, de 4,64%, aparece em vermelho acima do teto de 4,5% da meta, cujo centro é 3%.",
-        "fonte": "Fonte: IBGE, via O Repórter, Portal do Agronegócio e CNN Brasil, 26/11/2026"
+        "src": "/assets/img/noticias/2026-11-27-2-v2.png",
+        "alt": "À esquerda, o IPCA-15 mensal de junho a novembro de 2026: 0,41%, 0,06%, -0,40%, 0,70%, 0,32% e 0,22%, com duas desacelerações seguidas em outubro e novembro; à direita, a faixa da meta com teto de 4,5%, meta de 3% e piso de 1,5%, e o acumulado em 12 meses de 4,64% em vermelho, acima do teto.",
+        "fonte": "Fonte: IBGE (IPCA-15 de junho e agosto), Ministério da Fazenda, B3, Agência Gov, Exame, O Repórter e Portal do Agronegócio"
       },
       "fontes": [
         {
