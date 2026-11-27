@@ -154,7 +154,7 @@ A figura escolhida vai no campo `grafico` e aparece em todos os espaços da not�
 
 Template de estilo (obrigatório; preencher os colchetes em inglês):
 
-> Stylized editorial caricature of [FULL NAME OF PUBLIC FIGURE], [RECOGNIZABLE FACIAL TRAITS & EXPRESSION MATCHING THE NEWS], subtle bobblehead proportions. Crisp black outlines, flat vector colors, modern graphic poster aesthetic on a dominant bright red background. Wearing [SIGNATURE OUTFIT], holding [SYMBOLIC PROP RELATED TO THE NEWS]. Left side: [ARCHITECTURAL OR SCENE ELEMENT] in stark white and black. Right side: minimalist white and yellow vector icons representing [CORE THEME OF THE NEWS]. High contrast, clean composition, no text, no watermark.
+> Stylized editorial caricature of [FULL NAME OF PUBLIC FIGURE], [RECOGNIZABLE FACIAL TRAITS & EXPRESSION MATCHING THE NEWS], clearly exaggerated cartoon caricature (not photorealistic), subtle bobblehead proportions. Crisp black outlines, flat vector colors, modern graphic poster aesthetic on a dominant bright red background. Wearing [SIGNATURE OUTFIT], holding [SYMBOLIC PROP RELATED TO THE NEWS]. Left side: [ARCHITECTURAL OR SCENE ELEMENT] in stark white and black. Right side: minimalist white and yellow vector icons representing [CORE THEME OF THE NEWS]. High contrast, clean composition, no text, no letters, no numbers, no logos anywhere (any certificates, papers, screens or signs are blank), no watermark.
 
 Cuidados: tom neutro e respeitoso (sem deboche, sem opinião política); sem balão de fala ou frase atribuída à pessoa; só personalidades públicas citadas na notícia.
 
