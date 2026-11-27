@@ -109,7 +109,7 @@ def versionar(html):
 def grafico_fig(gr):
     """Gráfico pronto (PNG 1600x900 gerado por graficos/AAAA-MM-DD.py com tools/grafico.py)."""
     return (f'<figure class="grafico"><img src="{esc(gr["src"])}" alt="{esc(gr["alt"])}" width="1600" height="900" style="display:block;width:100%;height:auto" decoding="async">'
-            f'<figcaption>{esc(gr.get("fonte", ""))}</figcaption></figure>')
+            + (f'<figcaption>{esc(gr["fonte"])}</figcaption>' if gr.get("fonte") else "") + '</figure>')
 
 
 def arte_div(arte):
@@ -202,7 +202,7 @@ def cartao_lista(n):
 def pagina_noticia(n, todas, dados):
     url = f"{SITE}/noticias/{n['slug']}/"
     paragrafos = "\n".join(f"<p>{esc(t)}</p>" for t in n.get("texto", []))
-    fontes = " · ".join(f'<a href="{esc(f["url"])}" target="_blank" rel="noopener">{esc(f["nome"])}</a>' for f in n.get("fontes", []))
+    # as fontes ficam em noticias.json e em verificacao/ (checagem), mas não aparecem na página (decisão do editor, 27/11/2026)
     bolso = f'<p class="callout"><strong>Para o seu bolso:</strong> {esc(n["bolso"])}</p>' if n.get("bolso") else ""
     outras = [o for o in todas if o["slug"] != n["slug"]][:4]
     wa = "https://wa.me/?text=" + quote(f'{n["titulo"]} {url}')
@@ -220,7 +220,6 @@ def pagina_noticia(n, todas, dados):
 {paragrafos}
 {bolso}
   </div>
-  <p class="src">{"Fontes" if len(n.get("fontes", [])) > 1 else "Fonte"}: {fontes}. Resumo escrito pelo Dias Investindo a partir das reportagens citadas; os números foram conferidos em mais de uma fonte ou em fonte oficial.</p>
   <div class="share"><span>Compartilhe:</span><a href="{wa}" target="_blank" rel="noopener">WhatsApp</a><button type="button" id="copiar-link">Copiar link</button></div>
 </article>
 <div class="ad-conteudo" data-ad-slot-name="conteudo"></div>

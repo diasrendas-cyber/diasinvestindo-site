@@ -40,7 +40,7 @@ for i, n in enumerate(ns, 1):
         if not re.match(r"^/assets/img/noticias/[\w.-]+\.png$", src): erros.append(f"{p}: grafico.src deve ser /assets/img/noticias/<nome>.png")
         elif not os.path.isfile(os.path.join(raiz, src.lstrip("/"))): erros.append(f"{p}: grafico.src aponta para arquivo inexistente ({src})")
         if len(str(gr.get("alt", ""))) < 30: erros.append(f"{p}: grafico.alt deve descrever o gráfico e a conclusão (mínimo 30 caracteres)")
-        if not str(gr.get("fonte", "")).startswith("Fonte"): erros.append(f"{p}: grafico.fonte deve começar com 'Fonte'")
+        if gr.get("fonte") and not str(gr["fonte"]).startswith("Fonte"): erros.append(f"{p}: grafico.fonte, quando existe, deve começar com 'Fonte'")
     f = n.get("fontes", [])
     if not f or not all(x.get("nome") and str(x.get("url", "")).startswith("https://") for x in f): erros.append(f"{p}: fontes precisam de nome e url https")
     a = n.get("arte", {})

@@ -118,7 +118,8 @@ imagem de compartilhamento (og:image).
 - Script da edição: `graficos/AAAA-MM-DD.py`, usando `tools/grafico.py` (`quadro`, `limpar`, `salvar`, `br` e as cores).
   Rodar da raiz: `python3 graficos/AAAA-MM-DD.py`. Gera `assets/img/noticias/AAAA-MM-DD-N.png` (1600x900), N = ordem da notícia.
 - Campo: `"grafico": {"src": "/assets/img/noticias/AAAA-MM-DD-N.png", "alt": "o que o gráfico mostra e a conclusão", "fonte": "Fonte: ..."}`.
-- O validador exige arquivo existente, `alt` com 30+ caracteres e `fonte` começando com "Fonte".
+- O validador exige arquivo existente e `alt` com 30+ caracteres; `fonte` (legenda) é obrigatória nos gráficos de dados e começa com "Fonte". Caricaturas e objetos ficam sem legenda.
+- **Fontes das notícias** (regra de 27/11/2026, a pedido do editor): o campo `fontes` continua obrigatório em noticias.json e as fontes continuam em `verificacao/`, mas o site não mostra mais a lista de fontes na página nem no leitor da home.
 - Só números já conferidos em `verificacao/AAAA-MM-DD.md`. Notícia sem número confirmado fica sem `grafico` (usa `cena`).
 
 **Conte uma história, não só compare barras** (regra de 26/11/2026, a pedido do editor). Antes de desenhar, defina o enredo
@@ -179,7 +180,7 @@ Cuidados: tom neutro e respeitoso (sem deboche, sem opinião política); sem bal
 Como funciona (o ambiente da tarefa não alcança a API do Google, então a geração roda no GitHub Actions):
 1. A tarefa publica a edição normalmente (com gráfico ou `arte`) e grava `caricaturas/AAAA-MM-DD.json` com um item por notícia:
    `slug`, `n`, `modo` (`caricatura`, `misto` ou `objeto`), `pessoa` (a personalidade ou, no modo objeto, o sujeito), `prompt`, `grafico_base` (só no misto), `alt`, `fonte` e `legenda_social`.
-   Nos modos `caricatura` e `objeto`, use `"fonte": "Fonte: ilustração gerada com IA (Gemini)"`; no misto, a fonte dos dados + "; caricatura gerada com IA (Gemini)".
+   Nos modos `caricatura` e `objeto`, deixe `"fonte": ""` (a figura fica sem legenda) e termine o `alt` com "(ilustração gerada com IA)"; no misto, `fonte` é só a fonte dos dados do gráfico.
 2. O push desse arquivo dispara `.github/workflows/caricaturas.yml`, que roda `tools/caricatura.py`: gera a imagem (modelo `gemini-3.1-flash-image`,
    ou o definido na variável `GEMINI_IMAGE_MODEL` do repositório), salva `assets/img/noticias/AAAA-MM-DD-N-car.png` ou `-mix.png`,
    aponta o `grafico` da notícia para ela, valida, gera as páginas, roda os testes e publica.

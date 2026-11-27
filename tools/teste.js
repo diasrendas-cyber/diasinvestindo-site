@@ -78,7 +78,7 @@ d.querySelectorAll("#news-list [data-open-noticia]")[1].click();
 const dlg = $("leitor");
 check(dlg.hasAttribute("open"), "notícia abre o leitor");
 check($("leitor-corpo").querySelectorAll("article > p:not(.dek):not(.src):not(.callout)").length === 3, "notícia com 3 parágrafos", $("leitor-corpo").querySelectorAll("p").length);
-check($("leitor-corpo").textContent.includes(DADOS.noticias[1].fontes[0].nome), "fonte na notícia");
+check(!$("leitor-corpo").querySelector(".src"), "notícia sem lista de fontes no leitor (decisão de 27/11/2026)");
 $("leitor-fechar").click();
 check(!dlg.hasAttribute("open"), "leitor fecha");
 // Destaque grande também abre

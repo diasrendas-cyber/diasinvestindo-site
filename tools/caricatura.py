@@ -15,7 +15,7 @@ Entrada: caricaturas/AAAA-MM-DD.json, escrito pela tarefa diária:
       "prompt": "Stylized editorial caricature of ...",   # template de estilo preenchido
       "grafico_base": "/assets/img/noticias/AAAA-MM-DD-N.png",  # só no modo misto
       "alt": "descrição da figura e da conclusão",
-      "fonte": "Fonte: ...",                # fonte dos dados (misto) ou "Fonte: ilustração gerada com IA (Gemini)"
+      "fonte": "Fonte: ...",                # só no misto: a fonte dos dados do gráfico; caricatura e objeto ficam sem legenda
       "legenda_social": "legenda curta para redes sociais"
     }
   ]
@@ -143,7 +143,9 @@ def processar(data):
         nome = f"{data}-{item.get('n')}-{sufixo}.png"
         montar(item, caric).save(os.path.join(PASTA_IMG, nome), optimize=True)
         cobrir(caric, W, H).save(os.path.join(PASTA_IMG, f"{data}-{item.get('n')}-car-original.png"), optimize=True)
-        noticia["grafico"] = {"src": f"/assets/img/noticias/{nome}", "alt": item["alt"], "fonte": item["fonte"]}
+        noticia["grafico"] = {"src": f"/assets/img/noticias/{nome}", "alt": item["alt"]}
+        if item.get("fonte"):  # só no misto (fonte dos dados do gráfico); caricatura e objeto ficam sem legenda
+            noticia["grafico"]["fonte"] = item["fonte"]
         item["resultado"] = f"ok: /assets/img/noticias/{nome}"
         mudou = True
         log(f"{rotulo}: {item['resultado']}")
