@@ -10,6 +10,48 @@
   },
   "noticias": [
     {
+      "editoria": "Negócios",
+      "data": "25/11/2026",
+      "publicado": "27/11/2026",
+      "extra": true,
+      "titulo": "Musk promete duas ações da SpaceX para cada criança dos EUA",
+      "resumo": "O bilionário dobrou a promessa feita em outubro e diz que parte das ações será transferida já em dezembro.",
+      "texto": [
+        "Elon Musk afirmou no X que cada criança dos Estados Unidos vai receber duas ações da SpaceX: uma emitida pela própria empresa e outra tirada da participação pessoal dele. Segundo o empresário, as ações da companhia serão transferidas no próximo mês, e a dele só depois do fim do período de bloqueio de vendas, em junho de 2027. A promessa amplia a de outubro, quando Musk disse que daria uma ação a cada criança americana e que aquela seria apenas a primeira de muitas doações.",
+        "A nova rodada se apoia num anúncio da própria SpaceX, que na quarta-feira (25/11) informou que vai emitir uma nova ação Classe A para cada Trump Account ativa. Musk se comprometeu a igualar, com ações próprias, o número de papéis doados pela empresa. As Trump Accounts são contas de investimento com vantagem fiscal para menores de 18 anos, e quase 70 milhões delas já foram abertas, segundo a Casa Branca. Antes de Musk, Michael e Susan Dell já haviam prometido US$ 6,25 bilhões para essas contas.",
+        "Ainda faltam detalhes importantes: não há informação sobre como as ações serão transferidas, quantas crianças são elegíveis nem quantos papéis estão envolvidos no total. Para um analista ouvido pela Reuters, a medida cria no longo prazo uma grande base de acionistas pessoas físicas e aproxima as famílias do mercado. Os próximos marcos são dezembro, com a entrega das ações da empresa, e junho de 2027, quando deve chegar a ação pessoal de Musk."
+      ],
+      "bolso": "A promessa vale só para crianças com Trump Account nos EUA e não muda nada para quem investe no Brasil, mas mostra o interesse crescente de grandes empresas em formar pequenos acionistas desde cedo.",
+      "arte": {
+        "tipo": "cena",
+        "tema": "tecnologia"
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-27-5-car.png",
+        "alt": "Caricatura editorial de Elon Musk sorrindo, de jaqueta escura, segurando certificados de ações embrulhados para presente, com um foguete na plataforma à esquerda e ícones de cofrinho, moedas e gráfico em alta à direita, sobre fundo vermelho.",
+        "fonte": "Fonte: ilustração gerada com IA (Gemini)"
+      },
+      "fontes": [
+        {
+          "nome": "CNN Brasil (Reuters)",
+          "url": "https://www.cnnbrasil.com.br/economia/money/tecnologia/elon-musk-promete-duas-acoes-da-spacex-para-cada-crianca-nos-eua-entenda/"
+        },
+        {
+          "nome": "Newsweek",
+          "url": "https://www.newsweek.com/elon-musk-pledges-spacex-share-for-every-child-in-america-what-theyre-worth-12586874"
+        },
+        {
+          "nome": "Al Jazeera",
+          "url": "https://aljazeera.com/news/2026/10/21/musk-pledges-10bn-in-spacex-shares-for-us-children-who-really-gains"
+        },
+        {
+          "nome": "401(k) Specialist",
+          "url": "https://401kspecialistmag.com/elon-musk-pledges-spacex-shares-to-american-children/"
+        }
+      ],
+      "slug": "2026-11-25-musk-promete-duas-acoes-da-spacex-para-cada-crianca-dos-eua"
+    },
+    {
       "editoria": "Mercados",
       "data": "26/11/2026",
       "publicado": "27/11/2026",

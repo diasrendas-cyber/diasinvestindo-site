@@ -70,12 +70,12 @@ for n in ns:
         edicoes.append((n.get("publicado"), []))
     edicoes[-1][1].append(n)
 if edicoes:
-    hoje = edicoes[0][1]
+    hoje = [n for n in edicoes[0][1] if not n.get("extra")]  # "extra": notícia avulsa fora da edição (não conta na regra de 4 nem na variedade)
     if not (3 <= len(hoje) <= 4): erros.append(f"a edição de {edicoes[0][0]} deve ter 4 notícias (mínimo 3); tem {len(hoje)}")
     tipos = [n.get("arte", {}).get("tipo") for n in hoje]
     if len(tipos) != len(set(tipos)): erros.append(f"edição de {edicoes[0][0]}: cada notícia deve usar um tipo de ilustração diferente (tem {tipos})")
     if len(edicoes) > 1:
-        antes = [n.get("arte", {}).get("tipo") for n in edicoes[1][1]]
+        antes = [n.get("arte", {}).get("tipo") for n in edicoes[1][1] if not n.get("extra")]
         if tipos and antes and tipos[0] == antes[0]: erros.append(f"edição de {edicoes[0][0]}: a notícia de abertura não pode repetir o tipo de ilustração da abertura anterior ({tipos[0]})")
         comuns = set(tipos) & set(antes)
         if len(comuns) > 2: erros.append(f"edição de {edicoes[0][0]}: no máximo 2 tipos de ilustração repetidos da edição anterior (repetiu {sorted(comuns)})")
