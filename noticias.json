@@ -1,14 +1,219 @@
 {
-  "atualizado": "27/11/2026",
+  "atualizado": "28/11/2026",
   "ticker": {
     "selic": "13,75%",
-    "ibov": "176.800",
-    "ibovVar": "+6,07%",
-    "dolar": "R$ 5,74",
-    "dolarVar": "-1,25%",
-    "data": "26/11/2026"
+    "ibov": "176.573",
+    "ibovVar": "-0,13%",
+    "dolar": "R$ 5,52",
+    "dolarVar": "-3,97%",
+    "data": "27/11/2026"
   },
   "noticias": [
+    {
+      "editoria": "Mercados",
+      "data": "27/11/2026",
+      "publicado": "28/11/2026",
+      "titulo": "Dólar cai 3,97% e fecha a R$ 5,52 no primeiro pregão com Trabuco confirmado na Fazenda; na semana, recua 7,07%",
+      "resumo": "A moeda americana teve a quinta queda seguida e terminou a semana 7,07% mais barata, enquanto o Ibovespa devolveu os ganhos da manhã e fechou estável.",
+      "texto": [
+        "O dólar comercial fechou a sexta-feira (27) cotado a R$ 5,5156, queda de 3,97%, no primeiro pregão depois de o Palácio do Planalto confirmar Luiz Carlos Trabuco Cappi como ministro da Fazenda a partir de 2027. Foi a quinta sessão seguida de baixa da moeda americana, que acumulou recuo de 7,07% na semana. Na mínima do dia, por volta das 10h, o dólar chegou a R$ 5,479. O Ibovespa, que havia disparado 6,07% na véspera, fechou praticamente estável, com leve queda de 0,13%, aos 176.573 pontos.",
+        "Investidores interpretaram a escolha do presidente do Conselho de Administração do Bradesco como sinal de previsibilidade e de compromisso com o equilíbrio das contas públicas, o que derrubou os juros futuros. O real também se beneficiou do enfraquecimento do dólar diante de outras moedas emergentes, como o rand sul-africano e os pesos chileno e colombiano. Na bolsa, a realização de lucros e a queda de Petrobras, cuja ação preferencial recuou 2,43% com o petróleo mais barato, apagaram a alta de quase 4% vista pela manhã. Empresas mais sensíveis aos juros lideraram os ganhos, como as construtoras Tenda (+13,02%) e MRV (+11,07%).",
+        "Trabuco assume o ministério em janeiro, no lugar do atual ministro, Dario Durigan, e o mercado agora espera os nomes da nova equipe e os primeiros sinais sobre a condução da política fiscal. A queda dos juros futuros também passa a pesar nas apostas para as próximas decisões do Copom, que mantém a Selic em 13,75% ao ano. No exterior, a reunião da Opep+ marcada para domingo (29) deve influenciar o petróleo e, com ele, as ações da Petrobras na próxima semana. Depois de oscilações tão fortes, o câmbio pode seguir volátil até que as primeiras medidas da nova gestão sejam conhecidas."
+      ],
+      "analise": [
+        "Para quem cuida do próprio dinheiro, uma queda de 7% do dólar em uma semana mexe com planos concretos. Quem vai viajar ao exterior ou tem uma compra cotada em dólar ganha fôlego, porque cada US$ 1.000 passaram a custar cerca de R$ 418 a menos do que na quinta-feira anterior, considerando os fechamentos de R$ 5,93 e R$ 5,52. Para quem tem parte da carteira dolarizada, o movimento é o lado inverso: a mesma aplicação vale menos em reais, o que reforça por que a exposição ao câmbio funciona como proteção de longo prazo, e não como aposta de curto prazo.",
+        "O que acompanhar daqui para a frente são os nomes da equipe econômica e as primeiras medidas fiscais, porque foi a expectativa sobre as contas públicas que derrubou o dólar e os juros futuros. Movimentos tão rápidos costumam vir acompanhados de volatilidade, então quem precisa de moeda estrangeira em data certa tende a se proteger melhor comprando aos poucos do que tentando acertar o dia exato. O Conversor de Moedas do site ajuda a recalcular o orçamento de uma viagem com a cotação do dia."
+      ],
+      "arte": {
+        "tipo": "comparacao",
+        "tema": "cambio",
+        "titulo": "Dólar comercial na semana",
+        "a": {
+          "rotulo": "19/11",
+          "valor": "R$ 5,93"
+        },
+        "b": {
+          "rotulo": "27/11",
+          "valor": "R$ 5,52",
+          "nota": "-3,97% no dia"
+        },
+        "variacao": "-7,07%"
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-28-1.png",
+        "alt": "Linha do dólar comercial nos fechamentos de 19/11 a 27/11/2026: de R$ 5,93 a moeda recua aos poucos até R$ 5,74 em 26/11 e despenca 3,97% em 27/11, a R$ 5,52, no primeiro pregão com Trabuco confirmado na Fazenda. Na semana, queda de 7,07%."
+      },
+      "fontes": [
+        {
+          "nome": "Correio Braziliense",
+          "url": "https://www.correiobraziliense.com.br/economia/2026/11/7545835-dolar-cai-397-e-fecha-a-rs-551-um-dia-apos-anuncio-de-trabuco-na-fazenda.html"
+        },
+        {
+          "nome": "Agência Brasil (Imirante)",
+          "url": "https://imirante.com/noticias/brasil/2026/11/27/dolar-cai-quase-4-apos-anuncio-novo-ministro-fazenda"
+        },
+        {
+          "nome": "Estadão Conteúdo (Tribuna do Sertão)",
+          "url": "https://www.tribunadosertao.com.br/geral/2026/11/27/1031887-fechamento-do-mercado-financeiro"
+        },
+        {
+          "nome": "Gazeta Mercantil",
+          "url": "https://gazetamercantil.com/ibovespa-hoje"
+        },
+        {
+          "nome": "Minhas Economias",
+          "url": "https://minhaseconomias.com.br/blog/planejamento-financeiro/ibovespa-fecha-em-leve-queda-com-confirmacao-de-trabuco-a-fazenda-e-indicadores-economicos-no-radar"
+        }
+      ],
+      "slug": "2026-11-27-dolar-cai-3-97-e-fecha-a-r-5-52-no-primeiro-pregao-com-trabuco"
+    },
+    {
+      "editoria": "Economia",
+      "data": "27/11/2026",
+      "publicado": "28/11/2026",
+      "titulo": "IGP-M sobe 1,24% em novembro e acumula 6,26% em 12 meses, pressionado por alimentos in natura",
+      "resumo": "O índice usado em muitos contratos de aluguel desacelerou frente a outubro, mas segue em ritmo forte puxado por tomate e cebola.",
+      "texto": [
+        "O Índice Geral de Preços – Mercado (IGP-M), calculado pela Fundação Getulio Vargas, subiu 1,24% em novembro de 2026, depois da alta de 1,47% em outubro. Com o resultado, divulgado na sexta-feira (27), o indicador acumula 6,26% em 12 meses e 6,28% no ano. O número ficou perto do teto das projeções do mercado, que iam de 0,48% a 1,30%, com mediana de 1,05%. É o índice tradicionalmente usado para corrigir contratos de aluguel residencial e comercial.",
+        "A pressão veio principalmente dos preços no atacado: o Índice de Preços ao Produtor Amplo (IPA) subiu 1,62%, depois de 1,93% em outubro. Para o consumidor, o IPC avançou 0,39%, e o custo da construção (INCC) subiu 0,30%. O tomate liderou as altas, com avanço de 43,73% no atacado e de 32,79% no varejo, e a cebola também pesou. Segundo a FGV, a intensificação do El Niño fez os alimentos in natura ganharem destaque tanto nos preços ao produtor quanto ao consumidor.",
+        "A FGV avalia que o ritmo de alta dos preços deve continuar acelerado nos próximos meses, influenciado pelo clima e pela conjuntura econômica. Para quem tem contrato de aluguel com aniversário em dezembro, o reajuste pelo IGP-M será de 6,26%, salvo outra regra prevista no contrato. O acumulado do índice está acima da prévia da inflação oficial, o IPCA-15, que somou 4,64% em 12 meses até novembro. O IGP-M de dezembro, que fecha o ano, sai no fim do mês."
+      ],
+      "analise": [
+        "O IGP-M interessa sobretudo a quem paga ou recebe aluguel. Um contrato de R$ 2.000 corrigido por 6,26% passa a R$ 2.125,20, ou R$ 125,20 a mais por mês, o que soma R$ 1.502,40 em 12 meses. Como o índice está acima da prévia da inflação oficial (4,64% em 12 meses), o aluguel tende a subir mais do que a média dos preços que o inquilino paga no dia a dia, e o ajuste precisa caber no orçamento sem consumir a reserva de emergência.",
+        "Na hora da renovação, vale conferir qual índice o contrato prevê e conversar com o proprietário: muitos contratos usam o IPCA, e a negociação do percentual é comum quando o IGP-M dispara. Para o proprietário, a correção recompõe a renda do imóvel, mas um reajuste pesado pode aumentar o risco de vacância. Os próximos IGP-M, influenciados pelos alimentos e pelo câmbio mais baixo, mostram se essa pressão perde força. Os artigos de finanças pessoais do site ajudam a encaixar o novo valor no orçamento do mês sem desmontar a reserva."
+      ],
+      "arte": {
+        "tipo": "indicador",
+        "tema": "inflacao",
+        "rotulo": "IGP-M em 12 meses (até novembro)",
+        "valor": "6,26%",
+        "secundarios": [
+          {
+            "rotulo": "Novembro",
+            "valor": "1,24%"
+          },
+          {
+            "rotulo": "Outubro",
+            "valor": "1,47%"
+          }
+        ]
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-28-2.png",
+        "alt": "Número grande: o IGP-M acumula 6,26% em 12 meses até novembro de 2026, com 1,24% só em novembro. No exemplo, um aluguel de R$ 2.000 corrigido pelo índice passa a R$ 2.125,20, alta de R$ 125,20 por mês."
+      },
+      "fontes": [
+        {
+          "nome": "Jornal do Comércio (Estadão Conteúdo)",
+          "url": "https://www.jornaldocomercio.com/economia/2026/11/1271979-igp-m-sobe-124-em-novembro-apos-alta-de-147-em-outubro-revela-fgv.html"
+        },
+        {
+          "nome": "Safras & Mercado",
+          "url": "https://safras.com.br/igp-m-tem-inflacao-de-124-novembro/"
+        },
+        {
+          "nome": "Floresta Notícias",
+          "url": "https://www.florestanoticias.com/2026/11/27/igp-m-sobe-124-em-novembro-com-pressao-de-alimentos-in-natura/"
+        },
+        {
+          "nome": "Gazeta Mercantil",
+          "url": "https://gazetamercantil.com/ibovespa-hoje"
+        }
+      ],
+      "slug": "2026-11-27-igp-m-sobe-1-24-em-novembro-e-acumula-6-26-em-12-meses-pressionado"
+    },
+    {
+      "editoria": "Economia",
+      "data": "27/11/2026",
+      "publicado": "28/11/2026",
+      "titulo": "Desemprego cai a 5,1% no trimestre até outubro e iguala a menor taxa da série do IBGE",
+      "resumo": "A população ocupada chegou a 103,7 milhões, recorde, e o rendimento médio real subiu 3,5% em um ano.",
+      "texto": [
+        "A taxa de desocupação no Brasil caiu para 5,1% no trimestre de agosto a outubro de 2026, segundo a PNAD Contínua divulgada pelo IBGE na sexta-feira (27). O resultado iguala o menor patamar da série histórica, iniciada em 2012, registrado no trimestre encerrado em dezembro de 2025. A taxa era de 5,3% no trimestre até julho e de 5,4% no mesmo período do ano passado. O país tinha 5,6 milhões de desocupados, 252 mil a menos que no trimestre anterior.",
+        "A população ocupada chegou a 103,7 milhões de pessoas, o maior número da série, com alta de 1,1% em 12 meses, e o nível de ocupação ficou em 59,0%, também recorde. Segundo o analista do IBGE William Kratochwill, o recorde se mantém mesmo com a atividade econômica mais moderada. O rendimento médio real habitual foi de R$ 3.812, alta de 1,0% no trimestre e de 3,5% em um ano. O número de empregados com carteira assinada no setor privado ficou estável em 39,4 milhões.",
+        "Com o mercado de trabalho apertado e a renda em alta, o consumo das famílias tende a seguir sustentado, o que entra nas contas do Banco Central sobre a inflação e os juros. A taxa de subutilização caiu para 12,7%, e o número de desalentados recuou 8,9% em um ano, para 2,4 milhões. Os próximos indicadores do mercado de trabalho são os dados do emprego formal de outubro, pelo Novo Caged, que mostram se a criação de vagas com carteira mantém o ritmo."
+      ],
+      "analise": [
+        "Desemprego baixo e renda real subindo significam, para muitas famílias, mais segurança para planejar: fica mais fácil negociar salário, trocar de emprego e reorganizar dívidas caras. Mas um bom momento do mercado de trabalho é justamente a hora de fortalecer a reserva de emergência, e não de afrouxá-la, porque o emprego é cíclico e a renda extra de hoje pode financiar a proteção de amanhã. Uma referência comum é guardar de três a seis meses do custo de vida em aplicações de liquidez diária.",
+        "Há também o outro lado: com a economia aquecida e o consumo forte, o Banco Central tende a ser cauteloso para cortar a Selic, o que mantém o crédito caro para quem tem dívidas e a renda fixa atraente para quem poupa. Vale acompanhar os próximos dados do Caged e os próximos sinais do Copom. Quem quer transformar o aumento de renda em patrimônio pode usar a Calculadora do Milhão do site para ver quanto um aporte mensal maior encurta o caminho até a meta."
+      ],
+      "arte": {
+        "tipo": "rosca",
+        "tema": "emprego",
+        "titulo": "Força de trabalho, ago–out/2026 (milhões)",
+        "partes": [
+          {
+            "rotulo": "Ocupados",
+            "valor": 103.7
+          },
+          {
+            "rotulo": "Desocupados",
+            "valor": 5.6
+          }
+        ],
+        "sufixo": " mi",
+        "centro": "5,1%"
+      },
+      "grafico": {
+        "src": "/assets/img/noticias/2026-11-28-3.png",
+        "alt": "Linha da taxa de desocupação por trimestre móvel: 5,4% em agosto–outubro de 2025, 5,3% em maio–julho de 2026 e 5,1% em agosto–outubro de 2026, igual à mínima da série, registrada em dezembro de 2025."
+      },
+      "fontes": [
+        {
+          "nome": "Mix Vale",
+          "url": "https://www.mixvale.com.br/2026/11/27/taxa-de-desemprego-cai-para-51-no-trimestre-ate-outubro-no-brasil-e-iguala-minima-historica-do-ibge/"
+        },
+        {
+          "nome": "Viva (Broadcast/Estadão)",
+          "url": "https://viva.com.br/dinheiro/ibge-desemprego-de-51-em-outubro-iguala-menor-taxa-da-serie-historica.html"
+        },
+        {
+          "nome": "Fundação Perseu Abramo (Agência Gov)",
+          "url": "https://fpabramo.org.br/desemprego-cai-no-pais-e-iguala-menor-patamar-da-serie-historica/"
+        },
+        {
+          "nome": "Minhas Economias",
+          "url": "https://minhaseconomias.com.br/blog/planejamento-financeiro/ibovespa-fecha-em-leve-queda-com-confirmacao-de-trabuco-a-fazenda-e-indicadores-economicos-no-radar"
+        }
+      ],
+      "slug": "2026-11-27-desemprego-cai-a-5-1-no-trimestre-ate-outubro-e-iguala-a-menor-taxa"
+    },
+    {
+      "editoria": "Inteligência Artificial",
+      "data": "27/11/2026",
+      "publicado": "28/11/2026",
+      "titulo": "OpenAI contra-ataca Apple na Justiça e a acusa de roubar segredos e bloquear fornecedores de hardware",
+      "resumo": "A dona do ChatGPT respondeu ao processo aberto pela Apple em julho e levou a disputa para o controle da cadeia de fornecedores de aparelhos de IA.",
+      "texto": [
+        "A OpenAI apresentou na sexta-feira (27) pedidos reconvencionais contra a Apple em um tribunal federal da Califórnia, acusando a empresa de roubar seus segredos comerciais e de bloquear seu acesso a fornecedores de hardware. A dona do ChatGPT também afirma que as práticas de emprego da Apple foram desenhadas para prender funcionários e impedi-los de trabalhar com tecnologias de concorrentes. A ação é uma resposta ao processo que a Apple abriu em julho de 2026. Nenhuma das duas empresas comentou o novo pedido até a publicação das reportagens.",
+        "No processo original, a Apple acusa a OpenAI e dois ex-funcionários seus de se apropriarem de informações confidenciais para acelerar a entrada da OpenAI no mercado de aparelhos de consumo. Um deles teria acessado a rede interna da Apple depois de mudar de empresa, e o outro teria levado para contas pessoais dados sobre fornecedores. A OpenAI nega as acusações e já havia pedido, em agosto, a extinção da ação, alegando que a Apple tentava dificultar a contratação de seus ex-empregados. A nova ofensiva amplia a briga para o acesso a fabricantes e parceiros de componentes.",
+        "Os próximos passos incluem a resposta formal da Apple ao novo pedido e possíveis decisões provisórias que afetem fornecedores ou funcionários das duas empresas. Não há data de julgamento marcada. Analistas avaliam que a OpenAI trabalha em um telefone ou outro aparelho próprio, o que coloca as duas companhias em rota de competição direta. O caso também está ligado a uma disputa maior sobre quem vai controlar os dispositivos de inteligência artificial que podem dispensar os aplicativos e sistemas operacionais tradicionais."
+      ],
+      "analise": [
+        "Para o investidor comum, a briga mostra que a disputa da inteligência artificial deixou de ser só sobre programas e passou a envolver aparelhos, fornecedores e talentos. Quando gigantes vão aos tribunais por acesso à cadeia de produção, o recado é que o hardware virou peça estratégica, e processos longos como esse costumam gerar custos, atrasos de lançamento e incerteza para as empresas envolvidas e para seus fornecedores. Quem tem fundos ou ETFs de tecnologia está, indiretamente, exposto a esse tipo de risco jurídico.",
+        "O mais útil é acompanhar os fatos concretos: decisões do tribunal, eventuais restrições a fornecedores e o anúncio de um aparelho próprio da OpenAI. Disputas judiciais raramente se resolvem em semanas, e manchetes sobre processos tendem a provocar oscilações pontuais. Para quem investe em tecnologia, a diversificação entre empresas e setores ajuda a evitar que um único processo pese demais no patrimônio. No dia a dia, vale lembrar que a concorrência entre gigantes costuma resultar em mais opções e preços melhores para o consumidor."
+      ],
+      "arte": {
+        "tipo": "cena",
+        "tema": "tecnologia",
+        "titulo": "OpenAI x Apple"
+      },
+      "fontes": [
+        {
+          "nome": "Al Jazeera (Reuters)",
+          "url": "https://www.aljazeera.com/economy/2026/11/27/openai-countersues-apple-over-trade-secrets-as-ai-race-heats-up"
+        },
+        {
+          "nome": "Gadget Review",
+          "url": "https://www.gadgetreview.com/openai-countersues-apple-over-trade-secrets-and-supply-chain"
+        },
+        {
+          "nome": "Yahoo Finanças",
+          "url": "https://finance.yahoo.com/technology/ai/articles/openai-countersues-apple-over-trade-193855054.html"
+        }
+      ],
+      "slug": "2026-11-27-openai-contra-ataca-apple-na-justica-e-a-acusa-de-roubar-segredos-e"
+    },
     {
       "editoria": "Negócios",
       "data": "25/11/2026",
